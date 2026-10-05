@@ -1,0 +1,174 @@
+% ============================================================
+%  Front matter of the book: course information (after the first lecture of the course)
+%  and a one-page formula sheet (differentiation and integration).
+%  Both editions share this file; the words come from \ifEMrtl branches.
+% ============================================================
+\newcommand{\EMlatin}[1]{\ifEMrtl\lr{#1}\else#1\fi}          % a Latin title inside the text
+\newcommand{\EMfarsiin}[1]{\ifEMrtl#1\else\rl{#1}\fi}         % a Persian title inside the text
+\newcommand{\EMtx}[2]{\ifEMrtl\EMt{#2}\else\text{#1}\fi}      % a word inside a formula, English / Persian
+
+% a titled sub-block of the information page
+\newcommand{\EMinfohead}[1]{\par\Needspace{7\baselineskip}\vspace{0.7em}%
+  {\EMheadfont\bfseries\large\color{EMindigo}#1}\par\nobreak\vspace{0.1em}{\color{EMline}\hrule height 0.5pt}\vspace{0.35em}\nobreak}
+\newcommand{\EMinfo}[2]{\par\noindent{\EMheadfont\bfseries\color{EMrose}#1}\if\relax\detokenize{#2}\relax\nopagebreak\else\ \EMsep\ #2\fi\par}
+
+% four tiles for the grading
+\newcommand{\EMtile}[2]{%
+  \begin{minipage}[t]{0.235\linewidth}\centering
+  \begin{tcolorbox}[enhanced,sharp corners,frame hidden,colback=EMindigoL,borderline south={1.6pt}{0pt}{EMindigo},
+     left=3pt,right=3pt,top=5pt,bottom=5pt,before skip=0pt,after skip=0pt,halign=center,
+     height=1.9cm,valign=center]
+    {\EMheadfont\bfseries\Large\color{EMindigo}\ifEMrtl\persianfont#1\else#1\fi}\par\vspace{0.25em}{\small #2}
+  \end{tcolorbox}\end{minipage}}
+
+\newcommand{\EMcourseinfo}{%
+  \clearpage\thispagestyle{plain}\small\linespread{1.12}\selectfont\setlist{topsep=0pt,itemsep=0pt,partopsep=0pt}\setlength{\parskip}{0.25em}%
+  \pdfbookmark[0]{\EMlangInfoTitle}{EMinfo}\phantomsection
+  {\EMheadfont\bfseries\fontsize{22}{26}\selectfont\color{EMindigo}\EMlangInfoTitle\par}
+  \vspace{0.3em}{\color{EMline}\hrule height 0.8pt}\vspace{0.5em}
+  \ifEMrtl
+    \EMinfo{درس}{ریاضی مهندسی (۲۳۱۱۲۰۱۸)}
+    \EMinfo{مدرس}{عباس ابراهیمی مقدم}
+    \EMinfo{پیش‌نیاز درس}{ریاضی ۲، معادلات دیفرانسیل}
+    \EMinfo{امکانات آنلاین}{پیام‌رسان پرتال، کانال تلگرام و نیز سایت \lr{vu}}
+    \EMinfohead{منابع}
+    \EMinfo{منبع اصلی}{نسخهٔ الکترونیکی کتاب در سایت \lr{vu} بارگذاری شده است:\\
+      \hspace*{1.2em}\lr{\textit{Advanced Engineering Mathematics}, Erwin Kreyszig}}
+    \EMinfo{سایر منابع}{}
+    \begin{itemize}
+      \item \lr{\textit{Advanced Engineering Mathematics}, Clarence R. Wylie}
+      \item \lr{\textit{Complex Variables and Applications}, Ruel V. Churchill, \dots}
+      \item ریاضیات مهندسی، دکتر جلیل راشد محصل، دانشگاه تهران
+    \end{itemize}
+    \EMinfohead{نحوهٔ ارزیابی درس}
+    \noindent\EMtile{۲۰٪}{کوییزها\\(در کلاس حل تمرین)}\hfill
+    \EMtile{۱۰٪}{تکالیف}\hfill
+    \EMtile{۳۰٪}{میان‌ترم\\(پنجشنبه ۲۵ آبان)}\hfill
+    \EMtile{۴۰٪}{پایان‌ترم\\(روز سوم امتحانات)}\par
+    \EMinfohead{موضوعات مطرح‌شده در درس}
+    \EMinfo{تحلیل فوریه}{}
+    \begin{itemize}
+      \item سری فوریهٔ توابع متناوب
+      \item انتگرال فوریهٔ توابع غیرتناوبی
+    \end{itemize}
+    \EMinfo{معادلات دیفرانسیل با مشتقات جزئی}{}
+    \begin{itemize}
+      \item معرفی بعضی معادلات دیفرانسیل مهم
+      \item روش‌های مختلف حل معادلات دیفرانسیل با مشتقات جزئی
+    \end{itemize}
+    \EMinfo{آنالیز مختلط}{}
+    \begin{itemize}
+      \item اعداد مختلط (روش‌های مختلف بیان اعداد مختلط، \dots)
+      \item توابع مختلط (حد، پیوستگی، مشتق و انتگرال مختلط)
+      \item سری لورنت
+    \end{itemize}
+    \EMinfohead{یادآوری بعضی نکات ریاضی}
+    \begin{itemize}
+      \item عملیات روی متغیر مستقل یک تابع: جمع متغیر مستقل با یک عدد ثابت، ضرب متغیر مستقل در یک عدد ثابت، قرینه کردن متغیر مستقل
+      \item توابع زوج یا فرد و قسمت زوج یا فرد یک تابع
+      \item توابع متناوبی و دورهٔ تناوب این توابع
+    \end{itemize}
+  \else
+    \EMinfo{Course}{Engineering Mathematics (23112018)}
+    \EMinfo{Instructor}{Abbas Ebrahimi Moghadam}
+    \EMinfo{Prerequisites}{Mathematics 2, Differential Equations}
+    \EMinfo{Online facilities}{the portal messenger, the Telegram channel and the \texttt{vu} site}
+    \EMinfohead{Sources}
+    \EMinfo{Main source}{the electronic version of the book is uploaded on the \texttt{vu} site:\\
+      \hspace*{1.2em}\textit{Advanced Engineering Mathematics}, Erwin Kreyszig}
+    \EMinfo{Other sources}{}
+    \begin{itemize}
+      \item \textit{Advanced Engineering Mathematics}, Clarence R. Wylie
+      \item \textit{Complex Variables and Applications}, Ruel V. Churchill, \dots
+      \item \rl{ریاضیات مهندسی، دکتر جلیل راشد محصل، دانشگاه تهران}
+    \end{itemize}
+    \EMinfohead{Grading}
+    \noindent\EMtile{20\%}{Quizzes\\(in the problem class)}\hfill
+    \EMtile{10\%}{Assignments}\hfill
+    \EMtile{30\%}{Midterm\\(Thursday, 25 Aban)}\hfill
+    \EMtile{40\%}{Final exam\\(third day of the exams)}\par
+    \EMinfohead{Topics of the course}
+    \EMinfo{Fourier Analysis}{}
+    \begin{itemize}
+      \item Fourier series of periodic functions
+      \item The Fourier integral of non-periodic functions
+    \end{itemize}
+    \EMinfo{Partial Differential Equations}{}
+    \begin{itemize}
+      \item Introduction to some important differential equations
+      \item Various methods of solving partial differential equations
+    \end{itemize}
+    \EMinfo{Complex Analysis}{}
+    \begin{itemize}
+      \item Complex numbers (the various ways of expressing a complex number, \dots)
+      \item Complex functions (limit, continuity, complex derivative and integral)
+      \item The Laurent series
+    \end{itemize}
+    \EMinfohead{Mathematical reminders}
+    \begin{itemize}
+      \item Operations on the independent variable of a function: adding a constant to it, multiplying it by a constant, negating it
+      \item Even and odd functions, and the even and odd part of a function
+      \item Periodic functions and their period
+    \end{itemize}
+  \fi
+  \clearpage}
+
+% ---------- the formula sheet ----------
+\newcommand{\EMsheetbox}[2]{% title, body
+  \begin{minipage}[t]{0.485\linewidth}
+  \begin{tcolorbox}[enhanced,sharp corners,boxrule=0.5pt,colframe=EMindigo!40!white,colback=white,
+     left=6pt,right=6pt,top=4pt,bottom=4pt,before skip=0pt,after skip=0pt,
+     title={#1},coltitle=EMindigo,colbacktitle=EMindigoL,fonttitle=\EMheadfont\bfseries\large,
+     halign title=center]
+  #2
+  \end{tcolorbox}\end{minipage}}
+\newcommand{\EMrows}[1]{\EMim{\renewcommand{\arraystretch}{1.1}\begin{array}{@{}r@{\;=\;}l@{}}\displaystyle #1\end{array}}}
+% one rule line of a table: an equation, optionally a note
+\newcommand{\EMsheetsep}{\par\vspace{0.7em}{\color{EMline}\hrule height 0.4pt}\vspace{0.7em}\par}
+
+\newcommand{\EMcheatsheet}{%
+  \clearpage\thispagestyle{plain}%
+  \pdfbookmark[0]{\EMlangSheetTitle}{EMsheet}\phantomsection
+  {\EMheadfont\bfseries\fontsize{19}{24}\selectfont\color{EMindigo}\hyphenpenalty=10000 \EMlangSheetTitle\par}
+  \vspace{0.3em}{\color{EMline}\hrule height 0.8pt}\vspace{0.6em}
+  \setlength{\parskip}{0pt}\setlength{\jot}{0pt}%
+  \noindent
+  \EMsheetbox{\EMlangDiff}{%
+    \centering
+    \EMrows{(cu)' & cu' \quad (c\ \EMtx{constant}{ثابت})\\\noalign{\vskip 13pt}
+            (u+v)' & u'+v'\\\noalign{\vskip 13pt}
+            (uv)' & u'v+uv'\\\noalign{\vskip 15pt}
+            \left(\dfrac uv\right)' & \dfrac{u'v-uv'}{v^2}\\\noalign{\vskip 15pt}
+            \dfrac{du}{dx} & \dfrac{du}{dy}\cdot\dfrac{dy}{dx}\quad(\EMtx{Chain rule}{قاعدهٔ زنجیری})}
+    \EMsheetsep
+    \EMrows{(x^n)' & nx^{n-1}\\\noalign{\vskip 10pt} (e^x)' & e^x\\\noalign{\vskip 10pt} (e^{ax})' & ae^{ax}\\\noalign{\vskip 10pt} (a^x)' & a^x\ln a}
+    \EMsheetsep
+    \EMrows{(\sin x)' & \cos x\\\noalign{\vskip 9pt} (\cos x)' & -\sin x\\\noalign{\vskip 9pt} (\tan x)' & \sec^2x\\\noalign{\vskip 9pt}
+            (\cot x)' & -\csc^2x\\\noalign{\vskip 9pt} (\sinh x)' & \cosh x\\\noalign{\vskip 9pt} (\cosh x)' & \sinh x\\\noalign{\vskip 13pt}
+            (\ln x)' & \dfrac1x\\\noalign{\vskip 15pt} (\log_a x)' & \dfrac{\log_a e}{x}\\\noalign{\vskip 15pt}
+            (\arcsin x)' & \dfrac1{\sqrt{1-x^2}}\\\noalign{\vskip 15pt} (\arccos x)' & -\dfrac1{\sqrt{1-x^2}}\\\noalign{\vskip 15pt}
+            (\arctan x)' & \dfrac1{1+x^2}\\\noalign{\vskip 15pt} (\operatorname{arccot}x)' & -\dfrac1{1+x^2}}}%
+  \hfill
+  \EMsheetbox{\EMlangInt}{%
+    \centering
+    \EMrows{\int uv'\,dx & uv-\int u'v\,dx \quad(\EMtx{by parts}{جزء‌به‌جزء})\\\noalign{\vskip 13pt}
+            \int x^n\,dx & \dfrac{x^{n+1}}{n+1}+c \quad(n\neq-1)\\\noalign{\vskip 15pt}
+            \int\dfrac1x\,dx & \ln\lvert x\rvert+c\\\noalign{\vskip 15pt}
+            \int e^{ax}\,dx & \dfrac1a\,e^{ax}+c}
+    \EMsheetsep
+    \EMrows{\int\sin x\,dx & -\cos x+c\\\noalign{\vskip 9pt} \int\cos x\,dx & \sin x+c\\\noalign{\vskip 9pt}
+            \int\tan x\,dx & -\ln\lvert\cos x\rvert+c\\\noalign{\vskip 9pt} \int\cot x\,dx & \ln\lvert\sin x\rvert+c\\\noalign{\vskip 9pt}
+            \int\sec x\,dx & \ln\lvert\sec x+\tan x\rvert+c\\\noalign{\vskip 9pt} \int\csc x\,dx & \ln\lvert\csc x-\cot x\rvert+c}
+    \EMsheetsep
+    \EMrows{\int\dfrac{dx}{x^2+a^2} & \dfrac1a\arctan\dfrac xa+c\\\noalign{\vskip 15pt}
+            \int\dfrac{dx}{\sqrt{a^2-x^2}} & \arcsin\dfrac xa+c\\\noalign{\vskip 15pt}
+            \int\dfrac{dx}{\sqrt{x^2+a^2}} & \operatorname{arcsinh}\dfrac xa+c\\\noalign{\vskip 15pt}
+            \int\dfrac{dx}{\sqrt{x^2-a^2}} & \operatorname{arccosh}\dfrac xa+c}
+    \EMsheetsep
+    \EMrows{\int\sin^2x\,dx & \tfrac12x-\tfrac14\sin2x+c\\\noalign{\vskip 9pt} \int\cos^2x\,dx & \tfrac12x+\tfrac14\sin2x+c\\\noalign{\vskip 9pt}
+            \int\tan^2x\,dx & \tan x-x+c\\\noalign{\vskip 9pt} \int\cot^2x\,dx & -\cot x-x+c\\\noalign{\vskip 9pt}
+            \int\ln x\,dx & x\ln x-x+c}
+    \EMsheetsep
+    \EMrows{\int e^{ax}\sin bx\,dx & \dfrac{e^{ax}}{a^2+b^2}\,(a\sin bx-b\cos bx)+c\\\noalign{\vskip 15pt}
+            \int e^{ax}\cos bx\,dx & \dfrac{e^{ax}}{a^2+b^2}\,(a\cos bx+b\sin bx)+c}}\par
+  \clearpage}

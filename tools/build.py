@@ -162,7 +162,7 @@ def build_sources(lang, only=None, book_only=False):
         folder.mkdir(parents=True, exist_ok=True)
         parts = [f"\\EMcoverpage{{{COURSE[lang]}}}{{{COVER_SUBTITLE[lang]}}}{{{COURSE[other]}}}"
                  f"{{{COVER_SUBTITLE[other]}}}\n",
-                 "\\pagenumbering{roman}\\setcounter{page}{1}\n\\EMcolophon\n"]
+                 "\\pagenumbering{roman}\\setcounter{page}{1}\n\\EMcourseinfo\n\\EMcheatsheet\n"]
         # contents
         toc = ["\\EMsetmodule{0}{\\EMlangContents}{}\n\\begin{EMbooktoc}\n"]
         for pk, pnum, ptitle, lo, hi in PARTS:

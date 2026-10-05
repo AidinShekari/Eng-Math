@@ -524,19 +524,3 @@
     \node[anchor=south,text=EMline,align=center,text width=16cm,font=\small]
       at ($(current page.south)+(0,2.75)$) {#5};
   \end{tikzpicture}\clearpage}
-
-% ---------- about these notes ----------
-\newcommand{\EMcolophon}{%
-  \clearpage\thispagestyle{plain}%
-  {\EMheadfont\bfseries\fontsize{22}{26}\selectfont\color{EMindigo}\EMlangColophonTitle\par}
-  \vspace{0.3em}{\color{EMline}\hrule height 0.8pt}\vspace{0.8em}
-  \EMcolophontext
-  \vspace{0.6em}
-  \begin{EMdefinition}{\EMlegendDefinition}\EMlegendDefinitionText\end{EMdefinition}
-  \begin{EMtheorem}{\EMlegendTheorem}\EMlegendTheoremText\end{EMtheorem}
-  \begin{EMimportant}{\EMlegendImportant}\EMlegendImportantText\end{EMimportant}
-  \begin{EMexample}{\EMlegendExample}\EMlegendExampleText
-    \begin{EMsolution}\EMlegendSolutionText\end{EMsolution}\end{EMexample}
-  \begin{EMexercise}{\EMlegendExercise}\EMlegendExerciseText\end{EMexercise}
-  \begin{EMremark}{\EMlegendRemark}\EMlegendRemarkText\end{EMremark}
-  \setcounter{EMitem}{0}\clearpage}
