@@ -2,8 +2,8 @@
 \begin{tikzpicture}[scale=1.1]
   \draw[EMcurve2,EMmid,smooth cycle,tension=0.8] plot coordinates{(-2.4,1.2)(-2.9,-0.2)(-2.2,-1.6)(-0.6,-1.9)(1.3,-1.7)(2.6,-0.5)(2.6,1.4)(1.3,2.5)(-0.8,2.3)};
   \foreach \p/\n in {(-1.4,1.3)/1,(-1.7,0.2)/2,(-0.6,-0.4)/3}{
-    \draw[EMcurve,EMmid] \p circle (0.34);\node[EMptI] at \p{};\node[EMlabs,above right,xshift=2pt] at \p{$z_{\n}$};}
+    \draw[EMcurve,EMmid] \p circle (0.42);\node[EMptI] at \p{};\node[EMlabs,anchor=west,inner sep=1pt,xshift=1.5pt] at \p{$z_{\n}$};}
   \node[font=\small] at (0.1,-0.95){$\vdots$};
-  \draw[EMcurve,EMmid] (0.7,-1.35) circle (0.3);\node[EMptI] at (0.7,-1.35){};\node[EMlabs,above right] at (0.7,-1.35){$z_n$};
+  \draw[EMcurve,EMmid] (0.7,-1.35) circle (0.38);\node[EMptI] at (0.7,-1.35){};\node[EMlabs,anchor=west,inner sep=1pt,xshift=1.5pt] at (0.7,-1.35){$z_n$};
   \node[EMlab,text=EMrose] at (1.8,1.9){$C$};
 \end{tikzpicture}

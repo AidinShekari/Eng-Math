@@ -22,6 +22,7 @@
   EMfill3/.style={fill=EMjade!13,draw=none},
   EMlab/.style={font=\small,text=EMink,inner sep=1.5pt},
   EMlabs/.style={font=\footnotesize,text=EMink,inner sep=1pt},
+  EMlabg/.style={font=\footnotesize,text=EMink,inner sep=1.2pt,fill=white,fill opacity=0.8,text opacity=1},
   EMtag/.style={font=\small\itshape,text=EMmuted,inner sep=2pt},
   EMbox/.style={draw=EMindigo,line width=0.8pt,fill=EMindigoL,rounded corners=2pt,
     minimum height=1.1cm,minimum width=2.3cm,align=center,font=\small,inner sep=4pt},
@@ -40,8 +41,21 @@
 \newcommand{\EMpoint}[4]{\node[EMpt] (#2) at #1 {}; \node[EMlab,#4] at (#2) {#3};}
 \pgfplotsset{EMplot/.style={
   axis lines=middle,axis line style={EMink!75,-{Stealth[length=5pt]}},
-  tick style={EMink!60},tick label style={font=\footnotesize,text=EMink},
+  tick style={EMink!60},tick label style={font=\footnotesize,text=EMink,fill=white,fill opacity=0.85,text opacity=1,inner sep=1.3pt},
   label style={font=\small,text=EMink},
   every axis x label/.style={at={(ticklabel* cs:1.0)},anchor=west,xshift=3pt},
   every axis y label/.style={at={(ticklabel* cs:1.0)},anchor=south,yshift=3pt},
   grid=none,width=9cm,height=5.2cm,every axis plot/.append style={line width=1.15pt}}}
+
+% a label placed explicitly on a pgfplots axis (so that it can be moved off a curve):
+% \EMxt{x}{label}{anchor} at the x axis, \EMyt{y}{label}{anchor} at the y axis.  The anchor names
+% the corner of the label that touches the tick; a small shift keeps the label off the axis line.
+\tikzset{
+  EMsh/north/.style={yshift=-2.5pt},EMsh/south/.style={yshift=2.5pt},
+  EMsh/east/.style={xshift=-3pt},EMsh/west/.style={xshift=3pt},
+  EMsh/north east/.style={xshift=-2pt,yshift=-2.5pt},EMsh/north west/.style={xshift=2pt,yshift=-2.5pt},
+  EMsh/south east/.style={xshift=-2pt,yshift=2.5pt},EMsh/south west/.style={xshift=2pt,yshift=2.5pt}}
+\newcommand{\EMxt}[3]{\node[EMlabs,anchor=#3,inner sep=1.5pt,fill=white,fill opacity=0.85,text opacity=1,EMsh/#3] at (axis cs:#1,0){#2};}
+\newcommand{\EMyt}[3]{\node[EMlabs,anchor=#3,inner sep=1.5pt,fill=white,fill opacity=0.85,text opacity=1,EMsh/#3] at (axis cs:0,#1){#2};}
+% a label below the plot at x, joined to the axis by a faint guide (used where curves crowd the axis)
+\newcommand{\EMxb}[3]{\draw[EMgrid,densely dotted] (axis cs:#1,0)--(axis cs:#1,#3);\node[EMlabs,anchor=north,inner sep=2pt] at (axis cs:#1,#3){#2};}

@@ -4,7 +4,7 @@
   \filldraw[EMfill,dashed,draw=EMindigo,line width=0.9pt] (-1,0) circle (3);
   \filldraw[EMfill2,dashed,draw=EMrose,line width=0.9pt] (-4,0) circle (3);
   \EMcross{(-1,0)}\EMcross{(-4,0)}
-  \node[EMlabs,above] at (-1,0.12){$-1$};\node[EMlabs,above] at (-4,0.12){$-4$};
-  \draw[EMvec] (-1,0)--++(-30:3) node[EMlabs,midway,below]{$3$};
-  \draw[EMvec2] (-4,0)--++(-150:3) node[EMlabs,midway,below]{$3$};
+  \node[EMlabs,above right=1pt] at (-1,0.1){$-1$};\node[EMlabs,above left=1pt] at (-4,0.1){$-4$};
+  \draw[EMvec] (-1,0)--++(-30:3) node[EMlabs,midway,below left=2pt]{$3$};
+  \draw[EMvec2] (-4,0)--++(-150:3) node[EMlabs,midway,below right=2pt]{$3$};
 \end{tikzpicture}

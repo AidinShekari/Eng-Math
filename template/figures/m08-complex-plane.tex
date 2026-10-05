@@ -3,10 +3,10 @@
   \EMgrid{0}{4}{0}{3}
   \EMaxes{-0.6}{4.7}{-0.55}{3.4}{$\operatorname{Re}$}{$\operatorname{Im}$}
   \coordinate (O) at (0,0);\coordinate (Z) at (3,2);
-  \draw[EMdash] (Z) -- (3,0) node[EMlab,below]{$x$};
-  \draw[EMdash] (Z) -- (0,2) node[EMlab,left]{$y$};
-  \draw[EMvec] (O) -- (Z) node[EMlab,midway,above left,sloped]{$|z|$};
-  \node[EMpt] at (Z){};\node[EMlab,above right] at (Z){$z=(x,y)$};
+  \draw[EMdash] (Z) -- (3,0) node[EMlabg,below=2pt]{$x$};
+  \draw[EMdash] (Z) -- (0,2) node[EMlabg,left=2pt]{$y$};
+  \draw[EMvec] (O) -- (Z) node[EMlabg,midway,above=3pt,sloped]{$|z|$};
+  \node[EMpt] at (Z){};\node[EMlabg,above right] at (Z){$z=(x,y)$};
   \draw[EMcurve2] (0.85,0) arc (0:33.69:0.85);
-  \node[EMlab,anchor=west] at (0.95,0.22){$\theta=\measuredangle z$};
+  \node[EMlabg,anchor=west] at (0.95,0.22){$\theta=\measuredangle z$};
 \end{tikzpicture}

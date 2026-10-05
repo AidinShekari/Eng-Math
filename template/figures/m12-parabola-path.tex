@@ -4,6 +4,6 @@
   % y = x^2 exactly, as a cubic Bezier segment
   \draw[EMcurve,EMmid3] (-1,1) .. controls (-0.3333,-0.3333) and (0.3333,-0.3333) .. (1,1);
   \node[EMptI] at (-1,1){};\node[EMptI] at (1,1){};
-  \node[EMlabs,above] at (-1,1){$-1+i$};\node[EMlabs,above] at (1,1){$1+i$};
-  \node[EMlabs,right] at (0.72,0.35){$z(t)=t+it^2$};
+  \node[EMlabs,above=4pt] at (-1,1){$-1+i$};\node[EMlabs,above=4pt] at (1,1){$1+i$};
+  \node[EMlabs,anchor=west] at (1.15,0.55){$z(t)=t+it^2$};
 \end{tikzpicture}

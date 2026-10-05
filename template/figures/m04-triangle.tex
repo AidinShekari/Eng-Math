@@ -2,9 +2,7 @@
 \begin{tikzpicture}
   \begin{axis}[EMplot,width=10cm,height=4.6cm,xmin=-0.2,xmax=3.6,ymin=-0.25,ymax=1.5,
       xtick={0,1.1,3.1416},xticklabels={$0$,$a$,$\pi$},ytick={1},yticklabels={$k$},xlabel={$x$},ylabel={$f(x)$}]
-    \draw[EMcurve] (axis cs:0,0)--(axis cs:1.1,1)--(axis cs:3.1416,0);
+    \draw[EMcurve] (axis cs:0,0)--(axis cs:1.1,1) node[EMlabs,midway,above=3pt,sloped]{$\frac ka x$}--(axis cs:3.1416,0) node[EMlabs,midway,above=3pt,sloped]{$\frac{k}{a-\pi}(x-\pi)$};
     \draw[EMdash] (axis cs:0,1)--(axis cs:1.1,1)--(axis cs:1.1,0);
-    \node[EMlabs,anchor=south east,rotate=40] at (axis cs:0.75,0.62){$\frac ka x$};
-    \node[EMlabs,anchor=south west,rotate=-26] at (axis cs:1.95,0.52){$\frac{k}{a-\pi}(x-\pi)$};
   \end{axis}
 \end{tikzpicture}

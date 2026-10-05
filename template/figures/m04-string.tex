@@ -9,9 +9,9 @@
   \draw[EMdash] (\xp,0)--(\xp,\yp) (\xq,0)--(\xq,\yq);
   \node[EMlabs,below] at (\xp,0){$x$};\node[EMlabs,below] at (\xq,0){$x+\Delta x$};\node[EMlabs,below] at (6,0){$L$};\node[EMlabs,below left] at (0,0){$0$};
   \node[EMpt] (P) at (\xp,\yp){};\node[EMpt] (Q) at (\xq,\yq){};
-  \node[EMlab,above left] at (P){$P$};\node[EMlab,above] at ($(Q)+(0,0.05)$){$Q$};
+  \node[EMlab,above left] at (P){$P$};\node[EMlab,above left] at (Q){$Q$};
   \draw[EMdash] (P)--++(-1.15,0);\draw[EMdash] (Q)--++(1.15,0);
-  \draw[EMvec2] (P)--++({180+\aa}:1.15) node[EMlabs,left,pos=0.75]{$T_1$};
+  \draw[EMvec2] (P)--++({180+\aa}:1.15) node[EMlabs,left=3pt,pos=0.8]{$T_1$};
   \draw[EMvec2] (Q)--++({\bb}:1.15) node[EMlabs,above right]{$T_2$};
   \draw[EMcurve3] ($(P)+(180:0.6)$) arc (180:{180+\aa}:0.6);
   \node[EMlabs,text=EMjade] at ($(P)+({180+0.5*\aa}:0.9)$){$\alpha$};

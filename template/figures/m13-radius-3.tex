@@ -2,7 +2,7 @@
 \begin{tikzpicture}[scale=1.7]
   \EMaxes{-0.7}{2.9}{-1.4}{1.5}{$\operatorname{Re}$}{$\operatorname{Im}$}
   \filldraw[EMfill,dashed,draw=EMindigo,line width=0.9pt] (1,0) circle (1);
-  \EMcross{(0,0)}\node[EMlabs,below left] at (0,0){$0$};
-  \node[EMptI] at (1,0){};\node[EMlabs,below] at (1,-0.08){$z_0=1$};
-  \draw[EMvec] (1,0)--(1,0)++(55:1) node[EMlabs,midway,above left]{$1$};
+  \EMcross{(0,0)}\node[EMlabs,anchor=north east,xshift=-3pt,yshift=-4pt] at (0,0){$0$};
+  \node[EMptI] at (1,0){};\node[EMlabs,below=3pt] at (1,0){$z_0=1$};
+  \draw[EMvec] (1,0)--(1,0)++(55:1) node[EMlabs,midway,above left=2pt]{$1$};
 \end{tikzpicture}
