@@ -1,0 +1,9 @@
+% The path of exercise 4: the circle with centre 3+3i and radius 1
+\begin{tikzpicture}[scale=0.95]
+  \EMaxes{-0.4}{5.2}{-0.4}{5.2}{$x$}{$y$}
+  \draw[EMdash] (0,3)--(3,3)--(3,0);
+  \node[EMlabs,left] at (0,3){$3$};\node[EMlabs,below] at (3,0){$3$};
+  \draw[EMcurve,EMmid] (3,3) circle (1);
+  \node[EMptI] at (3,3){};
+  \draw[EMvec] (3,3)--++(-40:1) node[EMlabs,midway,above right]{$r=1$};
+\end{tikzpicture}

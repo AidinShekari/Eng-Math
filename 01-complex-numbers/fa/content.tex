@@ -1,0 +1,226 @@
+\EMhold
+
+\EMsection{مجموعهٔ اعداد مختلط}{مجموعهٔ اعداد مختلط}
+
+\begin{EMdefinition}{اعداد مختلط}
+
+مجموعهٔ اعداد مختلط تعمیم اعداد واقع بر محور اعداد حقیقی به صفحه‌ای از اعداد دارای دو مولفهٔ حقیقی و موهومی می‌باشد.
+\EMdisp{\mathbb{R}\to\mathbb{C}}
+
+\end{EMdefinition}
+
+\EMdisp{\mathbb{C}\EMbr =\{(x,y)\mid x,y\in\mathbb{R}\},\qquad\EMbr  z\EMbr =(x,y),\qquad\EMbr  x\EMbr =\operatorname{Re}\{z\},\qquad\EMbr  y\EMbr =\operatorname{Im}\{z\}}
+
+\EMfigure{m01-complex-plane}{نمایش عدد مختلط \EMim{z=(x,y)} در صفحهٔ مختلط؛ اندازهٔ \EMim{|z|} و
+آرگومان \EMim{\theta}}
+
+اندازه یا نرم (\lr{norm}) عدد مختلط:
+\EMdisp{|z|\EMbr =\sqrt{x^2+y^2}}
+
+فاز یا آرگومان:
+\EMdisp{\theta\EMbr =\measuredangle z\EMbr =\tan^{-1}\!\left(\frac{y}{x}\right),\qquad\EMbr  z\EMbr =|z|\measuredangle\theta}
+\EMdisp{x\EMbr =|z|\cos\theta,\qquad\EMbr  y\EMbr =|z|\sin\theta}
+
+\EMdisp{z\EMbr =x\times(1,0)+y\times(0,1)\EMbr =x+iy}
+
+\begin{EMimportant}{}
+
+\EMdisp{i^2\EMbr =-1}
+
+\end{EMimportant}
+
+\EMsection{چهار عمل اصلی}{چهار عمل اصلی}
+
+فرض کنید \EMim{z_1=(a_1,b_1)=a_1+ib_1} و \EMim{z_2=(a_2,b_2)=a_2+ib_2}.
+
+\textbf{(\lr{I}) جمع:}
+\EMdisp{z_1+z_2\EMbr =(a_1+a_2,\,b_1+b_2)\EMbr =a_1+a_2+i(b_1+b_2)}
+
+\textbf{(\lr{II}) تفریق:}
+\EMdisp{z_1-z_2\EMbr =(a_1-a_2,\,b_1-b_2)\EMbr =a_1-a_2+i(b_1-b_2)}
+
+\textbf{(\lr{III}) ضرب:}
+\EMdisp{\begin{aligned}
+z_1\times z_2&=(a_1+ib_1)\times(a_2+ib_2)\\
+&=a_1\times a_2+a_1\times ib_2+ib_1\times a_2+ib_1\times ib_2\\
+&=(a_1a_2-b_1b_2)+i(a_1b_2+b_1a_2)
+\end{aligned}}
+
+ضرب در یک عدد حقیقی:
+\EMdisp{\forall\alpha\in\mathbb{R}:\quad\EMbr  \alpha z_1\EMbr =\alpha a_1+i\alpha b_1}
+
+\textbf{(\lr{IV}) تقسیم:}
+\EMdisp{\begin{aligned}
+z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)(a_2-ib_2)}{(a_2+ib_2)(a_2-ib_2)}\\
+&=\frac{(a_1a_2+b_1b_2)+i(b_1a_2-a_1b_2)}{a_2^2+b_2^2}
+=\frac{a_1a_2+b_1b_2}{a_2^2+b_2^2}+i\,\frac{b_1a_2-a_1b_2}{a_2^2+b_2^2}
+\end{aligned}}
+
+\EMhold
+
+\EMsection{خواص جمع و ضرب}{خواص جمع و ضرب}
+
+\begin{EMtheorem}{میدان بودن اعداد مختلط}
+
+مجموعهٔ اعداد مختلط همراه با دو عمل جمع و ضرب تشکیل یک میدان غیرترتیب‌پذیر می‌دهد.
+
+\end{EMtheorem}
+
+برای \EMim{z_1,z_2,z_3\in\mathbb{C}}:
+
+\EMdisp{z_1+z_2\in\mathbb{C},\qquad\EMbr  z_1\times z_2\in\mathbb{C}}
+\EMdisp{z_1+z_2\EMbr =z_2+z_1,\qquad\EMbr  z_1\times z_2\EMbr =z_2\times z_1}
+\EMdisp{(z_1+z_2)+z_3\EMbr =z_1+(z_2+z_3),\qquad\EMbr  (z_1z_2)z_3\EMbr =z_1(z_2z_3)}
+\EMdisp{z_1(z_2+z_3)\EMbr =z_1z_2+z_1z_3}
+\EMdisp{z_1+(0,0)\EMbr =z_1+0\EMbr =z_1,\qquad\EMbr  z_1+(-z_1)\EMbr =(0,0)\EMbr =0}
+\EMdisp{-z_1\EMbr =-(a_1,b_1)\EMbr =(-a_1,-b_1)\EMbr =-a_1-ib_1}
+\EMdisp{z_1\times(1,0)\EMbr =z_1\times1\EMbr =z_1,\qquad\EMbr  z_1\times z_1^{-1}\EMbr =(1,0)\EMbr =1}
+\EMdisp{z_1^{-1}\EMbr =\left(\frac{a_1}{a_1^2+b_1^2},\frac{-b_1}{a_1^2+b_1^2}\right)\EMbr =\frac{a_1}{a_1^2+b_1^2}-i\,\frac{b_1}{a_1^2+b_1^2}}
+
+\begin{EMremark}{عدم ترتیب‌پذیری}
+
+در مجموعهٔ اعداد مختلط نمی‌توان رابطهٔ ترتیب \EMim{z_1<z_2} تعریف کرد.
+
+\end{EMremark}
+
+\EMhold
+
+\EMsection{مزدوج مختلط}{مزدوج مختلط}
+
+\begin{EMdefinition}{مزدوج مختلط یک عدد}
+
+\EMdisp{z\EMbr =x+iy\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  \bar z\triangleq x-iy}
+
+\end{EMdefinition}
+
+\begin{EMexample}{}
+
+مزدوج عدد مختلط \EMim{z=5+2i} را در صفحهٔ مختلط رسم کنید.
+
+\end{EMexample}
+
+\EMfigure{m01-conjugate}{عدد مختلط \EMim{z=5+2i} و مزدوج آن \EMim{\bar z=5-2i}}
+
+\begin{EMexercise}{}
+
+عبارت‌های زیر را ثابت کنید.
+\EMdisp{\operatorname{Re}\{z\}\EMbr =\frac12\,(z+\bar z),\qquad\EMbr  \operatorname{Im}\{z\}\EMbr =\frac{1}{2i}\,(z-\bar z),\qquad\EMbr  |z|^2\EMbr =z\cdot\bar z}
+\EMdisp{\overline{z_1+z_2}\EMbr =\bar z_1+\bar z_2,\qquad\EMbr  \overline{z_1\cdot z_2}\EMbr =\bar z_1\cdot\bar z_2,\qquad\EMbr  \overline{\left(\frac{z_1}{z_2}\right)}\EMbr =\frac{\bar z_1}{\bar z_2}}
+\EMdisp{|z|\EMbr =|\bar z|,\qquad\EMbr  |\operatorname{Re}\{z\}|\le|z|,\qquad\EMbr  |\operatorname{Im}\{z\}|\le|z|}
+
+\end{EMexercise}
+
+\EMkeepfig{m01-triangle}{3}
+
+\EMsection{نامساوی مثلثی}{نامساوی مثلثی}
+
+\EMfigure{m01-triangle}{نامساوی مثلثی: مثلثی با رئوس \EMim{0}، \EMim{z_1} و \EMim{z_1+z_2}}
+
+\begin{EMexercise}{}
+
+\begin{itemize}
+\tightlist
+\item
+  نامساوی مثلثی را برای هر دو عدد مختلط ثابت کنید: \EMim{|z_1+z_2|\le|z_1|+|z_2|}.
+\item
+  فرم کلی نامساوی مثلثی را برای \EMim{n} عدد مختلط دلخواه ثابت کنید:
+  \EMdisp{|z_1+z_2+\cdots+z_n|\le|z_1|+|z_2|+\cdots+|z_n|}
+\item
+  ثابت کنید: \EMim{|z_1+z_2|\ge|z_1|-|z_2|}.
+\end{itemize}
+
+\end{EMexercise}
+
+\EMsection{فرم قطبی اعداد مختلط}{فرم قطبی اعداد مختلط}
+
+\EMdisp{z\EMbr =x+iy,\qquad\EMbr  \left.\begin{aligned}x&=|z|\cos\theta\\ y&=|z|\sin\theta\end{aligned}\right\}\;\EMbr \Longrightarrow\; z\EMbr =|z|\,(\cos\theta+i\sin\theta)}
+
+\EMdisp{\theta\EMbr =\operatorname{Arg}(z)\EMbr =\tan^{-1}(y/x),\qquad\EMbr  -\pi<\theta\le\pi}
+\EMdisp{\arg(z)\EMbr =\operatorname{Arg}(z)+2k\pi,\qquad\EMbr  k\in\mathbb{Z}}
+
+\EMsection{ضرب دو عدد مختلط در فرم قطبی}{ضرب دو عدد مختلط در فرم قطبی}
+
+\EMdisp{z_1\EMbr =|z_1|(\cos\theta_1+i\sin\theta_1),\qquad\EMbr  z_2\EMbr =|z_2|(\cos\theta_2+i\sin\theta_2)}
+
+\EMdisp{\begin{aligned}
+z_1\cdot z_2&=|z_1||z_2|(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)\\
+&=|z_1||z_2|\big[(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)\\
+&\qquad\qquad+\,i(\sin\theta_1\cos\theta_2+\cos\theta_1\sin\theta_2)\big]
+\end{aligned}}
+
+\begin{EMimportant}{}
+
+\EMdisp{z_1\cdot z_2\EMbr =|z_1||z_2|\big[\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\big]}
+
+\end{EMimportant}
+
+\begin{EMremark}{نتیجهٔ ۱}
+
+در هنگام ضرب دو عدد مختلط، اندازه‌ها در هم ضرب و فازها با هم جمع می‌شوند.
+
+\end{EMremark}
+
+\begin{EMremark}{نتیجهٔ ۲}
+
+اگر یک عدد مختلط را به توان یک عدد طبیعی برسانیم، اندازه را به توان آن عدد طبیعی رسانده، آرگومان (فاز) را در آن عدد طبیعی ضرب می‌کنیم (به روش استقراء ثابت کنید). به عبارت دیگر:
+\EMdisp{z^k\EMbr =|z|^k(\cos k\theta+i\sin k\theta)}
+
+\end{EMremark}
+
+\EMdisp{z^k\EMbr =\big[|z|(\cos\theta+i\sin\theta)\big]^k\EMbr =|z|^k(\cos\theta+i\sin\theta)^k\EMbr =|z|^k(\cos k\theta+i\sin k\theta)}
+
+\begin{EMimportant}{رابطهٔ دموار}
+
+\EMdisp{(\cos\theta+i\sin\theta)^k\EMbr =\cos k\theta+i\sin k\theta}
+
+\end{EMimportant}
+
+\begin{EMexercise}{}
+
+با استفاده از رابطهٔ دموار \EMim{\cos3\theta} و \EMim{\cos4\theta} را بر حسب \EMim{\cos\theta} و \EMim{\sin\theta} به دست آورید.
+
+\end{EMexercise}
+
+\EMsection{ریشهٔ \EMim{m}-ام یک عدد مختلط}{ریشهٔ m-ام یک عدد مختلط}
+
+\EMdisp{w\EMbr =\sqrt[m]{z}\EMbr =z^{1/m},\qquad\EMbr  z\EMbr =|z|(\cos\theta+i\sin\theta)}
+
+\EMdisp{z\EMbr =w^m,\qquad\EMbr  w\EMbr =|w|(\cos\varphi+i\sin\varphi)}
+
+\EMdisp{z\EMbr =|z|(\cos\theta+i\sin\theta)\EMbr =|w|^m(\cos m\varphi+i\sin m\varphi)}
+
+\EMdisp{|w|^m\EMbr =|z|\;\EMbr \Longrightarrow\;|w|\EMbr =\sqrt[m]{|z|}}
+
+\EMdisp{m\varphi\EMbr =\theta+2k\pi\;\EMbr \Longrightarrow\;\varphi\EMbr =\frac{\theta+2k\pi}{m},\qquad\EMbr  k\EMbr =0,1,2,\dots,m-1}
+
+\begin{EMimportant}{}
+
+\EMdisp{w\EMbr =\sqrt[m]{z}\EMbr =\sqrt[m]{|z|}\left[\cos\!\left(\frac{\theta+2k\pi}{m}\right)+i\sin\!\left(\frac{\theta+2k\pi}{m}\right)\right],\qquad\EMbr  k\EMbr =0,1,2,\dots,m-1}
+
+\end{EMimportant}
+
+\begin{EMexample}{}
+
+ریشه‌های معادلهٔ \EMim{z^n=1} چیست؟
+
+\EMdisp{z\EMbr =\sqrt[n]{1},\qquad\EMbr  1\EMbr =1\measuredangle0\;\EMbr \Longrightarrow\; z\EMbr =\cos\!\left(\frac{2k\pi}{n}\right)+i\sin\!\left(\frac{2k\pi}{n}\right),\qquad\EMbr  k\EMbr =0,1,\dots,n-1}
+با تعریف \EMim{\omega=1\measuredangle\dfrac{2\pi}{n}} ریشه‌ها عبارت‌اند از
+\EMdisp{z\EMbr =1,\ \omega,\ \omega^2,\ \dots,\ \omega^{n-1}}
+
+\end{EMexample}
+
+\EMfigure{m01-roots-of-unity}{ریشه‌های \EMim{z=\sqrt[3]{1}}، \EMim{z=\sqrt[4]{1}} و
+\EMim{z=\sqrt[5]{1}} روی دایرهٔ واحد}
+
+\begin{EMexercise}{}
+
+\begin{itemize}
+\tightlist
+\item
+  ریشه‌های معادلهٔ \EMim{z^6+6+8i=0} را به دست آورده در صفحهٔ اعداد مختلط رسم کنید.
+\item
+  درستی اتحاد \EMim{1+z+z^2+\cdots+z^n=\dfrac{1-z^{n+1}}{1-z}} را تحقیق کنید و سپس اتحاد زیر (اتحاد لاگرانژ) را نتیجه بگیرید.
+  \EMdisp{1+\cos\theta+\cos2\theta+\cdots+\cos n\theta\EMbr =\frac12+\frac{\sin\!\left[\left(n+\frac12\right)\theta\right]}{2\sin(\theta/2)}}
+\end{itemize}
+
+\end{EMexercise}

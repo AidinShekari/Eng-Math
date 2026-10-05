@@ -1,0 +1,276 @@
+% !TEX program = xelatex
+% Engineering Mathematics — lecture notes (English)
+% Instructor: Abbas Ebrahimi Moghadam — compiled and edited by Aidin Shekari.
+% Compile with XeLaTeX (or tectonic) from this folder.
+\documentclass[11pt]{article}
+\def\EMroot{../../template}
+\input{\EMroot/em-en}
+\begin{document}
+\EMcoverpage{Engineering Mathematics}{Complex Analysis \ \textbullet\ Fourier Analysis \ \textbullet\ Partial Differential Equations}{ریاضی مهندسی}
+\pagenumbering{roman}\setcounter{page}{1}
+\EMcolophon
+\EMsetmodule{0}{\EMlangContents}{}
+\begin{EMbooktoc}
+\EMtocpart{I}{Complex Analysis}
+\EMtocchapter{1}{1}{Complex Numbers}
+\EMtocitemk{1}{1}{1.1}{The Set of Complex Numbers}
+\EMtocitemk{1}{2}{1.2}{The Four Basic Operations}
+\EMtocitemk{1}{3}{1.3}{Properties of Addition and Multiplication}
+\EMtocitemk{1}{4}{1.4}{The Complex Conjugate}
+\EMtocitemk{1}{5}{1.5}{The Triangle Inequality}
+\EMtocitemk{1}{6}{1.6}{The Polar Form of Complex Numbers}
+\EMtocitemk{1}{7}{1.7}{Multiplying Two Complex Numbers in Polar Form}
+\EMtocitemk{1}{8}{1.8}{The \EMim{m}-th Root of a Complex Number}
+\EMtocchapter{2}{2}{Complex Functions, the Derivative and the Cauchy--Riemann Conditions}
+\EMtocitemk{2}{1}{2.1}{Complex Functions}
+\EMtocitemk{2}{2}{2.2}{Some Important Loci}
+\EMtocitemk{2}{3}{2.3}{Limits of Complex Functions}
+\EMtocitemk{2}{4}{2.4}{Continuity of Complex Functions}
+\EMtocitemk{2}{5}{2.5}{The Derivative of Complex Functions}
+\EMtocitemk{2}{6}{2.6}{The Cauchy--Riemann Conditions}
+\EMtocitemk{2}{7}{2.7}{Differentiability of Complex Functions: Examples}
+\EMtocitemk{2}{8}{2.8}{Analytic Complex Functions}
+\EMtocitemk{2}{9}{2.9}{The Cauchy--Riemann Conditions in Polar Coordinates}
+\EMtocchapter{3}{3}{Elementary Complex Functions}
+\EMtocitemk{3}{1}{3.1}{The Exponential Function}
+\EMtocitemk{3}{2}{3.2}{Trigonometric Functions}
+\EMtocitemk{3}{3}{3.3}{Hyperbolic Functions}
+\EMtocitemk{3}{4}{3.4}{The Logarithm Function}
+\EMtocchapter{4}{4}{Linear Mappings}
+\EMtocitemk{4}{1}{4.1}{Translation}
+\EMtocitemk{4}{2}{4.2}{Rotation}
+\EMtocitemk{4}{3}{4.3}{Dilation or Contraction}
+\EMtocitemk{4}{4}{4.4}{The General Linear Mapping}
+\EMtocchapter{5}{5}{Integration of Complex Functions}
+\EMtocitemk{5}{1}{5.1}{The Definite Integral and the Path of Integration}
+\EMtocitemk{5}{2}{5.2}{The Definite Integral of Complex Functions}
+\EMtocitemk{5}{3}{5.3}{Simple Closed Curves and Simply Connected Domains}
+\EMtocitemk{5}{4}{5.4}{Integration by Antiderivative}
+\EMtocitemk{5}{5}{5.5}{Integrals of Complex Functions Along Closed Paths}
+\EMtocitemk{5}{6}{5.6}{Cauchy's Integral Formula}
+\EMtocitemk{5}{7}{5.7}{Application: Evaluating Real Integrals}
+\EMtocitemk{5}{8}{5.8}{Cauchy's Theorem with Several Non-Analytic Points}
+\EMtocitemk{5}{9}{5.9}{Derivatives of an Analytic Function}
+\EMtocchapter{6}{6}{Laurent Series, Singularities and Residues}
+\EMtocitemk{6}{1}{6.1}{The Laurent Series}
+\EMtocitemk{6}{2}{6.2}{The Residue}
+\EMtocitemk{6}{3}{6.3}{The Residue Theorem}
+\EMtocitemk{6}{4}{6.4}{Examples of Taylor and Laurent Expansions}
+\EMtocitemk{6}{5}{6.5}{Examples of Singular Points and Residues}
+\EMtocchapter{7}{7}{Evaluating Definite Integrals by Residues}
+\EMtocitemk{7}{1}{7.1}{Integrals of the First Class}
+\EMtocitemk{7}{2}{7.2}{Integrals of the Second Class}
+\EMtocpart{II}{Fourier Analysis}
+\EMtocchapter{8}{8}{Fourier Series}
+\EMtocitemk{8}{1}{8.1}{Periodic Functions}
+\EMtocitemk{8}{2}{8.2}{Review of Trigonometry}
+\EMtocitemk{8}{3}{8.3}{Review: Integrals and Orthogonality}
+\EMtocitemk{8}{4}{8.4}{The Fourier Series}
+\EMtocitemk{8}{5}{8.5}{Review: The Definite Integral of a Product of Two Functions}
+\EMtocitemk{8}{6}{8.6}{Examples of Fourier Series}
+\EMtocitemk{8}{7}{8.7}{Fourier Series of Functions with an Arbitrary Period}
+\EMtocitemk{8}{8}{8.8}{Dirichlet's Theorem}
+\EMtocitemk{8}{9}{8.9}{Solving Some Problems}
+\EMtocchapter{9}{9}{Properties of Fourier Series, Parseval's Theorem and the Complex Form}
+\EMtocitemk{9}{1}{9.1}{Approximating a Periodic Function by a Finite Trigonometric Series}
+\EMtocitemk{9}{2}{9.2}{Differentiation and Integration of Fourier Series}
+\EMtocitemk{9}{3}{9.3}{Rayleigh's Theorem}
+\EMtocitemk{9}{4}{9.4}{Parseval's Theorem}
+\EMtocitemk{9}{5}{9.5}{The Complex Form of the Fourier Series}
+\EMtocchapter{10}{10}{The Fourier Integral}
+\EMtocitemk{10}{1}{10.1}{Fourier Analysis of Non-Periodic Functions}
+\EMtocitemk{10}{2}{10.2}{The Fourier Integral}
+\EMtocitemk{10}{3}{10.3}{The Complex Form of the Fourier Integral (the Fourier Transform)}
+\EMtocitemk{10}{4}{10.4}{The Function \EMim{\operatorname{Si}(u)}}
+\EMtocitemk{10}{5}{10.5}{Examples of the Fourier Integral}
+\EMtocitemk{10}{6}{10.6}{Some Properties of the Fourier Integral}
+\EMtocpart{III}{Partial Differential Equations and the Laplace Transform}
+\EMtocchapter{11}{11}{The One-Dimensional Wave Equation and Separation of Variables}
+\EMtocitemk{11}{1}{11.1}{Introduction}
+\EMtocitemk{11}{2}{11.2}{The One-Dimensional Wave Equation}
+\EMtocitemk{11}{3}{11.3}{Solving the One-Dimensional Wave Equation}
+\EMtocitemk{11}{4}{11.4}{The Method of Separation of Variables: Examples}
+\EMtocitemk{11}{5}{11.5}{The One-Dimensional Wave Equation with Nonzero Boundary Values}
+\EMtocchapter{12}{12}{d'Alembert's Method and the One-Dimensional Heat Equation}
+\EMtocitemk{12}{1}{12.1}{d'Alembert's Method for the One-Dimensional Wave Equation}
+\EMtocitemk{12}{2}{12.2}{The Heat Equation}
+\EMtocitemk{12}{3}{12.3}{Solving the One-Dimensional Heat Equation}
+\EMtocitemk{12}{4}{12.4}{The One-Dimensional Heat Equation on an Infinite Rod}
+\EMtocitemk{12}{5}{12.5}{The Error Function}
+\EMtocchapter{13}{13}{Two-Dimensional Wave and Heat Equations: Rectangle and Disc}
+\EMtocitemk{13}{1}{13.1}{The Two-Dimensional Wave Equation}
+\EMtocitemk{13}{2}{13.2}{The Two-Dimensional Wave Equation with a Rectangular Boundary}
+\EMtocitemk{13}{3}{13.3}{The Two-Dimensional Heat Equation with a Rectangular Boundary}
+\EMtocitemk{13}{4}{13.4}{The Laplacian in Polar Coordinates}
+\EMtocitemk{13}{5}{13.5}{The Two-Dimensional Wave Equation with a Circular Boundary}
+\EMtocchapter{14}{14}{The Laplace Transform}
+\EMtocitemk{14}{1}{14.1}{The One-Sided Laplace Transform}
+\EMtocitemk{14}{2}{14.2}{Using the Laplace Transform to Solve Differential Equations}
+\end{EMbooktoc}
+\clearpage\pagenumbering{arabic}\setcounter{page}{1}
+\EMpartpage{1}{I}{Complex Analysis}{آنالیز مختلط}{Chapters 1--7}
+\EMsetmodule{1}{Complex Numbers}{اعداد مختلط}
+\EMchapterpage{1}{1}{Complex Numbers}{اعداد مختلط}
+\begin{EMminitoc}
+\EMtocitem{1}{The Set of Complex Numbers}
+\EMtocitem{2}{The Four Basic Operations}
+\EMtocitem{3}{Properties of Addition and Multiplication}
+\EMtocitem{4}{The Complex Conjugate}
+\EMtocitem{5}{The Triangle Inequality}
+\EMtocitem{6}{The Polar Form of Complex Numbers}
+\EMtocitem{7}{Multiplying Two Complex Numbers in Polar Form}
+\EMtocitem{8}{The \EMim{m}-th Root of a Complex Number}
+\end{EMminitoc}
+\EMchapterend
+\input{../../01-complex-numbers/en/content}
+\EMsetmodule{2}{Complex Functions, the Derivative and the Cauchy--Riemann Conditions}{توابع مختلط، مشتق و شرایط کشی--ریمان}
+\EMchapterpage{2}{2}{Complex Functions, the Derivative and the Cauchy--Riemann Conditions}{توابع مختلط، مشتق و شرایط کشی--ریمان}
+\begin{EMminitoc}
+\EMtocitem{1}{Complex Functions}
+\EMtocitem{2}{Some Important Loci}
+\EMtocitem{3}{Limits of Complex Functions}
+\EMtocitem{4}{Continuity of Complex Functions}
+\EMtocitem{5}{The Derivative of Complex Functions}
+\EMtocitem{6}{The Cauchy--Riemann Conditions}
+\EMtocitem{7}{Differentiability of Complex Functions: Examples}
+\EMtocitem{8}{Analytic Complex Functions}
+\EMtocitem{9}{The Cauchy--Riemann Conditions in Polar Coordinates}
+\end{EMminitoc}
+\EMchapterend
+\input{../../02-complex-functions/en/content}
+\EMsetmodule{3}{Elementary Complex Functions}{توابع مختلط مقدماتی}
+\EMchapterpage{3}{3}{Elementary Complex Functions}{توابع مختلط مقدماتی}
+\begin{EMminitoc}
+\EMtocitem{1}{The Exponential Function}
+\EMtocitem{2}{Trigonometric Functions}
+\EMtocitem{3}{Hyperbolic Functions}
+\EMtocitem{4}{The Logarithm Function}
+\end{EMminitoc}
+\EMchapterend
+\input{../../03-elementary-functions/en/content}
+\EMsetmodule{4}{Linear Mappings}{نگاشت‌های خطی}
+\EMchapterpage{4}{4}{Linear Mappings}{نگاشت‌های خطی}
+\begin{EMminitoc}
+\EMtocitem{1}{Translation}
+\EMtocitem{2}{Rotation}
+\EMtocitem{3}{Dilation or Contraction}
+\EMtocitem{4}{The General Linear Mapping}
+\end{EMminitoc}
+\EMchapterend
+\input{../../04-linear-mappings/en/content}
+\EMsetmodule{5}{Integration of Complex Functions}{انتگرال توابع مختلط}
+\EMchapterpage{5}{5}{Integration of Complex Functions}{انتگرال توابع مختلط}
+\begin{EMminitoc}
+\EMtocitem{1}{The Definite Integral and the Path of Integration}
+\EMtocitem{2}{The Definite Integral of Complex Functions}
+\EMtocitem{3}{Simple Closed Curves and Simply Connected Domains}
+\EMtocitem{4}{Integration by Antiderivative}
+\EMtocitem{5}{Integrals of Complex Functions Along Closed Paths}
+\EMtocitem{6}{Cauchy's Integral Formula}
+\EMtocitem{7}{Application: Evaluating Real Integrals}
+\EMtocitem{8}{Cauchy's Theorem with Several Non-Analytic Points}
+\EMtocitem{9}{Derivatives of an Analytic Function}
+\end{EMminitoc}
+\EMchapterend
+\input{../../05-complex-integration/en/content}
+\EMsetmodule{6}{Laurent Series, Singularities and Residues}{سری لورنت، نقاط تکین و مانده‌ها}
+\EMchapterpage{6}{6}{Laurent Series, Singularities and Residues}{سری لورنت، نقاط تکین و مانده‌ها}
+\begin{EMminitoc}
+\EMtocitem{1}{The Laurent Series}
+\EMtocitem{2}{The Residue}
+\EMtocitem{3}{The Residue Theorem}
+\EMtocitem{4}{Examples of Taylor and Laurent Expansions}
+\EMtocitem{5}{Examples of Singular Points and Residues}
+\end{EMminitoc}
+\EMchapterend
+\input{../../06-laurent-residues/en/content}
+\EMsetmodule{7}{Evaluating Definite Integrals by Residues}{محاسبهٔ انتگرال‌های معین به روش مانده‌ها}
+\EMchapterpage{7}{7}{Evaluating Definite Integrals by Residues}{محاسبهٔ انتگرال‌های معین به روش مانده‌ها}
+\begin{EMminitoc}
+\EMtocitem{1}{Integrals of the First Class}
+\EMtocitem{2}{Integrals of the Second Class}
+\end{EMminitoc}
+\EMchapterend
+\input{../../07-residue-integrals/en/content}
+\EMpartpage{2}{II}{Fourier Analysis}{آنالیز فوریه}{Chapters 8--10}
+\EMsetmodule{8}{Fourier Series}{سری فوریه}
+\EMchapterpage{8}{8}{Fourier Series}{سری فوریه}
+\begin{EMminitoc}
+\EMtocitem{1}{Periodic Functions}
+\EMtocitem{2}{Review of Trigonometry}
+\EMtocitem{3}{Review: Integrals and Orthogonality}
+\EMtocitem{4}{The Fourier Series}
+\EMtocitem{5}{Review: The Definite Integral of a Product of Two Functions}
+\EMtocitem{6}{Examples of Fourier Series}
+\EMtocitem{7}{Fourier Series of Functions with an Arbitrary Period}
+\EMtocitem{8}{Dirichlet's Theorem}
+\EMtocitem{9}{Solving Some Problems}
+\end{EMminitoc}
+\EMchapterend
+\input{../../08-fourier-series/en/content}
+\EMsetmodule{9}{Properties of Fourier Series, Parseval's Theorem and the Complex Form}{خواص سری فوریه، قضیهٔ پارسوال و صورت مختلط}
+\EMchapterpage{9}{9}{Properties of Fourier Series, Parseval's Theorem and the Complex Form}{خواص سری فوریه، قضیهٔ پارسوال و صورت مختلط}
+\begin{EMminitoc}
+\EMtocitem{1}{Approximating a Periodic Function by a Finite Trigonometric Series}
+\EMtocitem{2}{Differentiation and Integration of Fourier Series}
+\EMtocitem{3}{Rayleigh's Theorem}
+\EMtocitem{4}{Parseval's Theorem}
+\EMtocitem{5}{The Complex Form of the Fourier Series}
+\end{EMminitoc}
+\EMchapterend
+\input{../../09-fourier-properties/en/content}
+\EMsetmodule{10}{The Fourier Integral}{انتگرال فوریه}
+\EMchapterpage{10}{10}{The Fourier Integral}{انتگرال فوریه}
+\begin{EMminitoc}
+\EMtocitem{1}{Fourier Analysis of Non-Periodic Functions}
+\EMtocitem{2}{The Fourier Integral}
+\EMtocitem{3}{The Complex Form of the Fourier Integral (the Fourier Transform)}
+\EMtocitem{4}{The Function \EMim{\operatorname{Si}(u)}}
+\EMtocitem{5}{Examples of the Fourier Integral}
+\EMtocitem{6}{Some Properties of the Fourier Integral}
+\end{EMminitoc}
+\EMchapterend
+\input{../../10-fourier-integral/en/content}
+\EMpartpage{3}{III}{Partial Differential Equations and the Laplace Transform}{معادلات دیفرانسیل با مشتقات جزئی و تبدیل لاپلاس}{Chapters 11--14}
+\EMsetmodule{11}{The One-Dimensional Wave Equation and Separation of Variables}{معادلهٔ موجی یک‌بعدی و روش جداسازی متغیرها}
+\EMchapterpage{11}{11}{The One-Dimensional Wave Equation and Separation of Variables}{معادلهٔ موجی یک‌بعدی و روش جداسازی متغیرها}
+\begin{EMminitoc}
+\EMtocitem{1}{Introduction}
+\EMtocitem{2}{The One-Dimensional Wave Equation}
+\EMtocitem{3}{Solving the One-Dimensional Wave Equation}
+\EMtocitem{4}{The Method of Separation of Variables: Examples}
+\EMtocitem{5}{The One-Dimensional Wave Equation with Nonzero Boundary Values}
+\end{EMminitoc}
+\EMchapterend
+\input{../../11-wave-equation-1d/en/content}
+\EMsetmodule{12}{d'Alembert's Method and the One-Dimensional Heat Equation}{روش دالامبر و معادلهٔ انتقال حرارت یک‌بعدی}
+\EMchapterpage{12}{12}{d'Alembert's Method and the One-Dimensional Heat Equation}{روش دالامبر و معادلهٔ انتقال حرارت یک‌بعدی}
+\begin{EMminitoc}
+\EMtocitem{1}{d'Alembert's Method for the One-Dimensional Wave Equation}
+\EMtocitem{2}{The Heat Equation}
+\EMtocitem{3}{Solving the One-Dimensional Heat Equation}
+\EMtocitem{4}{The One-Dimensional Heat Equation on an Infinite Rod}
+\EMtocitem{5}{The Error Function}
+\end{EMminitoc}
+\EMchapterend
+\input{../../12-heat-equation-1d/en/content}
+\EMsetmodule{13}{Two-Dimensional Wave and Heat Equations: Rectangle and Disc}{معادلات دو‌بعدی موج و گرما: مستطیل و دایره}
+\EMchapterpage{13}{13}{Two-Dimensional Wave and Heat Equations: Rectangle and Disc}{معادلات دو‌بعدی موج و گرما: مستطیل و دایره}
+\begin{EMminitoc}
+\EMtocitem{1}{The Two-Dimensional Wave Equation}
+\EMtocitem{2}{The Two-Dimensional Wave Equation with a Rectangular Boundary}
+\EMtocitem{3}{The Two-Dimensional Heat Equation with a Rectangular Boundary}
+\EMtocitem{4}{The Laplacian in Polar Coordinates}
+\EMtocitem{5}{The Two-Dimensional Wave Equation with a Circular Boundary}
+\end{EMminitoc}
+\EMchapterend
+\input{../../13-pde-2d/en/content}
+\EMsetmodule{14}{The Laplace Transform}{تبدیل لاپلاس}
+\EMchapterpage{14}{14}{The Laplace Transform}{تبدیل لاپلاس}
+\begin{EMminitoc}
+\EMtocitem{1}{The One-Sided Laplace Transform}
+\EMtocitem{2}{Using the Laplace Transform to Solve Differential Equations}
+\end{EMminitoc}
+\EMchapterend
+\input{../../14-laplace-transform/en/content}
+\end{document}

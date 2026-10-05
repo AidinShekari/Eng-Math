@@ -1,0 +1,9 @@
+%% The fundamental strip of sin z and cos z
+\begin{tikzpicture}[scale=1.0]
+  \fill[EMfill,pattern=north east lines,pattern color=EMindigo!25] (-1.1,-1.9) rectangle (1.1,1.9);
+  \draw[EMax] (-2.0,0)--(2.2,0) node[EMlab,right]{$\operatorname{Re}$};
+  \draw[EMax] (0,-2.3)--(0,2.4) node[EMlab,above]{$\operatorname{Im}$};
+  \draw[EMcurve2] (-1.1,-1.9)--(-1.1,1.9);\draw[EMcurve2] (1.1,-1.9)--(1.1,1.9);
+  \node[EMlabs,below left] at (-1.1,0){$-\pi$};\node[EMlabs,below right] at (1.1,0){$\pi$};
+  \node[EMlab,fill=white,inner sep=2pt] at (0,1.05){\EML{main strip}{باند اصلی}};
+\end{tikzpicture}

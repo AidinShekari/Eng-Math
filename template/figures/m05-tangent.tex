@@ -1,0 +1,11 @@
+% The derivative of the path as the limit of (z(t+dt)-z(t))/dt
+\begin{tikzpicture}[scale=1.15]
+  \coordinate (O) at (0,0);\coordinate (P) at (-1.8,1.6);\coordinate (Q) at (2.2,2.4);
+  \draw[EMcurve] (-3.2,0.3) to[out=60,in=190] (P) to[out=10,in=190] (Q) to[out=10,in=190] (4.2,2.2);
+  \draw[EMvec] (O)--(P) node[EMlabs,midway,below left]{$z(t)$};
+  \draw[EMvec] (O)--(Q) node[EMlabs,midway,below right]{$z(t+\Delta t)$};
+  \draw[EMvec2] (P)--(Q) node[EMlabs,midway,below,sloped]{$z(t+\Delta t)-z(t)$};
+  \draw[EMvec,line width=1.5pt,EMink] (P)--($(P)+(1.15,0.74)$) node[EMlabs,above]{$\dot z(t)$};
+  \node[EMhole,draw=EMindigo] at (O){};\node[EMlabs,below] at (O){$0$};
+  \node[EMhole,draw=EMindigo] at (P){};\node[EMhole,draw=EMindigo] at (Q){};
+\end{tikzpicture}

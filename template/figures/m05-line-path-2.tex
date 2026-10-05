@@ -1,0 +1,8 @@
+% z(t) = t + i, -1 <= t <= 1
+\begin{tikzpicture}[scale=1.5]
+  \EMaxes{-1.5}{1.6}{-0.35}{1.7}{$x$}{$y$}
+  \draw[EMcurve,EMmid] (-1,1)--(1,1);
+  \node[EMptI] at (-1,1){};\node[EMptI] at (1,1){};
+  \node[EMlabs,above] at (-1,1){$-1+i$};\node[EMlabs,above] at (1,1){$1+i$};
+  \node[EMlabs,below] at (0,0.95){$z(t)=t+i$};
+\end{tikzpicture}

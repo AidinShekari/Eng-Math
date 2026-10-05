@@ -1,0 +1,11 @@
+# LaTeX build by-products (the PDFs and tools/ are kept)
+*.aux
+*.log
+*.toc
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+.DS_Store
+__pycache__/

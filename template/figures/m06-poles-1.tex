@@ -1,0 +1,10 @@
+% The singular points z = -1 and z = -4 of z/((z+1)(z+4)^3), with the discs |z+1| < 3 and |z+4| < 3
+\begin{tikzpicture}[scale=0.95]
+  \EMaxes{-7.6}{2.9}{-3.4}{3.4}{$\operatorname{Re}$}{$\operatorname{Im}$}
+  \filldraw[EMfill,dashed,draw=EMindigo,line width=0.9pt] (-1,0) circle (3);
+  \filldraw[EMfill2,dashed,draw=EMrose,line width=0.9pt] (-4,0) circle (3);
+  \EMcross{(-1,0)}\EMcross{(-4,0)}
+  \node[EMlabs,above] at (-1,0.12){$-1$};\node[EMlabs,above] at (-4,0.12){$-4$};
+  \draw[EMvec] (-1,0)--++(-30:3) node[EMlabs,midway,below]{$3$};
+  \draw[EMvec2] (-4,0)--++(-150:3) node[EMlabs,midway,below]{$3$};
+\end{tikzpicture}

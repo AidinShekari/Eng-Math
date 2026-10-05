@@ -1,0 +1,13 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Fourier series: harmonics and their sum
+\begin{scope}[shift={(0.4,4.5)}]
+  \draw[max] (-0.2,0)--(14.4,0);
+  \draw[mfaint] (0,-3.4)--(0,3.4);\draw[mfaint] (7.2,-3.4)--(7.2,3.4);\draw[mfaint] (14.4,-3.4)--(14.4,3.4);
+  \draw[mdash] (0,-2.6)--(7.2,-2.6) (7.2,2.6)--(14.4,2.6) (7.2,-2.6)--(7.2,2.6);
+  \draw[mdash] (0,2.6)--(0,-2.6);
+  \draw[EMjade,line width=0.7pt,domain=0:14.4,samples=150] plot (\x,{2.6*1.2732*sin(0.43633*\x r)});
+  \draw[EMamber,line width=0.7pt,domain=0:14.4,samples=250] plot (\x,{2.6*1.2732/3*sin(3*0.43633*\x r)});
+  \draw[EMindigo!55,line width=0.7pt,domain=0:14.4,samples=300] plot (\x,{2.6*1.2732/5*sin(5*0.43633*\x r)});
+  \draw[EMviolet!70,line width=0.7pt,domain=0:14.4,samples=300] plot (\x,{2.6*1.2732/7*sin(7*0.43633*\x r)});
+  \draw[mrose,line width=1.8pt,domain=0:14.4,samples=400] plot (\x,{2.6*1.2732*(sin(0.43633*\x r)+sin(3*0.43633*\x r)/3+sin(5*0.43633*\x r)/5+sin(7*0.43633*\x r)/7)});
+\end{scope}

@@ -1,0 +1,88 @@
+\begin{EMtheorem}{قضیهٔ مانده‌ها}
+
+اگر تابع \EMim{f(z)} در همه‌جای داخل مسیر \EMim{C} به‌جز نقاط \EMim{z_1,z_2,\dots,z_n} تحلیلی باشد و مانده تابع در این نقاط به ترتیب \EMim{A_1^1,A_1^2,\dots,A_1^n} باشد، آنگاه:
+\EMdisp{\oint_Cf(z)\,dz\EMbr =2\pi i\sum_{k=1}^{n}A_1^k}
+
+\end{EMtheorem}
+
+دسته انتگرال‌های مختلفی توسط روش مانده‌ها قابل حل هستند. در اینجا به دو دستهٔ آنها اشاره می‌شود:
+
+\begin{EMdefinition}{انتگرال‌های دستهٔ اول}
+
+در این نوع انتگرال‌ها، مخرج انتگرند به صورت چندجمله‌ای بوده، صورت به فرم تابعی از نوع چندجمله‌ای یا نمائی و یا توابع سینوس یا کسینوس (که آنها هم به صورت نمائی قابل بیان هستند) می‌باشد.
+
+\end{EMdefinition}
+
+\begin{EMdefinition}{انتگرال‌های دستهٔ دوم}
+
+در این نوع انتگرال‌ها، انتگرند تابعی از سینوس یا کسینوس می‌باشد.
+
+\end{EMdefinition}
+
+\EMhold
+
+\EMsection{انتگرال‌های دستهٔ اول}{انتگرال‌های دستهٔ اول}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx} (\EMim{\omega>0}).
+
+تابع \EMim{f(z)=e^{i\omega z}\big/(1+z^2)^2} را در نظر می‌گیریم. این تابع در \EMim{z=i} و \EMim{z=-i} تحلیلی نیست. مسیر \EMim{C} نیم‌دایرهٔ بالایی به شعاع \EMim{R} است.
+\EMdisp{\begin{aligned}
+\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz&=2\pi i\times\operatorname{Res}\left\{\frac{e^{i\omega z}}{(1+z^2)^2}\right\}\Bigg|_{z=i}\\
+&=2\pi i\times\left[\frac d{dz}\left\{(z-i)^2\,\frac{e^{i\omega z}}{(z-i)^2(z+i)^2}\right\}\right]_{z=i}\\
+&=2\pi i\times\left[\frac{i\omega e^{i\omega z}(z+i)-2e^{i\omega z}}{(z+i)^3}\right]_{z=i}\\
+&=2\pi i\times e^{-\omega}\left(\frac{i\omega(2i)-2}{(2i)^3}\right)\\
+&=2\pi i\times e^{-\omega}\,\frac{\omega+1}{4i}=\frac\pi2(\omega+1)e^{-\omega}
+\end{aligned}}
+از طرف دیگر
+\EMdisp{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}}{(1+x^2)^2}\,dx+\int_0^\pi\frac{e^{i\omega Re^{it}}\,Rie^{it}}{(1+R^2e^{i2t})^2}\,dt}
+و وقتی \EMim{R\to\infty} انتگرال روی نیم‌دایره صفر می‌شود و بخش موهومی انتگرال روی محور حقیقی (تابع فرد \EMim{\sin\omega x/(1+x^2)^2}) صفر است:
+\EMdisp{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\ \xrightarrow{\ R\to\infty\ }\ 2\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx}
+\EMdisp{\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx\EMbr =\frac\pi4(\omega+1)e^{-\omega}}
+
+\end{EMexample}
+
+\EMfigure{m07-semicircle}{مسیر نیم‌دایرهٔ بالایی؛ قطب مرتبهٔ دوم \EMim{z=i} داخل مسیر و \EMim{z=-i}
+بیرون آن است}
+
+\EMsection{انتگرال‌های دستهٔ دوم}{انتگرال‌های دستهٔ دوم}
+
+\EMdisp{\int_0^{2\pi}f(a\cos t,\,b\sin t)\,dt}
+برای حل این‌گونه انتگرال‌ها فرض می‌کنیم \EMim{z=e^{it}}، در این صورت داریم:
+\EMdisp{dz\EMbr =ie^{it}\,dt\;\EMbr \Longrightarrow\;dt\EMbr =\frac{dz}{ie^{it}}\EMbr =\frac{dz}{iz}}
+\EMdisp{\sin t\EMbr =\frac{e^{it}-e^{-it}}{2i}\EMbr =\frac{z-z^{-1}}{2i},\qquad\EMbr  \cos t\EMbr =\frac{e^{it}+e^{-it}}2\EMbr =\frac{z+z^{-1}}2}
+
+\begin{EMimportant}{}
+
+\EMdisp{\int_0^{2\pi}f(a\cos t,\,b\sin t)\,dt\EMbr =\oint_Cf\!\left(a\,\frac{z+z^{-1}}{2},\;b\,\frac{z-z^{-1}}{2i}\right)\frac{dz}{iz}}
+
+\end{EMimportant}
+
+در اینجا \EMim{C} دایرهٔ واحد است و به سهولت با استفاده از روش مانده‌ها انتگرال حل می‌شود.
+
+\EMfigure{m07-unit-circle}{دایرهٔ واحد \EMim{z=e^{it}}، \EMim{0\le t\le2\pi}}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle\int_0^{2\pi}\frac1{2+\cos x}\,dx}.
+
+\EMdisp{z\EMbr =e^{ix},\qquad\EMbr  dz\EMbr =ie^{ix}dx,\qquad\EMbr  dx\EMbr =\frac{dz}{iz},\qquad\EMbr  \cos x\EMbr =\frac{z+z^{-1}}2\EMbr =\frac{z^2+1}{2z}}
+\EMdisp{2+\cos x\EMbr =2+\frac{z^2+1}{2z}\EMbr =\frac{z^2+4z+1}{2z}}
+\EMdisp{\int_0^{2\pi}\frac1{2+\cos x}\,dx\EMbr =\oint_C\frac{2z}{z^2+4z+1}\,\frac{dz}{iz}\EMbr =\frac2i\oint_C\frac1{z^2+4z+1}\,dz\EMbr =\frac2i\times2\pi i\times\sum_k\operatorname{Res}\left\{\frac1{z^2+4z+1}\right\}\Bigg|_{z=z_k}}
+\EMdisp{z^2+4z+1\EMbr =0\;\EMbr \Longrightarrow\;z_1\EMbr =-2+\sqrt3\EMbr \approx-0.27,\qquad\EMbr  z_2\EMbr =-2-\sqrt3\EMbr \approx-3.73}
+فقط \EMim{z_1} داخل دایرهٔ واحد قرار دارد.
+\EMdisp{\int_0^{2\pi}\frac1{2+\cos x}\,dx\EMbr =4\pi\times\operatorname{Res}\left\{\frac1{z^2+4z+1}\right\}\Bigg|_{z=z_1}\EMbr =4\pi\left[\big(z+2-\sqrt3\big)\frac1{\big(z+2-\sqrt3\big)\big(z+2+\sqrt3\big)}\right]_{z_1=-2+\sqrt3}\EMbr =\frac{2\pi}{\sqrt3}}
+
+\end{EMexample}
+
+\EMfigure{m07-poles-cos}{دایرهٔ واحد و قطب‌های \EMim{z_1\approx-0.27} (داخل) و
+\EMim{z_2\approx-3.73} (بیرون)}
+
+\begin{EMexercise}{کاربرد قضیهٔ مانده‌ها در حل انتگرال}
+
+با استفاده از قضیهٔ مانده‌ها مقدار انتگرال‌های معین زیر را به دست آورید:
+\EMdisp{I_1\EMbr =\int_0^{2\pi}\frac{dt}{1-2p\cos t+p^2},\qquad\EMbr  I_2\EMbr =\int_{-\infty}^{\infty}\frac{\sin2x}{x^2+x+1}\,dx}
+\EMdisp{I_3\EMbr =\int_{-\infty}^{\infty}\frac{x}{(x^2-2x+2)^2}\,dx,\qquad\EMbr  I_4\EMbr =\int_{-\infty}^{\infty}\frac{\cos^4x}{(x^2+1)(x^2+4)}\,dx}
+
+\end{EMexercise}

@@ -1,0 +1,398 @@
+% ============================================================
+%  EngineeringMath — shared visual style
+%  (palette, headings, theorem family, header/footer, figures,
+%   cover and chapter pages, contents)
+%
+%  Identity: indigo ink, magenta-rose for results, jade for worked
+%  examples, amber for exercises — the colours of a domain-colouring
+%  plot, on plain white paper.
+% ============================================================
+
+% ---------- palette ----------
+\definecolor{EMink}{HTML}{1E1F3B}
+\definecolor{EMindigo}{HTML}{33307F}
+\definecolor{EMindigoL}{HTML}{EDECF8}
+\definecolor{EMrose}{HTML}{B3215A}
+\definecolor{EMroseL}{HTML}{FAEAF1}
+\definecolor{EMjade}{HTML}{0F7B6C}
+\definecolor{EMjadeL}{HTML}{E6F4F1}
+\definecolor{EMamber}{HTML}{B5700F}
+\definecolor{EMamberL}{HTML}{FCF1DE}
+\definecolor{EMmuted}{HTML}{6B6B85}
+\definecolor{EMviolet}{HTML}{6B3FA0}
+\definecolor{EMline}{HTML}{CFCEE2}
+\color{EMink}
+
+% ---------- bidi-aware helpers ----------
+\providecommand{\lr}[1]{\LR{#1}}
+\ifEMrtl
+  \newenvironment{EMltr}{\begin{latin}}{\end{latin}}
+  \newcommand{\EMnum}[1]{\lr{\persianfont #1}}
+  \def\EMstart{east}\def\EMend{west}
+  \newcommand{\EMsep}{{\color{EMrose}\rule[0.2em]{0.3em}{0.3em}}}
+  \newcommand{\EMheadfont}{\EMfaDisplay}
+  \newcommand{\EMmathfont}{}
+\else
+  \newenvironment{EMltr}{}{}
+  \newcommand{\EMnum}[1]{#1}
+  \def\EMstart{west}\def\EMend{east}
+  \newcommand{\EMsep}{{\color{EMrose}\rule[0.2em]{0.3em}{0.3em}}}
+  \newcommand{\EMheadfont}{\sffamily}
+\fi
+% an inline formula: always left to right, never split
+\newcommand{\EMim}[1]{\ifEMrtl\lr{$#1$}\else$#1$\fi}
+% Persian words inside a formula run right to left
+\newcommand{\EMt}[1]{\mbox{\ifEMrtl\RL{\persianfont #1}\else#1\fi}}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+% symbols missing from Libertinus Math
+\usepackage{pifont}
+\newcommand{\EMcheck}{\mathord{\text{\textcolor{EMjade}{\ding{51}}}}}
+\def\circlearrowright{\mathord{\cwopencirclearrow}}
+\def\circlearrowleft{\mathord{\acwopencirclearrow}}
+\def\blacksquare{\mathord{\mdlgblksquare}}
+\def\square{\mathord{\mdlgwhtsquare}}
+\setoperatorfont\mathrm
+% a displayed formula, centred and always left to right.  The filter marks the places where it
+% may be broken (before a top-level =, \Rightarrow ..., after \qquad); the macro fills lines
+% greedily by their measured width and indents the continuation lines.  A formula that fits
+% stays on one line; one that cannot be broken is left to overflow and is reported by the build.
+\newtoks\EMdcur
+\newbox\EMdb \newbox\EMdvb
+\newcount\EMdn \newcount\EMdlines
+\newdimen\EMdlim
+\newcommand{\EMdline}[1]{\hbox{\ifEMrtl\beginL\fi$\displaystyle#1$\ifEMrtl\endL\fi}}
+\def\EMdflush{%
+  \setbox\EMdvb\vbox{\offinterlineskip\unvbox\EMdvb
+    \ifnum\EMdlines>0 \vskip0.55em\fi
+    \hbox{\ifnum\EMdlines>0 \hskip2em\fi\EMdline{\the\EMdcur}}}%
+  \advance\EMdlines1 \EMdcur={}\EMdn=0 }
+\long\def\EMdseg#1{%
+  \ifnum\EMdn>0
+    \setbox\EMdb\hbox{$\displaystyle\the\EMdcur #1$}%
+    \ifdim\wd\EMdb>\EMdlim \EMdflush \fi
+  \fi
+  \EMdcur=\expandafter{\the\EMdcur #1}\advance\EMdn1 }
+\long\def\EMdproc#1\EMbr#2\EMdend{%
+  \EMdseg{#1}%
+  \ifblank{#2}{}{\EMdproc#2\EMdend}}
+\newcommand{\EMdisp}[1]{\par\nopagebreak[4]\vspace{0.3em}%
+  \begingroup\EMdcur={}\EMdn=0 \EMdlines=0 \setbox\EMdvb\vbox{}%
+  \EMdlim=\dimexpr\linewidth-2em\relax
+  \EMdproc#1\EMbr\EMdend
+  \ifnum\EMdlines>0 \EMdflush \else
+    \setbox\EMdvb\hbox{\EMdline{\the\EMdcur}}\fi
+  \noindent\hfil\box\EMdvb\hfil\par\endgroup\nopagebreak[2]\vspace{0.1em}}
+\relpenalty=9999 \binoppenalty=9999
+\emergencystretch=3em
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.15em}
+\setlist{itemsep=2pt,topsep=3pt,parsep=0pt}
+\setlist[itemize]{label={\color{EMrose}\textbullet}}
+\setlist[enumerate,1]{label={\color{EMindigo}\bfseries\arabic*.}}
+\setlength{\abovedisplayskip}{0.7em plus 0.2em}
+\setlength{\belowdisplayskip}{0.7em plus 0.2em}
+\setlength{\abovedisplayshortskip}{0.4em}
+\setlength{\belowdisplayshortskip}{0.4em}
+\allowdisplaybreaks[1]
+
+% ---------- figures (template/figures/*.tex: TikZ / PGFPlots) ----------
+% \EML{English}{فارسی}: a word in a diagram, in the language of the document
+\ifEMrtl\newcommand{\EML}[2]{\RL{\persianfont #2}}\else\newcommand{\EML}[2]{#1}\fi
+\input{\EMroot/figures/em-diagram-styles}
+
+\newcounter{EMchap}
+\newcounter{EMitem}[EMchap]
+\newcounter{EMfig}[EMchap]
+\renewcommand{\thesection}{\arabic{EMchap}.\arabic{section}}
+\newcommand{\EMitemnum}{\EMnum{\arabic{EMchap}.\arabic{EMitem}}}
+\newcommand{\EMfignum}{\EMnum{\arabic{EMchap}.\arabic{EMfig}}}
+
+\newsavebox{\EMfigbox}
+\newlength{\EMfigh}
+% the drawing, scaled down only when it would exceed the text width
+\newcommand{\EMfigmeasure}[1]{%
+  \sbox{\EMfigbox}{\begin{EMltr}\input{\EMroot/figures/#1}\end{EMltr}}%
+  \ifdim\wd\EMfigbox>\linewidth
+    \sbox{\EMfigbox}{\resizebox{\linewidth}{!}{\usebox{\EMfigbox}}}\fi
+  \setlength{\EMfigh}{\dimexpr\ht\EMfigbox+\dp\EMfigbox\relax}}
+% reserves the room of a figure (and the lines before it) so a heading is never left alone
+\newcommand{\EMkeepfig}[2]{\par\begingroup\EMfigmeasure{#1}%
+  \Needspace*{\dimexpr\EMfigh+\numexpr#2+4\relax\baselineskip\relax}\endgroup}
+% #1 = figure file, #2 = caption; drawing and caption never split
+\newcommand{\EMfigure}[2]{%
+  \par\EMfigmeasure{#1}\Needspace*{\dimexpr\EMfigh+4\baselineskip\relax}%
+  \refstepcounter{EMfig}\label{fig:#1}\vspace{0.5em}%
+  \begin{minipage}{\linewidth}\centering\usebox{\EMfigbox}\par\vspace{0.5em}%
+  {\small\color{EMmuted}{\color{EMindigo}\EMheadfont\bfseries\EMlangFigure~\EMfignum}\hspace{0.7em}#2\par}%
+  \end{minipage}\par\vspace{0.8em}}
+
+% ---------- headings ----------
+\newcommand{\EMmodkey}{x}
+\newcommand{\EMsectag}{\ifEMrtl\lr{\fi\tikz[baseline=(n.base)]\node[fill=EMindigo,text=white,
+  rounded corners=1.8pt,inner xsep=4.5pt,inner ysep=3pt,font=\EMheadfont\bfseries\small](n){\EMnum{\thesection}};\ifEMrtl}\fi}
+\newcommand{\EMsectionreal}[2]{%
+  \par\Needspace{9\baselineskip}\vspace{1.3em}%
+  \refstepcounter{section}\label{EMsec:\EMmodkey:\arabic{section}}%
+  \addcontentsline{toc}{section}{\texorpdfstring{#1}{#2}}%
+  \noindent\EMsectag\hspace{0.7em}{\EMheadfont\bfseries\Large\color{EMindigo}#1}\par\nobreak
+  \vspace{0.25em}{\color{EMline}\hrule height 0.6pt}\vspace{0.6em}\nobreak}
+\newcommand{\EMsubsectionreal}[2]{%
+  \par\Needspace{6\baselineskip}\vspace{0.9em}%
+  \noindent{\color{EMrose}\rule[0.1em]{0.32em}{0.78em}}\hspace{0.55em}%
+  {\EMheadfont\bfseries\large\color{EMink}#1}\par\nobreak\vspace{0.25em}\nobreak}
+
+% a heading followed by a box is held back until the box knows how much room it needs; the two
+% then move together
+\newif\ifEMhold
+\def\EMpending{}\newcount\EMpendn
+\newcommand{\EMhold}{\global\EMholdtrue}
+\newcommand{\EMqueue}[1]{\gappto\EMpending{#1}\global\advance\EMpendn by 1\relax}
+\newcommand{\EMsection}[2]{\ifEMhold\EMqueue{\EMsectionreal{#1}{#2}}\else\EMsectionreal{#1}{#2}\fi}
+\newcommand{\EMsubsection}[2]{\ifEMhold\EMqueue{\EMsubsectionreal{#1}{#2}}\else\EMsubsectionreal{#1}{#2}\fi}
+\newcommand{\EMflush}{\par\ifnum\EMpendn>0
+  \begingroup\global\EMholdfalse\EMpending\endgroup
+  \global\let\EMpending\empty\global\EMpendn=0 \fi\global\EMholdfalse}
+\newdimen\EMpendht
+\newcommand{\EMboxstart}{% decides the room, then places the held headings
+  \EMpendht=\dimexpr\EMpendn\baselineskip*4\relax
+  \ifdim\EMboxht<0.58\textheight
+    \Needspace*{\dimexpr\EMboxht+\EMpendht\relax}\def\EMboxopt{unbreakable}%
+  \else\Needspace*{\dimexpr9\baselineskip+\EMpendht\relax}\def\EMboxopt{}\fi
+  \EMflush}
+
+% ---------- the theorem family ----------
+\ifEMrtl
+  \tcbset{EMbar/.style={borderline east={2.6pt}{0pt}{#1}}}
+\else
+  \tcbset{EMbar/.style={borderline west={2.6pt}{0pt}{#1}}}
+\fi
+\tcbset{EMbase/.style={enhanced,breakable,frame hidden,sharp corners,
+  left=7pt,right=7pt,top=5pt,bottom=5pt,before skip=0.9em,after skip=0.9em,
+  before upper={\parindent0pt\setlength{\parskip}{0.45em}}}}
+\newcommand{\EMboxhead}[3]{%   colour, label word, title (may be empty)
+  \refstepcounter{EMitem}\label{EMit:\EMmodkey:\arabic{EMitem}}%
+  {\EMheadfont\bfseries\color{#1}#2~\EMitemnum}%
+  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\par\nobreak\vspace{0.15em}}
+% a box is measured first: a short one is kept whole (moved to the next page when it does not
+% fit), a long one may break but starts with room for its head and a few lines
+\newdimen\EMboxht
+\newcommand{\EMboxbody}[1]{\parindent0pt\setlength{\parskip}{0.45em}#1}
+\newcommand{\EMmeasure}[1]{\setbox0\vbox{\hsize\dimexpr\linewidth-17pt\relax\EMboxbody{#1}}%
+  \EMboxht=\dimexpr\ht0+\dp0+3\baselineskip+22pt\relax}
+\newcommand{\EMmakebox}[5]{% env, main colour, tint, label word, numbered(1/0)
+  \NewEnviron{#1}[1]{%
+    \EMmeasure{\BODY}%
+    \EMboxstart
+    \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=#2,colback=#3]%
+    \if#51\EMboxhead{#2}{#4}{##1}\else
+      {\EMheadfont\bfseries\color{#2}##1}\par\nobreak\vspace{0.1em}\fi
+    \BODY\end{tcolorbox}}}
+\EMmakebox{EMdefinition}{EMindigo}{EMindigoL}{\EMlangDefinition}{1}
+\EMmakebox{EMtheorem}{EMrose}{EMroseL}{\EMlangTheorem}{1}
+\EMmakebox{EMexample}{EMjade}{EMjadeL}{\EMlangExample}{1}
+\EMmakebox{EMexercise}{EMamber}{EMamberL}{\EMlangExercise}{1}
+\EMmakebox{EMremark}{EMmuted}{white}{\EMlangRemark}{0}
+% the key results: framed, stronger
+\NewEnviron{EMimportant}[1]{%
+  \EMmeasure{\BODY}%
+  \EMboxstart
+  \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMrose,colback=EMroseL,frame hidden,
+    boxrule=0.8pt,colframe=EMrose,frame style={draw=EMrose},borderline={0.7pt}{0pt}{EMrose},
+    top=6pt,bottom=6pt]%
+  \EMboxhead{EMrose}{\EMlangImportant}{#1}\BODY\end{tcolorbox}}
+% proof and solution: open text, a closing mark for proofs
+\newenvironment{EMproof}{\par\Needspace{5\baselineskip}\noindent{\EMheadfont\bfseries\color{EMindigo}\EMlangProof.}\ }%
+  {\hfill\ensuremath{\blacksquare}\par}
+\newenvironment{EMsolution}{\par\noindent{\EMheadfont\bfseries\color{EMjade}\EMlangSolution.}\ }{\par}
+
+% ---------- header / footer ----------
+\def\EMchaptitle{}\def\EMchapother{}
+\newcommand{\EMsetmodule}[3]{\gdef\EMmodkey{#1}\gdef\EMchaptitle{#2}\gdef\EMchapother{#3}%
+  \ifnum0#1>0 \setcounter{EMchap}{#1}\fi\setcounter{section}{0}}
+\newcommand{\EMheadchapter}{\ifnum\value{EMchap}>0 {\color{EMrose}\EMlangChapter~\EMnum{\arabic{EMchap}}}\ \EMsep\ \fi\EMchaptitle}
+\newcommand{\EMheadcourse}{\EMlangCourse}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{EMmuted}\ifEMrtl\EMheadchapter\else\EMheadcourse\fi}
+\fancyhead[R]{\small\color{EMmuted}\ifEMrtl\EMheadcourse\else\EMheadchapter\fi}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\lr{\tikz[baseline=(p.base)]\node[circle,draw=EMindigo,line width=0.7pt,inner sep=2.2pt,
+  minimum size=1.9em,font=\small\EMheadfont,text=EMindigo](p){\EMnum{\thepage}};}}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\lr{\tikz[baseline=(p.base)]\node[circle,draw=EMindigo,line width=0.7pt,inner sep=2.2pt,
+  minimum size=1.9em,font=\small\EMheadfont,text=EMindigo](p){\EMnum{\thepage}};}}}
+
+% ---------- contents ----------
+\newcommand{\EMtocleader}{\leaders\hbox{\kern1.5pt\textcolor{EMline}{.}\kern1.5pt}\hfill}
+\newenvironment{EMminitoc}{%
+  \par\vspace{0.6em}{\EMheadfont\bfseries\large\color{EMindigo}\EMlangChapterContents}\par\vspace{0.3em}%
+  {\color{EMline}\hrule height 0.6pt}\vspace{0.5em}\par}{\par}
+\newcommand{\EMtocitem}[2]{% section number in the chapter, title
+  \par\noindent\hyperref[EMsec:\EMmodkey:#1]{\hbox to\linewidth{\EMsectagtoc{#1}\hspace{0.6em}#2\EMtocleader\hspace{0.4em}\pageref{EMsec:\EMmodkey:#1}}}\par}
+\newcommand{\EMsectagtoc}[1]{\ifEMrtl\lr{\fi\tikz[baseline=(n.base)]\node[fill=EMindigo,text=white,
+  rounded corners=1.5pt,inner xsep=3.5pt,inner ysep=2pt,font=\EMheadfont\bfseries\footnotesize](n){\EMnum{\arabic{EMchap}.#1}};\ifEMrtl}\fi}
+% the book: parts, chapters, sections
+\newenvironment{EMbooktoc}{%
+  \par{\EMheadfont\bfseries\fontsize{26}{30}\selectfont\color{EMindigo}\EMlangContents}\par\vspace{0.4em}%
+  {\color{EMline}\hrule height 0.8pt}\vspace{0.8em}\par}{\par}
+\newcommand{\EMtocpart}[2]{\par\Needspace{6\baselineskip}\vspace{1.1em}\noindent
+  {\EMheadfont\bfseries\large\color{EMrose}\EMlangPart~#1}\ \ \EMsep\ \ {\EMheadfont\bfseries\large\color{EMink}#2}\par\vspace{0.1em}}
+\newcommand{\EMtocchapter}[3]{% key, number, title
+  \par\Needspace{4\baselineskip}\vspace{0.5em}\noindent\hyperref[EMch:#1]{\hbox to\linewidth{%
+    \EMheadfont\bfseries\color{EMindigo}\EMnum{#2}\hspace{0.7em}#3\EMtocleader\hspace{0.4em}\pageref{EMch:#1}}}\par}
+\newcommand{\EMtocitemk}[4]{% key, k, number, title
+  \par\noindent\hspace{1.4em}\hyperref[EMsec:#1:#2]{\hbox to\dimexpr\linewidth-1.4em\relax{\small
+    \EMnum{#3}\hspace{0.6em}#4\EMtocleader\hspace{0.4em}\pageref{EMsec:#1:#2}}}\par}
+
+% ---------- cover motif: a Joukowski map of a polar grid ----------
+% the circles |z|=r map to ellipses, the rays arg z=t to hyperbola branches
+\newcommand{\EMjoukowski}[3]{% scale, indigo strength, rose strength
+  \begin{scope}[x=#1,y=#1,line cap=round]
+    \foreach \r in {1.06,1.14,1.26,1.42,1.65,2,2.6,3.6}{%
+      \draw[EMindigo!#2,line width=0.5pt] plot[domain=0:360,samples=90,smooth]
+        ({(\r+1/\r)*cos(\x)},{(\r-1/\r)*sin(\x)});}
+    \foreach \t in {10,25,...,175}{%
+      \draw[EMrose!#3,line width=0.45pt] plot[domain=1:4,samples=40,smooth]
+        ({(\x+1/\x)*cos(\t)},{(\x-1/\x)*sin(\t)});
+      \draw[EMrose!#3,line width=0.45pt] plot[domain=1:4,samples=40,smooth]
+        ({(\x+1/\x)*cos(\t)},{-(\x-1/\x)*sin(\t)});}
+    \draw[EMink!80,line width=0.8pt] (-2,0)--(2,0);
+  \end{scope}}
+
+% ---------- motif styles (cover and chapter openers) ----------
+\tikzset{
+  max/.style={-{Stealth[length=5pt,width=4pt]},line width=0.6pt,EMink!70},
+  mfaint/.style={line width=0.35pt,EMline},
+  mline/.style={line width=1.1pt,EMindigo},
+  mrose/.style={line width=1.1pt,EMrose},
+  mjade/.style={line width=1.1pt,EMjade},
+  mdash/.style={dashed,line width=0.6pt,EMmuted},
+  mvec/.style={-{Stealth[length=6pt,width=5pt]},line width=1.2pt,EMrose},
+  mvecl/.style={-{Stealth[length=6pt,width=5pt]},line width=1.2pt,EMindigo!75},
+  mmid/.style={decoration={markings,mark=at position 0.5 with {\arrow{Stealth[length=6pt]}}},postaction=decorate},
+  mdot/.style={circle,inner sep=0pt,minimum size=5pt},
+  mdotr/.style={circle,fill=EMrose,inner sep=0pt,minimum size=5.5pt},
+  mdotl/.style={circle,fill=EMindigo,inner sep=0pt,minimum size=5.5pt},
+}
+\newcommand{\EMcrossm}[1]{\draw[EMrose,line width=1.4pt] #1 ++(-3.5pt,-3.5pt)--++(7pt,7pt) #1 ++(-3.5pt,3.5pt)--++(7pt,-7pt);}
+% the motif of chapter #1 (a 15 cm x 9 cm drawing)
+\newcommand{\EMmotif}[1]{\input{\EMroot/motifs/m\ifnum#1<10 0\fi#1}}
+% Joukowski map on a dark ground: colours given as full colour specs
+\newcommand{\EMjoukowskiD}[3]{% scale, circle colour, ray colour
+  \begin{scope}[x=#1,y=#1,line cap=round]
+    \foreach \r in {1.06,1.14,1.26,1.42,1.65,2,2.6,3.6}{%
+      \draw[#2,line width=0.5pt] plot[domain=0:360,samples=90,smooth]
+        ({(\r+1/\r)*cos(\x)},{(\r-1/\r)*sin(\x)});}
+    \foreach \t in {10,25,...,175}{%
+      \draw[#3,line width=0.45pt] plot[domain=1:4,samples=40,smooth]
+        ({(\x+1/\x)*cos(\t)},{(\x-1/\x)*sin(\t)});
+      \draw[#3,line width=0.45pt] plot[domain=1:4,samples=40,smooth]
+        ({(\x+1/\x)*cos(\t)},{-(\x-1/\x)*sin(\t)});}
+    \draw[white!80,line width=0.8pt] (-2,0)--(2,0);
+  \end{scope}}
+
+% ---------- cover ----------
+% #1 course title (dominant), #2 subtitle, #3 title in the other language
+\newcommand{\EMcoverpage}[3]{%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \def\pw{21}\def\ph{29.7}
+    \coordinate (sw) at (current page.south west);
+    % the art panel
+    \fill[EMink] ([yshift=14.3cm]sw) rectangle (current page.north east);
+    \begin{scope}
+      \clip ([yshift=14.3cm]sw) rectangle (current page.north east);
+      \begin{scope}[shift={($(sw)+(11.2,22.6)$)}]\EMjoukowskiD{1.08cm}{EMindigo!55!white!70}{EMrose!85!white!80}\end{scope}
+      % Fourier: harmonics of a square wave and their sum
+      \begin{scope}[shift={($(sw)+(0,17.0)$)}]
+        \draw[white!30,line width=0.4pt] (0,0)--(21,0);
+        \draw[EMjade!70!white,line width=0.6pt,domain=0:21,samples=200] plot (\x,{0.9*sin(0.7*\x r*1.0*3.14159/3.14159*1.5)});
+        \draw[EMamber!70!white,line width=0.6pt,domain=0:21,samples=300] plot (\x,{0.9/3*sin(3*0.7*\x r*1.5)});
+        \draw[EMrose!50!white,line width=1.8pt,domain=0:21,samples=500] plot (\x,{1.1*(sin(0.7*1.5*\x r)+sin(3*0.7*1.5*\x r)/3+sin(5*0.7*1.5*\x r)/5+sin(7*0.7*1.5*\x r)/7)});
+      \end{scope}
+      % contour around three poles
+      \begin{scope}[shift={($(sw)+(3.6,24.3)$)}]
+        \draw[white!75,line width=1.1pt,mmid,smooth cycle,tension=0.85] plot coordinates{(-2.6,-0.2)(-1.6,1.8)(0.8,2.3)(2.6,0.9)(2.2,-1.6)(-0.3,-2.2)};
+        \foreach \p in {(-0.9,0.5),(0.9,-0.4),(0.5,1.2)}{\draw[EMrose!70!white,line width=0.9pt] \p circle (0.3);\fill[EMrose!60!white] \p circle (1.6pt);}
+      \end{scope}
+      % Laplace: a decaying oscillation
+      \begin{scope}[shift={($(sw)+(14.2,27.0)$)}]
+        \draw[white!50,line width=0.5pt,-{Stealth[length=5pt]}] (0,0)--(6.3,0);
+        \draw[white!35,dashed,line width=0.5pt,domain=0:6,samples=50] plot (\x,{1.4*exp(-0.5*\x)});
+        \draw[EMjade!60!white,line width=1.4pt,domain=0:6,samples=250] plot (\x,{1.4*exp(-0.5*\x)*cos(4.8*\x r)});
+      \end{scope}
+    \end{scope}
+    \fill[EMrose] ([yshift=14.3cm]sw) rectangle ([yshift=14.55cm]current page.south east);
+    % titles
+    \node[anchor=center,text=EMindigo,align=center,text width=17.5cm,
+      font=\ifEMrtl\EMfaDisplay\else\EMheadfont\bfseries\fi\fontsize{66}{74}\selectfont] at ($(sw)+(10.5,10.6)$) {#1};
+    \node[anchor=center,text=EMmuted,align=center,text width=16cm,font=\large]
+      at ($(sw)+(10.5,7.5)$) {\EMother{#3}};
+    \node[anchor=center,text=EMink,align=center,text width=17cm,font=\EMheadfont\normalsize]
+      at ($(sw)+(10.5,6.4)$) {#2};
+    \draw[EMrose,line width=1.4pt] ($(sw)+(8.7,5.4)$)--($(sw)+(12.3,5.4)$);
+    \node[anchor=center,text=EMink,font=\large] at ($(sw)+(10.5,3.5)$)
+      {\begin{minipage}{16cm}\centering
+       {\color{EMmuted}\EMlangInstructorLabel:}\ {\EMheadfont\bfseries\EMlangInstructor}\par\vspace{0.7em}
+       {\color{EMmuted}\EMlangCompilerLabel:}\ {\EMheadfont\bfseries\EMlangCompiler}\end{minipage}};
+    \node[anchor=south,text=EMmuted,align=center,text width=16cm,font=\small]
+      at ($(sw)+(10.5,0.8)$) {\EMlangUni};
+  \end{tikzpicture}\clearpage}
+
+% ---------- chapter opener (also the first page of a single-chapter PDF) ----------
+% #1 key, #2 number, #3 title, #4 title in the other language.  The chapter contents follow
+% on the same page (\EMchapterend closes it); the text starts on the next page.
+\newcommand{\EMchapterpage}[4]{%
+  \clearpage\pdfbookmark[1]{\EMlangChapter~#2: #3}{EMch@#1}\phantomsection\label{EMch:#1}%
+  \thispagestyle{plain}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[EMindigo] ([xshift=\ifEMrtl-1.1cm\else0cm\fi]current page.north \ifEMrtl east\else west\fi) rectangle
+      ([xshift=\ifEMrtl0cm\else1.1cm\fi]current page.south \ifEMrtl east\else west\fi);
+  \end{tikzpicture}%
+  \vspace*{-0.6cm}%
+  \par\noindent\hbox to\linewidth{{\EMheadfont\bfseries\large\color{EMmuted}\EMlangChapter}\hfill}\par\vspace{-0.5em}
+  \noindent\hbox to\linewidth{{\EMheadfont\bfseries\fontsize{96}{100}\selectfont\color{EMrose!85}\EMnum{#2}}\hfill}\par\vspace{0.1em}
+  {\color{EMrose}\rule{3.2cm}{2pt}}\par\vspace{0.7em}
+  {\EMheadfont\bfseries\fontsize{27}{35}\selectfont\color{EMindigo}#3\par}
+  \vspace{0.3em}{\large\color{EMmuted}\EMother{#4}\par}
+  \vspace{0.9em}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.95]
+      \clip (0,0) rectangle (15,9);
+      \EMmotif{#1}
+    \end{tikzpicture}
+  \end{center}}
+\newcommand{\EMchapterend}{\clearpage}
+
+% ---------- part page (the book) ----------
+\newcommand{\EMpartpage}[5]{% key, numeral, title, other title, chapter range
+  \clearpage\pdfbookmark[0]{\EMlangPart~#2: #3}{EMpart@#1}\phantomsection\label{EMpart:#1}%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \begin{scope}[shift={($(current page.center)+(0,3.2)$)}]\EMjoukowski{1.02cm}{50}{60}\end{scope}
+    \fill[EMindigo] ([yshift=8.2cm]current page.south west) rectangle ([yshift=2.4cm]current page.south east);
+    \node[anchor=south,text=EMline,align=center,text width=16cm,font=\EMheadfont\large]
+      at ($(current page.south)+(0,6.55)$) {\EMlangPart\ #2};
+    \node[anchor=south,text=white,align=center,text width=16cm,font=\EMheadfont\bfseries\fontsize{30}{36}\selectfont]
+      at ($(current page.south)+(0,4.7)$) {#3};
+    \node[anchor=south,text=white!75!EMindigo,align=center,text width=16cm,font=\large]
+      at ($(current page.south)+(0,3.55)$) {\EMother{#4}};
+    \node[anchor=south,text=EMline,align=center,text width=16cm,font=\small]
+      at ($(current page.south)+(0,2.75)$) {#5};
+  \end{tikzpicture}\clearpage}
+
+% ---------- about these notes ----------
+\newcommand{\EMcolophon}{%
+  \clearpage\thispagestyle{plain}%
+  {\EMheadfont\bfseries\fontsize{22}{26}\selectfont\color{EMindigo}\EMlangColophonTitle\par}
+  \vspace{0.3em}{\color{EMline}\hrule height 0.8pt}\vspace{0.8em}
+  \EMcolophontext
+  \vspace{0.6em}
+  \begin{EMdefinition}{\EMlegendDefinition}\EMlegendDefinitionText\end{EMdefinition}
+  \begin{EMtheorem}{\EMlegendTheorem}\EMlegendTheoremText\end{EMtheorem}
+  \begin{EMimportant}{\EMlegendImportant}\EMlegendImportantText\end{EMimportant}
+  \begin{EMexample}{\EMlegendExample}\EMlegendExampleText
+    \begin{EMsolution}\EMlegendSolutionText\end{EMsolution}\end{EMexample}
+  \begin{EMexercise}{\EMlegendExercise}\EMlegendExerciseText\end{EMexercise}
+  \begin{EMremark}{\EMlegendRemark}\EMlegendRemarkText\end{EMremark}
+  \setcounter{EMitem}{0}\clearpage}

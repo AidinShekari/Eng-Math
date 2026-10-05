@@ -1,0 +1,40 @@
+% Important loci: |z|=1, |z-a|=rho, |z-a|<rho and an annulus
+\begin{tikzpicture}[scale=0.95]
+  % |z| = 1
+  \begin{scope}[yshift=1.55cm]
+    \draw[EMax] (-1.7,0)--(1.9,0) node[EMlabs,right]{$x$};
+    \draw[EMax] (0,-1.7)--(0,1.8) node[EMlabs,above]{$y$};
+    \draw[EMcurve] (0,0) circle (1.25);
+    \node[EMhole] at (1.25,0){};\node[EMlabs,below right] at (1.25,0){$1$};
+    \node[EMlab] at (0,2.0){$|z|=1$};
+  \end{scope}
+  % |z-a| = rho
+  \begin{scope}[xshift=5.3cm]
+    \draw[EMax] (-0.2,0)--(3.6,0) node[EMlabs,right]{$x$};
+    \draw[EMax] (0,-0.2)--(0,3.1) node[EMlabs,above]{$y$};
+    \draw[EMcurve] (1.9,1.5) circle (1.1);
+    \draw[EMvec] (1.9,1.5)--++(150:1.1) node[EMlabs,midway,above]{$\rho$};
+    \node[EMhole] at (1.9,1.5){};\node[EMlabs,below right] at (1.9,1.5){$a$};
+    \node[EMlab] at (1.9,3.55){$|z-a|=\rho$};
+  \end{scope}
+  % |z-a| < rho
+  \begin{scope}[xshift=10.6cm]
+    \draw[EMax] (-0.2,0)--(3.6,0) node[EMlabs,right]{$x$};
+    \draw[EMax] (0,-0.2)--(0,3.1) node[EMlabs,above]{$y$};
+    \draw[EMdash] (1.9,1.5)--(1.9,0);\draw[EMdash] (1.9,1.5)--(0,1.5);
+    \filldraw[EMfill,dashed,draw=EMindigo] (1.9,1.5) circle (1.1);
+    \draw[EMvec] (1.9,1.5)--++(30:1.1) node[EMlabs,midway,above]{$\rho$};
+    \node[EMhole] at (1.9,1.5){};\node[EMlabs,left,xshift=-2pt] at (1.9,1.5){$a$};
+    \node[EMlab] at (1.9,3.55){$|z-a|<\rho$};
+  \end{scope}
+  % rho1 < |z-a| < rho2
+  \begin{scope}[xshift=5.3cm,yshift=-6.2cm]
+    \draw[EMax] (-0.2,0)--(4.2,0) node[EMlabs,right]{$x$};
+    \draw[EMax] (0,-0.2)--(0,4.2) node[EMlabs,above]{$y$};
+    \filldraw[EMfill,dashed,draw=EMindigo,even odd rule] (2.2,2.1) circle (1.7) (2.2,2.1) circle (0.9);
+    \draw[EMvec] (2.2,2.1)--++(115:1.7) node[EMlabs,midway,left]{$\rho_2$};
+    \draw[EMvec] (2.2,2.1)--++(60:0.9) node[EMlabs,midway,right]{$\rho_1$};
+    \node[EMhole] at (2.2,2.1){};\node[EMlabs,below] at (2.2,2.1){$a$};
+    \node[EMlab] at (2.2,4.75){$\rho_1<|z-a|<\rho_2$};
+  \end{scope}
+\end{tikzpicture}

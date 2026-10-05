@@ -1,0 +1,21 @@
+% Translation w = z + b: the square keeps its shape and moves by b
+\begin{tikzpicture}[scale=1.0]
+  \begin{scope}
+    \draw[EMax] (-0.9,0)--(3.6,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \draw[EMdash] (1.4,0)--(1.4,0.9)--(0,0.9);
+    \filldraw[EMfill,draw=EMindigo,line width=0.9pt] (1.4,0.9) rectangle (2.3,1.8);
+    \node[EMlabs,below] at (1.4,0){$x_0$};\node[EMlabs,left] at (0,0.9){$y_0$};
+    \node[EMlab] at (1.4,-1.5){\EML{$z$-plane}{صفحهٔ $z$}};
+  \end{scope}
+  \begin{scope}[xshift=7.4cm]
+    \draw[EMax] (-0.9,0)--(3.9,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \draw[EMdash] (2.2,0)--(2.2,1.9)--(0,1.9);
+    \filldraw[EMfill2,draw=EMrose,line width=0.9pt] (2.2,1.9) rectangle (3.1,2.8);
+    \node[EMlabs,below] at (2.2,0){$x_0+\operatorname{Re}\{b\}$};
+    \node[EMlabs,left] at (0,1.9){$y_0+\operatorname{Im}\{b\}$};
+    \node[EMlab] at (1.4,-1.5){\EML{$w$-plane}{صفحهٔ $w$}};
+  \end{scope}
+  \draw[EMvec2,line width=1.6pt] (2.6,2.6) to[bend left=35] node[EMlab,above,pos=0.5]{$w=z+b$} (5.2,2.6);
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+% A complex function maps the domain in the z-plane onto the range in the w-plane
+\begin{tikzpicture}
+  \begin{scope}
+    \draw[EMax] (-0.4,0)--(4.4,0) node[EMlab,right]{$x$};
+    \draw[EMax] (0,-0.4)--(0,3.4) node[EMlab,above]{$y$};
+    \draw[EMcurve,fill=EMindigo!10] plot[smooth cycle,tension=0.75]
+      coordinates{(1.0,1.5)(1.5,2.6)(2.5,2.7)(3.0,1.9)(2.5,1.0)(1.6,0.9)};
+    \node[EMlab] at (1.95,1.8){\EML{domain}{دامنه}};
+    \node[EMlab] at (2.1,-0.75){\EML{$z$-plane}{صفحهٔ $z$}};
+  \end{scope}
+  \begin{scope}[xshift=7cm]
+    \draw[EMax] (-0.4,0)--(4.4,0) node[EMlab,right]{$u$};
+    \draw[EMax] (0,-0.4)--(0,3.4) node[EMlab,above]{$v$};
+    \draw[EMcurve2,fill=EMrose!10] plot[smooth cycle,tension=0.75]
+      coordinates{(2.2,1.0)(2.6,2.2)(3.5,2.3)(3.9,1.5)(3.4,0.7)(2.7,0.6)};
+    \node[EMlab] at (3.1,1.5){\EML{range}{برد}};
+    \node[EMlab] at (2.1,-0.75){\EML{$w$-plane}{صفحهٔ $w$}};
+  \end{scope}
+  \draw[EMvec2] (1.2,2.15) to[bend left=22] node[EMlab,above,pos=0.45]{$w=f(z)$} (7.0+2.25,1.9);
+\end{tikzpicture}

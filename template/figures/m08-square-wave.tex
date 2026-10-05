@@ -1,0 +1,10 @@
+% The square wave: -k on (-pi,0), +k on (0,pi), period 2 pi
+\begin{tikzpicture}
+  \begin{axis}[EMplot,width=12cm,height=4.6cm,xmin=-7.2,xmax=7.4,ymin=-1.6,ymax=1.6,
+      xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$},ytick={-1,1},yticklabels={$-k$,$k$},xlabel={$x$},clip=false]
+    \draw[EMcurve] (axis cs:-6.2832,1)--(axis cs:-3.1416,1) (axis cs:-3.1416,-1)--(axis cs:0,-1) (axis cs:0,1)--(axis cs:3.1416,1) (axis cs:3.1416,-1)--(axis cs:6.2832,-1);
+    \draw[EMcurve] (axis cs:-6.2832,-1)--(axis cs:-6.2832,1) (axis cs:0,-1)--(axis cs:0,1) (axis cs:6.2832,-1)--(axis cs:6.2832,1);
+    \draw[EMcurve] (axis cs:-7.0,-1)--(axis cs:-6.2832,-1) (axis cs:6.2832,1)--(axis cs:7.0,1);
+    \draw[EMdash] (axis cs:-3.1416,-1)--(axis cs:-3.1416,1) (axis cs:3.1416,-1)--(axis cs:3.1416,1);
+  \end{axis}
+\end{tikzpicture}

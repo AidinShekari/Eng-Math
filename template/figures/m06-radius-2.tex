@@ -1,0 +1,9 @@
+% Poles at z = -4 and z = 2: the disc of convergence about 0 has radius 2
+\begin{tikzpicture}[scale=0.82]
+  \EMaxes{-5.2}{3.6}{-2.7}{2.9}{$\operatorname{Re}$}{$\operatorname{Im}$}
+  \filldraw[EMfill,dashed,draw=EMindigo,line width=0.9pt] (0,0) circle (2);
+  \EMcross{(-4,0)}\EMcross{(2,0)}
+  \node[EMlabs,below] at (-4,-0.15){$-4$};\node[EMlabs,below,xshift=4pt] at (2,-0.15){$2$};
+  \node[EMhole,draw=EMindigo] at (0,0){};\node[EMlabs,below left] at (0,0){$0$};
+  \draw[EMvec] (0,0)--(125:2) node[EMlabs,midway,left]{$2$};
+\end{tikzpicture}

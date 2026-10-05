@@ -1,0 +1,24 @@
+% Simply connected and not simply connected domains
+\begin{tikzpicture}[scale=0.82]
+  \tikzset{reg/.style={fill=EMindigo!18,draw=EMindigo,dashed,line width=0.9pt}}
+  \begin{scope}% simply connected: kidney
+    \filldraw[reg,smooth cycle,tension=0.9] plot coordinates{(0,0)(1.4,-0.2)(2.2,0.8)(1.4,0.9)(1.0,1.7)(1.8,2.3)(0.6,2.8)(-0.8,2.0)(-0.9,0.7)};
+    \node[EMlabs] at (0.6,-1.0){\EML{simply connected}{همبند ساده}};
+  \end{scope}
+  \begin{scope}[xshift=4.2cm]% simply connected with a slit
+    \filldraw[reg] (0.7,1.4) circle (1.6);
+    \fill[white] (0.0,1.5) circle (0.45) (0.9,0.5) circle (0.4);
+    \draw[reg,fill=white] (0,1.5) circle (0.45);\draw[reg,fill=white] (0.9,0.5) circle (0.4);
+    \fill[white] (0.2,0.9) rectangle (1.1,1.1);
+    \draw[EMindigo,dashed,line width=0.9pt] (0.35,1.15)--(1.05,0.85);
+    \node[EMlabs] at (0.7,-1.0){\EML{simply connected}{همبند ساده}};
+  \end{scope}
+  \begin{scope}[xshift=8.6cm]% annulus: not simply connected
+    \filldraw[reg,even odd rule] (0,1.4) circle (1.6) (0,1.4) circle (0.75);
+    \node[EMlabs] at (0,-1.0){\EML{not simply connected}{غیر همبند}};
+  \end{scope}
+  \begin{scope}[xshift=12.8cm]% two holes: not simply connected
+    \filldraw[reg,even odd rule] (0,1.4) circle (1.6) (-0.6,1.9) ellipse (0.55 and 0.4) (0.55,0.8) ellipse (0.6 and 0.45);
+    \node[EMlabs] at (0,-1.0){\EML{not simply connected}{غیر همبند}};
+  \end{scope}
+\end{tikzpicture}

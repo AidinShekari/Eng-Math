@@ -1,0 +1,264 @@
+\EMhold
+
+\EMsection{مقدمه}{مقدمه}
+
+\begin{EMdefinition}{معادلهٔ دیفرانسیل}
+
+معادله‌ای که در آن تابع و مشتقات وجود داشته باشند.
+
+\end{EMdefinition}
+
+\begin{EMdefinition}{معادلهٔ دیفرانسیل معمولی}
+
+معادله‌ای که بر حسب فقط یک متغیر مستقل و مشتقات تابع فقط بر حسب آن متغیر نوشته شده باشد.
+
+\end{EMdefinition}
+
+\begin{EMdefinition}{معادلهٔ دیفرانسیل با مشتقات جزئی}
+
+معادلهٔ دیفرانسیلی که تابع به چند متغیر مستقل وابسته بوده، مشتقات جزئی تابع بر حسب متغیرهای مختلف در معادله وجود داشته باشد.
+
+\end{EMdefinition}
+
+\textbf{معادلهٔ دیفرانسیل موج:}
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  \frac{\partial^2u}{\partial t^2}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad\EMbr  \frac{\partial^2u}{\partial t^2}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
+
+\textbf{معادلهٔ دیفرانسیل انتقال حرارت:}
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
+
+\textbf{معادلهٔ دیفرانسیل لاپلاس:}
+\EMdisp{\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\EMbr =0,\qquad\EMbr  \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\EMbr =0,\qquad\EMbr  \nabla^2u\EMbr =0}
+
+\EMsection{معادلهٔ دیفرانسیل موجی یک‌بعدی}{معادلهٔ دیفرانسیل موجی یک‌بعدی}
+
+مدلسازی یک تار مرتعش (به‌دست آوردن معادلهٔ حاکم بر \EMim{u(x,t)}).
+
+\textbf{فرضیات فیزیکی:}
+
+\begin{itemize}
+\tightlist
+\item
+  جرم به صورت یکنواخت در طول تار توزیع شده (تار همگن)، کاملاً انعطاف‌پذیر است.
+\item
+  تار چنان محکم کشیده شده است که نیروی جاذبه در آن قابل چشم‌پوشی است.
+\item
+  میزان انحراف تار از حالت تعادل بسیار کوچک است.
+\end{itemize}
+
+\EMfigure{m11-string}{قطعهٔ \EMim{PQ} از تار مرتعش: کشش‌های \EMim{T_1} و \EMim{T_2} در دو انتها
+با زوایای \EMim{\alpha} و \EMim{\beta}}
+
+\EMdisp{T_1\cos\alpha\EMbr =T_2\cos\beta\EMbr =T\EMbr =\text{const.}}
+\EMdisp{T_2\sin\beta-T_1\sin\alpha\EMbr =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}}
+که در آن \EMim{\rho} چگالی جرمی تار و \EMim{\Delta s} دیفرانسیل طول تار است. با تقسیم بر \EMim{T}:
+\EMdisp{T\big(\tan\beta-\tan\alpha\big)\EMbr =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  T\left(\frac{\partial u}{\partial x}\bigg|_{(x+\Delta x,t)}-\frac{\partial u}{\partial x}\bigg|_{(x,t)}\right)\EMbr =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}}
+
+با استفاده از قضیهٔ مقدار میانی (\EMim{f(b)-f(a)=f'(l)(b-a)}، \EMim{l\in[a,b]}):
+\EMdisp{T\left(\frac{\partial u}{\partial x}\bigg|_{(x+\Delta x,t)}-\frac{\partial u}{\partial x}\bigg|_{(x,t)}\right)\EMbr =T\frac{\partial^2u}{\partial x^2}\bigg|_{(l,t)}\Delta x\EMbr =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2},\qquad\EMbr  x<l<x+\Delta x}
+طبق فرض \EMim{\displaystyle\lim_{\Delta x\to0}\frac{\Delta x}{\Delta s}=1}، پس:
+\EMdisp{T\frac{\partial^2u}{\partial x^2}\EMbr =\rho\frac{\partial^2u}{\partial t^2},\qquad\EMbr  c^2\triangleq\frac T\rho\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac{\partial^2u}{\partial t^2}\EMbr =c^2\frac{\partial^2u}{\partial x^2}}
+
+برای حل یکتای این معادله نیاز به شرایط مرزی و شرایط اولیه داریم:
+
+\begin{itemize}
+\tightlist
+\item
+  شرایط مرزی (\lr{Boundary Conditions}): \EMim{u(0,t)=u(L,t)=0}
+\item
+  شرایط اولیه (\lr{Initial Conditions}): \EMim{u(x,0)=f(x)} و \EMim{u_t(x,0)=g(x)}، که در آن \EMim{u_t\triangleq\dfrac{\partial u}{\partial t}}
+\end{itemize}
+
+\EMsection{حل معادلهٔ دیفرانسیل موجی یک‌بعدی}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی}
+
+\EMdisp{\begin{cases}\dfrac{\partial^2u}{\partial t^2}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}}
+
+در اینجا برای حل این معادله از روش \textbf{جداسازی متغیرها} استفاده می‌کنیم. فرض:
+\EMdisp{u(x,t)\EMbr =X(x)\times T(t)}
+\EMdisp{\frac{\partial^2u}{\partial x^2}\EMbr =X''(x)T(t),\qquad\EMbr  \frac{\partial^2u}{\partial t^2}\EMbr =X(x)T''(t)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  X(x)T''(t)\EMbr =c^2X''(x)T(t)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac{T''}{c^2T}\EMbr =\frac{X''}{X}\EMbr =k}
+
+\EMim{k} باید حتماً یک عدد منفی باشد. بررسی حالت‌ها:
+
+\textbf{اگر \EMim{k=0}:}
+\EMdisp{\frac{X''}{X}\EMbr =0\ \EMbr \Rightarrow\ X''\EMbr =0\ \EMbr \Rightarrow\ X(x)\EMbr =Ax+B,\qquad\EMbr  X(0)\EMbr =0\EMbr \Rightarrow B\EMbr =0,\quad\EMbr  X(L)\EMbr =0\EMbr \Rightarrow A\EMbr =0\ \EMbr \Rightarrow\ X(x)\EMbr =0}
+
+\textbf{اگر \EMim{k>0} (\EMim{k=\lambda^2}):}
+\EMdisp{\frac{X''}{X}\EMbr =\lambda^2\ \EMbr \Rightarrow\ X''-\lambda^2X\EMbr =0\ \EMbr \Rightarrow\ X(x)\EMbr =Ae^{\lambda x}+Be^{-\lambda x},\qquad\EMbr  X(0)\EMbr =0\EMbr \Rightarrow A+B\EMbr =0,\quad\EMbr  X(L)\EMbr =0\EMbr \Rightarrow Ae^{\lambda L}+Be^{-\lambda L}\EMbr =0}
+\EMdisp{\Longrightarrow\ A\EMbr =B\EMbr =0\ \EMbr \Rightarrow\ X(x)\EMbr =0}
+
+بنابراین \EMim{k} باید حتماً یک عدد منفی باشد (\EMim{k=-\lambda^2}):
+\EMdisp{\frac{T''}{c^2T}\EMbr =\frac{X''}{X}\EMbr =-\lambda^2\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}X''+\lambda^2X=0\\ T''+c^2\lambda^2T=0\end{cases}}
+\EMdisp{X(x)\EMbr =A\cos\lambda x+B\sin\lambda x,\qquad\EMbr  X(0)\EMbr =0\EMbr \Rightarrow A\EMbr =0}
+\EMdisp{X(L)\EMbr =0\ \EMbr \Rightarrow\ B\sin\lambda L\EMbr =0\ \EMbr \Rightarrow\ \lambda L\EMbr =n\pi\ \ (n\in\mathbb{Z})\ \EMbr \Rightarrow\ \lambda\EMbr =\frac{n\pi}L\EMbr =\lambda_n}
+\EMdisp{X_n(x)\EMbr =B_n\sin\lambda_nx,\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L\ \ (n\in\mathbb{Z})}
+\EMdisp{T''+c^2\lambda_n^2T\EMbr =0\ \EMbr \Rightarrow\ T_n(t)\EMbr =C_n\cos(c\lambda_nt)+D_n\sin(c\lambda_nt)}
+\EMdisp{u_n(x,t)\EMbr =X_n(x)\times T_n(t)\EMbr =B_n\sin\lambda_nx\times\big(C_n\cos(c\lambda_nt)+D_n\sin(c\lambda_nt)\big)}
+با برهم‌نهی جواب‌ها:
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}\left[a_n\cos\!\left(\frac{cn\pi}Lt\right)+b_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+
+\textbf{اعمال شرایط اولیه.} شرط \EMim{u(x,0)=f(x)}:
+\EMdisp{u(x,0)\EMbr =\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}Lx\EMbr =f(x)}
+تابع \EMim{f(x)} با یک تابع تناوبی و فرد برابر شده است، بنابراین برای محاسبهٔ ضرایب مجهول فوریه باید \EMim{f(x)} را یک تابع تناوبی (با دورهٔ تناوب \EMim{2L}) و فرد فرض کنیم. به این صورت خواهیم داشت:
+\EMdisp{a_n\EMbr =\frac2{2L}\int_{-L}^{L}f(x)\sin\!\left(\frac{2\pi}{2L}nx\right)dx\EMbr =\frac1L\int_{-L}^{L}f(x)\sin\!\left(\frac{n\pi}Lx\right)dx\EMbr =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+شرط \EMim{u_t(x,0)=g(x)}:
+\EMdisp{u_t(x,t)\EMbr =\sum_{n=1}^{\infty}\left[-a_n\frac{cn\pi}L\sin\!\left(\frac{cn\pi}Lt\right)+b_n\frac{cn\pi}L\cos\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\EMdisp{u_t(x,0)\EMbr =\sum_{n=1}^{\infty}b_n\frac{cn\pi}L\sin\frac{n\pi}Lx\EMbr =g(x)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  b_n\EMbr =\frac2{cn\pi}\int_0^Lg(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+
+\begin{EMimportant}{جواب معادلهٔ موجی یک‌بعدی (روش جداسازی متغیرها)}
+
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}\left[a_n\cos\!\left(\frac{cn\pi}Lt\right)+b_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\EMdisp{a_n\EMbr =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx,\qquad\EMbr  b_n\EMbr =\frac2{cn\pi}\int_0^Lg(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+
+\end{EMimportant}
+
+\begin{EMexample}{مثال ۱}
+
+جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =u(\pi,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =k\sin2x,\qquad\EMbr  u_t(x,0)\EMbr =0}
+
+با توجه به اینکه سرعت اولیهٔ تار مرتعش صفر است، \EMim{g(x)=0\Rightarrow b_n=0}. بنابراین (\EMim{c=1}، \EMim{L=\pi}):
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{cn\pi}Lt\right)\sin\frac{n\pi}Lx\EMbr =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\EMdisp{a_n\EMbr =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx\EMbr =\frac2\pi\int_0^\pi k\sin2x\sin nx\,dx\EMbr =\begin{cases}0&n\neq2\\ k&n=2\end{cases}}
+\EMdisp{u(x,t)\EMbr =k\sin2x\cos2t}
+
+\end{EMexample}
+
+\EMfigure{m11-mode2}{مود دوم ارتعاش تار: \EMim{u(x,t)=k\sin2x\cos2t} در لحظه‌های مختلف}
+
+\begin{EMexample}{مثال ۲}
+
+جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =u(\pi,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =f(x),\qquad\EMbr  u_t(x,0)\EMbr =0}
+که در آن \EMim{f(x)} تابع مثلثی شکل زیر است: \EMim{f(x)=\dfrac kax} برای \EMim{0\le x\le a} و \EMim{f(x)=\dfrac k{a-\pi}(x-\pi)} برای \EMim{a\le x\le\pi}.
+
+\EMim{u_t(x,0)=g(x)=0\Rightarrow b_n=0} و
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\EMdisp{\begin{aligned}
+a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx+\frac2\pi\int_a^\pi\frac k{a-\pi}(x-\pi)\sin nx\,dx\\
+&=\frac{2k}{a\pi}\left[x\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_0^a+\frac{2k}{(a-\pi)\pi}\left[(x-\pi)\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_a^\pi\\
+&=\cdots=\frac{2k\sin na}{an^2(\pi-a)}
+\end{aligned}}
+\EMdisp{u(x,t)\EMbr =\frac{2k}{a(\pi-a)}\sum_{n=1}^{\infty}\frac{\sin na}{n^2}\cos nt\,\sin nx}
+
+\end{EMexample}
+
+\EMfigure{m11-triangle}{توزیع اولیهٔ مثلثی \EMim{f(x)} با قلهٔ \EMim{k} در \EMim{x=a}}
+
+\begin{EMexample}{مثال ۳}
+
+جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =u(\pi,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =kx(\pi-x),\qquad\EMbr  u_t(x,0)\EMbr =0}
+
+\EMim{g(x)=0\Rightarrow b_n=0} و
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\EMdisp{a_n\EMbr =\frac2\pi\int_0^\pi kx(\pi-x)\sin nx\,dx\EMbr =\frac{2k}\pi\Big[(-x^2+\pi x)\Big(\frac{-1}n\cos nx\Big)-(-2x+\pi)\Big(\frac{-1}{n^2}\sin nx\Big)+(-2)\Big(\frac1{n^3}\cos nx\Big)\Big]_0^\pi\EMbr =\cdots\EMbr =\frac{4k\big(1-(-1)^n\big)}{\pi n^3}}
+\EMdisp{u(x,t)\EMbr =\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx}
+
+\end{EMexample}
+
+\EMfigure{m11-parabola}{توزیع اولیهٔ سهمی‌شکل \EMim{f(x)=kx(\pi-x)}}
+
+\begin{EMexercise}{}
+
+(الف) مقدار نسبت \EMim{\dfrac{a_1^2}{a_1^2+a_2^2+\cdots}} را به دست آورید.
+
+(ب) نسبت \EMim{a_{2n-1}/a_{2n+1}} را بر حسب \EMim{n\in\mathbb{N}} رسم کنید.
+
+\end{EMexercise}
+
+\EMhold
+
+\EMsection{روش جداسازی متغیرها: مثال‌ها}{روش جداسازی متغیرها: مثال‌ها}
+
+\begin{EMexample}{مثال ۱}
+
+مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{xu_x=yu_y}.
+
+\EMdisp{x\frac{\partial u}{\partial x}\EMbr =y\frac{\partial u}{\partial y},\qquad\EMbr  u(x,y)\EMbr =X(x)\cdot Y(y)}
+\EMdisp{xX'Y\EMbr =yXY'\ \EMbr \Rightarrow\ \frac{xX'}X\EMbr =\frac{yY'}Y\EMbr =k}
+\EMdisp{\frac{X'}X\EMbr =\frac kx\ \EMbr \Rightarrow\ \ln X\EMbr =k\ln x+c_1\ \EMbr \Rightarrow\ X(x)\EMbr =C_1x^k,\qquad\EMbr  \frac{Y'}Y\EMbr =\frac ky\ \EMbr \Rightarrow\ \ln Y\EMbr =k\ln y+c_2\ \EMbr \Rightarrow\ Y(y)\EMbr =C_2y^k}
+\EMdisp{u(x,y)\EMbr =X(x)Y(y)\EMbr =C_1x^kC_2y^k\EMbr =C(xy)^k}
+
+\end{EMexample}
+
+\begin{EMexample}{مثال ۲}
+
+مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{u_{xx}+u_{yy}=0}.
+
+\EMdisp{u(x,y)\EMbr =X(x)\cdot Y(y)\ \EMbr \Rightarrow\ X''Y+XY''\EMbr =0\ \EMbr \Rightarrow\ \frac{X''}X\EMbr =-\frac{Y''}Y\EMbr =k}
+\EMdisp{\begin{cases}X''-kX=0\ \Rightarrow\ X(x)=Ae^{\sqrt kx}+Be^{-\sqrt kx}\\ Y''+kY=0\ \Rightarrow\ Y(y)=Ce^{\sqrt{-k}\,y}+De^{-\sqrt{-k}\,y}\end{cases}}
+\EMdisp{u(x,y)\EMbr =X(x)Y(y)\EMbr =\big(Ae^{\sqrt kx}+Be^{-\sqrt kx}\big)\big(Ce^{\sqrt{-k}\,y}+De^{-\sqrt{-k}\,y}\big)}
+
+\end{EMexample}
+
+\begin{EMexample}{مثال ۳}
+
+مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{x^2u_{xy}=-3y^2u}.
+
+\EMdisp{x^2\frac{\partial^2u}{\partial x\partial y}+3y^2u\EMbr =0,\qquad\EMbr  u(x,y)\EMbr =X(x)\cdot Y(y)\ \EMbr \Rightarrow\ x^2X'Y'+3y^2XY\EMbr =0\ \EMbr \Rightarrow\ \frac{x^2X'}X\EMbr =\frac{-3y^2Y}{Y'}\EMbr =k}
+\EMdisp{\frac{X'}X\EMbr =\frac k{x^2}\ \EMbr \Rightarrow\ \ln X\EMbr =\frac{-k}x+c_1\ \EMbr \Rightarrow\ X(x)\EMbr =C_1e^{-k/x}}
+\EMdisp{\frac{Y'}Y\EMbr =\frac{-3y^2}k\ \EMbr \Rightarrow\ \ln Y\EMbr =-\frac{y^3}k+c_2\ \EMbr \Rightarrow\ Y(y)\EMbr =C_2e^{-y^3/k}}
+\EMdisp{u(x,y)\EMbr =X(x)Y(y)\EMbr =C_1e^{-k/x}\times C_2e^{-y^3/k}\EMbr =Ce^{-(k/x+y^3/k)}}
+
+\end{EMexample}
+
+\EMhold
+
+\EMsection{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر}{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر}
+
+\begin{EMexample}{مسئله}
+
+جواب معادلهٔ دیفرانسیل موجی یک‌بعدی زیر را به‌دست آورید.
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =P_0,\quad\EMbr  u(L,t)\EMbr =P_1,\quad\EMbr  u(x,0)\EMbr =f(x),\quad\EMbr  u_t(x,0)\EMbr =g(x)}
+
+\EMdisp{u(x,t)\EMbr =w(x,t)+v(x)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}w(0,t)+v(0)=P_0\\ w(L,t)+v(L)=P_1\end{cases}}
+\EMdisp{\frac{\partial^2w}{\partial t^2}\EMbr =c^2\left(\frac{\partial^2w}{\partial x^2}+\frac{\partial^2v}{\partial x^2}\right)}
+تابع \EMim{v(x)} را چنان انتخاب می‌کنیم که مسئلهٔ \EMim{w} شرایط مرزی همگن داشته باشد:
+\EMdisp{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=P_0\\ v(L)=P_1\end{cases}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  v(x)\EMbr =\left(\frac{P_1-P_0}L\right)x+P_0}
+\EMdisp{\begin{cases}\dfrac{\partial^2w}{\partial t^2}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  w(x,t)\EMbr =\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\EMdisp{u(x,t)\EMbr =\underbrace{\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}_{w(x,t)}+\underbrace{\left(\frac{P_1-P_0}L\right)x+P_0}_{v(x)}}
+شرط اولیهٔ \EMim{u(x,0)=f(x)}:
+\EMdisp{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx\EMbr =f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\triangleq f_1(x)}
+\EMdisp{A_n\EMbr =\frac2L\int_0^Lf_1(x)\sin\frac{n\pi}Lx\,dx\EMbr =\frac2L\int_0^L\left[f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\right]\sin\frac{n\pi}Lx\,dx}
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+\EMim{B_n} را برای حالت (الف) \EMim{g(x)=0} و (ب) \EMim{g(x)} دلخواه به دست آورید.
+
+\end{EMexercise}
+
+\EMsection{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک)}{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک)}
+
+اگر سرعت اولیه صفر باشد (\EMim{g(x)=0}) آنگاه خواهیم داشت:
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{cn\pi}Lt\right)\sin\frac{n\pi}Lx,\qquad\EMbr  u(x,0)\EMbr =\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}Lx\EMbr =f(x)\equiv\tilde f(x)}
+با استفاده از \EMim{\sin\alpha\cos\beta=\frac12\big(\sin(\alpha+\beta)+\sin(\alpha-\beta)\big)}:
+\EMdisp{\begin{aligned}
+u(x,t)&=\sum_{n=1}^{\infty}a_n\frac12\left[\sin\!\left(\frac{n\pi}Lx+\frac{cn\pi}Lt\right)+\sin\!\left(\frac{n\pi}Lx-\frac{cn\pi}Lt\right)\right]\\
+&=\frac12\sum_{n=1}^{\infty}a_n\left[\sin\frac{n\pi}L(x+ct)+\sin\frac{n\pi}L(x-ct)\right]\\
+&=\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x+ct)+\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x-ct)=\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]
+\end{aligned}}
+
+\begin{EMimportant}{امواج متحرک}
+
+\EMdisp{u(x,t)\EMbr =\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]}
+\EMim{\tilde f} ادامهٔ فرد و متناوب (با دورهٔ \EMim{2L}) تابع اولیهٔ \EMim{f} است؛ جواب برهم‌نهی دو موج با نیمی از دامنهٔ اولیه است که با سرعت \EMim{c} در دو جهت مخالف حرکت می‌کنند.
+
+\end{EMimportant}
+
+\EMfigure{m11-traveling}{ادامهٔ فرد و متناوب \EMim{\tilde f(x)} و دو موج
+\EMim{\frac12\tilde f(x+ct)} و \EMim{\frac12\tilde f(x-ct)} که در دو جهت
+مخالف حرکت می‌کنند}
+
+\begin{EMexample}{}
+
+جواب معادلهٔ موجی یک‌بعدی زیر را با فرض سرعت اولیهٔ صفر در زمان‌های مختلف رسم کنید.
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =u(L,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =f(x),\qquad\EMbr  u_t(x,0)\EMbr =0}
+\EMdisp{f(x)\EMbr =\begin{cases}\dfrac{2k}Lx&0<x<\dfrac L2\\\noalign{\vskip 7mm} \dfrac{2k}L(L-x)&\dfrac L2<x<L\end{cases}}
+
+با رسم \EMim{\frac12\tilde f(x+ct)} و \EMim{\frac12\tilde f(x-ct)} و جمع آنها در زمان‌های \EMim{t=0}، \EMim{t=L/5c}، \EMim{t=2L/5c}، \EMim{t=L/2c} و \EMim{t=3L/5c} شکل جواب به دست می‌آید.
+
+\end{EMexample}
+
+\EMfigure{m11-triangle-time}{جواب مثال برای \EMim{t=0}، \EMim{L/5c}، \EMim{2L/5c}، \EMim{L/2c} و
+\EMim{3L/5c}؛ در \EMim{t=L/2c} شکل تار صاف است}

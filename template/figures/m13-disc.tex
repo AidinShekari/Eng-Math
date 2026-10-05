@@ -1,0 +1,6 @@
+% A circular membrane of radius R
+\begin{tikzpicture}[scale=1.15]
+  \filldraw[EMfill,draw=EMindigo,line width=0.9pt] (0,0) circle (1.6);
+  \draw[EMax] (-2.4,0)--(2.6,0) node[EMlab,right]{$x$};\draw[EMax] (0,-2.1)--(0,2.2) node[EMlab,above]{$y$};
+  \draw[EMvec] (0,0)--(-35:1.6) node[EMlabs,midway,above right]{$R$};
+\end{tikzpicture}

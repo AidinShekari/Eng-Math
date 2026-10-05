@@ -1,0 +1,8 @@
+% About z0 = 1 the series of 1/z^4 converges in the disc |z-1| < 1, up to the pole z = 0
+\begin{tikzpicture}[scale=1.7]
+  \EMaxes{-0.7}{2.9}{-1.4}{1.5}{$\operatorname{Re}$}{$\operatorname{Im}$}
+  \filldraw[EMfill,dashed,draw=EMindigo,line width=0.9pt] (1,0) circle (1);
+  \EMcross{(0,0)}\node[EMlabs,below left] at (0,0){$0$};
+  \node[EMptI] at (1,0){};\node[EMlabs,below] at (1,-0.08){$z_0=1$};
+  \draw[EMvec] (1,0)--(1,0)++(55:1) node[EMlabs,midway,above left]{$1$};
+\end{tikzpicture}

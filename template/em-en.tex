@@ -1,0 +1,78 @@
+% ============================================================
+%  EngineeringMath — English (LTR) preamble
+%  Compile with XeLaTeX (or tectonic).  \EMroot must point to template/
+% ============================================================
+\input{\EMroot/em-packages}
+\usepackage{fontspec}
+\setmainfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold,
+  ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]
+\setsansfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Semibold, BoldFont=*-Bold,
+  ItalicFont=*-Italic]
+\setmonofont{lmmono10-regular}[Extension=.otf, Scale=0.9]
+\newfontfamily\EMfarsi[Path=\EMroot/fonts/, Extension=.ttf, Script=Arabic, AutoFakeBold=1.3]{Vazirmatn-Regular}
+\newfontfamily\EMfaDisplay[Path=\EMroot/fonts/, Extension=.ttf, Script=Arabic]{Vazirmatn-Black}
+\usepackage{bidi}
+\setmathfont{LibertinusMath-Regular.otf}
+
+\linespread{1.08}
+\newif\ifEMrtl \EMrtlfalse
+% \rl{} for Persian snippets (Persian font + RTL)
+\newcommand{\rl}[1]{\RL{\EMfarsi #1}}
+
+% language strings
+\def\EMlangCourse{Engineering Mathematics}
+\def\EMlangCourseOther{\rl{ریاضی مهندسی}}
+\def\EMlangUni{Ferdowsi University of Mashhad}
+\def\EMlangUniOther{\rl{دانشگاه فردوسی مشهد}}
+\def\EMlangChapter{Chapter}
+\def\EMlangPart{Part}
+\def\EMlangPage{Page}
+\def\EMlangContents{Contents}
+\def\EMlangChapterContents{In this chapter}
+\def\EMlangFigure{Figure}
+\def\EMlangDefinition{Definition}
+\def\EMlangTheorem{Theorem}
+\def\EMlangImportant{Key result}
+\def\EMlangExample{Example}
+\def\EMlangExercise{Exercise}
+\def\EMlangRemark{Remark}
+\def\EMlangProof{Proof}
+\def\EMlangSolution{Solution}
+\def\EMlangInstructorLabel{Instructor}
+\def\EMlangInstructor{Abbas Ebrahimi Moghadam}
+\def\EMlangCompilerLabel{Compiled and edited by}
+\def\EMlangCompiler{Aidin Shekari}
+\def\EMlangNotes{Lecture Notes}
+\def\EMcompilerURL{https://shekari.me}
+\def\EMlangColophonTitle{About these notes}
+
+
+\def\EMlegendDefinition{A concept being defined}
+\def\EMlegendDefinitionText{Definitions are set in indigo boxes and are numbered within the chapter.}
+\def\EMlegendTheorem{A theorem or a formula to know}
+\def\EMlegendTheoremText{Theorems and lemmas are set in rose boxes.}
+\def\EMlegendImportant{A key result}
+\def\EMlegendImportantText{The results worth finding again quickly are framed.}
+\def\EMlegendExample{A worked example}
+\def\EMlegendExampleText{Examples are green; the statement comes first.}
+\def\EMlegendSolutionText{The solution follows inside the same box.}
+\def\EMlegendExercise{An exercise}
+\def\EMlegendExerciseText{Exercises are amber and are left to the reader.}
+\def\EMlegendRemark{A remark}
+\def\EMlegendRemarkText{Remarks and consequences have a thin grey rule and no number.}
+\newcommand{\EMcolophontext}{%
+  These are the typeset lecture notes of the course \emph{Engineering Mathematics},
+  taught by \EMlangInstructor. They follow the instructor's slides and keep their order, notation
+  and examples, in three parts: \textbf{complex analysis} (chapters 1--7), \textbf{Fourier
+  analysis} (chapters 8--10), and \textbf{partial differential equations and the Laplace
+  transform} (chapters 11--14).
+
+  The notes were compiled and typeset by \EMlangCompiler. Every figure is drawn in TikZ or
+  PGFPlots from the underlying mathematical object. Slips in the slides that were corrected
+  while typesetting are listed in the file \texttt{REVIEW.md} of the repository.
+
+  \medskip\noindent\textbf{How to read the notes.} Numbered boxes share one counter within each
+  chapter, so "Example 5.12" is easy to find:}
+
+\newcommand{\EMother}[1]{\rl{#1}}
+\input{\EMroot/em-style}

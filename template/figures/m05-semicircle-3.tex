@@ -1,0 +1,12 @@
+% The semicircle with the circles C1 and C2; the four poles z^4 = -1
+\begin{tikzpicture}[scale=1.05]
+  \EMaxes{-3.3}{3.5}{-2.2}{3.5}{$x$}{$y$}
+  \draw[EMcurve,EMmid3] (-2.8,0)--(2.8,0);
+  \draw[EMcurve,EMmid3] (2.8,0) arc (0:180:2.8);
+  \node[EMlabs,below] at (-2.8,0){$-R$};\node[EMlabs,below] at (2.8,0){$R$};
+  \node[EMlab,text=EMindigo] at (2.25,2.3){$C$};
+  \foreach \n/\a in {1/45,2/135,3/225,4/315}{\EMcross{(\a:1.4)}\node[EMlabs,anchor=north,inner sep=1pt] at ($(\a:1.4)+(0,-0.1)$){$z_{\n}$};}
+  \draw[EMcurve2,EMmid] (45:1.4) circle (0.62);\draw[EMcurve2,EMmid] (135:1.4) circle (0.62);
+  \node[EMlabs,text=EMrose] at (1.0,2.35){$C_1$};\node[EMlabs,text=EMrose] at (-1.0,2.35){$C_2$};
+  \draw[EMdash] (0,0) circle (1.4);
+\end{tikzpicture}

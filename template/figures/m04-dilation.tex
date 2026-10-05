@@ -1,0 +1,17 @@
+% Contraction w = a z with 0 < a < 1 (for a > 1 it is a dilation)
+\begin{tikzpicture}[scale=1.0]
+  \begin{scope}
+    \draw[EMax] (-0.9,0)--(3.9,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \fill[EMfill,draw=EMindigo,line width=0.9pt] (0,0)--(15:3.2)--(40:3.2)--cycle;
+    \node[EMlab] at (1.2,-1.5){\EML{$z$-plane}{صفحهٔ $z$}};
+  \end{scope}
+  \begin{scope}[xshift=7.4cm]
+    \draw[EMax] (-0.9,0)--(3.9,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \fill[EMfill2,draw=EMrose,line width=0.9pt] (0,0)--(15:1.6)--(40:1.6)--cycle;
+    \draw[EMdash] (15:1.6)--(15:3.2);\draw[EMdash] (40:1.6)--(40:3.2);
+    \node[EMlab] at (1.2,-1.5){\EML{$w$-plane}{صفحهٔ $w$}};
+  \end{scope}
+  \draw[EMvec2,line width=1.6pt] (2.6,2.6) to[bend left=35] node[EMlab,above,pos=0.5]{$w=az$} (5.2,2.6);
+\end{tikzpicture}

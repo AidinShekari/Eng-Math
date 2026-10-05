@@ -1,0 +1,9 @@
+% The semicircle; poles at z = +-i and +-2i
+\begin{tikzpicture}[scale=1.0]
+  \EMaxes{-3.2}{3.4}{-2.6}{3.4}{$x$}{$y$}
+  \draw[EMcurve,EMmid3] (-2.7,0)--(2.7,0);
+  \draw[EMcurve,EMmid3] (2.7,0) arc (0:180:2.7);
+  \node[EMlabs,below] at (-2.7,0){$-R$};\node[EMlabs,below] at (2.7,0){$R$};
+  \node[EMlab,text=EMindigo] at (2.15,2.2){$C$};
+  \foreach \y/\l in {1/i,2/2i,-1/-i,-2/-2i}{\EMcross{(0,\y)}\node[EMlabs,right,xshift=3pt] at (0,\y){$\l$};}
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Complex functions: the grid of a quarter plane and its image under w = z^2
+\begin{scope}[shift={(0.6,4.5)}]
+  \draw[max] (-0.5,0)--(5.3,0) node[right,font=\small]{$x$};\draw[max] (0,-3.4)--(0,3.5) node[above,font=\small]{$y$};
+  \foreach \c in {0.5,1.0,...,4.5}{\draw[mfaint] (\c,-3.0)--(\c,3.0);}
+  \foreach \c in {-3,-2.5,...,3}{\draw[mfaint] (0,\c)--(4.8,\c);}
+  \foreach \c in {1.0,2.0,3.0,4.0}{\draw[mline] (\c,-3.0)--(\c,3.0);}
+  \foreach \c in {-2,-1,0,1,2}{\draw[mrose] (0,\c)--(4.8,\c);}
+  \node[font=\small] at (2.4,-3.9){$z$};
+\end{scope}
+\draw[mvec,line width=1.5pt] (6.6,4.5) to[bend left=18] node[above,font=\large]{$w=z^2$} (8.4,4.5);
+\begin{scope}[shift={(9.2,4.5)}]
+  \draw[max] (-3.0,0)--(5.4,0) node[right,font=\small]{$u$};\draw[max] (0,-4.2)--(0,4.3) node[above,font=\small]{$v$};
+  \foreach \c in {0.25,0.5,...,1.75}{\draw[mfaint,domain=-1.6:1.6,samples=40] plot ({0.85*(\c*\c-\x*\x)},{0.85*2*\c*\x});}
+  \foreach \c in {0.5,1.0,1.5,2.0}{\draw[mline,domain=-1.5:1.5,samples=40] plot ({0.85*(\c*\c-\x*\x)},{0.85*2*\c*\x});}
+  \foreach \c in {-1,-0.5,0,0.5,1}{\draw[mrose,domain=0:2.1,samples=40] plot ({0.85*(\x*\x-\c*\c)},{0.85*2*\x*\c});}
+  \node[font=\small] at (1.2,-4.8){$w$};
+\end{scope}

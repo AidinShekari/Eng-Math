@@ -1,0 +1,19 @@
+% Rotation w = a z with |a| = 1: a wedge turns by phi = arg a
+\begin{tikzpicture}[scale=1.0]
+  \begin{scope}
+    \draw[EMax] (-0.9,0)--(3.9,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \fill[EMfill3,draw=EMjade,line width=0.9pt] (0,0)--(10:3.1)--(32:3.1)--cycle;
+    \node[EMlab] at (1.2,-1.5){\EML{$z$-plane}{صفحهٔ $z$}};
+  \end{scope}
+  \begin{scope}[xshift=7.4cm]
+    \draw[EMax] (-0.9,0)--(3.9,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.9)--(0,3.3) node[EMlab,above]{$\operatorname{Im}$};
+    \fill[EMfill3,draw=EMjade,line width=0.9pt] (0,0)--(40:3.1)--(62:3.1)--cycle;
+    \draw[EMdash] (0,0)--(10:3.1);
+    \draw[EMcurve2] (1.7,0.30) arc (10:40:1.7);
+    \node[EMlab] at (2.05,0.8){$\varphi$};
+    \node[EMlab] at (1.2,-1.5){\EML{$w$-plane}{صفحهٔ $w$}};
+  \end{scope}
+  \draw[EMvec2,line width=1.6pt] (2.6,2.6) to[bend left=35] node[EMlab,above,pos=0.5]{$w=az$} (5.2,2.6);
+\end{tikzpicture}

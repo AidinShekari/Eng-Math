@@ -1,0 +1,16 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Fourier integral: a pulse in time and its spectrum
+\begin{scope}[shift={(0.5,4.5)}]
+  \draw[max] (-0.2,0)--(6.0,0) node[right,font=\small]{$x$};\draw[max] (0,-2.4)--(0,3.8);
+  \draw[mline,line width=1.6pt] (0.4,0)--(1.6,0)--(1.6,3.0)--(4.4,3.0)--(4.4,0)--(5.6,0);
+  \fill[EMindigo!12] (1.6,0) rectangle (4.4,3.0);
+  \node[font=\small,below] at (1.6,0){$-1$};\node[font=\small,below] at (4.4,0){$1$};
+  \node[font=\small] at (3.0,-2.2){$f(x)$};
+\end{scope}
+\draw[mvec,line width=1.4pt] (6.7,4.9) to[bend left=16] node[above,font=\large]{$\mathcal F$} (8.3,4.9);
+\draw[mvecl,line width=1.4pt] (8.3,4.1) to[bend left=16] node[below,font=\large]{$\mathcal F^{-1}$} (6.7,4.1);
+\begin{scope}[shift={(9.0,4.5)}]
+  \draw[max] (-0.2,0)--(6.0,0) node[right,font=\small]{$\omega$};\draw[max] (0,-2.4)--(0,3.8);
+  \draw[mrose,line width=1.6pt,domain=0.02:5.6,samples=200] plot (\x,{3.0*sin(2.3*\x r)/(2.3*\x)});
+  \node[font=\small] at (3.0,-2.2){$F(\omega)$};
+\end{scope}

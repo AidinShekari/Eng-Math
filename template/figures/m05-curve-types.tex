@@ -1,0 +1,19 @@
+% Simple closed curves and closed curves that are not simple
+\begin{tikzpicture}[scale=0.82]
+  \begin{scope}% kidney: simple
+    \draw[EMcurve,smooth cycle,tension=0.9] plot coordinates{(0,0)(1.4,-0.2)(2.2,0.8)(1.4,0.9)(1.0,1.7)(1.8,2.3)(0.6,2.8)(-0.8,2.0)(-0.9,0.7)};
+    \node[EMlabs] at (0.6,-1.0){\EML{simple closed}{ساده بسته}};
+  \end{scope}
+  \begin{scope}[xshift=4.2cm]% snake: simple
+    \draw[EMcurve,smooth cycle,tension=0.9] plot coordinates{(0,0)(1.6,0.3)(2.3,1.2)(1.0,1.5)(2.4,2.1)(1.2,2.8)(0.2,2.2)(-0.4,1.3)(0.9,1.0)(-0.6,0.5)};
+    \node[EMlabs] at (1.0,-1.0){\EML{simple closed}{ساده بسته}};
+  \end{scope}
+  \begin{scope}[xshift=8.6cm]% figure eight: not simple
+    \draw[EMcurve] plot[domain=0:360,samples=80,smooth,variable=\t] ({1.25*sin(\t)},{1.6*sin(\t)*cos(\t)+1.4});
+    \node[EMlabs] at (0,-1.0){\EML{not simple}{غیر ساده}};
+  \end{scope}
+  \begin{scope}[xshift=12.2cm]% trefoil-like: not simple
+    \draw[EMcurve] plot[domain=0:360,samples=120,smooth,variable=\t] ({1.1*sin(\t)+0.7*sin(2*\t)},{1.1*cos(\t)+0.7*cos(2*\t)+1.3});
+    \node[EMlabs] at (0,-1.0){\EML{not simple}{غیر ساده}};
+  \end{scope}
+\end{tikzpicture}

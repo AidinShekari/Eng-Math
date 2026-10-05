@@ -1,0 +1,14 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Linear mappings: translation, rotation, dilation of a square
+\def\sq{\draw[line width=1pt] (0,0) rectangle (1,1);}
+\begin{scope}[shift={(0.5,1.8)}]
+  \draw[max] (-0.2,0)--(14.2,0);
+  \begin{scope}[shift={(0.3,0.3)},scale=1.7]\filldraw[mline,fill=EMindigo!14,line width=1.1pt] (0,0) rectangle (1,1);\node[font=\small] at (0.5,0.5){$z$};\end{scope}
+  \draw[mvecl] (2.3,1.2) to[bend left=18] node[above,font=\small]{$+b$} (4.2,1.2);
+  \begin{scope}[shift={(4.4,2.4)},scale=1.7]\filldraw[mrose,fill=EMrose!10,line width=1.1pt] (0,0) rectangle (1,1);\end{scope}
+  \draw[mvecl] (6.4,3.4) to[bend left=18] node[above,font=\small]{$e^{i\varphi}$} (8.3,3.4);
+  \begin{scope}[shift={(9.2,2.0)},rotate=45,scale=1.7]\filldraw[mjade,fill=EMjade!10,line width=1.1pt] (0,0) rectangle (1,1);\end{scope}
+  \draw[mvecl] (10.9,4.3) to[bend left=18] node[above,font=\small]{$a>1$} (12.0,4.3);
+  \begin{scope}[shift={(11.9,2.3)},rotate=45,scale=2.5]\filldraw[mline,fill=EMindigo!14,line width=1.1pt] (0,0) rectangle (1,1);\end{scope}
+  \node[font=\fontsize{30}{32}\selectfont,text=EMindigo!14,anchor=west] at (0.2,6.0){$w=az+b$};
+\end{scope}

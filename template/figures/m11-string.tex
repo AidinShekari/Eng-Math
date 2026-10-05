@@ -1,0 +1,20 @@
+% A segment PQ of the vibrating string and the tensions T1, T2 at its ends
+\begin{tikzpicture}[scale=1.2]
+  \draw[EMax] (-0.5,0)--(6.6,0) node[EMlab,right]{$x$};\draw[EMax] (0,-0.3)--(0,3.5) node[EMlab,above]{$u$};
+  \draw[EMcurve,domain=0:6,samples=60,smooth] plot ({\x},{3.1*sin(pi*\x/6 r)});
+  \def\xp{1.25}\def\xq{2.35}
+  \pgfmathsetmacro{\yp}{3.1*sin(pi*\xp/6 r)}\pgfmathsetmacro{\yq}{3.1*sin(pi*\xq/6 r)}
+  \pgfmathsetmacro{\sp}{3.1*pi/6*cos(pi*\xp/6 r)}\pgfmathsetmacro{\sq}{3.1*pi/6*cos(pi*\xq/6 r)}
+  \pgfmathsetmacro{\aa}{atan(\sp)}\pgfmathsetmacro{\bb}{atan(\sq)}
+  \draw[EMdash] (\xp,0)--(\xp,\yp) (\xq,0)--(\xq,\yq);
+  \node[EMlabs,below] at (\xp,0){$x$};\node[EMlabs,below] at (\xq,0){$x+\Delta x$};\node[EMlabs,below] at (6,0){$L$};\node[EMlabs,below left] at (0,0){$0$};
+  \node[EMpt] (P) at (\xp,\yp){};\node[EMpt] (Q) at (\xq,\yq){};
+  \node[EMlab,above left] at (P){$P$};\node[EMlab,above] at ($(Q)+(0,0.05)$){$Q$};
+  \draw[EMdash] (P)--++(-1.15,0);\draw[EMdash] (Q)--++(1.15,0);
+  \draw[EMvec2] (P)--++({180+\aa}:1.15) node[EMlabs,left,pos=0.75]{$T_1$};
+  \draw[EMvec2] (Q)--++({\bb}:1.15) node[EMlabs,above right]{$T_2$};
+  \draw[EMcurve3] ($(P)+(180:0.6)$) arc (180:{180+\aa}:0.6);
+  \node[EMlabs,text=EMjade] at ($(P)+({180+0.5*\aa}:0.9)$){$\alpha$};
+  \draw[EMcurve3] ($(Q)+(0:0.6)$) arc (0:{\bb}:0.6);
+  \node[EMlabs,text=EMjade] at ($(Q)+({0.5*\bb}:0.92)$){$\beta$};
+\end{tikzpicture}

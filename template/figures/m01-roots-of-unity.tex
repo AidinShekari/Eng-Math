@@ -1,0 +1,16 @@
+% The n-th roots of unity for n = 3, 4, 5
+\begin{tikzpicture}[scale=1.3]
+  \foreach \n/\xo/\lab in {3/0/{z=\sqrt[3]{1}},4/3.7/{z=\sqrt[4]{1}},5/7.4/{z=\sqrt[5]{1}}}{
+    \begin{scope}[shift={(\xo,0)}]
+      \draw[EMax] (-1.4,0)--(1.55,0) node[EMlabs,right]{$x$};
+      \draw[EMax] (0,-1.4)--(0,1.5) node[EMlabs,above]{$y$};
+      \draw[EMdash] (0,0) circle (1);
+      \draw[EMcurve,fill=EMindigo!8] (0:1) \foreach \k in {1,...,\n}{ -- (360*\k/\n:1) } -- cycle;
+      \foreach \k in {0,...,\numexpr\n-1\relax}{
+        \node[EMhole] at (360*\k/\n:1){};
+        \ifnum\k=0 \node[EMlabs,above right] at (1,0){$1$};
+        \else\ifnum\k=1 \node[EMlabs] at (360*\k/\n:1.28){$\omega$};
+        \else\node[EMlabs] at (360*\k/\n:1.3){$\omega^{\k}$};\fi\fi}
+      \node[EMlab] at (0,-1.85){$\lab$};
+    \end{scope}}
+\end{tikzpicture}

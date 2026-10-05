@@ -1,0 +1,9 @@
+% The poles of 1/(z^2+4z+1): z1 = -2+sqrt(3) inside the unit circle, z2 = -2-sqrt(3) outside
+\begin{tikzpicture}[scale=0.95]
+  \EMaxes{-4.6}{1.9}{-1.8}{1.9}{$x$}{$y$}
+  \draw[EMcurve,EMmid] (0,0) circle (1);
+  \EMcross{(-0.268,0)}\EMcross{(-3.732,0)}
+  \node[EMlabs,above,xshift=2pt] at (-0.268,0.1){$z_1\approx-0.27$};
+  \node[EMlabs,above] at (-3.732,0.1){$z_2\approx-3.73$};
+  \node[EMlab,text=EMrose] at (0.85,0.95){$C$};
+\end{tikzpicture}

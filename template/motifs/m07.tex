@@ -1,0 +1,11 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Residue integrals: the semicircle in the upper half-plane and the poles it encloses
+\begin{scope}[shift={(7.5,1.3)}]
+  \draw[max] (-7.0,0)--(7.2,0) node[right,font=\small]{$x$};\draw[max] (0,-0.8)--(0,7.4) node[above,font=\small]{$y$};
+  \draw[mrose,line width=1.6pt,mmid] (-5.8,0)--(5.8,0);
+  \draw[mline,line width=1.6pt,mmid] (5.8,0) arc (0:180:5.8);
+  \foreach \p in {{(-1.9,2.1)},{(1.6,3.3)},{(3.7,1.4)}}{\EMcrossm{\p}\draw[mdash] \p circle (0.6);}
+  \foreach \p in {{(-2.2,-1.5)},{(2.3,-2.0)}}{\EMcrossm{\p}}
+  \node[font=\small,below] at (-5.8,0){$-R$};\node[font=\small,below] at (5.8,0){$R$};
+  \node[font=\fontsize{28}{30}\selectfont,text=EMindigo!15] at (0,5.0){$2\pi i\sum\operatorname{Res}$};
+\end{scope}

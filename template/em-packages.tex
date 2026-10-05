@@ -1,0 +1,23 @@
+% ============================================================
+%  EngineeringMath — shared packages (loaded before xepersian/bidi)
+% ============================================================
+\usepackage[a4paper,top=2.5cm,bottom=2.4cm,left=2.4cm,right=2.4cm,headheight=15pt,headsep=0.9cm,footskip=1.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{unicode-math}% before bidi/xepersian: loaded after them it breaks \\[len] in amsmath environments
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage[table]{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage{environ}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,decorations.markings,decorations.pathreplacing,patterns,positioning,intersections,through,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween,groupplots}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}

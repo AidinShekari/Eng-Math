@@ -1,0 +1,12 @@
+% f(x) = x on [-pi, pi], extended periodically
+\begin{tikzpicture}
+  \begin{axis}[EMplot,width=12cm,height=5cm,xmin=-7.2,xmax=7.4,ymin=-4.2,ymax=4.2,
+      xtick={-6.2832,-3.1416,3.1416,6.2832},xticklabels={$-2\pi$,$-\pi$,$\pi$,$2\pi$},ytick={-3.1416,3.1416},yticklabels={$-\pi$,$\pi$},xlabel={$x$},clip=false]
+    \addplot[EMcurve,domain=-9.4248:-3.1416]{x-(-6.2832)};
+    \addplot[EMcurve,domain=-3.1416:3.1416]{x-(0.0000)};
+    \addplot[EMcurve,domain=3.1416:9.4248]{x-(6.2832)};
+    \draw[EMdash] (axis cs:-3.1416,-3.1416)--(axis cs:-3.1416,3.1416) (axis cs:3.1416,-3.1416)--(axis cs:3.1416,3.1416);
+    \node[EMhole] at (axis cs:-3.1416,-3.1416){};\node[EMhole] at (axis cs:-3.1416,3.1416){};
+    \node[EMhole] at (axis cs:3.1416,-3.1416){};\node[EMhole] at (axis cs:3.1416,3.1416){};
+  \end{axis}
+\end{tikzpicture}

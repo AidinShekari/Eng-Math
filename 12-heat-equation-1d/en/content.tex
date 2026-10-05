@@ -1,0 +1,246 @@
+\EMsection{d'Alembert's Method for the One-Dimensional Wave Equation}{d’Alembert’s Method for the One-Dimensional Wave Equation}
+
+\EMdisp{\begin{cases}\dfrac{\partial^2u}{\partial t^2}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}}
+We rewrite and solve the equation using the following change of variables.
+\EMdisp{u(x,t)\EMbr \Rightarrow u(\varphi,\psi),\qquad\EMbr \begin{cases}\varphi=x+ct\\ \psi=x-ct\end{cases}}
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial u}{\partial\varphi}\frac{\partial\varphi}{\partial x}+\frac{\partial u}{\partial\psi}\frac{\partial\psi}{\partial x}\EMbr =\frac{\partial u}{\partial\varphi}+\frac{\partial u}{\partial\psi}}
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =\frac{\partial u}{\partial\varphi}\frac{\partial\varphi}{\partial t}+\frac{\partial u}{\partial\psi}\frac{\partial\psi}{\partial t}\EMbr =c\frac{\partial u}{\partial\varphi}-c\frac{\partial u}{\partial\psi}}
+\EMdisp{\frac{\partial^2u}{\partial x^2}\EMbr =\frac\partial{\partial x}\left(\frac{\partial u}{\partial\varphi}+\frac{\partial u}{\partial\psi}\right)\EMbr =\left(\frac{\partial^2u}{\partial\varphi^2}+\frac{\partial^2u}{\partial\varphi\partial\psi}\right)\cdot1+\left(\frac{\partial^2u}{\partial\psi\partial\varphi}+\frac{\partial^2u}{\partial\psi^2}\right)\cdot1\EMbr =\frac{\partial^2u}{\partial\varphi^2}+2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}}
+(using \EMim{\dfrac{\partial^2u}{\partial\varphi\partial\psi}=\dfrac{\partial^2u}{\partial\psi\partial\varphi}}.)
+
+\begin{EMexercise}{}
+
+In the same way, prove the identity
+\EMdisp{\frac{\partial^2u}{\partial t^2}\EMbr =c^2\left(\frac{\partial^2u}{\partial\varphi^2}-2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right)}
+
+\end{EMexercise}
+
+Substituting the two relations above into the one-dimensional wave equation:
+\EMdisp{c^2\left(\frac{\partial^2u}{\partial\varphi^2}-2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right)\EMbr =c^2\left(\frac{\partial^2u}{\partial\varphi^2}+2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac{\partial^2u}{\partial\varphi\partial\psi}\EMbr =0}
+
+\textbf{The general solution:}
+\EMdisp{\frac{\partial u}{\partial\varphi}\EMbr =\phi_1(\varphi)\ \EMbr \Rightarrow\ u(\varphi,\psi)\EMbr =\int\phi_1(\varphi)\,d\varphi+\Psi(\psi)\EMbr =\Phi(\varphi)+\Psi(\psi)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  u(x,t)\EMbr =\Phi(x+ct)+\Psi(x-ct)}
+
+\textbf{Applying the initial conditions:}
+\EMdisp{u(x,0)\EMbr =\Phi(x)+\Psi(x)\EMbr =f(x)}
+\EMdisp{u_t(x,t)\EMbr =\frac{\partial\Phi}{\partial\varphi}\frac{\partial\varphi}{\partial t}+\frac{\partial\Psi}{\partial\psi}\frac{\partial\psi}{\partial t}\EMbr =c\Phi'(\varphi)-c\Psi'(\psi)\EMbr =c\Phi'(x+ct)-c\Psi'(x-ct)}
+\EMdisp{u_t(x,0)\EMbr =c\Phi'(x)-c\Psi'(x)\EMbr =c\big[\Phi'(x)-\Psi'(x)\big]\EMbr =g(x)}
+\EMdisp{\begin{cases}\Phi(x)+\Psi(x)=f(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases}\EMbr \Rightarrow\begin{cases}\Phi'(x)+\Psi'(x)=f'(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases}\EMbr \Rightarrow\begin{cases}\Phi'(x)=\dfrac12f'(x)+\dfrac1{2c}g(x)\\\noalign{\vskip 2mm} \Psi'(x)=\dfrac12f'(x)-\dfrac1{2c}g(x)\end{cases}}
+\EMdisp{\begin{cases}\Phi(x)=\dfrac12f(x)+\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_1\\\noalign{\vskip 2mm} \Psi(x)=\dfrac12f(x)-\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_2\end{cases}}
+\EMdisp{u(x,t)\EMbr =\frac12\left(f(x+ct)+\frac1c\int_0^{x+ct}g(s)\,ds\right)+\frac12\left(f(x-ct)-\frac1c\int_0^{x-ct}g(s)\,ds\right)+k_1+k_2}
+
+\begin{EMimportant}{d'Alembert's formula}
+
+\EMdisp{u(x,t)\EMbr =\frac12\Big[f(x+ct)+f(x-ct)\Big]+\frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds+K,\qquad\EMbr  u(0,0)\EMbr =0\ \EMbr \Rightarrow\ K\EMbr =0}
+\EMdisp{u(x,t)\EMbr =\frac12\Big[f(x+ct)+f(x-ct)\Big]+\frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds}
+
+\end{EMimportant}
+
+\begin{EMexercise}{}
+
+Prove that if the boundary conditions are to hold, the functions \EMim{f(x)} and \EMim{g(x)} in the formula above must both be periodic with period \EMim{2L} and odd.
+
+\end{EMexercise}
+
+\EMsection{The Heat Equation}{The Heat Equation}
+
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
+
+\EMkeepfig{m12-rod}{3}
+
+\EMsubsection{The One-Dimensional Heat Equation}{The One-Dimensional Heat Equation}
+
+\EMfigure{m12-rod}{A one-dimensional rod \EMim{0\le x\le L} with temperature distribution
+\EMim{u(x,t)}}
+
+For a unique solution we need boundary conditions and initial conditions:
+
+\begin{itemize}
+\tightlist
+\item
+  Boundary conditions: \EMim{u(0,t)=u(L,t)=0}
+\item
+  Initial conditions: \EMim{u(x,0)=f(x)}
+\end{itemize}
+
+\EMsection{Solving the One-Dimensional Heat Equation}{Solving the One-Dimensional Heat Equation}
+
+\EMdisp{\begin{cases}\dfrac{\partial u}{\partial t}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\end{cases}}
+Here we solve the equation by \textbf{separation of variables}. Assume \EMim{u(x,t)=X(x)\times T(t)}.
+\EMdisp{\frac{\partial^2u}{\partial x^2}\EMbr =X''(x)T(t),\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =X(x)T'(t)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  X(x)T'(t)\EMbr =c^2X''(x)T(t)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac{T'}{c^2T}\EMbr =\frac{X''}X\EMbr =k}
+\EMim{k} must necessarily be negative (for \EMim{k=0} and \EMim{k>0} one gets \EMim{X(x)=0} exactly as in the wave problem). With \EMim{k=-\lambda^2}:
+\EMdisp{\frac{T'}{c^2T}\EMbr =\frac{X''}X\EMbr =-\lambda^2\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}X''+\lambda^2X=0\\ T'+c^2\lambda^2T=0\end{cases}}
+\EMdisp{X(x)\EMbr =A\cos\lambda x+B\sin\lambda x,\quad\EMbr  X(0)\EMbr =0\EMbr \Rightarrow A\EMbr =0,\qquad\EMbr  X(L)\EMbr =0\EMbr \Rightarrow B\sin\lambda L\EMbr =0\EMbr \Rightarrow\lambda\EMbr =\frac{n\pi}L\EMbr =\lambda_n}
+\EMdisp{X_n(x)\EMbr =B_n\sin\lambda_nx,\qquad\EMbr  T'+c^2\lambda_n^2T\EMbr =0\ \EMbr \Rightarrow\ T_n(t)\EMbr =C_ne^{-(c\lambda_n)^2t}}
+\EMdisp{u_n(x,t)\EMbr =X_n(x)\times T_n(t)\EMbr =B_n\sin\!\left(\frac{n\pi}Lx\right)\times C_ne^{-\left(\frac{cn\pi}L\right)^2t}}
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx),\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L}
+The initial condition \EMim{u(x,0)=f(x)}:
+\EMdisp{u(x,0)\EMbr =\sum_{n=1}^{\infty}A_n\sin\lambda_nx\EMbr =f(x)}
+\EMim{f(x)} has been set equal to a periodic odd function, so to compute the unknown Fourier coefficients we must regard \EMim{f(x)} as a periodic odd function (with period \EMim{2L}):
+\EMdisp{A_n\EMbr =\frac2{2L}\int_{-L}^{L}f(x)\sin\!\left(\frac{2\pi}{2L}nx\right)dx\EMbr =\frac1L\int_{-L}^{L}f(x)\sin\!\left(\frac{n\pi}Lx\right)dx\EMbr =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+
+\begin{EMimportant}{Solution of the one-dimensional heat equation (separation of variables)}
+
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx),\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L,\qquad\EMbr  A_n\EMbr =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+
+\end{EMimportant}
+
+\begin{EMexample}{Example 1}
+
+Find the solution of the following one-dimensional heat equation.
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =u(10,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =f(x)\EMbr =\begin{cases}x&0\le x<5\\ 10-x&5\le x\le10\end{cases}}
+
+\EMdisp{\begin{aligned}
+A_n&=\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx=0.2\int_0^5x\sin\!\left(\frac{n\pi}{10}x\right)dx+0.2\int_5^{10}(10-x)\sin\!\left(\frac{n\pi}{10}x\right)dx\\
+&=0.2\left[(x)\left(\frac{-10}{n\pi}\cos\frac{n\pi}{10}x\right)-(1)\left(\frac{-100}{n^2\pi^2}\sin\frac{n\pi}{10}x\right)\right]_0^5\\
+&\quad+0.2\left[(10-x)\left(\frac{-10}{n\pi}\cos\frac{n\pi}{10}x\right)-(-1)\left(\frac{-100}{n^2\pi^2}\sin\frac{n\pi}{10}x\right)\right]_5^{10}=\frac{40}{n^2\pi^2}\sin\frac{n\pi}2
+\end{aligned}}
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}\left(\frac{40}{n^2\pi^2}\sin\frac{n\pi}2\right)e^{-\left(\frac{cn\pi}{10}\right)^2t}\sin\!\left(\frac{n\pi}{10}x\right)}
+(with \EMim{c=1}.)
+
+\end{EMexample}
+
+\begin{EMexample}{Example 2 (nonzero boundary values)}
+
+Find the solution of the following one-dimensional heat equation.
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u(0,t)\EMbr =T_0,\qquad\EMbr  u(L,t)\EMbr =T_1,\qquad\EMbr  u(x,0)\EMbr =f(x)}
+
+\EMdisp{u(x,t)\EMbr =w(x,t)+v(x)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}w(0,t)+v(0)=T_0\\ w(L,t)+v(L)=T_1\end{cases}}
+\EMdisp{\frac{\partial w}{\partial t}\EMbr =c^2\left(\frac{\partial^2w}{\partial x^2}+\frac{\partial^2v}{\partial x^2}\right)}
+\EMdisp{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=T_0\\ v(L)=T_1\end{cases}\EMbr \Rightarrow\ v(x)\EMbr =\left(\frac{T_1-T_0}L\right)x+T_0,\qquad\EMbr \begin{cases}\dfrac{\partial w}{\partial t}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases}\EMbr \Rightarrow\ w(x,t)\EMbr =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}
+\EMdisp{u(x,t)\EMbr =\underbrace{\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}_{w(x,t)}+\underbrace{\left(\frac{T_1-T_0}L\right)x+T_0}_{v(x)},\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L}
+The initial condition:
+\EMdisp{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx\EMbr =f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\triangleq f_1(x)\ \EMbr \Longrightarrow\ A_n\EMbr =\frac2L\int_0^L\left[f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\right]\sin\frac{n\pi}Lx\,dx}
+
+\end{EMexample}
+
+\begin{EMexample}{Example 3 (insulated ends)}
+
+Find the solution of the following one-dimensional heat equation.
+\EMdisp{\frac{\partial u}{\partial t}\EMbr =c^2\frac{\partial^2u}{\partial x^2},\qquad\EMbr  u_x(0,t)\EMbr =u_x(L,t)\EMbr =0,\qquad\EMbr  u(x,0)\EMbr =f(x)}
+
+We solve this problem by \textbf{separation of variables}: \EMim{u(x,t)=X(x)\times T(t)}.
+\EMdisp{\frac{T'}{c^2T}\EMbr =\frac{X''}X\EMbr =-\lambda^2\ \EMbr \Rightarrow\ \begin{cases}X''+\lambda^2X=0\ \Rightarrow\ X(x)=A\cos\lambda x+B\sin\lambda x\\ T'+c^2\lambda^2T=0\end{cases}}
+\EMdisp{X'(x)\EMbr =-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad\EMbr  X'(0)\EMbr =0\EMbr \Rightarrow B\EMbr =0,\qquad\EMbr  X'(L)\EMbr =0\EMbr \Rightarrow-A\lambda\sin\lambda L\EMbr =0\EMbr \Rightarrow\lambda L\EMbr =n\pi\EMbr \Rightarrow\lambda_n\EMbr =\frac{n\pi}L}
+\EMdisp{X_n(x)\EMbr =A_n\cos\lambda_nx,\qquad\EMbr  T_n(t)\EMbr =C_ne^{-(c\lambda_n)^2t}}
+\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L}
+The initial condition \EMim{u(x,0)=\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)} gives
+\EMdisp{B_n\EMbr =\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx}
+
+\end{EMexample}
+
+\EMsection{The One-Dimensional Heat Equation on an Infinite Rod}{The One-Dimensional Heat Equation on an Infinite Rod}
+
+\EMdisp{\begin{cases}\dfrac{\partial u}{\partial t}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(\infty,t)=u(-\infty,t)=0\\ u(x,0)=f(x),\quad-\infty<x<\infty\end{cases}}
+Assuming \EMim{u(x,t)=X(x)\times T(t)}:
+\EMdisp{X(x)T'(t)\EMbr =c^2X''(x)T(t)\ \EMbr \Rightarrow\ \frac{T'}{c^2T}\EMbr =\frac{X''}X\EMbr =-\lambda^2\ \EMbr \Rightarrow\ \begin{cases}X(x)=A_1(\lambda)\cos\lambda x+B_1(\lambda)\sin\lambda x=X_\lambda(x)\\ T(t)=C_1(\lambda)e^{-c^2\lambda^2t}=T_\lambda(t)\end{cases}}
+\EMdisp{u_\lambda(x,t)\EMbr =\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  u(x,t)\EMbr =\frac1\pi\int_0^\infty\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda}
+Checking the equation:
+\EMdisp{\frac{\partial^2u}{\partial x^2}\EMbr =\frac1\pi\int_0^\infty-\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda,\qquad\EMbr  \frac{\partial u}{\partial t}\EMbr =\frac1\pi\int_0^\infty-c^2\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda\ \EMbr \Rightarrow\ \frac{\partial u}{\partial t}\EMbr =c^2\frac{\partial^2u}{\partial x^2}\ \EMcheck }
+\textbf{Applying the initial condition:} \EMim{u(x,0)=\dfrac1\pi\displaystyle\int_0^\infty\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]d\lambda=f(x)}, i.e.~the Fourier integral (Chapter 10):
+\EMdisp{A(\lambda)\EMbr =\mathfrak{I}_C\{f(x)\}\EMbr =\int_{-\infty}^{\infty}f(x)\cos\lambda x\,dx,\qquad\EMbr  B(\lambda)\EMbr =\mathfrak{I}_S\{f(x)\}\EMbr =\int_{-\infty}^{\infty}f(x)\sin\lambda x\,dx}
+\EMdisp{\begin{aligned}
+u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lambda\nu\,d\nu\right)\cos\lambda x+\left(\int_{-\infty}^{\infty}f(\nu)\sin\lambda\nu\,d\nu\right)\sin\lambda x\right]e^{-c^2\lambda^2t}\,d\lambda\\
+&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(\nu)\big[\cos\lambda\nu\cos\lambda x+\sin\lambda\nu\sin\lambda x\big]d\nu\right\}e^{-c^2\lambda^2t}\,d\lambda\\
+&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(\nu)\cos\lambda(x-\nu)\,d\nu\right\}e^{-c^2\lambda^2t}\,d\lambda
+\end{aligned}}
+
+\begin{EMimportant}{First form of the solution}
+
+\EMdisp{u(x,t)\EMbr =\frac1\pi\int_{-\infty}^{\infty}f(\nu)\left\{\int_0^\infty e^{-c^2\lambda^2t}\cos\lambda(x-\nu)\,d\lambda\right\}d\nu}
+
+\end{EMimportant}
+
+\EMhold
+
+\EMsubsection{Mathematical Lemmas}{Mathematical Lemmas}
+
+\begin{EMtheorem}{Lemma (a)}
+
+\EMdisp{I\EMbr =\int_0^\infty e^{-x^2}\,dx\EMbr =\frac{\sqrt\pi}2}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+\EMdisp{I^2\EMbr =\int_0^\infty e^{-x^2}dx\times\int_0^\infty e^{-y^2}dy\EMbr =\int_0^\infty\!\!\int_0^\infty e^{-(x^2+y^2)}\,dx\,dy\ \overset{\rho^2=x^2+y^2}{=}\ \int_0^{\pi/2}\!\!\int_0^\infty\rho\,e^{-\rho^2}\,d\rho\,d\theta\EMbr =\int_0^{\pi/2}\left[\frac{-1}2e^{-\rho^2}\right]_0^\infty d\theta\EMbr =\frac\pi4}
+
+\end{EMproof}
+
+\begin{EMtheorem}{Lemma (b)}
+
+\EMdisp{\int_0^\infty e^{-s^2}\cos(2bs)\,ds\EMbr =\frac{\sqrt\pi}2e^{-b^2}}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+\EMdisp{I(b)\EMbr =\int_0^\infty e^{-s^2}\cos(2bs)\,ds\ \EMbr \Rightarrow\ \frac{dI(b)}{db}\EMbr =-\int_0^\infty2se^{-s^2}\sin(2bs)\,ds}
+Integrating by parts (\EMim{du=-2se^{-s^2}ds}, \EMim{v=\sin2bs}):
+\EMdisp{\frac{dI(b)}{db}\EMbr =e^{-s^2}\sin2bs\Big|_0^\infty-2b\int_0^\infty e^{-s^2}\cos2bs\,ds\EMbr =-2b\,I(b)\ \EMbr \Rightarrow\ I(b)\EMbr =ke^{-b^2},\qquad\EMbr  I(0)\EMbr =k\EMbr =\int_0^\infty e^{-s^2}ds\EMbr =\frac{\sqrt\pi}2}
+
+\end{EMproof}
+
+With the substitution \EMim{c\lambda\sqrt t=s}:
+\EMdisp{\int_0^\infty e^{-c^2\lambda^2t}\cos\lambda(x-\nu)\,d\lambda\EMbr =\frac1{c\sqrt t}\int_0^\infty e^{-s^2}\cos\!\left[2\frac{(x-\nu)}{2c\sqrt t}s\right]ds\EMbr =\frac1{c\sqrt t}\frac{\sqrt\pi}2e^{-\left(\frac{x-\nu}{2c\sqrt t}\right)^2}}
+
+\begin{EMimportant}{Second form of the solution}
+
+\EMdisp{u(x,t)\EMbr =\frac1{2c\sqrt{\pi t}}\int_{-\infty}^{\infty}f(\nu)\,e^{-\frac{(x-\nu)^2}{4c^2t}}\,d\nu}
+
+\end{EMimportant}
+
+With the substitution \EMim{z=\dfrac{\nu-x}{2c\sqrt t}} (i.e.~\EMim{\nu=x+2c\sqrt t\,z} and \EMim{d\nu=2c\sqrt t\,dz}):
+
+\begin{EMimportant}{Third form of the solution}
+
+\EMdisp{u(x,t)\EMbr =\frac1{\sqrt\pi}\int_{-\infty}^{\infty}f\big(x+2c\sqrt t\,z\big)\,e^{-z^2}\,dz}
+
+\end{EMimportant}
+
+\EMsection{The Error Function}{The Error Function}
+
+In mathematics the error function is most often defined as
+\EMdisp{\operatorname{erf}(x)\triangleq\frac2{\sqrt\pi}\int_0^xe^{-t^2}\,dt}
+Properties of the error function:
+
+\begin{itemize}
+\tightlist
+\item
+  odd symmetry: \EMim{\operatorname{erf}(-x)=-\operatorname{erf}(x)}
+\item
+  asymptotic property: \EMim{\operatorname{erf}(\infty)=1}
+\item
+  its Maclaurin expansion is given below (start from the expansion of \EMim{e^x} and prove this identity):
+  \EMdisp{\operatorname{erf}(x)\EMbr =\frac2{\sqrt\pi}\left[x-\frac{x^3}{1!\times3}+\frac{x^5}{2!\times5}-\frac{x^7}{3!\times7}+-\cdots\right]\EMbr =\frac2{\sqrt\pi}\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^{2n-1}}{(n-1)!\,(2n-1)}}
+\end{itemize}
+
+\EMfigure{m12-erf}{The graph of the error function \EMim{\operatorname{erf}(x)} for
+\EMim{-2\le x\le2}}
+
+\begin{EMexample}{Example 1}
+
+Find the solution of the equation above for the following initial condition.
+\EMdisp{f(x)\EMbr =\begin{cases}U_0&|x|<1\\ 0&|x|\ge1\end{cases}}
+
+We use the second form of the solution:
+\EMdisp{u(x,t)\EMbr =\frac{U_0}{2c\sqrt{\pi t}}\int_{-1}^{1}e^{-\frac{(x-\nu)^2}{4c^2t}}\,d\nu\ \overset{z=\frac{\nu-x}{2c\sqrt t}}{=}\ \frac{U_0}{\sqrt\pi}\int_{-\frac{1+x}{2c\sqrt t}}^{\frac{1-x}{2c\sqrt t}}e^{-z^2}\,dz}
+\EMdisp{=\frac{U_0}{\sqrt\pi}\left\{\int_{-\frac{1+x}{2c\sqrt t}}^{0}e^{-z^2}dz+\int_0^{\frac{1-x}{2c\sqrt t}}e^{-z^2}dz\right\}\EMbr =\frac{U_0}{\sqrt\pi}\frac{\sqrt\pi}2\left\{\frac2{\sqrt\pi}\int_0^{\frac{1+x}{2c\sqrt t}}e^{-z^2}dz+\frac2{\sqrt\pi}\int_0^{\frac{1-x}{2c\sqrt t}}e^{-z^2}dz\right\}}
+\EMdisp{u(x,t)\EMbr =\frac{U_0}2\left[\operatorname{erf}\!\left(\frac{1+x}{2c\sqrt t}\right)+\operatorname{erf}\!\left(\frac{1-x}{2c\sqrt t}\right)\right]}
+
+\end{EMexample}
+
+\EMfigure{m12-heat-pulse}{The temperature distribution \EMim{u(x,t)} at \EMim{t=0},
+\EMim{\frac18}, \EMim{\frac12}, \EMim{1}, \EMim{2} and \EMim{8} for the
+initial pulse \EMim{U_0=100} and \EMim{c=1}}
+
+\begin{EMexample}{Example 2}
+
+Find the solution of the equation above for the following initial condition.
+\EMdisp{f(x)\EMbr =\begin{cases}1&x>0\\ 0&x\le0\end{cases}}
+
+We use the second form of the solution:
+\EMdisp{u(x,t)\EMbr =\frac1{2c\sqrt{\pi t}}\int_0^\infty e^{-\frac{(x-\nu)^2}{4c^2t}}\,d\nu\ \overset{z=\frac{\nu-x}{2c\sqrt t}}{=}\ \frac1{\sqrt\pi}\int_{-\frac x{2c\sqrt t}}^{\infty}e^{-z^2}\,dz\EMbr =\frac1{\sqrt\pi}\left\{\int_{-\frac x{2c\sqrt t}}^{0}e^{-z^2}dz+\int_0^\infty e^{-z^2}dz\right\}}
+\EMdisp{u(x,t)\EMbr =\frac12\left[\operatorname{erf}\!\left(\frac x{2c\sqrt t}\right)+1\right]}
+
+\end{EMexample}

@@ -1,0 +1,11 @@
+% f(x) = x^2 on [0, 2 pi], extended periodically
+\begin{tikzpicture}
+  \begin{axis}[EMplot,width=12cm,height=5.2cm,xmin=-6.8,xmax=13.2,ymin=-5,ymax=44,
+      xtick={0,6.2832,12.5664},xticklabels={0,$2\pi$,$4\pi$},ytick={39.478},yticklabels={$4\pi^2$},xlabel={$x$},clip=false]
+    \addplot[EMcurve,domain=-6.2832:0.0000,samples=60,smooth]{(x-(-6.2832))^2};
+    \addplot[EMcurve,domain=0.0000:6.2832,samples=60,smooth]{(x-(0.0000))^2};
+    \addplot[EMcurve,domain=6.2832:12.5664,samples=60,smooth]{(x-(6.2832))^2};
+    \draw[EMdash] (axis cs:0.0000,0)--(axis cs:0.0000,39.478);\draw[EMdash] (axis cs:6.2832,0)--(axis cs:6.2832,39.478);\draw[EMdash] (axis cs:12.5664,0)--(axis cs:12.5664,39.478);
+    \node[EMhole] at (axis cs:0.0000,39.478){};\node[EMhole] at (axis cs:6.2832,39.478){};\node[EMhole] at (axis cs:12.5664,39.478){};
+  \end{axis}
+\end{tikzpicture}

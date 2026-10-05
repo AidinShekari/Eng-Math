@@ -1,0 +1,26 @@
+
+% The contour Gamma: C, the circles C1 ... Cn and the connecting links
+\begin{tikzpicture}[scale=1.0]
+  \draw[EMcurve2,EMmid] (-2.231,1.470) arc[start angle=138.056,end angle=191.944,x radius=3.0,y radius=2.2];
+  \draw[EMcurve2,EMmid] (-2.852,-0.682) arc[start angle=198.056,end angle=246.944,x radius=3.0,y radius=2.2];
+  \draw[EMcurve2,EMmid] (-0.874,-2.104) arc[start angle=253.056,end angle=286.944,x radius=3.0,y radius=2.2];
+  \draw[EMcurve2,EMmid] (1.175,-2.024) arc[start angle=293.056,end angle=491.944,x radius=3.0,y radius=2.2];
+  \draw[EMcurve,EMmid] (-1.568,1.185) arc[start angle=123.069,end angle=-207.976,radius=0.4];
+  \draw[EMthin,EMmid3] (-2.189,1.482) -- (-1.703,1.038);
+  \draw[EMthin,EMmid3] (-1.568,1.185) -- (-2.054,1.629);
+  \node[EMptI] at (-1.35,0.85){};\node[EMlabs,below right,xshift=2pt] at (-1.35,0.85){$z_1$};
+  \draw[EMcurve,EMmid] (-1.950,-0.206) arc[start angle=-179.150,end angle=-510.195,radius=0.4];
+  \draw[EMthin,EMmid3] (-2.871,-0.666) -- (-1.897,-0.399);
+  \draw[EMthin,EMmid3] (-1.950,-0.206) -- (-2.924,-0.473);
+  \node[EMptI] at (-1.55,-0.2){};\node[EMlabs,below right,xshift=2pt] at (-1.55,-0.2){$z_2$};
+  \draw[EMcurve,EMmid] (-0.451,-0.561) arc[start angle=-128.922,end angle=-459.967,radius=0.4];
+  \draw[EMthin,EMmid3] (-0.935,-2.109) -- (-0.269,-0.644);
+  \draw[EMthin,EMmid3] (-0.451,-0.561) -- (-1.117,-2.026);
+  \node[EMptI] at (-0.2,-0.25){};\node[EMlabs,below right,xshift=2pt] at (-0.2,-0.25){$z_3$};
+  \draw[EMcurve,EMmid] (0.844,-1.376) arc[start angle=-98.522,end angle=-428.007,radius=0.38];
+  \draw[EMthin,EMmid3] (1.125,-2.056) -- (1.042,-1.352);
+  \draw[EMthin,EMmid3] (0.844,-1.376) -- (0.927,-2.079);
+  \node[EMptI] at (0.9,-1.0){};\node[EMlabs,below right,xshift=2pt] at (0.9,-1.0){$z_n$};
+  \node[font=\small] at (0.45,-0.55){$\vdots$};
+  \node[EMlab,text=EMrose] at (2.4,1.9){$C$};\node[EMlab,text=EMrose] at (2.9,-1.7){$\Gamma$};
+\end{tikzpicture}

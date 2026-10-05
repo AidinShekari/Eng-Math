@@ -1,0 +1,10 @@
+% z = 5 + 2i and its conjugate 5 - 2i
+\begin{tikzpicture}[scale=0.95]
+  \EMgrid{0}{6}{-3}{3}
+  \EMaxes{-0.6}{6.7}{-3.5}{3.5}{$\operatorname{Re}$}{$\operatorname{Im}$}
+  \foreach \x in {1,...,5}{\draw (\x,0.06)--(\x,-0.06) node[EMlabs,below,yshift=-1pt]{$\x$};}
+  \foreach \y/\l in {2/2,-2/{-2}}{\draw (0.06,\y)--(-0.06,\y) node[EMlabs,left]{$\l$};}
+  \draw[EMvec] (0,0)--(5,2);\draw[EMvec2] (0,0)--(5,-2);
+  \node[EMpt] at (5,2){};\node[EMlab,above right] at (5,2){$z=5+2i$};
+  \node[EMpt] at (5,-2){};\node[EMlab,below right] at (5,-2){$\bar z=5-2i$};
+\end{tikzpicture}

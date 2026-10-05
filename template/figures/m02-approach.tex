@@ -1,0 +1,10 @@
+% z0 can be approached from every direction
+\begin{tikzpicture}
+  \draw[EMax] (-0.4,0)--(4.8,0) node[EMlab,right]{$x$};
+  \draw[EMax] (0,-0.4)--(0,3.6) node[EMlab,above]{$y$};
+  \coordinate (Z) at (2.4,2.0);
+  \foreach \a in {20,75,130,190,250,310}{\draw[EMvec2,shorten >=3pt] (Z)++(\a:1.15) -- (Z);}
+  \draw[EMvec2,shorten >=3pt] (Z)++(160:1.3) to[bend right=25] (Z);
+  \draw[EMvec2,shorten >=3pt] (Z)++(340:1.3) to[bend left=25] (Z);
+  \node[EMptI] at (Z){};\node[EMlab,anchor=south] at ($(Z)+(103:0.5)$){$z_0$};
+\end{tikzpicture}

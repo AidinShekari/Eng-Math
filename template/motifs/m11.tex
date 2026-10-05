@@ -1,0 +1,11 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% The wave equation: standing waves of a string
+\begin{scope}[shift={(0.6,0)}]
+  \foreach \n/\y/\c in {1/7.2/EMrose,2/4.5/EMindigo,3/1.8/EMjade}{
+    \draw[mdash] (0,{\y+1.0*0})--(13.8,\y);
+    \draw[\c,line width=1.7pt,domain=0:13.8,samples=120] plot (\x,{\y+1.15*sin(\n*pi*\x/13.8 r)});
+    \draw[\c!45,line width=0.8pt,domain=0:13.8,samples=120] plot (\x,{\y-1.15*sin(\n*pi*\x/13.8 r)});
+    \draw[\c!60,line width=0.6pt,domain=0:13.8,samples=120] plot (\x,{\y+0.6*sin(\n*pi*\x/13.8 r)});
+    \foreach \k in {0,...,\n}{\node[mdot,fill=\c] at ({\k*13.8/\n},\y){};}
+    \node[font=\small,anchor=east] at (-0.1,\y){$n=\n$};}
+\end{scope}

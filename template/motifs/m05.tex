@@ -1,0 +1,11 @@
+\useasboundingbox (0,0) rectangle (15,9);
+% Complex integration: a closed contour, the small circles around the points where f fails to be analytic
+\begin{scope}[shift={(7.4,4.5)}]
+  \foreach \a in {0,20,...,340}{\draw[mfaint] (0,0)--(\a:4.3);}
+  \draw[mline,line width=1.5pt,smooth cycle,tension=0.8,mmid]
+    plot coordinates{(-5.0,-0.3)(-4.0,2.6)(-1.4,3.8)(2.0,3.6)(4.9,1.8)(5.3,-0.8)(3.4,-3.4)(-0.6,-3.8)(-3.6,-2.8)};
+  \foreach \p/\r in {{(-2.6,0.9)}/0.62,{(0.4,-0.8)}/0.7,{(3.0,1.2)}/0.55}{
+    \draw[mrose,line width=1.1pt,mmid] \p circle (\r);\node[mdotr] at \p{};}
+  \draw[mdash,smooth cycle,tension=0.8] plot coordinates{(-4.3,-0.2)(-3.4,2.1)(-1.2,3.1)(2.0,3.0)(4.2,1.6)(4.6,-0.7)(3.0,-2.9)(-0.6,-3.2)(-3.0,-2.3)};
+  \node[font=\fontsize{30}{32}\selectfont,text=EMindigo!14] at (0.3,2.0){$\oint_C f(z)\,dz$};
+\end{scope}

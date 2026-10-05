@@ -1,0 +1,379 @@
+\EMkeepfig{m08-periodic}{5}
+
+\EMsection{توابع متناوب}{توابع متناوب}
+
+\EMdisp{f(x+p)\EMbr =f(x)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  f(x+np)\EMbr =f(x)}
+
+\EMfigure{m08-periodic}{تابعی متناوب با دورهٔ تناوب \EMim{p}}
+
+\begin{itemize}
+\tightlist
+\item
+  کوچک‌ترین مقدار مثبت \EMim{p} به قسمی که تابع با آن تناوبی باشد، دورهٔ تناوب اصلی تابع نامیده می‌شود.
+\item
+  اگر تابع با دورهٔ تناوب \EMim{p} تناوبی باشد آنگاه با دورهٔ \EMim{np}، که \EMim{n} یک عدد طبیعی است، نیز متناوب است.
+\end{itemize}
+
+\EMhold
+
+\EMsubsection{توابع متناوب سینوس و کسینوس}{توابع متناوب سینوس و کسینوس}
+
+\begin{EMexample}{}
+
+تابع \EMim{\sin x} تابعی با دورهٔ تناوب \EMim{2\pi} تناوبی است و \EMim{\sin2x} با دورهٔ تناوب اصلی \EMim{\pi} تناوبی است هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست. همینطور تابع \EMim{\sin3x} با دورهٔ تناوب \EMim{2\pi/3} تناوبی است، هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست.
+
+\end{EMexample}
+
+\EMfigure{m08-sincos}{توابع \EMim{\sin nx} و \EMim{\cos nx} برای \EMim{n=1,2,3} در بازهٔ
+\EMim{[0,2\pi]}}
+
+\EMsection{یادآوری از مبحث مثلثات}{یادآوری از مبحث مثلثات}
+
+\EMdisp{\begin{gathered}
+\sin^2\alpha+\cos^2\alpha=1\\
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\\
+\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta\\
+\cos2\alpha=2\cos^2\alpha-1=1-2\sin^2\alpha=\cos^2\alpha-\sin^2\alpha\\
+\sin2\alpha=2\sin\alpha\cos\alpha\\
+\sin^2\alpha=\frac{1-\cos2\alpha}{2}\qquad\cos^2\alpha=\frac{1+\cos2\alpha}{2}\\
+\sin\alpha\sin\beta=\tfrac12\big[\cos(\alpha-\beta)-\cos(\alpha+\beta)\big]\\
+\cos\alpha\cos\beta=\tfrac12\big[\cos(\alpha-\beta)+\cos(\alpha+\beta)\big]\\
+\sin\alpha\cos\beta=\tfrac12\big[\sin(\alpha-\beta)+\sin(\alpha+\beta)\big]
+\end{gathered}}
+
+\EMsection{یادآوری: انتگرال‌ها و تعامد}{یادآوری: انتگرال‌ها و تعامد}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin nt\,dt\EMbr =0,\qquad\EMbr  n\in\mathbb{Z}}
+\EMdisp{\int_{-\pi}^{\pi}\cos nt\,dt\EMbr =0,\qquad\EMbr  n\in\mathbb{Z}\setminus\{0\}}
+
+\begin{EMproof}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin nt\,dt\EMbr =-\frac1n\cos nt\Big|_{-\pi}^{\pi}\EMbr =0,\qquad\EMbr  \int_{-\pi}^{\pi}\cos nt\,dt\EMbr =\frac1n\sin nt\Big|_{-\pi}^{\pi}\EMbr =0\qquad\EMbr (n\neq0)}
+
+\end{EMproof}
+
+\EMsubsection{تعامد}{تعامد}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin nt\sin mt\,dt\EMbr =0,\qquad\EMbr  n,m\in\mathbb{Z},\ n\neq m}
+\EMdisp{\int_{-\pi}^{\pi}\cos nt\cos mt\,dt\EMbr =0,\qquad\EMbr  n,m\in\mathbb{Z},\ n\neq m}
+\EMdisp{\int_{-\pi}^{\pi}\sin nt\cos mt\,dt\EMbr =0,\qquad\EMbr  n,m\in\mathbb{Z}\ \ (n\neq m\ \EMt{یا}\ n\EMbr =m)}
+
+\begin{EMproof}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin nx\sin mx\,dx\EMbr =\frac12\int_{-\pi}^{\pi}\cos(n-m)x\,dx-\frac12\int_{-\pi}^{\pi}\cos(n+m)x\,dx}
+\EMdisp{\int_{-\pi}^{\pi}\cos nx\cos mx\,dx\EMbr =\frac12\int_{-\pi}^{\pi}\cos(n+m)x\,dx+\frac12\int_{-\pi}^{\pi}\cos(n-m)x\,dx}
+\EMdisp{\int_{-\pi}^{\pi}\sin nx\cos mx\,dx\EMbr =\frac12\int_{-\pi}^{\pi}\sin(n+m)x\,dx+\frac12\int_{-\pi}^{\pi}\sin(n-m)x\,dx}
+
+\end{EMproof}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin^2nt\,dt\EMbr =\pi,\qquad\EMbr  \int_{-\pi}^{\pi}\cos^2nt\,dt\EMbr =\pi,\qquad\EMbr  n\in\mathbb{Z}\setminus\{0\}}
+
+\begin{EMproof}
+
+\EMdisp{\int_{-\pi}^{\pi}\sin^2nt\,dt\EMbr =\int_{-\pi}^{\pi}\frac{1-\cos2nt}{2}\,dt\EMbr =\pi,\qquad\EMbr  \int_{-\pi}^{\pi}\cos^2nt\,dt\EMbr =\int_{-\pi}^{\pi}\frac{1+\cos2nt}{2}\,dt\EMbr =\pi}
+
+\end{EMproof}
+
+\EMhold
+
+\EMsection{سری فوریه}{سری فوریه}
+
+\begin{EMremark}{تاریخچه}
+
+ژوزف فوریه (۱۷۶۸--۱۸۳۰) ایدهٔ بیان توابع متناوب به صورت یک سری از توابع سینوسی را ارائه کرد. در زمان ارائهٔ این ایدهٔ انقلابی، بعضی از ریاضیدانان، از جمله لاگرانژ با عمومیت این ایده مخالفت کردند تا زمانی که دریشله شرایط همگرایی سری فوریه را بیان کرد.
+
+\end{EMremark}
+
+\begin{EMtheorem}{سری فوریه}
+
+اگر تابع \EMim{f(x)} با دورهٔ تناوب \EMim{2\pi} متناوب باشد، آنگاه می‌توان آن را بر حسب یک سری مثلثاتی به صورت زیر بیان کرد:
+\EMdisp{f(x)\EMbr =a_0+\sum_{n=1}^{\infty}\big(a_n\cos nx+b_n\sin nx\big)}
+که در آن
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx,\qquad\EMbr  a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx,\qquad\EMbr  b_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+فرض کنید تابع متناوب را به صورت سری مثلثاتی بالا نوشته‌ایم؛ کافی است ضرایب \EMim{a_0}، \EMim{a_n} و \EMim{b_n} را پیدا کنیم.
+
+\textbf{محاسبهٔ \EMim{a_0}.} اگر از طرفین تساوی بالا روی بازه‌ای به طول \EMim{2\pi} انتگرال بگیریم، خواهیم داشت:
+\EMdisp{\int_{-\pi}^{\pi}f(x)\,dx\EMbr =\int_{-\pi}^{\pi}\left[a_0+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)\right]dx\EMbr =a_0\int_{-\pi}^{\pi}dx+\sum_{n=1}^{\infty}\left(a_n\underbrace{\int_{-\pi}^{\pi}\cos nx\,dx}_{0}+b_n\underbrace{\int_{-\pi}^{\pi}\sin nx\,dx}_{0}\right)\EMbr =2\pi a_0}
+\EMdisp{\Longrightarrow\quad\EMbr  a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx}
+\EMim{a_0} مقدار متوسط یا سطح \lr{DC} تابع است.
+
+\textbf{محاسبهٔ \EMim{a_n}.} اگر از طرفین تساوی بالا در \EMim{\cos mx} ضرب کنیم و روی بازه‌ای به طول \EMim{2\pi} انتگرال بگیریم، خواهیم داشت:
+\EMdisp{\int_{-\pi}^{\pi}f(x)\cos mx\,dx\EMbr =\int_{-\pi}^{\pi}a_0\cos mx\,dx+\sum_{n=1}^{\infty}\int_{-\pi}^{\pi}a_n\cos nx\cos mx\,dx+\sum_{n=1}^{\infty}\int_{-\pi}^{\pi}b_n\sin nx\cos mx\,dx\EMbr =\pi a_m}
+\EMdisp{\Longrightarrow\quad\EMbr  a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx}
+
+\textbf{محاسبهٔ \EMim{b_n}.} اگر از طرفین تساوی بالا در \EMim{\sin mx} ضرب کنیم و روی بازه‌ای به طول \EMim{2\pi} انتگرال بگیریم، خواهیم داشت:
+\EMdisp{\int_{-\pi}^{\pi}f(x)\sin mx\,dx\EMbr =\int_{-\pi}^{\pi}a_0\sin mx\,dx+\sum_{n=1}^{\infty}\int_{-\pi}^{\pi}a_n\cos nx\sin mx\,dx+\sum_{n=1}^{\infty}\int_{-\pi}^{\pi}b_n\sin nx\sin mx\,dx\EMbr =\pi b_m}
+\EMdisp{\Longrightarrow\quad\EMbr  b_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx}
+
+\end{EMproof}
+
+\begin{EMimportant}{سری فوریه و روابط اویلر}
+
+\EMdisp{f(x)\EMbr =a_0+\sum_{n=1}^{\infty}\big(a_n\cos nx+b_n\sin nx\big),\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{2\pi}f(x)\,dx,\qquad\EMbr  a_n\EMbr =\frac1\pi\int_{2\pi}f(x)\cos nx\,dx,\qquad\EMbr  b_n\EMbr =\frac1\pi\int_{2\pi}f(x)\sin nx\,dx}
+(انتگرال روی یک دورهٔ تناوب \EMim{2\pi} گرفته می‌شود.)
+
+\end{EMimportant}
+
+\begin{EMremark}{}
+
+مقدار سری فوریه در نقاط ناپیوستگی تابع برابر است با متوسط حد بالا و پایین در آن نقطه.
+
+\end{EMremark}
+
+\EMsection{یادآوری: انتگرال معین حاصل‌ضرب دو تابع}{یادآوری: انتگرال معین حاصل‌ضرب دو تابع}
+
+با استفاده از روش جزء به جزء:
+\EMdisp{\int_\alpha^\beta f(x)g(x)\,dx\EMbr =\Big[f(x)G_1(x)-f^{(1)}(x)G_2(x)+f^{(2)}(x)G_3(x)-+\cdots\Big]_\alpha^\beta}
+که در آن \EMim{f^{(k)}} مشتق \EMim{k}-ام \EMim{f} و \EMim{G_k} انتگرال \EMim{k}-ام \EMim{g} است:
+
+{\def\LTcaptype{none} % do not increment counter
+\Needspace{13\baselineskip}
+\begin{longtable}[c]{@{}ccc@{}}
+\toprule\noalign{}
+\rowcolor{EMindigoL}مشتق \EMim{f} & & انتگرال \EMim{g} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\EMim{f(x)} & \EMim{\searrow} & \EMim{g(x)} \\
+\EMim{f^{(1)}(x)} & \EMim{\searrow} & \EMim{G_1(x)} \\
+\EMim{f^{(2)}(x)} & \EMim{\searrow} & \EMim{G_2(x)} \\
+\EMim{f^{(3)}(x)} & \EMim{\searrow} & \EMim{G_3(x)} \\
+\EMim{\vdots} & & \EMim{\vdots} \\
+\end{longtable}
+}
+
+\EMhold
+
+\EMsection{مثال‌های سری فوریه}{مثال‌های سری فوریه}
+
+\begin{EMexample}{}
+
+سری فوریهٔ تابع زیر را به دست آورید:
+\EMdisp{f(x)\EMbr =\begin{cases}-k&-\pi<x<0\\ \ \ k&0<x<\pi\end{cases}\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx\EMbr =0}
+\EMdisp{a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx\EMbr =\frac1\pi\left[\int_{-\pi}^{0}(-k)\cos nx\,dx+\int_0^\pi k\cos nx\,dx\right]\EMbr =\frac1\pi\left[-k\,\frac{\sin nx}{n}\Big|_{-\pi}^{0}+k\,\frac{\sin nx}{n}\Big|_0^\pi\right]\EMbr =0}
+\EMdisp{\begin{aligned}
+b_n&=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx=\frac1\pi\left[\int_{-\pi}^{0}(-k)\sin nx\,dx+\int_0^\pi k\sin nx\,dx\right]\\
+&=\frac1\pi\left[k\,\frac{\cos nx}{n}\Big|_{-\pi}^{0}-k\,\frac{\cos nx}{n}\Big|_0^\pi\right]=\frac k{n\pi}\big[\cos0-\cos(-n\pi)-\cos n\pi+\cos0\big]=\frac{2k}{n\pi}(1-\cos n\pi)
+\end{aligned}}
+\EMdisp{\cos n\pi\EMbr =\begin{cases}-1&n\ \EMt{فرد}\\ \ \ 1&n\ \EMt{زوج}\end{cases}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr 1-\cos n\pi\EMbr =\begin{cases}2&n\ \EMt{فرد}\\ 0&n\ \EMt{زوج}\end{cases}}
+\EMdisp{b_1\EMbr =\frac{4k}{\pi},\quad\EMbr  b_2\EMbr =0,\quad\EMbr  b_3\EMbr =\frac{4k}{3\pi},\quad\EMbr  b_4\EMbr =0,\quad\EMbr  b_5\EMbr =\frac{4k}{5\pi},\ \dots}
+\EMdisp{f(x)\EMbr =\frac{4k}\pi\left(\sin x+\frac13\sin3x+\frac15\sin5x+\cdots\right)}
+
+\end{EMexample}
+
+\EMfigure{m08-square-wave}{موج مربعی \EMim{f(x)} با دورهٔ تناوب \EMim{2\pi} و مقادیر \EMim{\pm k}}
+
+مجموع‌های جزئی سری:
+
+\EMdisp{S_1\EMbr =\frac{4k}\pi\sin x,\qquad\EMbr  S_2\EMbr =\frac{4k}\pi\left(\sin x+\frac13\sin3x\right),\qquad\EMbr  S_3\EMbr =\frac{4k}\pi\left(\sin x+\frac13\sin3x+\frac15\sin5x\right)}
+
+\EMfigure{m08-partial-sums}{مجموع‌های جزئی \EMim{S_1}، \EMim{S_2} و \EMim{S_3} سری فوریهٔ موج مربعی
+(خط‌چین خود موج مربعی است)}
+
+با قرار دادن \EMim{x=\pi/2}:
+\EMdisp{f(\pi/2)\EMbr =\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =k\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \pi\EMbr =4\left(1-\frac13+\frac15-\frac17+-\cdots\right)}
+
+\begin{EMexample}{}
+
+سری فوریهٔ تابع زیر را به دست آورید:
+\EMdisp{f(x)\EMbr =x,\qquad\EMbr  -\pi\le x\le\pi,\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx\EMbr =0}
+\EMdisp{a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}x\cos nx\,dx\EMbr =\frac1\pi\left[x\left(\frac1n\sin nx\right)-(1)\left(-\frac1{n^2}\cos nx\right)\right]_{-\pi}^{\pi}\EMbr =\frac1\pi\left[\frac1{n^2}\big(\cos n\pi-\cos(-n\pi)\big)\right]\EMbr =0}
+\EMdisp{b_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}x\sin nx\,dx\EMbr =\frac2\pi\int_0^\pi x\sin nx\,dx\EMbr =\frac2\pi\left[x\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_0^\pi\EMbr =\frac2\pi\left[\frac{-\pi}n\cos n\pi\right]\EMbr =\frac2n(-1)^{n+1}}
+\EMdisp{f(x)\EMbr =\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin nx\EMbr =2\left(\sin x-\frac12\sin2x+\frac13\sin3x-+\cdots\right)}
+
+\end{EMexample}
+
+\EMfigure{m08-sawtooth}{موج دندانه‌اره‌ای \EMim{f(x)=x} روی \EMim{[-\pi,\pi]} با ادامهٔ متناوب}
+
+با قرار دادن \EMim{x=\pi/2}:
+\EMdisp{f\!\left(\frac\pi2\right)\EMbr =\frac\pi2\EMbr =\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin\!\left(n\frac\pi2\right)\EMbr =2\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =\sum_{n=1}^{\infty}\frac2{2n-1}(-1)^{n+1}\ \EMbr \Longrightarrow\ \pi\EMbr =\sum_{n=1}^{\infty}\frac4{2n-1}(-1)^{n+1}}
+
+مقدار سری در نقطهٔ ناپیوستگی \EMim{x=\pi}:
+\EMdisp{f(\pi)\EMbr =\;?\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin(n\pi)\EMbr =0}
+
+\begin{EMimportant}{نکات مهم}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  اگر تابع تناوبی فرد باشد، ضرایب \EMim{a} همگی صفرند.
+\item
+  مقدار سری فوریه در نقطهٔ ناپیوستگی تابع برابر است با متوسط حد بالا و پایین در آن نقطه.
+\end{enumerate}
+
+\end{EMimportant}
+
+\begin{EMexample}{}
+
+سری فوریهٔ تابع زیر را به دست آورید:
+\EMdisp{f(x)\EMbr =x^2,\qquad\EMbr  -\pi\le x\le\pi,\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}x^2\,dx\EMbr =\frac{2}{2\pi}\int_0^\pi x^2\,dx\EMbr =\frac1\pi\left[\frac13x^3\right]_0^\pi\EMbr =\frac{\pi^2}{3}}
+\EMdisp{a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}x^2\cos nx\,dx\EMbr =\frac2\pi\int_0^\pi x^2\cos nx\,dx\EMbr =\frac2\pi\left[x^2\left(\frac1n\sin nx\right)-2x\left(\frac{-1}{n^2}\cos nx\right)+2\left(\frac{-1}{n^3}\sin nx\right)\right]_0^\pi\EMbr =\frac2\pi\left[\frac{2\pi}{n^2}\cos n\pi\right]\EMbr =\frac4{n^2}(-1)^n}
+\EMdisp{b_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}x^2\sin nx\,dx\EMbr =0}
+\EMdisp{f(x)\EMbr =\frac{\pi^2}3+\sum_{n=1}^{\infty}\frac4{n^2}(-1)^n\cos nx}
+
+\end{EMexample}
+
+\EMfigure{m08-parabola}{تابع \EMim{f(x)=x^2} روی \EMim{[-\pi,\pi]} با ادامهٔ متناوب}
+
+\begin{EMimportant}{نکتهٔ مهم}
+
+اگر تابع تناوبی زوج باشد، ضرایب \EMim{b} همگی صفرند.
+
+\end{EMimportant}
+
+با قرار دادن \EMim{x=0}:
+\EMdisp{f(0)\EMbr =0\EMbr =\frac{\pi^2}3+\sum_{n=1}^{\infty}\frac4{n^2}(-1)^n\cos(n\cdot0)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac{\pi^2}3\EMbr =\sum_{n=1}^{\infty}\frac4{n^2}(-1)^{n+1}}
+\EMdisp{\pi^2\EMbr =\sum_{n=1}^{\infty}\frac{12}{n^2}(-1)^{n+1}\EMbr =12\left(1-\frac14+\frac19-\frac1{16}+-\cdots\right)}
+
+\begin{EMexample}{}
+
+سری فوریهٔ تابع زیر را به دست آورید:
+\EMdisp{f(x)\EMbr =x^2,\qquad\EMbr  0\le x\le2\pi,\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_0^{2\pi}x^2\,dx\EMbr =\frac1{2\pi}\left[\frac13x^3\right]_0^{2\pi}\EMbr =\frac1{2\pi}\cdot\frac138\pi^3\EMbr =\frac{4\pi^2}3}
+\EMdisp{a_n\EMbr =\frac1\pi\int_0^{2\pi}x^2\cos nx\,dx\EMbr =\frac1\pi\left[x^2\left(\frac1n\sin nx\right)-2x\left(\frac{-1}{n^2}\cos nx\right)+2\left(\frac{-1}{n^3}\sin nx\right)\right]_0^{2\pi}\EMbr =\frac1\pi(2\times2\pi)\left(\frac1{n^2}\cos2\pi n\right)\EMbr =\frac4{n^2}}
+\EMdisp{b_n\EMbr =\frac1\pi\int_0^{2\pi}x^2\sin nx\,dx\EMbr =\frac1\pi\left[x^2\left(\frac{-1}n\cos nx\right)-2x\left(\frac{-1}{n^2}\sin nx\right)+2\left(\frac1{n^3}\cos nx\right)\right]_0^{2\pi}\EMbr =\frac1\pi\left[(4\pi^2)\left(\frac{-1}n\right)+2\cdot\frac1{n^3}-2\cdot\frac1{n^3}\right]\EMbr =-\frac{4\pi}n}
+\EMdisp{f(x)\EMbr =\frac{4\pi^2}3+\sum_{n=1}^{\infty}\left(\frac4{n^2}\cos nx-\frac{4\pi}n\sin nx\right)}
+
+\end{EMexample}
+
+\EMfigure{m08-shifted-parabola}{تابع \EMim{f(x)=x^2} روی \EMim{[0,2\pi]} با ادامهٔ متناوب}
+
+\EMsection{سری فوریهٔ توابع متناوب با دورهٔ تناوب دلخواه}{سری فوریهٔ توابع متناوب با دورهٔ تناوب دلخواه}
+
+\EMdisp{f(x+T)\EMbr =f(x)}
+اگر از متغیر کمکی \EMim{t=\dfrac{2\pi}{T}x} استفاده کنیم (\EMim{x:0\to T} و \EMim{t:0\to2\pi}):
+\EMdisp{f\!\left(\frac T{2\pi}t\right)\EMbr =a_0+\sum_{n=1}^{\infty}a_n\cos nt+b_n\sin nt}
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{2\pi}f\!\left(\frac T{2\pi}t\right)dt,\qquad\EMbr  a_n\EMbr =\frac1\pi\int_{2\pi}f\!\left(\frac T{2\pi}t\right)\cos nt\,dt,\qquad\EMbr  b_n\EMbr =\frac1\pi\int_{2\pi}f\!\left(\frac T{2\pi}t\right)\sin nt\,dt}
+با بازگشت به \EMim{x=\dfrac T{2\pi}t}:
+\EMdisp{f(x)\EMbr =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_Tf(x)\frac{2\pi}T\,dx\EMbr =\frac1T\int_Tf(x)\,dx}
+\EMdisp{a_n\EMbr =\frac1\pi\int_Tf(x)\cos\!\left(\frac{2\pi}Tnx\right)\frac{2\pi}T\,dx\EMbr =\frac2T\int_Tf(x)\cos\!\left(\frac{2\pi}Tnx\right)dx}
+\EMdisp{b_n\EMbr =\frac1\pi\int_Tf(x)\sin\!\left(\frac{2\pi}Tnx\right)\frac{2\pi}T\,dx\EMbr =\frac2T\int_Tf(x)\sin\!\left(\frac{2\pi}Tnx\right)dx}
+
+\begin{EMtheorem}{سری فوریه (دورهٔ تناوب \EMim{T})}
+
+اگر تابع \EMim{f(x)} با دورهٔ تناوب \EMim{T} متناوب باشد، آنگاه می‌توان آن را بر حسب یک سری مثلثاتی به صورت زیر بیان کرد:
+\EMdisp{f(x)\EMbr =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx,\qquad\EMbr  f(x+T)\EMbr =f(x)}
+\EMdisp{a_0\EMbr =\frac1T\int_Tf(x)\,dx,\qquad\EMbr  a_n\EMbr =\frac2T\int_Tf(x)\cos\frac{2\pi}Tnx\,dx,\qquad\EMbr  b_n\EMbr =\frac2T\int_Tf(x)\sin\frac{2\pi}Tnx\,dx}
+
+\end{EMtheorem}
+
+\begin{EMremark}{}
+
+مقدار سری فوریه در نقاط ناپیوستگی تابع برابر است با متوسط حد بالا و پایین در آن نقطه؛ مقدار سری فوریه در نقطهٔ \EMim{x}:
+\EMdisp{\frac{f(x^+)+f(x^-)}{2}}
+
+\end{EMremark}
+
+\EMhold
+
+\EMsection{قضیهٔ دریشله}{قضیهٔ دریشله}
+
+\begin{EMtheorem}{قضیهٔ دریشله (\lr{Dirichlet Theorem})}
+
+اگر تابع \EMim{f(x)} متناوب و \textbf{محدود} بوده، دارای تعداد \textbf{محدود ماکزیمم و مینیمم} و نیز تعداد \textbf{محدود نقاط ناپیوستگی} در هر دورهٔ تناوب باشد، آنگاه این تابع دارای سری فوریه بوده، مقدار سری فوریه در نقاط ناپیوستگی برابر مقدار متوسط حد راست و چپ در این نقاط است.
+
+\end{EMtheorem}
+
+مثال‌هایی از توابعی که شرایط دریشله را ندارند:
+
+\EMdisp{f(x)\EMbr =1/x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+\EMdisp{f(x)\EMbr =\sin(1/x),\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+
+\EMfigure{m08-dirichlet}{توابعی که شرایط دریشله را ندارند: \EMim{1/x} (نامحدود)، \EMim{\sin(1/x)}
+(بی‌نهایت ماکزیمم و مینیمم) و تابع پله‌ای با بی‌نهایت پله}
+
+\EMhold
+
+\EMsection{حل چند مسئله}{حل چند مسئله}
+
+\begin{EMexample}{مسئلهٔ ۱}
+
+سری فوریهٔ تابع زیر را به دست آورید:
+\EMdisp{f(x)\EMbr =\sin\alpha x,\qquad\EMbr  \alpha\in\mathbb{R},\qquad\EMbr  x\in[-\pi,\pi),\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+از آنجا که این تابع فرد است، داریم \EMim{a_0=0} و \EMim{a_n=0}.
+\EMdisp{\begin{aligned}
+b_n&=\frac1\pi\int_{-\pi}^{\pi}\sin\alpha x\sin nx\,dx=\frac2\pi\int_0^\pi\sin\alpha x\sin nx\,dx=\frac1\pi\int_0^\pi\big[\cos(\alpha-n)x-\cos(\alpha+n)x\big]dx\\
+&=\frac1\pi\left[\frac{\sin(\alpha-n)x}{\alpha-n}-\frac{\sin(\alpha+n)x}{\alpha+n}\right]_0^\pi=\cdots=\frac{2n(-1)^n\sin\alpha\pi}{\pi(\alpha^2-n^2)}
+\end{aligned}}
+\EMdisp{f(x)\EMbr =\sum_{n=1}^{\infty}\frac{2n(-1)^n\sin\alpha\pi}{\pi(\alpha^2-n^2)}\sin nx}
+
+سری را وقتی \EMim{\alpha=1} بررسی می‌کنیم:
+\EMdisp{\lim_{\alpha\to1}b_1\EMbr =\lim_{\alpha\to1}\frac{2(-1)^1\sin\alpha\pi}{\pi(\alpha^2-1^2)}\EMbr =\lim_{\alpha\to1}\frac{-2(\pi\cos\alpha\pi)}{\pi(2\alpha)}\EMbr =1,\qquad\EMbr  b_n\Big|_{n\neq1}\EMbr =0}
+بنابراین سری فوریه همان \EMim{f(x)=\sin x} است.
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+سری فوریه را وقتی \EMim{\alpha=m}، \EMim{m\in\mathbb{N}} بررسی کنید.
+
+\end{EMexercise}
+
+\begin{EMexample}{مسئلهٔ ۲}
+
+سری فوریهٔ تابع زیر را به دست آورید و \EMim{\csc\alpha\pi} را از روی آن بیابید.
+\EMdisp{f(x)\EMbr =\cos\alpha x,\qquad\EMbr  \alpha\in\mathbb{R},\qquad\EMbr  x\in[-\pi,\pi),\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+از آنجا که این تابع زوج است، داریم \EMim{b_n=0} و \EMim{f(x)=a_0+\sum_{n=1}^{\infty}a_n\cos nx}.
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}\cos\alpha x\,dx\EMbr =\frac1\pi\int_0^\pi\cos\alpha x\,dx\EMbr =\frac1\pi\left[\frac{\sin\alpha x}{\alpha}\right]_0^\pi\EMbr =\frac1{\alpha\pi}\sin\alpha\pi}
+\EMdisp{a_n\EMbr =\frac2\pi\int_0^\pi\cos\alpha x\cos nx\,dx\EMbr =\frac1\pi\int_0^\pi\big[\cos(\alpha-n)x+\cos(\alpha+n)x\big]dx\EMbr =\frac1\pi\left[\frac{\sin(\alpha-n)x}{\alpha-n}+\frac{\sin(\alpha+n)x}{\alpha+n}\right]_0^\pi\EMbr =\cdots\EMbr =\frac{(-1)^n2\alpha\sin\alpha\pi}{\pi(\alpha^2-n^2)}}
+\EMdisp{f(x)\EMbr =\frac1{\alpha\pi}\sin\alpha\pi+\frac{2\alpha\sin\alpha\pi}\pi\sum_{n=1}^{\infty}\frac{(-1)^n}{(\alpha^2-n^2)}\cos nx}
+تابع تناوبی در \EMim{x=0} پیوسته است، بنابراین داریم:
+\EMdisp{f(0)\EMbr =1\EMbr =\frac1{\alpha\pi}\sin\alpha\pi+\frac{2\alpha\sin\alpha\pi}\pi\sum_{n=1}^{\infty}\frac{(-1)^n}{(\alpha^2-n^2)}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac1{\sin\alpha\pi}\EMbr =\csc\alpha\pi\EMbr =\frac1{\alpha\pi}+\frac{2\alpha}\pi\sum_{n=1}^{\infty}\frac{(-1)^n}{(\alpha^2-n^2)}}
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+ثابت کنید: اگر \EMim{\alpha=m}، \EMim{m\in\mathbb{N}} خواهیم داشت:
+\EMdisp{a_0\EMbr =0,\qquad\EMbr  a_n\EMbr =\begin{cases}1&n=m\\ 0&n\neq m\end{cases}}
+
+\end{EMexercise}
+
+\begin{EMexample}{مسئلهٔ ۳}
+
+سری فوریهٔ تابع زیر را به دست آورید و \EMim{\coth\alpha\pi} را از روی آن بیابید.
+\EMdisp{f(x)\EMbr =e^{-\alpha x},\qquad\EMbr  \alpha\in\mathbb{R},\qquad\EMbr  x\in[-\pi,\pi),\qquad\EMbr  f(x+2\pi)\EMbr =f(x)}
+
+\textbf{لم ۱:}
+\EMdisp{\int e^{\alpha x}\cos nx\,dx\EMbr =\frac{e^{\alpha x}}{\alpha^2+n^2}\big(\alpha\cos nx+n\sin nx\big)}
+اثبات: با انتگرال‌گیری جزء به جزء دو بار، با \EMim{I=\int e^{\alpha x}\cos nx\,dx}:
+\EMdisp{I\EMbr =\frac1\alpha e^{\alpha x}\cos nx-\int\frac1\alpha e^{\alpha x}(-n\sin nx)\,dx\EMbr =\frac1\alpha e^{\alpha x}\cos nx+\frac n\alpha\int e^{\alpha x}\sin nx\,dx}
+\EMdisp{=\frac1\alpha e^{\alpha x}\cos nx+\frac n\alpha\left[\frac1\alpha e^{\alpha x}\sin nx-\int\frac1\alpha e^{\alpha x}(n\cos nx)\,dx\right]\EMbr =\frac1\alpha e^{\alpha x}\cos nx+\frac n{\alpha^2}e^{\alpha x}\sin nx-\frac{n^2}{\alpha^2}I}
+\EMdisp{\Longrightarrow\quad\EMbr  I\EMbr =\frac{e^{\alpha x}}{\alpha^2+n^2}\big(\alpha\cos nx+n\sin nx\big)}
+
+\textbf{لم ۲:}
+\EMdisp{\int e^{\alpha x}\sin nx\,dx\EMbr =\frac{e^{\alpha x}}{\alpha^2+n^2}\big(\alpha\sin nx-n\cos nx\big)}
+(اثبات به عنوان تمرین.)
+
+تابع نه زوج است و نه فرد؛ لذا باید همهٔ ضرایب سری فوریه را حساب کنیم.
+\EMdisp{a_0\EMbr =\frac1{2\pi}\int_{-\pi}^{\pi}e^{-\alpha x}\,dx\EMbr =\frac1{-2\pi\alpha}\Big[e^{-\alpha x}\Big]_{-\pi}^{\pi}\EMbr =\frac1{2\pi\alpha}\big[e^{\alpha\pi}-e^{-\alpha\pi}\big]\EMbr =\frac{\sinh\alpha\pi}{\alpha\pi}}
+\EMdisp{a_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}e^{-\alpha x}\cos nx\,dx\EMbr =\left\{\frac{e^{-\alpha x}}{\pi(\alpha^2+n^2)}\big(-\alpha\cos nx+n\sin nx\big)\right\}_{-\pi}^{\pi}\EMbr =\frac{\alpha(-1)^n}{\pi(\alpha^2+n^2)}\big[e^{\alpha\pi}-e^{-\alpha\pi}\big]\EMbr =\frac{2\alpha(-1)^n}{\pi(\alpha^2+n^2)}\sinh\alpha\pi}
+\EMdisp{b_n\EMbr =\frac1\pi\int_{-\pi}^{\pi}e^{-\alpha x}\sin nx\,dx\EMbr =\left\{\frac{e^{-\alpha x}}{\pi(\alpha^2+n^2)}\big(-\alpha\sin nx-n\cos nx\big)\right\}_{-\pi}^{\pi}\EMbr =\frac{n(-1)^n}{\pi(\alpha^2+n^2)}\big[e^{\alpha\pi}-e^{-\alpha\pi}\big]\EMbr =\frac{2n(-1)^n}{\pi(\alpha^2+n^2)}\sinh\alpha\pi}
+\EMdisp{\begin{aligned}
+f(x)&=\frac{\sinh\alpha\pi}{\alpha\pi}+\sum_{n=1}^{\infty}\left(\frac{2\alpha(-1)^n}{\pi(\alpha^2+n^2)}\sinh\alpha\pi\cos nx+\frac{2n(-1)^n}{\pi(\alpha^2+n^2)}\sinh\alpha\pi\sin nx\right)\\
+&=\sinh\alpha\pi\left(\frac1{\alpha\pi}+\sum_{n=1}^{\infty}\left(\frac{2\alpha(-1)^n}{\pi(\alpha^2+n^2)}\cos nx+\frac{2n(-1)^n}{\pi(\alpha^2+n^2)}\sin nx\right)\right)
+\end{aligned}}
+از آنجا که نقطهٔ \EMim{x=\pi} نقطهٔ ناپیوستگی است مقدار سری فوریه در این نقطه برابر است با متوسط حد بالا و پایین تابع در این نقطه، به عبارت دیگر:
+\EMdisp{\frac{f(\pi^+)+f(\pi^-)}2\EMbr =\frac{e^{\alpha\pi}+e^{-\alpha\pi}}2\EMbr =\cosh\alpha\pi}
+\EMdisp{\cosh\alpha\pi\EMbr =\sinh\alpha\pi\left(\frac1{\alpha\pi}+\sum_{n=1}^{\infty}\left(\frac{2\alpha(-1)^n}{\pi(\alpha^2+n^2)}\cos n\pi+\frac{2n(-1)^n}{\pi(\alpha^2+n^2)}\sin n\pi\right)\right)\EMbr =\sinh\alpha\pi\left(\frac1{\alpha\pi}+\sum_{n=1}^{\infty}\frac{2\alpha}{\pi(\alpha^2+n^2)}\right)}
+\EMdisp{\coth\alpha\pi\EMbr =\frac{\cosh\alpha\pi}{\sinh\alpha\pi}\EMbr =\frac1{\alpha\pi}+\sum_{n=1}^{\infty}\frac{2\alpha}{\pi(\alpha^2+n^2)}}
+
+\end{EMexample}

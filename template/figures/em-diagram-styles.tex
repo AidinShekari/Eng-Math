@@ -1,0 +1,47 @@
+% ============================================================
+%  Shared styles and macros for the figures (TikZ / PGFPlots).
+%  Colours: indigo = the object under study, rose = the result or
+%  the point of interest, jade = a second curve or a region,
+%  muted grey = guides.  Labels are mathematics (language neutral).
+% ============================================================
+\tikzset{
+  EMax/.style={-{Stealth[length=5.5pt,width=4.2pt]},line width=0.6pt,EMink!75},
+  EMgrid/.style={line width=0.3pt,EMline!80},
+  EMcurve/.style={line width=1.15pt,EMindigo},
+  EMcurve2/.style={line width=1.15pt,EMrose},
+  EMcurve3/.style={line width=1.15pt,EMjade},
+  EMthin/.style={line width=0.6pt,EMindigo!80},
+  EMdash/.style={dashed,line width=0.55pt,EMmuted},
+  EMvec/.style={-{Stealth[length=5.5pt,width=4.5pt]},line width=1.05pt,EMindigo},
+  EMvec2/.style={-{Stealth[length=5.5pt,width=4.5pt]},line width=1.05pt,EMrose},
+  EMpt/.style={circle,fill=EMrose,inner sep=0pt,minimum size=4.2pt},
+  EMptI/.style={circle,fill=EMindigo,inner sep=0pt,minimum size=4.2pt},
+  EMhole/.style={circle,fill=white,draw=EMrose,line width=0.8pt,inner sep=0pt,minimum size=4.6pt},
+  EMfill/.style={fill=EMindigo!13,draw=none},
+  EMfill2/.style={fill=EMrose!12,draw=none},
+  EMfill3/.style={fill=EMjade!13,draw=none},
+  EMlab/.style={font=\small,text=EMink,inner sep=1.5pt},
+  EMlabs/.style={font=\footnotesize,text=EMink,inner sep=1pt},
+  EMtag/.style={font=\small\itshape,text=EMmuted,inner sep=2pt},
+  EMbox/.style={draw=EMindigo,line width=0.8pt,fill=EMindigoL,rounded corners=2pt,
+    minimum height=1.1cm,minimum width=2.3cm,align=center,font=\small,inner sep=4pt},
+  EMmid/.style={decoration={markings,mark=at position 0.5 with {\arrow{Stealth[length=5pt]}}},postaction=decorate},
+  EMmid3/.style={decoration={markings,mark=at position 0.55 with {\arrow{Stealth[length=5pt]}}},postaction=decorate},
+}
+% rectangular axes with arrow tips: \EMaxes{xmin}{xmax}{ymin}{ymax}{x label}{y label}
+\newcommand{\EMaxes}[6]{%
+  \draw[EMax] (#1,0) -- (#2,0) node[EMlab,right]{#5};
+  \draw[EMax] (0,#3) -- (0,#4) node[EMlab,above]{#6};}
+% a pole: a cross
+\newcommand{\EMcross}[1]{\draw[EMrose,line width=1.1pt] ($#1+(-3pt,-3pt)$)--($#1+(3pt,3pt)$) ($#1+(-3pt,3pt)$)--($#1+(3pt,-3pt)$);}
+% light integer grid
+\newcommand{\EMgrid}[4]{\draw[EMgrid] (#1,#3) grid (#2,#4);}
+% a point with a label: \EMpoint{(x,y)}{name}{label}{anchor options}
+\newcommand{\EMpoint}[4]{\node[EMpt] (#2) at #1 {}; \node[EMlab,#4] at (#2) {#3};}
+\pgfplotsset{EMplot/.style={
+  axis lines=middle,axis line style={EMink!75,-{Stealth[length=5pt]}},
+  tick style={EMink!60},tick label style={font=\footnotesize,text=EMink},
+  label style={font=\small,text=EMink},
+  every axis x label/.style={at={(ticklabel* cs:1.0)},anchor=west,xshift=3pt},
+  every axis y label/.style={at={(ticklabel* cs:1.0)},anchor=south,yshift=3pt},
+  grid=none,width=9cm,height=5.2cm,every axis plot/.append style={line width=1.15pt}}}

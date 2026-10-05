@@ -1,0 +1,521 @@
+\EMsection{The Definite Integral and the Path of Integration}{The Definite Integral and the Path of Integration}
+
+The integral of complex functions, like that of real functions, appears in two forms:
+
+\begin{itemize}
+\tightlist
+\item
+  the indefinite integral, which amounts to finding an antiderivative;
+\item
+  the definite integral, known as the integral along a path.
+\end{itemize}
+
+In the setting of complex functions the definite integral is also called the path integral or \emph{line integral}, and is written
+\EMdisp{\int_C f(z)\,dz}
+\EMim{C} is called the path of integration.
+
+\EMfigure{m05-path}{A path of integration \EMim{C} from the point \EMim{A} to the point
+\EMim{B} in the \EMim{z}-plane}
+
+\EMsubsection{The Path of Integration}{The Path of Integration}
+
+A path of integration in the complex plane consists of a starting point, an intermediate route and an end point. In many cases the best way to describe a path is to use an auxiliary variable which, as it increases, traverses the path from start to end in the desired direction.
+
+\EMdisp{z(t)\EMbr =x(t)+iy(t),\qquad\EMbr  a\le t\le b,\qquad\EMbr  t,a,b\in\mathbb{R}}
+\EMdisp{z(a)\EMbr =A,\qquad\EMbr  z(b)\EMbr =B,\qquad\EMbr  z,A,B\in\mathbb{C}}
+
+\EMfigure{m05-path-param}{The path \EMim{C}, directed from \EMim{A=z(a)} to \EMim{B=z(b)}}
+
+\begin{EMexample}{}
+
+\EMdisp{z(t)\EMbr =t+i2t,\qquad\EMbr  1\le t\le2}
+This path is the line segment from the point \EMim{1+2i} to the point \EMim{2+4i}.
+
+\end{EMexample}
+
+\EMfigure{m05-line-path}{The path \EMim{z(t)=t+i2t}, \EMim{1\le t\le2}}
+
+\begin{EMexample}{}
+
+\EMdisp{z(t)\EMbr =\cos t+i\sin t,\qquad\EMbr  0\le t\le2\pi}
+\EMdisp{z(t)\EMbr =e^{it},\qquad\EMbr  0\le t\le2\pi}
+This path is the unit circle, traversed counterclockwise.
+
+\end{EMexample}
+
+\EMfigure{m05-circle-path}{The path \EMim{z(t)=e^{it}}, \EMim{0\le t\le2\pi} (the unit circle)}
+
+\EMkeepfig{m05-tangent}{5}
+
+\EMsubsection{The Derivative of the Path}{The Derivative of the Path}
+
+\EMdisp{\dot z(t)\EMbr =\frac{d}{dt}z(t)\EMbr =\lim_{\Delta t\to0}\frac{z(t+\Delta t)-z(t)}{\Delta t}\EMbr =\frac{d}{dt}x(t)+i\frac{d}{dt}y(t)\EMbr =\dot x(t)+i\dot y(t)}
+
+\EMfigure{m05-tangent}{The derivative of the path \EMim{\dot z(t)} as the limit of
+\EMim{\frac{z(t+\Delta t)-z(t)}{\Delta t}}}
+
+\EMsection{The Definite Integral of Complex Functions}{The Definite Integral of Complex Functions}
+
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_C(u+iv)(dx+i\,dy)\EMbr =\int_C(u\,dx-v\,dy)+i\int_C(v\,dx+u\,dy)}
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_tf\big(z(t)\big)\,\dot z(t)\,dt}
+
+\begin{EMdefinition}{Steps for computing a complex definite integral along a path}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Describe the path parametrically: \EMim{z(t)=x(t)+iy(t)}, \EMim{a\le t\le b}.
+\item
+  Compute the derivative of \EMim{z(t)} with respect to \EMim{t}: \EMim{\dot z(t)=\dot x(t)+i\,\dot y(t)}.
+\item
+  Substitute \EMim{z(t)} into \EMim{f(z)}.
+\item
+  Integrate \EMim{f\big(z(t)\big)\dot z(t)} with respect to \EMim{t} for \EMim{a\le t\le b}.
+\end{enumerate}
+
+\end{EMdefinition}
+
+\begin{EMexample}{}
+
+Compute the integral of the function \EMim{f(z)=\bar z} along the path shown.
+
+\EMdisp{z(t)\EMbr =t+it^2,\quad\EMbr  -1\le t\le1,\qquad\EMbr  \dot z(t)\EMbr =1+i2t}
+\EMdisp{f(z)\EMbr =\bar z\EMbr =x-iy,\qquad\EMbr  f\big(z(t)\big)\EMbr =\bar z(t)\EMbr =t-it^2}
+\EMdisp{\begin{aligned}
+\int_{-1+i}^{1+i}\bar z\,dz&=\int_{t=-1}^{1}(t-it^2)(1+i2t)\,dt\\
+&=\int_{t=-1}^{1}\Big[(t+2t^3)+i(2t^2-t^2)\Big]dt=\int_{t=-1}^{1}\Big[(t+2t^3)+it^2\Big]dt\\
+&=\left.\left(\frac12t^2+\frac24t^4\right)+i\times\frac13t^3\right|_{-1}^{1}=0+i\,\frac23
+\end{aligned}}
+
+\end{EMexample}
+
+\EMfigure{m05-parabola-path}{The path \EMim{z(t)=t+it^2}, \EMim{-1\le t\le1}, from \EMim{-1+i} to
+\EMim{1+i}}
+
+\begin{EMexample}{}
+
+Compute the integral of the function \EMim{f(z)=\bar z} along the path shown.
+
+\EMdisp{z(t)\EMbr =t+i,\quad\EMbr  -1\le t\le1,\qquad\EMbr  \dot z(t)\EMbr =1}
+\EMdisp{f(z)\EMbr =\bar z\EMbr =x-iy,\qquad\EMbr  f\big(z(t)\big)\EMbr =\bar z(t)\EMbr =t-i}
+\EMdisp{\int_{-1+i}^{1+i}\bar z\,dz\EMbr =\int_{t=-1}^{1}(t-i)(1)\,dt\EMbr =\left.\left(\frac{t^2}{2}-it\right)\right|_{-1}^{1}\EMbr =0-i2}
+So for this complex function the value of the integral depends on the chosen path.
+
+\end{EMexample}
+
+\EMfigure{m05-line-path-2}{The path \EMim{z(t)=t+i}, \EMim{-1\le t\le1}, from \EMim{-1+i} to
+\EMim{1+i}}
+
+\EMkeepfig{m05-split-path}{5}
+
+\EMsubsection{Some Properties of the Definite Integral}{Some Properties of the Definite Integral}
+
+\EMdisp{\int_C\big[k_1f_1(z)+k_2f_2(z)\big]dz\EMbr =k_1\int_Cf_1(z)\,dz+k_2\int_Cf_2(z)\,dz\qquad\EMbr \text{(linearity)}}
+\EMdisp{\int_{z_0}^{Z}f(z)\,dz\EMbr =-\int_{Z}^{z_0}f(z)\,dz\qquad\EMbr \text{(reversing the direction of integration)}}
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_{C_1}f(z)\,dz+\int_{C_2}f(z)\,dz\qquad\EMbr \text{(splitting the path of integration)}}
+
+\EMfigure{m05-split-path}{A path \EMim{C} from \EMim{z_0} to \EMim{Z} split into two pieces
+\EMim{C_1} and \EMim{C_2}}
+
+\EMhold
+
+\EMsection{Simple Closed Curves and Simply Connected Domains}{Simple Closed Curves and Simply Connected Domains}
+
+\begin{EMdefinition}{Simple closed curve}
+
+A simple closed curve is a closed curve that does not intersect itself.
+
+\end{EMdefinition}
+
+\EMfigure{m05-curve-types}{Simple closed curves and closed curves that are not simple}
+
+\begin{EMdefinition}{Simply connected domain}
+
+A domain \EMim{D} is simply connected if, whenever a simple closed curve lies entirely in it, all the points inside the curve belong to this domain.
+
+\end{EMdefinition}
+
+\EMfigure{m05-connected-types}{Simply connected and not simply connected domains}
+
+\EMhold
+
+\EMsection{Integration by Antiderivative}{Integration by Antiderivative}
+
+\begin{EMtheorem}{}
+
+Let the complex function \EMim{f(z)} be analytic in the simply connected domain \EMim{D}. If \EMim{F(z)} is an antiderivative of \EMim{f(z)}, i.e.~\EMim{F'(z)=f(z)}, then
+\EMdisp{\int_{z_0}^{z_1}f(z)\,dz\EMbr =F(z_1)-F(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_0^{1+i}z^2\,dz\EMbr =\left.\frac13z^3\right|_0^{1+i}\EMbr =\frac13(1+i)^3\EMbr =\frac23(-1+i)}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{-\pi i}^{\pi i}\cos z\,dz\EMbr =\sin z\Big|_{-\pi i}^{\pi i}\EMbr =2\sin(\pi i)\EMbr =2i\sinh\pi\EMbr =23.097\,i}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{8+\pi i}^{8-3\pi i}e^{z/2}\,dz\EMbr =2e^{z/2}\Big|_{8+\pi i}^{8-3\pi i}\EMbr =2\left(e^{4-3\pi i/2}-e^{4+\pi i/2}\right)\EMbr =0}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{-i}^{i}\frac{dz}{z}\EMbr =\ln i-\ln(-i)\EMbr =\frac{i\pi}{2}-\left(-\frac{i\pi}{2}\right)\EMbr =i\pi}
+
+\end{EMexample}
+
+\EMsection{Integrals of Complex Functions Along Closed Paths}{Integrals of Complex Functions Along Closed Paths}
+
+The integral along a simple closed path \EMim{C}, written
+\EMdisp{\oint_Cf(z)\,dz}
+is of great importance.
+
+\begin{EMtheorem}{Cauchy's integral theorem}
+
+If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D}, then for every simple closed path \EMim{C} in this domain,
+\EMdisp{\oint_Cf(z)\,dz\EMbr =0}
+
+\end{EMtheorem}
+
+\EMfigure{m05-cauchy-region}{A simple closed path \EMim{C} in the simply connected domain \EMim{D}}
+
+\begin{EMproof}
+
+As we saw earlier, since the complex function is analytic, we have
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial v}{\partial y},\qquad\EMbr  \frac{\partial u}{\partial y}\EMbr =-\frac{\partial v}{\partial x}}
+\EMdisp{\oint_Cf(z)\,dz\EMbr =\oint_C(u+iv)(dx+i\,dy)\EMbr =\oint_C(u\,dx-v\,dy)+i\oint_C(v\,dx+u\,dy)}
+By Green's theorem (which you learned in Mathematics II),
+\EMdisp{\oint_C(L\,dx+M\,dy)\EMbr =\iint_R\left(\frac{\partial M}{\partial x}-\frac{\partial L}{\partial y}\right)dx\,dy}
+Hence
+\EMdisp{\oint_C(u\,dx-v\,dy)+i\oint_C(v\,dx+u\,dy)\EMbr =\iint_R\underbrace{\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)}_{0}dx\,dy+i\iint_R\underbrace{\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right)}_{0}dx\,dy\EMbr =0}
+where the first term vanishes because of the second Cauchy--Riemann condition and the second because of the first.
+
+\end{EMproof}
+
+\begin{EMexample}{}
+
+If the function is analytic in the whole complex plane, the integral along any closed path is zero:
+\EMdisp{\oint_C\cos z\,dz\EMbr =0,\qquad\EMbr  \oint_Ce^z\,dz\EMbr =0,\qquad\EMbr  \oint_Cz^n\,dz\EMbr =0,\quad\EMbr  n\EMbr =1,2,3,\dots}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+If the function has non-analytic points that lie neither on the path nor inside \EMim{C}, the integral is still zero:
+\EMdisp{\oint_{|z|=1}\sec z\,dz,\qquad\EMbr  \oint_{|z|=1}\frac{dz}{z^2+4}}
+(the path is the unit circle.)
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+If the function is not analytic, the integral along a closed path \textbf{may} be nonzero:
+\EMdisp{\oint_{|z|=1}\bar z\,dz,\qquad\EMbr  z(t)\EMbr =\cos t+i\sin t\EMbr =e^{it},\quad\EMbr \dot z(t)\EMbr =ie^{it}}
+\EMdisp{\oint_{|z|=1}\bar z\,dz\EMbr =\int_0^{2\pi}e^{-it}\,ie^{it}\,dt\EMbr =2\pi i}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+If the function is not analytic on the path or inside it, the integral along a closed path \textbf{may} be zero:
+\EMdisp{\oint_C\frac1{z^2}\,dz\EMbr =0}
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+Prove that \EMim{\displaystyle\oint_C\frac1{z^2}\,dz=0}.
+
+\end{EMexercise}
+
+\begin{EMremark}{Consequence 1}
+
+The connectedness of the domain is essential in Cauchy's integral theorem.
+
+\end{EMremark}
+
+\begin{EMremark}{Consequence 2}
+
+If \EMim{f(z)} is analytic in the simply connected domain \EMim{D}, the definite integral does not depend on the choice of path.
+
+\end{EMremark}
+
+\EMdisp{\int_{C_1}f(z)\,dz+\int_{C_2^*}f(z)\,dz\EMbr =0\;\EMbr \Longrightarrow\;\int_{C_1}f(z)\,dz\EMbr =-\int_{C_2^*}f(z)\,dz\;\EMbr \Longrightarrow\;\int_{C_1}f(z)\,dz\EMbr =\int_{C_2}f(z)\,dz}
+
+Hence the integral from the starting point to the end point does not depend on the chosen path.
+
+\EMfigure{m05-path-independence}{The paths \EMim{C_1}, \EMim{C_2} and \EMim{C_2^*} (\EMim{C_2} with
+reversed direction) between \EMim{z_1} and \EMim{z_2}}
+
+\EMkeepfig{m05-circle-integral}{5}
+
+\EMsubsection{A Very Important Example}{A Very Important Example}
+
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =\;?\qquad\EMbr  C:\ z(t)\EMbr =z_0+re^{it}}
+
+\EMfigure{m05-circle-integral}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{r}}
+
+\EMdisp{z(t)\EMbr =z_0+re^{it},\qquad\EMbr  \dot z(t)\EMbr =rie^{it}}
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =\int_0^{2\pi}\frac{rie^{it}}{re^{it}}\,dt\EMbr =\int_0^{2\pi}i\,dt\EMbr =2\pi i}
+
+\begin{EMimportant}{}
+
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =2\pi i}
+
+\end{EMimportant}
+
+\EMhold
+
+\EMsection{Cauchy's Integral Formula}{Cauchy’s Integral Formula}
+
+\begin{EMtheorem}{Cauchy's integral formula}
+
+If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D} and \EMim{z_0} is a point inside \EMim{C}, then
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =f(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+As we saw earlier, since the function \EMim{\dfrac{f(z)}{z-z_0}} is analytic inside the connected domain \EMim{\Gamma}, we have
+\EMdisp{\oint_\Gamma\frac{f(z)}{z-z_0}\,dz\EMbr =0\EMbr =\int_{ACA'}\frac{f(z)}{z-z_0}\,dz+\int_{A'B'}\frac{f(z)}{z-z_0}\,dz+\int_{B'C'B}\frac{f(z)}{z-z_0}\,dz+\int_{BA}\frac{f(z)}{z-z_0}\,dz}
+\EMdisp{\lim_{\substack{A\to A'\\ B\to B'}}\int_{BA}\frac{f(z)}{z-z_0}\,dz\EMbr =-\int_{A'B'}\frac{f(z)}{z-z_0}\,dz}
+Consequently (the two integrals along the connecting segments cancel)
+\EMdisp{\lim_{\substack{A\to A'\\ B\to B'}}\int_{ACA'}\frac{f(z)}{z-z_0}\,dz+\int_{B'C'B}\frac{f(z)}{z-z_0}\,dz\EMbr =0\;\EMbr \Longrightarrow\;\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =\oint_{C'}\frac{f(z)}{z-z_0}\,dz}
+(here \EMim{C'} is traversed counterclockwise). Continuing:
+\EMdisp{\begin{aligned}
+\oint_C\frac{f(z)}{z-z_0}\,dz&=\oint_{C'}\frac{f(z)}{z-z_0}\,dz=\oint_{C'}\frac{f(z)-f(z_0)+f(z_0)}{z-z_0}\,dz\\
+&=\oint_{C'}\frac{f(z)-f(z_0)}{z-z_0}\,dz+\oint_{C'}\frac{f(z_0)}{z-z_0}\,dz\\
+&=\oint_{C'}g(z)\,dz+f(z_0)\oint_{C'}\frac1{z-z_0}\,dz=0+2\pi i\,f(z_0)=2\pi i\,f(z_0)
+\end{aligned}}
+where
+\EMdisp{g(z)\triangleq\begin{cases}\dfrac{f(z)-f(z_0)}{z-z_0}&z\neq z_0\\\noalign{\vskip 2mm} f'(z_0)&z=z_0\end{cases}}
+is analytic inside \EMim{C'}. Therefore
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =f(z_0)}
+
+\end{EMproof}
+
+\EMfigure{m05-cauchy-proof}{The path \EMim{\Gamma} in the proof of Cauchy's integral formula: the
+curve \EMim{C}, the small circle \EMim{C'} centred at \EMim{z_0}, and
+the two connecting segments \EMim{AA'} and \EMim{BB'}}
+
+\EMhold
+
+\EMsection{Application: Evaluating Real Integrals}{Application: Evaluating Real Integrals}
+
+\begin{EMexample}{}
+
+Evaluate the integral \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}} using Cauchy's integral formula.
+
+Consider the function \EMim{g(z)=\dfrac{1}{1+z^2}}. Using the path shown in the figure we find the integral along the closed path.
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\oint_C\frac{\left[\dfrac1{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac1{i+i}\EMbr =\pi,\qquad\EMbr  f(z)\EMbr =\frac1{z+i},\quad\EMbr  z_0\EMbr =i}
+On the other hand
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
+In the expression above, the first term as \EMim{R\to\infty} is the required value.
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\pi\EMbr =\int_{-\infty}^{\infty}\frac{dx}{1+x^2}+I,\qquad\EMbr  I\EMbr =\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}\EMbr =0}
+Therefore
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{1+x^2}\EMbr =\pi}
+
+\end{EMexample}
+
+\EMfigure{m05-semicircle-1}{The semicircular path in the upper half-plane; the poles are at
+\EMim{z=\pm i}}
+
+\begin{EMexample}{}
+
+Evaluate the integral \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx} using Cauchy's integral formula (\EMim{\omega>0}).
+
+Consider the function \EMim{g(z)=\dfrac{e^{i\omega z}}{1+z^2}}. Using the path shown in the figure (the same semicircle as before) we find the integral along the closed path.
+\EMdisp{\oint_C\frac{e^{i\omega z}}{1+z^2}\,dz\EMbr =\oint_C\frac{\left[\dfrac{e^{i\omega z}}{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac{e^{i\omega i}}{i+i}\EMbr =\pi e^{-\omega},\qquad\EMbr  f(z)\EMbr =\frac{e^{i\omega z}}{z+i},\quad\EMbr  z_0\EMbr =i}
+On the other hand
+\EMdisp{\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}+\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}}
+But:
+\EMdisp{I_1\EMbr =\lim_{R\to\infty}\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}\to0}
+\textbf{Proof:}
+\EMdisp{e^{i\omega Re^{it}}\EMbr =e^{i\omega R(\cos t+i\sin t)}\EMbr =e^{i\omega R\cos t}\,e^{-\omega R\sin t}}
+\EMdisp{\lim_{R\to\infty}\left|e^{i\omega Re^{it}}\right|\EMbr =\lim_{R\to\infty}\left|e^{i\omega R\cos t}\right|\times\left|e^{-\omega R\sin t}\right|\EMbr =1\times0\EMbr =0,\qquad\EMbr  t\in[0,\pi]}
+On the other hand, in the integral \EMim{I_1} the remaining factor of the integrand tends to zero as \EMim{R} tends to infinity. So the limit of \EMim{I_1} as \EMim{R\to\infty} is zero.
+
+Therefore
+\EMdisp{\pi e^{-\omega}\EMbr =\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}}
+The second integral is zero. Why?
+\EMdisp{\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx\EMbr =\pi e^{-\omega}}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Evaluate the integral \EMim{\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}} using Cauchy's integral formula.
+
+\EMdisp{\frac{1}{(x^2+1)(x^2+4)}\EMbr =\frac{A}{x^2+1}+\frac{B}{x^2+4}\EMbr =\frac{1/3}{x^2+1}+\frac{-1/3}{x^2+4}}
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}\EMbr =\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+1}-\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+4}}
+
+\textbf{First integral:} \EMim{I_1=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+1}} and \EMim{g_1(z)=\dfrac1{z^2+1}}:
+\EMdisp{\oint_Cg_1(z)\,dz\EMbr =\oint_C\frac1{z^2+1}\,dz\EMbr =\oint_C\frac{\left[\dfrac1{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac1{i+i}\EMbr =\pi}
+\EMdisp{\oint_C\frac1{z^2+1}\,dz\EMbr =\pi\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^2+1}\,dz\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+0\EMbr =\pi\;\EMbr \Longrightarrow\;I_1\EMbr =\pi}
+
+\textbf{Second integral:} \EMim{I_2=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+4}} and \EMim{g_2(z)=\dfrac1{z^2+4}}:
+\EMdisp{\oint_Cg_2(z)\,dz\EMbr =\oint_C\frac1{z^2+4}\,dz\EMbr =\oint_C\frac{\left[\dfrac1{z+2i}\right]}{z-2i}\,dz\EMbr =2\pi i\,\frac1{2i+2i}\EMbr =\frac\pi2}
+\EMdisp{\oint_C\frac1{z^2+4}\,dz\EMbr =\frac\pi2\EMbr =\int_{-R}^{R}\frac{dx}{x^2+4}+\int_0^\pi\frac{iRe^{it}\,dt}{R^2e^{i2t}+4}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^2+4}\,dz\EMbr =\int_{-R}^{R}\frac{dx}{x^2+4}+0\EMbr =\frac\pi2\;\EMbr \Longrightarrow\;I_2\EMbr =\frac\pi2}
+
+As a result
+\EMdisp{I\EMbr =\frac13I_1-\frac13I_2\EMbr =\frac13\pi-\frac13\times\frac\pi2\EMbr =\frac\pi6}
+
+\end{EMexample}
+
+\EMfigure{m05-semicircle-2}{The semicircular path; the poles are at \EMim{z=\pm i} and
+\EMim{z=\pm2i}}
+
+\begin{EMexample}{}
+
+Evaluate the integral \EMim{\displaystyle I=\int_0^\infty\frac{dx}{x^4+1}} using Cauchy's integral formula.
+
+\EMdisp{g(z)\EMbr =\frac1{z^4+1},\qquad\EMbr  z^4+1\EMbr =0\;\EMbr \Longrightarrow\;z_1\EMbr =e^{i\pi/4},\quad\EMbr  z_2\EMbr =e^{i3\pi/4},\quad\EMbr  z_3\EMbr =e^{i5\pi/4},\quad\EMbr  z_4\EMbr =e^{i7\pi/4}}
+Only the two poles \EMim{z_1} and \EMim{z_2} lie inside the path \EMim{C}:
+\EMdisp{\begin{aligned}
+\oint_Cg(z)\,dz&=\oint_C\frac1{z^4+1}\,dz=\oint_{C_1}\frac1{z^4+1}\,dz+\oint_{C_2}\frac1{z^4+1}\,dz\\
+&=\oint_{C_1}\frac{\dfrac1{(z-z_2)(z-z_3)(z-z_4)}}{z-z_1}\,dz+\oint_{C_2}\frac{\dfrac1{(z-z_1)(z-z_3)(z-z_4)}}{z-z_2}\,dz\\
+&=2\pi i\left.\frac1{(z-z_2)(z-z_3)(z-z_4)}\right|_{z=z_1}+2\pi i\left.\frac1{(z-z_1)(z-z_3)(z-z_4)}\right|_{z=z_2}\\
+&=2\pi i\,\frac1{\underbrace{(e^{i\pi/4}-e^{i3\pi/4})}_{\sqrt2}\underbrace{(e^{i\pi/4}-e^{i5\pi/4})}_{\sqrt2+i\sqrt2}\underbrace{(e^{i\pi/4}-e^{i7\pi/4})}_{i\sqrt2}}\\
+&\quad+2\pi i\,\frac1{\underbrace{(e^{i3\pi/4}-e^{i\pi/4})}_{-\sqrt2}\underbrace{(e^{i3\pi/4}-e^{i5\pi/4})}_{i\sqrt2}\underbrace{(e^{i3\pi/4}-e^{i7\pi/4})}_{-\sqrt2+i\sqrt2}}=\frac\pi{\sqrt2}
+\end{aligned}}
+On the other hand
+\EMdisp{\oint_C\frac1{z^4+1}\,dz\EMbr =\frac\pi{\sqrt2}\EMbr =\int_{-R}^{R}\frac{dx}{x^4+1}+\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^4+1}\,dz\EMbr =\int_{-\infty}^{\infty}\frac{dx}{x^4+1}+\underbrace{\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}_{0}\EMbr =\frac\pi{\sqrt2}}
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{x^4+1}\EMbr =\frac\pi{\sqrt2}\;\EMbr \Longrightarrow\;\int_0^\infty\frac{dx}{x^4+1}\EMbr =\frac\pi{2\sqrt2}}
+
+\end{EMexample}
+
+\EMfigure{m05-semicircle-3}{The semicircular path and the circles \EMim{C_1} and \EMim{C_2} around
+the poles \EMim{z_1} and \EMim{z_2}; the poles \EMim{z_3} and \EMim{z_4}
+lie in the lower half-plane}
+
+\EMhold
+
+\EMsection{Cauchy's Theorem with Several Non-Analytic Points}{Cauchy’s Theorem with Several Non-Analytic Points}
+
+\begin{EMtheorem}{}
+
+If the function \EMim{f(z)} is analytic at all points of the domain \EMim{D} except the points \EMim{z_1,z_2,z_3,\dots,z_n} inside \EMim{C}, then
+\EMdisp{\oint_Cf(z)\,dz\EMbr =\oint_{C_1}f(z)\,dz+\oint_{C_2}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
+where \EMim{C_k} is a circle centred at \EMim{z_k} that lies inside \EMim{C} and does not contain any of the other points \EMim{z_1,\dots,z_n}.
+
+\end{EMtheorem}
+
+\EMfigure{m05-multi-points}{A path \EMim{C} and the non-analytic points \EMim{z_1,\dots,z_n} inside
+it}
+
+\begin{EMproof}
+
+Build the path \EMim{\Gamma} from \EMim{C} (counterclockwise), the small circles \EMim{C_1,\dots,C_n} (clockwise) and the segments connecting them to \EMim{C}; the integral along each connecting segment is traversed twice in opposite directions and cancels. The function is analytic inside \EMim{\Gamma}, so
+\EMdisp{\oint_\Gamma f(z)\,dz\EMbr =0\;\EMbr \Longrightarrow\;\oint_Cf(z)\,dz+\oint_{C_1^{\circlearrowright}}f(z)\,dz+\cdots+\oint_{C_n^{\circlearrowright}}f(z)\,dz\EMbr =0}
+\EMdisp{\oint_Cf(z)\,dz\EMbr =-\oint_{C_1^{\circlearrowright}}f(z)\,dz-\cdots-\oint_{C_n^{\circlearrowright}}f(z)\,dz\EMbr =\oint_{C_1}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
+where \EMim{C_k^{\circlearrowright}} is the circle \EMim{C_k} traversed clockwise and \EMim{C_k} the same circle traversed counterclockwise.
+
+\end{EMproof}
+
+\EMfigure{m05-multi-proof}{The path \EMim{\Gamma} for the proof: \EMim{C}, the circles
+\EMim{C_1,\dots,C_n} and the connecting segments}
+
+\EMhold
+
+\EMsection{Derivatives of an Analytic Function}{Derivatives of an Analytic Function}
+
+\begin{EMtheorem}{Cauchy's integral formula for the derivative}
+
+If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D} and \EMim{z_0} is a point inside \EMim{C}, then
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\EMbr =f'(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+\EMdisp{f'(z_0)\EMbr =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t},\qquad\EMbr  f(z_0)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz,\qquad\EMbr  f(z_0+\Delta t)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz}
+\EMdisp{\begin{aligned}
+\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t}&=\frac1{2\pi i\,\Delta t}\left\{\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz-\oint_C\frac{f(z)}{z-z_0}\,dz\right\}\\
+&=\frac1{2\pi i\,\Delta t}\oint_Cf(z)\left[\frac1{z-z_0-\Delta t}-\frac1{z-z_0}\right]dz\\
+&=\frac1{2\pi i\,\Delta t}\oint_Cf(z)\left[\frac{\Delta t}{(z-z_0-\Delta t)(z-z_0)}\right]dz\\
+&=\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz
+\end{aligned}}
+\EMdisp{f'(z_0)\EMbr =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t}\EMbr =\lim_{\Delta t\to0}\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
+
+\end{EMproof}
+
+\begin{EMtheorem}{Generalization of Cauchy's integral formula}
+
+If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D} and \EMim{z_0} is a point inside \EMim{C}, then
+\EMdisp{\frac{n!}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz\EMbr =f^{(n)}(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMexercise}{}
+
+Prove it by mathematical induction.
+
+\end{EMexercise}
+
+\begin{EMexample}{}
+
+Evaluate the following integral. (\EMim{C} is the unit circle.)
+\EMdisp{I\EMbr =\oint_C\frac{z^2}{(2z-1)^2}\,dz}
+
+\EMdisp{I\EMbr =\oint_C\frac{z^2}{4(z-1/2)^2}\,dz\EMbr =\frac14\oint_C\frac{z^2}{(z-1/2)^2}\,dz\EMbr =\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}\EMbr =\frac14\times2\pi i\times(2z)\Big|_{z=1/2}\EMbr =\frac\pi2\,i}
+(\EMim{z=1/2} lies inside the unit circle.)
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Evaluate the following integral. (\EMim{C} is the unit circle.)
+\EMdisp{I\EMbr =\oint_C\frac{e^{-z}\sin z}{z^2}\,dz}
+
+\EMdisp{f(z)\EMbr =e^{-z}\sin z,\quad\EMbr  z_0\EMbr =0,\qquad\EMbr  f'(z)\EMbr =-e^{-z}\sin z+e^{-z}\cos z,\qquad\EMbr  f'(z_0)\EMbr =f'(0)\EMbr =1}
+\EMdisp{I\EMbr =2\pi i\,f'(z_0)\EMbr =2\pi i}
+
+\end{EMexample}
+
+\begin{EMexercise}{Problem}
+
+If \EMim{f(z)} is analytic in the whole \EMim{z}-plane and bounded in the whole plane, i.e.~\EMim{|f(z)|<M}, prove that \EMim{f(z)=k}, \EMim{k\in\mathbb{C}}.
+
+Choose the path \EMim{C} to be a circle of radius \EMim{R} centred at \EMim{z_0}, and let \EMim{R} tend to infinity.
+\EMdisp{f'(z_0)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
+\EMdisp{|f'(z_0)|\EMbr =\left|\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\right|\le\frac1{2\pi}\oint_C\frac{|f(z)|}{|z-z_0|^2}\,|dz|\le\frac1{2\pi}\,\frac{M}{R^2}\oint_C|dz|\EMbr =\frac1{2\pi}\,\frac{M}{R^2}\cdot2\pi R\EMbr =\frac MR\to0\quad\EMbr (R\to\infty)}
+\EMdisp{\Longrightarrow\;|f'(z_0)|\EMbr =0\;\EMbr \Longrightarrow\;f'(z)\EMbr =0\;\EMbr \Longrightarrow\;f(z)\EMbr =k}
+
+\end{EMexercise}
+
+\EMfigure{m05-liouville-circle}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{R}}
+
+\begin{EMexercise}{}
+
+Evaluate the following integrals:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{\displaystyle\oint_C\frac{z^2}{(2z-1)^4}\,dz}, \EMim{C}: the unit circle
+\item
+  \EMim{\displaystyle\int_{1+i}^{1+3i}e^z\sin z\,dz}
+\item
+  \EMim{\displaystyle\int_{1+i}^{2+2i}\operatorname{Re}\{z^2\}\,dz} along a straight-line path
+\item
+  \EMim{\displaystyle\oint_C\frac{e^{\cos z}\sin z}{1+z^6}\,dz} along the path below
+\end{enumerate}
+
+\end{EMexercise}
+
+\EMfigure{m05-exercise-circle}{The path of exercise 4: a circle with centre \EMim{3+3i} and radius
+\EMim{r=1}}

@@ -1,0 +1,9 @@
+% Solving an initial-value problem with the Laplace transform
+\begin{tikzpicture}[node distance=1.5cm,every node/.style={}]
+  \node[EMbox,text width=2.4cm] (a) {\EML{initial-value problem}{مسئلهٔ مقدار اولیه}};
+  \node[EMbox,text width=2.4cm,right=2.0cm of a] (b) {\EML{algebraic problem}{مسئلهٔ جبری}};
+  \node[EMbox,text width=2.4cm,right=2.0cm of b,fill=EMroseL,draw=EMrose] (c) {\EML{solution of the algebraic problem}{جواب مسئلهٔ جبری}};
+  \node[EMbox,text width=2.4cm,right=2.0cm of c,fill=EMjadeL,draw=EMjade] (d) {\EML{solution of the initial-value problem}{جواب مسئلهٔ مقدار اولیه}};
+  \foreach \s/\t/\n in {a/b/1,b/c/2,c/d/3}{
+    \draw[EMvec2] (\s.east)--(\t.west) node[midway,above,circle,draw=EMjade,fill=white,inner sep=1.5pt,font=\footnotesize]{$\n$};}
+\end{tikzpicture}

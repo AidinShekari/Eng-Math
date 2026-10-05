@@ -1,0 +1,247 @@
+\EMkeepfig{m10-periodic-extension}{5}
+
+\EMsection{Fourier Analysis of Non-Periodic Functions}{Fourier Analysis of Non-Periodic Functions}
+
+To be able to use Fourier analysis for non-periodic functions, we first regard the function as periodic and then let the period tend to infinity.
+
+\EMfigure{m10-periodic-extension}{A non-periodic function \EMim{f(x)} and its periodic extension
+\EMim{\tilde f(x)} with period \EMim{T}}
+
+\EMdisp{\tilde f(x)\EMbr =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\EMdisp{a_0\EMbr =\frac1T\int_{-T/2}^{T/2}f(x)\,dx,\qquad\EMbr  a_n\EMbr =\frac2T\int_{-T/2}^{T/2}f(x)\cos\frac{2\pi}Tnx\,dx,\qquad\EMbr  b_n\EMbr =\frac2T\int_{-T/2}^{T/2}f(x)\sin\frac{2\pi}Tnx\,dx}
+\EMdisp{\begin{aligned}
+\tilde f(x)&=\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\sum_{n=1}^{\infty}\Bigg\{\left(\frac2T\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tnt\,dt\right)\cos\frac{2\pi}Tnx\\
+&\qquad+\left(\frac2T\int_{-T/2}^{T/2}f(t)\sin\frac{2\pi}Tnt\,dt\right)\sin\frac{2\pi}Tnx\Bigg\}
+\end{aligned}}
+\EMdisp{\tilde f(x)\EMbr =\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\left(\cos\frac{2\pi}Tnt\cos\frac{2\pi}Tnx+\sin\frac{2\pi}Tnt\sin\frac{2\pi}Tnx\right)dt\right\}}
+\EMdisp{\tilde f(x)\EMbr =\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tn(t-x)\,dt\right\}}
+
+\begin{itemize}
+\tightlist
+\item
+  To obtain the Fourier analysis of the function \EMim{f(x)} we must let \EMim{T} tend to \textbf{infinity}.
+\item
+  Suppose \EMim{f(x)} is an integrable function, so that
+  \EMdisp{\lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}f(t)\,dt\EMbr =0}
+\end{itemize}
+
+Then
+\EMdisp{f(x)\EMbr =\lim_{T\to\infty}\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tn(t-x)\,dt\right\}}
+\EMdisp{\omega_n\triangleq\frac{2\pi}Tn\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \Delta\omega\triangleq\omega_n-\omega_{n-1}\EMbr =\frac{2\pi}Tn-\frac{2\pi}T(n-1)\EMbr =\frac{2\pi}T\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \frac2T\EMbr =\frac{\Delta\omega}\pi}
+\EMdisp{f(x)\EMbr =\lim_{T\to\infty}\frac1\pi\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\omega_n(t-x)\,dt\right\}\Delta\omega}
+If \EMim{T\to\infty}, then \EMim{\sum_{n=1}^{\infty}\to\int_0^\infty}, \EMim{\Delta\omega\to d\omega} and \EMim{\omega_n\to\omega}:
+\EMdisp{\begin{aligned}
+f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega t\cos\omega x+\sin\omega t\sin\omega x\big)\,dt\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\left\{\cos\omega x\int_{-\infty}^{\infty}\big(f(t)\cos\omega t\big)\,dt+\sin\omega x\int_{-\infty}^{\infty}\big(f(t)\sin\omega t\big)\,dt\right\}d\omega
+\end{aligned}}
+\EMdisp{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt,\qquad\EMbr  B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega}
+
+\EMhold
+
+\EMsection{The Fourier Integral}{The Fourier Integral}
+
+\begin{EMimportant}{The Fourier integral and the sine and cosine transforms}
+
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\qquad\EMbr \text{(the Fourier integral; synthesis equation)}}
+\EMdisp{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt\qquad\EMbr \text{(the Fourier cosine transform)}}
+\EMdisp{B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\qquad\EMbr \text{(the Fourier sine transform)}}
+(the analysis equations)
+
+\end{EMimportant}
+
+\begin{EMtheorem}{}
+
+A sufficient condition for the existence of the Fourier integral of a function \EMim{f(x)} is that the function be piecewise continuous, have right and left derivatives at every point, and be absolutely integrable, i.e.
+\EMdisp{\int_{-\infty}^{\infty}|f(x)|\,dx<\infty}
+At points of discontinuity, the value of the Fourier integral equals the average of the left and right limits of \EMim{f(x)} at those points.
+
+\end{EMtheorem}
+
+\EMsection{The Complex Form of the Fourier Integral (the Fourier Transform)}{The Complex Form of the Fourier Integral (the Fourier Transform)}
+
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega}
+The expression \EMim{\displaystyle\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt} is an even function of \EMim{\omega}, hence
+\EMdisp{f(x)\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega}
+and the expression \EMim{\displaystyle\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt} is an odd function of \EMim{\omega}, hence
+\EMdisp{\frac{-i}{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt\right\}d\omega\EMbr =0}
+\EMdisp{f(x)\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega-\frac i{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt\right\}d\omega}
+\EMdisp{f(x)\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega(t-x)-i\sin\omega(t-x)\big)\,dt\right\}d\omega}
+\EMdisp{f(x)\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega(t-x)}\,dt\right\}d\omega\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\right\}e^{i\omega x}\,d\omega}
+
+\begin{EMimportant}{The Fourier transform}
+
+\EMdisp{f(x)\EMbr =\frac1{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega x}\,d\omega\qquad\EMbr \text{(the Fourier integral; synthesis equation)}}
+\EMdisp{F(\omega)\EMbr =\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\qquad\EMbr \text{(the Fourier transform; analysis equation)}}
+
+\end{EMimportant}
+
+The complex form of the Fourier series (review):
+\EMdisp{f(x)\EMbr =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx}\quad\EMbr \text{(Fourier series; synthesis equation)},\qquad\EMbr  c_n\EMbr =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx\quad\EMbr \text{(Fourier coefficients; analysis equation)}}
+
+\EMsection{The Function \EMim{\operatorname{Si}(u)}}{The Function operatornameSi(u)}
+
+\EMdisp{\operatorname{Si}(x)\triangleq\int_0^x\frac{\sin w}{w}\,dw}
+
+\begin{itemize}
+\tightlist
+\item
+  odd;
+\item
+  has finite asymptotic values at infinity.
+\end{itemize}
+
+\EMfigure{m10-si}{The function \EMim{\operatorname{Si}(u)} (solid) and the function
+\EMim{\sin u/u} (dashed)}
+
+\begin{EMtheorem}{Lemma}
+
+\EMdisp{\int_0^\infty\frac{\sin\alpha w}{w}\,dw\EMbr =\begin{cases}\dfrac\pi2&\alpha>0\\\noalign{\vskip 1mm} 0&\alpha=0\\\noalign{\vskip 1mm} -\dfrac\pi2&\alpha<0\end{cases}}
+
+\end{EMtheorem}
+
+\begin{EMproof}
+
+For \EMim{\alpha=0} the lemma is obvious. With the substitution \EMim{\tau=\alpha w}:
+\EMdisp{\int_0^x\frac{\sin\alpha w}{w}\,dw\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\tau/\alpha}\,\frac{d\tau}{\alpha}\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau\EMbr =\operatorname{Si}(\alpha x),\qquad\EMbr  \operatorname{Si}(\alpha x)\EMbr =-\operatorname{Si}(-\alpha x)}
+So it suffices to prove the lemma for positive values of \EMim{\alpha}.
+\EMdisp{F(\alpha)\triangleq\int_0^\infty e^{-\alpha t}\frac{\sin t}{t}\,dt,\qquad\EMbr  F(0)\EMbr =\operatorname{Si}(+\infty)\EMbr =\;?}
+\EMdisp{F'(\alpha)\EMbr =\int_0^\infty-t\,e^{-\alpha t}\frac{\sin t}t\,dt\EMbr =-\int_0^\infty e^{-\alpha t}\sin t\,dt\EMbr =-\left[\frac{e^{-\alpha t}}{1+\alpha^2}\big(-\alpha\sin t-\cos t\big)\right]_0^\infty\EMbr =\frac{-1}{1+\alpha^2}}
+\EMdisp{\alpha>0:\quad\EMbr  F(\alpha)\EMbr =-\tan^{-1}\alpha+C,\qquad\EMbr  F(\alpha\to\infty)\EMbr =0\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  C\EMbr =F(\infty)+\tan^{-1}\infty\EMbr =\frac\pi2}
+\EMdisp{F(\alpha)\EMbr =-\tan^{-1}\alpha+\frac\pi2\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  F(0)\EMbr =\operatorname{Si}(+\infty)\EMbr =\frac\pi2}
+
+\end{EMproof}
+
+\EMhold
+
+\EMsection{Examples of the Fourier Integral}{Examples of the Fourier Integral}
+
+\begin{EMexample}{}
+
+Express the rectangular pulse below as a Fourier integral.
+\EMdisp{f(x)\EMbr =\begin{cases}1&|x|<1\\ 0&|x|>1\end{cases}}
+
+Since \EMim{f(x)} is even, the Fourier sine transform vanishes: \EMim{B(\omega)=0}.
+\EMdisp{A(\omega)\EMbr =\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt\EMbr =\int_{-1}^{1}\cos\omega t\,dt\EMbr =\frac2\omega\sin\omega}
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\frac2\omega\sin\omega\cos\omega x\,d\omega\EMbr =\frac1\pi\int_0^\infty\frac1\omega\big[\sin(1-x)\omega+\sin(1+x)\omega\big]\,d\omega}
+\EMdisp{=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right]\EMbr =\begin{cases}0&x<-1\\ 1/2&x=-1\\ 1&-1<x<1\\ 1/2&x=1\\ 0&x>1\end{cases}}
+Note: the value of the Fourier integral at the points of discontinuity (using the lemma above).
+
+\end{EMexample}
+
+\EMfigure{m10-pulse}{The rectangular pulse \EMim{f(x)=1} for \EMim{|x|<1}}
+
+\begin{EMexample}{}
+
+Express the exponential function below as a Fourier integral.
+\EMdisp{f(x)\EMbr =\begin{cases}0&x<0\\ e^{-x}&x>0\end{cases}}
+
+\EMdisp{A(\omega)\EMbr =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx\EMbr =\int_0^\infty e^{-x}\cos\omega x\,dx\EMbr =\frac{e^{-x}}{1+\omega^2}\big(-\cos\omega x+\omega\sin\omega x\big)\Big|_0^\infty\EMbr =\frac1{1+\omega^2}}
+\EMdisp{B(\omega)\EMbr =\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx\EMbr =\int_0^\infty e^{-x}\sin\omega x\,dx\EMbr =\frac{e^{-x}}{1+\omega^2}\big(-\sin\omega x-\omega\cos\omega x\big)\Big|_0^\infty\EMbr =\frac\omega{1+\omega^2}}
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\EMbr =\frac1\pi\int_0^\infty\frac{\cos\omega x+\omega\sin\omega x}{1+\omega^2}\,d\omega}
+\EMdisp{f(x\EMbr =0)\EMbr =\frac1\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega\EMbr =\frac1\pi\Big[\tan^{-1}\omega\Big]_0^\infty\EMbr =\frac1\pi\times\frac\pi2\EMbr =\frac12}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Express the function below as a Fourier integral.
+\EMdisp{f(x)\EMbr =e^{-|x|}}
+
+Since \EMim{f(x)} is even, the Fourier sine transform vanishes.
+\EMdisp{A(\omega)\EMbr =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx\EMbr =2\int_0^\infty e^{-x}\cos\omega x\,dx\EMbr =\frac{2e^{-x}}{1+\omega^2}\big(-\cos\omega x+\omega\sin\omega x\big)\Big|_0^\infty\EMbr =\frac2{1+\omega^2}}
+\EMdisp{B(\omega)\EMbr =\int_{-\infty}^{\infty}e^{-|x|}\sin\omega x\,dx\EMbr =0}
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\EMbr =\frac2\pi\int_0^\infty\frac{\cos\omega x}{1+\omega^2}\,d\omega}
+\EMdisp{f(x\EMbr =0)\EMbr =\frac2\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega\EMbr =\frac2\pi\Big[\tan^{-1}\omega\Big]_0^\infty\EMbr =\frac2\pi\times\frac\pi2\EMbr =1}
+
+\end{EMexample}
+
+\EMfigure{m10-exp-abs}{The function \EMim{f(x)=e^{-|x|}}}
+
+\begin{EMexample}{}
+
+Express the function below as a Fourier integral.
+\EMdisp{f(x)\EMbr =\begin{cases}\sin x&|x|\le\pi\\ 0&|x|>\pi\end{cases}}
+
+Since \EMim{f(x)} is odd, the Fourier cosine transform vanishes.
+\EMdisp{A(\omega)\EMbr =\int_{-\pi}^{\pi}\sin x\cos\omega x\,dx\EMbr =0}
+\EMdisp{B(\omega)\EMbr =\int_{-\pi}^{\pi}\sin x\sin\omega x\,dx\EMbr =2\int_0^\pi\sin x\sin\omega x\,dx\EMbr =\int_0^\pi\big[\cos(1-\omega)x-\cos(1+\omega)x\big]dx\EMbr =\left[\frac{\sin(1-\omega)x}{1-\omega}-\frac{\sin(1+\omega)x}{1+\omega}\right]_0^\pi\EMbr =\frac{2\sin(\omega\pi)}{1-\omega^2}}
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\EMbr =\frac2\pi\int_0^\infty\frac{\sin(\omega\pi)\sin\omega x}{1-\omega^2}\,d\omega}
+
+\end{EMexample}
+
+\EMfigure{m10-sine-pulse}{The function \EMim{f(x)=\sin x} for \EMim{|x|\le\pi} and zero outside}
+
+\begin{EMexample}{}
+
+Express the function below as a Fourier integral.
+\EMdisp{f(x)\EMbr =\begin{cases}x^2&|x|\le a\\ 0&|x|>a\end{cases}}
+
+Since \EMim{f(x)} is even, the Fourier sine transform vanishes.
+\EMdisp{B(\omega)\EMbr =\int_{-a}^{a}x^2\sin\omega x\,dx\EMbr =0}
+\EMdisp{A(\omega)\EMbr =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx\EMbr =2\int_0^ax^2\cos\omega x\,dx\EMbr =2\left[\frac{x^2}\omega\sin\omega x+\frac{2x}{\omega^2}\cos\omega x-\frac2{\omega^3}\sin\omega x\right]_0^a\EMbr =2\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]}
+\EMdisp{f(x)\EMbr =\frac2\pi\int_0^\infty\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]\cos\omega x\,d\omega}
+
+\end{EMexample}
+
+\EMsection{Some Properties of the Fourier Integral}{Some Properties of the Fourier Integral}
+
+All the properties follow from the synthesis and analysis equations:
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega,\qquad\EMbr  A(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx,\qquad\EMbr  B(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx}
+
+\EMsubsection{Time Scaling}{Time Scaling}
+
+\EMdisp{f(x)\to f(ax),\quad\EMbr  a\in\mathbb{R}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}A(\omega)\to\dfrac1{|a|}A\!\left(\dfrac\omega a\right)\\\noalign{\vskip 2mm} B(\omega)\to\dfrac1{|a|}B\!\left(\dfrac\omega a\right)\end{cases}}
+
+\begin{EMproof}
+
+\EMdisp{A_1(\omega)\EMbr =\int_{-\infty}^{\infty}f(ax)\cos\omega x\,dx\ \ \begin{cases}\underset{u=ax}{\overset{a>0}{=}}\ \displaystyle\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,\frac{du}a=\frac1aA\!\left(\frac\omega a\right)\\\noalign{\vskip 3mm}\underset{u=ax}{\overset{a<0}{=}}\ \displaystyle\int_{+\infty}^{-\infty}f(u)\cos\frac\omega au\,\frac{du}a=-\frac1a\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,du=-\frac1aA\!\left(\frac\omega a\right)\end{cases}\ \EMbr \Longrightarrow\ A_1(\omega)\EMbr =\frac1{|a|}A\!\left(\frac\omega a\right)}
+
+\end{EMproof}
+
+\EMsubsection{Parseval's Identity}{Parseval’s Identity}
+
+\EMdisp{\int_{-\infty}^{\infty}f^2(x)\,dx\EMbr =\frac1\pi\int_0^\infty\big\{A^2(\omega)+B^2(\omega)\big\}\,d\omega}
+
+\begin{EMproof}
+
+\EMdisp{\begin{aligned}
+\int_{-\infty}^{\infty}f^2(x)\,dx&=\int_{-\infty}^{\infty}f(x)\left(\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\right)dx\\
+&=\frac1\pi\int_0^\infty\left\{A(\omega)\left[\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx\right]+B(\omega)\left[\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx\right]\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\big\{A^2(\omega)+B^2(\omega)\big\}\,d\omega
+\end{aligned}}
+
+\end{EMproof}
+
+\EMsubsection{The Time Derivative}{The Time Derivative}
+
+\EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  f'(x)\EMbr =\frac1\pi\int_0^\infty\big\{\omega B(\omega)\cos\omega x-\omega A(\omega)\sin\omega x\big\}\,d\omega}
+(using the rule for differentiating an integral:)
+\EMdisp{\frac\partial{\partial z}\int_{a(z)}^{b(z)}f(x,z)\,dx\EMbr =\int_{a(z)}^{b(z)}\frac{\partial f(x,z)}{\partial z}\,dx+f\big(b(z),z\big)\frac{db(z)}{dz}-f\big(a(z),z\big)\frac{da(z)}{dz}}
+
+\EMsubsection{The Frequency Derivative}{The Frequency Derivative}
+
+\EMdisp{\frac{dA(\omega)}{d\omega}\EMbr =A'(\omega)\EMbr =\int_{-\infty}^{\infty}-xf(x)\sin\omega x\,dx\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \int_{-\infty}^{\infty}\big(xf(x)\big)\sin\omega x\,dx\EMbr =-A'(\omega)}
+\EMdisp{\frac{dB(\omega)}{d\omega}\EMbr =B'(\omega)\EMbr =\int_{-\infty}^{\infty}xf(x)\cos\omega x\,dx\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \int_{-\infty}^{\infty}\big(xf(x)\big)\cos\omega x\,dx\EMbr =B'(\omega)}
+\EMdisp{xf(x)\EMbr =\frac1\pi\int_0^\infty\big\{B'(\omega)\cos\omega x-A'(\omega)\sin\omega x\big\}\,d\omega}
+
+\begin{EMexercise}{}
+
+Prove the following identities:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \pi/2&x=0\\ \pi e^{-x}&x>0\end{cases}}
+\item
+  \EMim{\displaystyle\int_0^\infty\frac{\sin\pi w\,\sin xw}{1-w^2}\,dw=\begin{cases}\dfrac\pi2\sin x&0\le x\le\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}
+\item
+  \EMim{\displaystyle\int_0^\infty\frac{1-\cos\pi w}{w}\sin xw\,dw=\begin{cases}\dfrac12\pi&0<x<\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}
+\item
+  \EMim{\displaystyle\int_0^\infty\frac{\cos\frac12\pi w}{1-w^2}\cos xw\,dw=\begin{cases}\dfrac12\pi\cos x&0<|x|<\frac12\pi\\\noalign{\vskip 1mm} 0&|x|\ge\frac12\pi\end{cases}}
+\item
+  \EMim{\displaystyle\int_0^\infty\frac{\sin w-w\cos w}{w^2}\sin xw\,dw=\begin{cases}\dfrac12\pi x&0<x<1\\\noalign{\vskip 1mm} \dfrac14\pi&x=1\\\noalign{\vskip 1mm} 0&x>1\end{cases}}
+\end{enumerate}
+
+\end{EMexercise}

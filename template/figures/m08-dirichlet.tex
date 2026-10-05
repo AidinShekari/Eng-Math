@@ -1,0 +1,17 @@
+% Functions that violate Dirichlet's conditions on 0 < x <= 1 (period 1)
+\begin{tikzpicture}
+  \begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.1cm},EMplot,width=5.3cm,height=4cm,xmin=0,xmax=1.15,xtick={0,1},clip=true]
+    \nextgroupplot[ymin=0,ymax=8,ytick=\empty,title style={font=\small},title={$1/x$}]
+      \addplot[EMcurve,domain=0.13:1,samples=100,smooth]{1/x};
+    \nextgroupplot[ymin=-1.5,ymax=1.5,ytick={-1,1},title style={font=\small},title={$\sin(1/x)$}]
+      \addplot[EMcurve,domain=0.012:1,samples=1500]{sin(deg(1/x))};
+    \nextgroupplot[ymin=0,ymax=1.2,ytick={1},title style={font=\small},title={$\ $}]
+      \draw[EMcurve] (axis cs:0.50000,1.000)--(axis cs:1.00000,1.000);
+      \draw[EMcurve] (axis cs:0.25000,0.860)--(axis cs:0.50000,0.860);
+      \draw[EMcurve] (axis cs:0.12500,0.720)--(axis cs:0.25000,0.720);
+      \draw[EMcurve] (axis cs:0.06250,0.580)--(axis cs:0.12500,0.580);
+      \draw[EMcurve] (axis cs:0.03125,0.440)--(axis cs:0.06250,0.440);
+      \draw[EMcurve] (axis cs:0.01562,0.300)--(axis cs:0.03125,0.300);
+      \draw[EMcurve] (axis cs:0.00781,0.160)--(axis cs:0.01562,0.160);
+  \end{groupplot}
+\end{tikzpicture}

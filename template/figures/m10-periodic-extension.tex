@@ -1,0 +1,11 @@
+% A non-periodic function f(x) and its periodic extension with period T
+\begin{tikzpicture}
+  \begin{axis}[EMplot,width=12.4cm,height=4.6cm,xmin=-9.2,xmax=9.6,ymin=-0.4,ymax=1.6,
+      xtick={-3,3},xticklabels={$-\frac T2$,$\frac T2$},ytick=\empty,xlabel={$x$},clip=false]
+    \foreach \s in {-6,6}{\addplot[EMdash,domain=\s-3:\s+3,samples=80,smooth,line width=0.9pt]{1.15*exp(-((x-\s)/1.4)^2)};}
+    \addplot[EMcurve,domain=-3:3,samples=100,smooth]{1.15*exp(-(x/1.4)^2)};
+    \node[EMlab,anchor=west] at (axis cs:0.3,1.4){$f(x)$};
+    \node[EMlabs,text=EMmuted,anchor=west] at (axis cs:3.3,1.05){$\tilde f(x)$};
+    \draw[EMvec2,<->] (axis cs:-3,-0.25)--(axis cs:3,-0.25) node[EMlabs,midway,below]{$T$};
+  \end{axis}
+\end{tikzpicture}
