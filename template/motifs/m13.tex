@@ -1,9 +1,14 @@
 \useasboundingbox (0,0) rectangle (15,9);
-% Two-dimensional problems: a vibrating membrane, mode (2,1)
-\begin{scope}[shift={(2.0,0.6)}]
-  \foreach \yy in {0,0.5,...,3.14159}{
-    \draw[mline,line width=0.8pt,domain=0:6.28318,samples=60] plot ({1.7*\x+1.9*\yy},{0.62*\x*0+0.9*\yy+1.8*sin(\x r)*sin(\yy r)+0.0});}
-  \foreach \xx in {0,0.5,...,6.28318}{
-    \draw[mrose,line width=0.8pt,domain=0:3.14159,samples=40] plot ({1.7*\xx+1.9*\x},{0.9*\x+1.8*sin(\xx r)*sin(\x r)});}
-  \node[font=\fontsize{26}{28}\selectfont,text=EMindigo!15,anchor=west] at (9.2,0.6){$\nabla^2 u$};
+% Laurent series and residues: the annulus of convergence about a singular point
+\begin{scope}[shift={(7.2,4.5)}]
+  \fill[EMindigo!9,even odd rule] (0,0) circle (4.3) (0,0) circle (1.5);
+  \foreach \a in {0,15,...,345}{\draw[mfaint] (1.5,0) ++(0,0) (\a:1.5)--(\a:4.3);}
+  \draw[mdash] (0,0) circle (1.5);\draw[mdash] (0,0) circle (4.3);
+  \draw[mrose,line width=1.5pt,mmid] (0,0) circle (3.0);
+  \EMcrossm{(0,0)}
+  \foreach \p in {{(-4.9,2.6)},{(5.1,-2.2)}}{\EMcrossm{\p}}
+  \draw[mvec] (0,0)--(125:1.5) node[midway,left,font=\small]{$r_1$};
+  \draw[mvec] (0,0)--(-50:4.3) node[midway,right,font=\small]{$r_2$};
+  \node[font=\small,anchor=south west] at (0.1,0.1){$z_0$};
+  \node[font=\fontsize{26}{28}\selectfont,text=EMindigo!16,anchor=west] at (-6.8,-3.3){$\displaystyle\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n$};
 \end{scope}

@@ -1,0 +1,622 @@
+\EMhold
+
+\EMsection{انتگرال معین و مسیر انتگرال‌گیری}{انتگرال معین و مسیر انتگرال‌گیری}
+
+\begin{EMunit}
+
+انتگرال توابع مختلط همچون توابع حقیقی به دو صورت مطرح می‌شود:
+
+\begin{itemize}
+\tightlist
+\item
+  انتگرال نامعین، که مثل محاسبهٔ تابع اولیه است؛
+\item
+  انتگرال معین، که به عنوان انتگرال روی مسیر شناخته می‌شود.
+\end{itemize}
+
+\end{EMunit}
+
+\begin{EMunit}
+
+انتگرال معین را در حوزهٔ توابع مختلط انتگرال روی مسیر یا \lr{Line Integral} نیز می‌نامیم و با نماد زیر نشان می‌دهیم:
+\EMdisp{\int_C f(z)\,dz}
+به \EMim{C} مسیر انتگرال‌گیری گوئیم.
+
+\EMfigure{m12-path}{مسیر انتگرال‌گیری \EMim{C} از نقطهٔ \EMim{A} تا نقطهٔ \EMim{B} در صفحهٔ
+\EMim{z}}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsubsection{مسیر انتگرال‌گیری}{مسیر انتگرال‌گیری}
+
+\begin{EMunit}
+
+مسیر انتگرال‌گیری در صفحهٔ مختلط از نقطهٔ شروع، مسیر میانی، و نقطهٔ پایانی تشکیل می‌شود. در بسیاری موارد بهترین نحوهٔ بیان مسیر، استفاده از یک متغیر کمکی است که با تغییرات صعودی خود مسیر از ابتدا تا پایان در جهت مطلوب طی می‌شود.
+
+\EMdisp{z(t)\EMbr =x(t)+iy(t),\qquad\EMbr  a\le t\le b,\qquad\EMbr  t,a,b\in\mathbb{R}}
+\EMdisp{z(a)\EMbr =A,\qquad\EMbr  z(b)\EMbr =B,\qquad\EMbr  z,A,B\in\mathbb{C}}
+
+\EMfigure{m12-path-param}{مسیر \EMim{C} با جهت از \EMim{A=z(a)} به \EMim{B=z(b)}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+\EMdisp{z(t)\EMbr =t+i2t,\qquad\EMbr  1\le t\le2}
+این مسیر پاره‌خطی است از نقطهٔ \EMim{1+2i} تا نقطهٔ \EMim{2+4i}.
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-line-path}{مسیر \EMim{z(t)=t+i2t}، \EMim{1\le t\le2}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+\EMdisp{z(t)\EMbr =\cos t+i\sin t,\qquad\EMbr  0\le t\le2\pi}
+\EMdisp{z(t)\EMbr =e^{it},\qquad\EMbr  0\le t\le2\pi}
+این مسیر دایرهٔ واحد است که در جهت مثلثاتی پیموده می‌شود.
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-circle-path}{مسیر \EMim{z(t)=e^{it}}، \EMim{0\le t\le2\pi} (دایرهٔ واحد)}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsubsection{مشتق مسیر انتگرال‌گیری}{مشتق مسیر انتگرال‌گیری}
+
+\begin{EMunit}
+
+\EMdisp{\dot z(t)\EMbr =\frac{d}{dt}z(t)\EMbr =\lim_{\Delta t\to0}\frac{z(t+\Delta t)-z(t)}{\Delta t}\EMbr =\frac{d}{dt}x(t)+i\frac{d}{dt}y(t)\EMbr =\dot x(t)+i\dot y(t)}
+
+\EMfigure{m12-tangent}{مشتق مسیر \EMim{\dot z(t)} به عنوان حد
+\EMim{\frac{z(t+\Delta t)-z(t)}{\Delta t}}}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{انتگرال معین توابع مختلط}{انتگرال معین توابع مختلط}
+
+\begin{EMunit}
+
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_C(u+iv)(dx+i\,dy)\EMbr =\int_C(u\,dx-v\,dy)+i\int_C(v\,dx+u\,dy)}
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_tf\big(z(t)\big)\,\dot z(t)\,dt}
+
+\end{EMunit}
+
+\begin{EMdefinition}{مراحل محاسبهٔ انتگرال معین مختلط روی مسیر}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  بیان مسیر به صورت پارامتریک: \EMim{z(t)=x(t)+iy(t)}، \EMim{a\le t\le b}.
+\item
+  محاسبهٔ مشتق \EMim{z(t)} نسبت به \EMim{t}: \EMim{\dot z(t)=\dot x(t)+i\,\dot y(t)}.
+\item
+  جایگذاری \EMim{z(t)} در \EMim{f(z)}.
+\item
+  انتگرال‌گیری از \EMim{f\big(z(t)\big)\dot z(t)} نسبت به \EMim{t} برای \EMim{a\le t\le b}.
+\end{enumerate}
+
+\end{EMdefinition}
+
+\begin{EMexample}{}
+
+مطلوب است انتگرال روی مسیر شکل زیر از تابع \EMim{f(z)=\bar z}.
+
+\EMdisp{z(t)\EMbr =t+it^2,\quad\EMbr  -1\le t\le1,\qquad\EMbr  \dot z(t)\EMbr =1+i2t}
+\EMdisp{f(z)\EMbr =\bar z\EMbr =x-iy,\qquad\EMbr  f\big(z(t)\big)\EMbr =\bar z(t)\EMbr =t-it^2}
+\EMdisp{\begin{aligned}
+\int_{-1+i}^{1+i}\bar z\,dz&=\int_{t=-1}^{1}(t-it^2)(1+i2t)\,dt\\
+&=\int_{t=-1}^{1}\Big[(t+2t^3)+i(2t^2-t^2)\Big]dt=\int_{t=-1}^{1}\Big[(t+2t^3)+it^2\Big]dt\\
+&=\left.\left(\frac12t^2+\frac24t^4\right)+i\times\frac13t^3\right|_{-1}^{1}=0+i\,\frac23
+\end{aligned}}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-parabola-path}{مسیر \EMim{z(t)=t+it^2}، \EMim{-1\le t\le1} از \EMim{-1+i} تا \EMim{1+i}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است انتگرال روی مسیر شکل زیر از تابع \EMim{f(z)=\bar z}.
+
+\EMdisp{z(t)\EMbr =t+i,\quad\EMbr  -1\le t\le1,\qquad\EMbr  \dot z(t)\EMbr =1}
+\EMdisp{f(z)\EMbr =\bar z\EMbr =x-iy,\qquad\EMbr  f\big(z(t)\big)\EMbr =\bar z(t)\EMbr =t-i}
+\EMdisp{\int_{-1+i}^{1+i}\bar z\,dz\EMbr =\int_{t=-1}^{1}(t-i)(1)\,dt\EMbr =\left.\left(\frac{t^2}{2}-it\right)\right|_{-1}^{1}\EMbr =0-i2}
+بنابراین برای این تابع مختلط مقدار انتگرال به مسیر انتخابی بستگی دارد.
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-line-path-2}{مسیر \EMim{z(t)=t+i}، \EMim{-1\le t\le1} از \EMim{-1+i} تا \EMim{1+i}}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsubsection{بعضی خواص انتگرال معین}{بعضی خواص انتگرال معین}
+
+\begin{EMunit}
+
+\EMdisp{\int_C\big[k_1f_1(z)+k_2f_2(z)\big]dz\EMbr =k_1\int_Cf_1(z)\,dz+k_2\int_Cf_2(z)\,dz\qquad\EMbr \EMt{(خطی بودن)}}
+\EMdisp{\int_{z_0}^{Z}f(z)\,dz\EMbr =-\int_{Z}^{z_0}f(z)\,dz\qquad\EMbr \EMt{(معکوس کردن جهت انتگرال‌گیری)}}
+\EMdisp{\int_Cf(z)\,dz\EMbr =\int_{C_1}f(z)\,dz+\int_{C_2}f(z)\,dz\qquad\EMbr \EMt{(چند تکه کردن مسیر انتگرال‌گیری)}}
+
+\EMfigure{m12-split-path}{مسیر \EMim{C} از \EMim{z_0} تا \EMim{Z} که به دو تکهٔ \EMim{C_1} و
+\EMim{C_2} تقسیم شده است}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{منحنی ساده بسته و ناحیهٔ همبند ساده}{منحنی ساده بسته و ناحیهٔ همبند ساده}
+
+\begin{EMdefinition}{منحنی ساده بسته}
+
+منحنی ساده بسته، منحنی بسته‌ای است که خود را قطع نکند.
+
+\end{EMdefinition}
+
+\begin{EMunit}
+
+\EMfigure{m12-curve-types}{منحنی‌های ساده بسته و غیر ساده بسته}
+
+\end{EMunit}
+
+\begin{EMdefinition}{ناحیهٔ همبند ساده}
+
+ناحیهٔ \EMim{D} که اگر هر منحنی بستهٔ ساده‌ای به طور کامل در آن قرار گیرد، نقاط داخل منحنی همه مربوط به این ناحیه باشند.
+
+\end{EMdefinition}
+
+\begin{EMunit}
+
+\EMfigure{m12-connected-types}{ناحیه‌های همبند ساده و غیر همبند}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{انتگرال با تابع اولیه}{انتگرال با تابع اولیه}
+
+\begin{EMtheorem}{}
+
+فرض کنید تابع مختلط \EMim{f(z)} تابعی تحلیلی در ناحیهٔ همبند سادهٔ \EMim{D} باشد. اگر تابع \EMim{F(z)} تابع اولیهٔ \EMim{f(z)} باشد، یعنی \EMim{F'(z)=f(z)}، آنگاه داریم:
+\EMdisp{\int_{z_0}^{z_1}f(z)\,dz\EMbr =F(z_1)-F(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_0^{1+i}z^2\,dz\EMbr =\left.\frac13z^3\right|_0^{1+i}\EMbr =\frac13(1+i)^3\EMbr =\frac23(-1+i)}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{-\pi i}^{\pi i}\cos z\,dz\EMbr =\sin z\Big|_{-\pi i}^{\pi i}\EMbr =2\sin(\pi i)\EMbr =2i\sinh\pi\EMbr =23.097\,i}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{8+\pi i}^{8-3\pi i}e^{z/2}\,dz\EMbr =2e^{z/2}\Big|_{8+\pi i}^{8-3\pi i}\EMbr =2\left(e^{4-3\pi i/2}-e^{4+\pi i/2}\right)\EMbr =0}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+\EMdisp{\int_{-i}^{i}\frac{dz}{z}\EMbr =\ln i-\ln(-i)\EMbr =\frac{i\pi}{2}-\left(-\frac{i\pi}{2}\right)\EMbr =i\pi}
+
+\end{EMexample}
+
+\EMsection{انتگرال توابع مختلط روی مسیر بسته}{انتگرال توابع مختلط روی مسیر بسته}
+
+انتگرال روی مسیر بستهٔ سادهٔ \EMim{C} که با نماد زیر بیان می‌شود از اهمیت زیادی برخوردار است.
+\EMdisp{\oint_Cf(z)\,dz}
+
+\begin{EMtheorem}{قضیهٔ انتگرال کشی}
+
+اگر تابع \EMim{f(z)} در ناحیهٔ همبند سادهٔ \EMim{D} تحلیلی باشد، آنگاه برای هر مسیر سادهٔ بستهٔ \EMim{C} در این ناحیه،
+\EMdisp{\oint_Cf(z)\,dz\EMbr =0}
+
+\end{EMtheorem}
+
+\begin{EMjoin}
+
+\begin{EMunit}
+
+\EMfigure{m12-cauchy-region}{مسیر ساده بستهٔ \EMim{C} در ناحیهٔ همبند سادهٔ \EMim{D}}
+
+\end{EMunit}
+
+\begin{EMproof}{}
+
+طبق آنچه قبلاً دیدیم، از آنجا که تابع مختلط تحلیلی است، داریم:
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial v}{\partial y},\qquad\EMbr  \frac{\partial u}{\partial y}\EMbr =-\frac{\partial v}{\partial x}}
+\EMdisp{\oint_Cf(z)\,dz\EMbr =\oint_C(u+iv)(dx+i\,dy)\EMbr =\oint_C(u\,dx-v\,dy)+i\oint_C(v\,dx+u\,dy)}
+طبق قضیهٔ گرین (که در ریاضی ۲ آموخته‌اید) داریم:
+\EMdisp{\oint_C(L\,dx+M\,dy)\EMbr =\iint_R\left(\frac{\partial M}{\partial x}-\frac{\partial L}{\partial y}\right)dx\,dy}
+بنابراین
+\EMdisp{\oint_C(u\,dx-v\,dy)+i\oint_C(v\,dx+u\,dy)\EMbr =\iint_R\underbrace{\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)}_{0}dx\,dy+i\iint_R\underbrace{\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right)}_{0}dx\,dy\EMbr =0}
+که در آن عبارت اول به دلیل شرط دوم کشی--ریمان و عبارت دوم به دلیل شرط اول کشی--ریمان صفر می‌شوند.
+
+\end{EMproof}
+
+\end{EMjoin}
+
+\begin{EMexample}{}
+
+اگر تابع در همهٔ صفحهٔ مختلط تحلیلی باشد، آنگاه انتگرال روی هر مسیر بسته‌ای صفر خواهد بود:
+\EMdisp{\oint_C\cos z\,dz\EMbr =0,\qquad\EMbr  \oint_Ce^z\,dz\EMbr =0,\qquad\EMbr  \oint_Cz^n\,dz\EMbr =0,\quad\EMbr  n\EMbr =1,2,3,\dots}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+اگر تابع نقاط تحلیلی نباشد، ولی آن نقاط بر روی مسیر و داخل \EMim{C} قرار نداشته باشند، انتگرال باز هم صفر است:
+\EMdisp{\oint_{|z|=1}\sec z\,dz,\qquad\EMbr  \oint_{|z|=1}\frac{dz}{z^2+4}}
+(مسیر دایرهٔ واحد است.)
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+اگر تابع غیرتحلیلی باشد، انتگرال روی مسیر بسته \textbf{ممکن است} صفر نباشد:
+\EMdisp{\oint_{|z|=1}\bar z\,dz,\qquad\EMbr  z(t)\EMbr =\cos t+i\sin t\EMbr =e^{it},\quad\EMbr \dot z(t)\EMbr =ie^{it}}
+\EMdisp{\oint_{|z|=1}\bar z\,dz\EMbr =\int_0^{2\pi}e^{-it}\,ie^{it}\,dt\EMbr =2\pi i}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+اگر تابع روی مسیر یا داخل آن غیرتحلیلی باشد، انتگرال روی مسیر بسته \textbf{ممکن است} صفر باشد:
+\EMdisp{\oint_C\frac1{z^2}\,dz\EMbr =0}
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+ثابت کنید \EMim{\displaystyle\oint_C\frac1{z^2}\,dz=0}.
+
+\end{EMexercise}
+
+\begin{EMremark}{نتیجه ۱}
+
+همبند بودن ناحیه در قضیهٔ انتگرال کشی اهمیت اساسی دارد.
+
+\end{EMremark}
+
+\begin{EMremark}{نتیجه ۲}
+
+اگر تابع \EMim{f(z)} در ناحیهٔ همبند سادهٔ \EMim{D} تحلیلی باشد، آنگاه انتگرال معین به انتخاب مسیر مربوط نیست.
+
+\end{EMremark}
+
+\begin{EMunit}
+
+\EMdisp{\int_{C_1}f(z)\,dz+\int_{C_2^*}f(z)\,dz\EMbr =0\;\EMbr \Longrightarrow\;\int_{C_1}f(z)\,dz\EMbr =-\int_{C_2^*}f(z)\,dz\;\EMbr \Longrightarrow\;\int_{C_1}f(z)\,dz\EMbr =\int_{C_2}f(z)\,dz}
+
+\end{EMunit}
+
+\begin{EMunit}
+
+بنابراین انتگرال از مبدأ تا مقصد به مسیر انتخابی وابسته نیست.
+
+\EMfigure{m12-path-independence}{مسیرهای \EMim{C_1}، \EMim{C_2} و \EMim{C_2^*} (مسیر \EMim{C_2} با جهت
+معکوس) میان \EMim{z_1} و \EMim{z_2}}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsubsection{یک مثال بسیار مهم}{یک مثال بسیار مهم}
+
+\begin{EMunit}
+
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =\;?\qquad\EMbr  C:\ z(t)\EMbr =z_0+re^{it}}
+
+\EMfigure{m12-circle-integral}{دایرهٔ \EMim{C} به مرکز \EMim{z_0} و شعاع \EMim{r}}
+
+\EMdisp{z(t)\EMbr =z_0+re^{it},\qquad\EMbr  \dot z(t)\EMbr =rie^{it}}
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =\int_0^{2\pi}\frac{rie^{it}}{re^{it}}\,dt\EMbr =\int_0^{2\pi}i\,dt\EMbr =2\pi i}
+
+\end{EMunit}
+
+\begin{EMimportant}{}
+
+\EMdisp{\oint_C\frac{dz}{z-z_0}\EMbr =2\pi i}
+
+\end{EMimportant}
+
+\EMhold
+
+\EMsection{فرمول انتگرال کشی}{فرمول انتگرال کشی}
+
+\begin{EMtheorem}{فرمول انتگرال کشی}
+
+اگر تابع \EMim{f(z)} در ناحیهٔ همبند سادهٔ \EMim{D} تحلیلی بوده و \EMim{z_0} نقطه‌ای در داخل \EMim{C} باشد، آنگاه
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =f(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMproof}{}
+
+طبق آنچه قبلاً دیدیم، از آنجا که تابع \EMim{\dfrac{f(z)}{z-z_0}} داخل ناحیهٔ همبند \EMim{\Gamma} تحلیلی است، داریم:
+\EMdisp{\oint_\Gamma\frac{f(z)}{z-z_0}\,dz\EMbr =0\EMbr =\int_{ACA'}\frac{f(z)}{z-z_0}\,dz+\int_{A'B'}\frac{f(z)}{z-z_0}\,dz+\int_{B'C'B}\frac{f(z)}{z-z_0}\,dz+\int_{BA}\frac{f(z)}{z-z_0}\,dz}
+\EMdisp{\lim_{\substack{A\to A'\\ B\to B'}}\int_{BA}\frac{f(z)}{z-z_0}\,dz\EMbr =-\int_{A'B'}\frac{f(z)}{z-z_0}\,dz}
+در نتیجه (دو انتگرال روی پیوندها یکدیگر را خنثی می‌کنند)
+\EMdisp{\lim_{\substack{A\to A'\\ B\to B'}}\int_{ACA'}\frac{f(z)}{z-z_0}\,dz+\int_{B'C'B}\frac{f(z)}{z-z_0}\,dz\EMbr =0\;\EMbr \Longrightarrow\;\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =\oint_{C'}\frac{f(z)}{z-z_0}\,dz}
+(در اینجا \EMim{C'} در جهت مثلثاتی پیموده می‌شود.) ادامه:
+\EMdisp{\begin{aligned}
+\oint_C\frac{f(z)}{z-z_0}\,dz&=\oint_{C'}\frac{f(z)}{z-z_0}\,dz=\oint_{C'}\frac{f(z)-f(z_0)+f(z_0)}{z-z_0}\,dz\\
+&=\oint_{C'}\frac{f(z)-f(z_0)}{z-z_0}\,dz+\oint_{C'}\frac{f(z_0)}{z-z_0}\,dz\\
+&=\oint_{C'}g(z)\,dz+f(z_0)\oint_{C'}\frac1{z-z_0}\,dz=0+2\pi i\,f(z_0)=2\pi i\,f(z_0)
+\end{aligned}}
+که در آن
+\EMdisp{g(z)\triangleq\begin{cases}\dfrac{f(z)-f(z_0)}{z-z_0}&z\neq z_0\\\noalign{\vskip 2mm} f'(z_0)&z=z_0\end{cases}}
+تابعی تحلیلی در داخل \EMim{C'} است. بنابراین
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz\EMbr =f(z_0)}
+
+\end{EMproof}
+
+\begin{EMunit}
+
+\EMfigure{m12-cauchy-proof}{مسیر \EMim{\Gamma} در اثبات فرمول انتگرال کشی: منحنی \EMim{C}، دایرهٔ
+کوچک \EMim{C'} به مرکز \EMim{z_0} و دو پیوند \EMim{AA'} و \EMim{BB'}}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{کاربرد: محاسبهٔ انتگرال‌های حقیقی}{کاربرد: محاسبهٔ انتگرال‌های حقیقی}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}} با استفاده از فرمول انتگرال کشی.
+
+تابع \EMim{g(z)} را به صورت \EMim{g(z)=\dfrac{1}{1+z^2}} در نظر می‌گیریم. با استفاده از مسیر مشخص شده در شکل انتگرال روی مسیر بسته را به دست می‌آوریم.
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\oint_C\frac{\left[\dfrac1{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac1{i+i}\EMbr =\pi,\qquad\EMbr  f(z)\EMbr =\frac1{z+i},\quad\EMbr  z_0\EMbr =i}
+از طرف دیگر
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
+در عبارت بالا جملهٔ اول وقتی \EMim{R\to\infty} مقدار مطلوب خواهد بود.
+\EMdisp{\oint_C\frac{dz}{1+z^2}\EMbr =\pi\EMbr =\int_{-\infty}^{\infty}\frac{dx}{1+x^2}+I,\qquad\EMbr  I\EMbr =\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}\EMbr =0}
+بنابراین
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{1+x^2}\EMbr =\pi}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-semicircle-1}{مسیر نیم‌دایره در نیم‌صفحهٔ بالایی؛ قطب‌ها در \EMim{z=\pm i}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx} با استفاده از فرمول انتگرال کشی (\EMim{\omega>0}).
+
+تابع \EMim{g(z)} را به صورت \EMim{g(z)=\dfrac{e^{i\omega z}}{1+z^2}} در نظر می‌گیریم. با استفاده از مسیر مشخص شده در شکل (همان نیم‌دایرهٔ شکل قبل) انتگرال روی مسیر بسته را به دست می‌آوریم.
+\EMdisp{\oint_C\frac{e^{i\omega z}}{1+z^2}\,dz\EMbr =\oint_C\frac{\left[\dfrac{e^{i\omega z}}{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac{e^{i\omega i}}{i+i}\EMbr =\pi e^{-\omega},\qquad\EMbr  f(z)\EMbr =\frac{e^{i\omega z}}{z+i},\quad\EMbr  z_0\EMbr =i}
+از طرف دیگر
+\EMdisp{\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}+\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}}
+اما:
+\EMdisp{I_1\EMbr =\lim_{R\to\infty}\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}\to0}
+\textbf{اثبات:}
+\EMdisp{e^{i\omega Re^{it}}\EMbr =e^{i\omega R(\cos t+i\sin t)}\EMbr =e^{i\omega R\cos t}\,e^{-\omega R\sin t}}
+\EMdisp{\lim_{R\to\infty}\left|e^{i\omega Re^{it}}\right|\EMbr =\lim_{R\to\infty}\left|e^{i\omega R\cos t}\right|\times\left|e^{-\omega R\sin t}\right|\EMbr =1\times0\EMbr =0,\qquad\EMbr  t\in[0,\pi]}
+از طرف دیگر در انتگرال \EMim{I_1} بقیهٔ انتگرند زمانی که \EMim{R} بی‌نهایت می‌شود به سمت صفر میل می‌کند. پس حد \EMim{I_1} وقتی \EMim{R\to\infty} صفر می‌شود.
+
+بنابراین
+\EMdisp{\pi e^{-\omega}\EMbr =\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}}
+انتگرال دوم صفر است. چرا؟
+\EMdisp{\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx\EMbr =\pi e^{-\omega}}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}} با استفاده از فرمول انتگرال کشی.
+
+\EMdisp{\frac{1}{(x^2+1)(x^2+4)}\EMbr =\frac{A}{x^2+1}+\frac{B}{x^2+4}\EMbr =\frac{1/3}{x^2+1}+\frac{-1/3}{x^2+4}}
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}\EMbr =\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+1}-\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+4}}
+
+\textbf{انتگرال اول:} \EMim{I_1=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+1}} و \EMim{g_1(z)=\dfrac1{z^2+1}}:
+\EMdisp{\oint_Cg_1(z)\,dz\EMbr =\oint_C\frac1{z^2+1}\,dz\EMbr =\oint_C\frac{\left[\dfrac1{z+i}\right]}{z-i}\,dz\EMbr =2\pi i\,\frac1{i+i}\EMbr =\pi}
+\EMdisp{\oint_C\frac1{z^2+1}\,dz\EMbr =\pi\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^2+1}\,dz\EMbr =\int_{-R}^{R}\frac{dx}{1+x^2}+0\EMbr =\pi\;\EMbr \Longrightarrow\;I_1\EMbr =\pi}
+
+\textbf{انتگرال دوم:} \EMim{I_2=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+4}} و \EMim{g_2(z)=\dfrac1{z^2+4}}:
+\EMdisp{\oint_Cg_2(z)\,dz\EMbr =\oint_C\frac1{z^2+4}\,dz\EMbr =\oint_C\frac{\left[\dfrac1{z+2i}\right]}{z-2i}\,dz\EMbr =2\pi i\,\frac1{2i+2i}\EMbr =\frac\pi2}
+\EMdisp{\oint_C\frac1{z^2+4}\,dz\EMbr =\frac\pi2\EMbr =\int_{-R}^{R}\frac{dx}{x^2+4}+\int_0^\pi\frac{iRe^{it}\,dt}{R^2e^{i2t}+4}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^2+4}\,dz\EMbr =\int_{-R}^{R}\frac{dx}{x^2+4}+0\EMbr =\frac\pi2\;\EMbr \Longrightarrow\;I_2\EMbr =\frac\pi2}
+
+در نتیجه
+\EMdisp{I\EMbr =\frac13I_1-\frac13I_2\EMbr =\frac13\pi-\frac13\times\frac\pi2\EMbr =\frac\pi6}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-semicircle-2}{مسیر نیم‌دایره؛ قطب‌ها در \EMim{z=\pm i} و \EMim{z=\pm2i}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle I=\int_0^\infty\frac{dx}{x^4+1}} با استفاده از فرمول انتگرال کشی.
+
+\EMdisp{g(z)\EMbr =\frac1{z^4+1},\qquad\EMbr  z^4+1\EMbr =0\;\EMbr \Longrightarrow\;z_1\EMbr =e^{i\pi/4},\quad\EMbr  z_2\EMbr =e^{i3\pi/4},\quad\EMbr  z_3\EMbr =e^{i5\pi/4},\quad\EMbr  z_4\EMbr =e^{i7\pi/4}}
+در داخل مسیر \EMim{C} فقط دو قطب \EMim{z_1} و \EMim{z_2} قرار دارند:
+\EMdisp{\begin{aligned}
+\oint_Cg(z)\,dz&=\oint_C\frac1{z^4+1}\,dz=\oint_{C_1}\frac1{z^4+1}\,dz+\oint_{C_2}\frac1{z^4+1}\,dz\\
+&=\oint_{C_1}\frac{\dfrac1{(z-z_2)(z-z_3)(z-z_4)}}{z-z_1}\,dz+\oint_{C_2}\frac{\dfrac1{(z-z_1)(z-z_3)(z-z_4)}}{z-z_2}\,dz\\
+&=2\pi i\left.\frac1{(z-z_2)(z-z_3)(z-z_4)}\right|_{z=z_1}+2\pi i\left.\frac1{(z-z_1)(z-z_3)(z-z_4)}\right|_{z=z_2}\\
+&=2\pi i\,\frac1{\underbrace{(e^{i\pi/4}-e^{i3\pi/4})}_{\sqrt2}\underbrace{(e^{i\pi/4}-e^{i5\pi/4})}_{\sqrt2+i\sqrt2}\underbrace{(e^{i\pi/4}-e^{i7\pi/4})}_{i\sqrt2}}\\
+&\quad+2\pi i\,\frac1{\underbrace{(e^{i3\pi/4}-e^{i\pi/4})}_{-\sqrt2}\underbrace{(e^{i3\pi/4}-e^{i5\pi/4})}_{i\sqrt2}\underbrace{(e^{i3\pi/4}-e^{i7\pi/4})}_{-\sqrt2+i\sqrt2}}=\frac\pi{\sqrt2}
+\end{aligned}}
+از طرف دیگر
+\EMdisp{\oint_C\frac1{z^4+1}\,dz\EMbr =\frac\pi{\sqrt2}\EMbr =\int_{-R}^{R}\frac{dx}{x^4+1}+\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}
+\EMdisp{\lim_{R\to\infty}\oint_C\frac1{z^4+1}\,dz\EMbr =\int_{-\infty}^{\infty}\frac{dx}{x^4+1}+\underbrace{\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}_{0}\EMbr =\frac\pi{\sqrt2}}
+\EMdisp{\int_{-\infty}^{\infty}\frac{dx}{x^4+1}\EMbr =\frac\pi{\sqrt2}\;\EMbr \Longrightarrow\;\int_0^\infty\frac{dx}{x^4+1}\EMbr =\frac\pi{2\sqrt2}}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m12-semicircle-3}{مسیر نیم‌دایره و دایره‌های \EMim{C_1} و \EMim{C_2} حول قطب‌های \EMim{z_1} و
+\EMim{z_2}؛ قطب‌های \EMim{z_3} و \EMim{z_4} در نیم‌صفحهٔ پایینی}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{قضیهٔ انتگرال کشی برای چند نقطهٔ غیرتحلیلی}{قضیهٔ انتگرال کشی برای چند نقطهٔ غیرتحلیلی}
+
+\begin{EMtheorem}{}
+
+اگر تابع \EMim{f(z)} در همهٔ نقاط ناحیهٔ \EMim{D} بجز نقاط \EMim{z_1,z_2,z_3,\dots,z_n} در داخل \EMim{C} تحلیلی باشد، آنگاه
+\EMdisp{\oint_Cf(z)\,dz\EMbr =\oint_{C_1}f(z)\,dz+\oint_{C_2}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
+که در این رابطه، دایرهٔ \EMim{C_k} دایره‌ای به مرکز \EMim{z_k} است که داخل \EMim{C} قرار داشته سایر نقاط \EMim{z_1} تا \EMim{z_n} را شامل نشود.
+
+\end{EMtheorem}
+
+\begin{EMjoin}
+
+\begin{EMunit}
+
+\EMfigure{m12-multi-points}{مسیر \EMim{C} و نقاط غیرتحلیلی \EMim{z_1,\dots,z_n} در داخل آن}
+
+\end{EMunit}
+
+\begin{EMproof}{}
+
+مسیر \EMim{\Gamma} را از \EMim{C} (در جهت مثلثاتی)، دایره‌های کوچک \EMim{C_1,\dots,C_n} (در جهت ساعت‌گرد) و پیوندهایی که آن‌ها را به \EMim{C} وصل می‌کنند می‌سازیم؛ انتگرال روی هر پیوند دو بار و در دو جهت مخالف محاسبه می‌شود و حذف می‌گردد. تابع در داخل \EMim{\Gamma} تحلیلی است، پس
+\EMdisp{\oint_\Gamma f(z)\,dz\EMbr =0\;\EMbr \Longrightarrow\;\oint_Cf(z)\,dz+\oint_{C_1^{\circlearrowright}}f(z)\,dz+\cdots+\oint_{C_n^{\circlearrowright}}f(z)\,dz\EMbr =0}
+\EMdisp{\oint_Cf(z)\,dz\EMbr =-\oint_{C_1^{\circlearrowright}}f(z)\,dz-\cdots-\oint_{C_n^{\circlearrowright}}f(z)\,dz\EMbr =\oint_{C_1}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
+که در آن \EMim{C_k^{\circlearrowright}} دایرهٔ \EMim{C_k} در جهت ساعت‌گرد و \EMim{C_k} همان دایره در جهت مثلثاتی است.
+
+\end{EMproof}
+
+\end{EMjoin}
+
+\begin{EMunit}
+
+\EMfigure{m12-multi-proof}{مسیر \EMim{\Gamma} برای اثبات: \EMim{C}، دایره‌های \EMim{C_1,\dots,C_n} و
+پیوندها}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{مشتق‌های تابع تحلیلی}{مشتق‌های تابع تحلیلی}
+
+\begin{EMtheorem}{فرمول انتگرال کشی برای مشتق}
+
+اگر تابع \EMim{f(z)} در ناحیهٔ همبند سادهٔ \EMim{D} تحلیلی بوده و \EMim{z_0} نقطه‌ای در داخل \EMim{C} باشد، آنگاه
+\EMdisp{\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\EMbr =f'(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMproof}{}
+
+\EMdisp{f'(z_0)\EMbr =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t},\qquad\EMbr  f(z_0)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz,\qquad\EMbr  f(z_0+\Delta t)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz}
+\EMdisp{\begin{aligned}
+\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t}&=\frac1{2\pi i\,\Delta t}\left\{\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz-\oint_C\frac{f(z)}{z-z_0}\,dz\right\}\\
+&=\frac1{2\pi i\,\Delta t}\oint_Cf(z)\left[\frac1{z-z_0-\Delta t}-\frac1{z-z_0}\right]dz\\
+&=\frac1{2\pi i\,\Delta t}\oint_Cf(z)\left[\frac{\Delta t}{(z-z_0-\Delta t)(z-z_0)}\right]dz\\
+&=\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz
+\end{aligned}}
+\EMdisp{f'(z_0)\EMbr =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t}\EMbr =\lim_{\Delta t\to0}\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
+
+\end{EMproof}
+
+\begin{EMtheorem}{تعمیم فرمول انتگرال کشی}
+
+اگر تابع \EMim{f(z)} در ناحیهٔ همبند سادهٔ \EMim{D} تحلیلی بوده و \EMim{z_0} نقطه‌ای در داخل \EMim{C} باشد، آنگاه
+\EMdisp{\frac{n!}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz\EMbr =f^{(n)}(z_0)}
+
+\end{EMtheorem}
+
+\begin{EMexercise}{}
+
+از طریق استقراء ریاضی ثابت کنید.
+
+\end{EMexercise}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال زیر. (\EMim{C} دایرهٔ واحد است.)
+\EMdisp{I\EMbr =\oint_C\frac{z^2}{(2z-1)^2}\,dz}
+
+\EMdisp{I\EMbr =\oint_C\frac{z^2}{4(z-1/2)^2}\,dz\EMbr =\frac14\oint_C\frac{z^2}{(z-1/2)^2}\,dz\EMbr =\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}\EMbr =\frac14\times2\pi i\times(2z)\Big|_{z=1/2}\EMbr =\frac\pi2\,i}
+(\EMim{z=1/2} داخل دایرهٔ واحد است.)
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ انتگرال زیر. (\EMim{C} دایرهٔ واحد است.)
+\EMdisp{I\EMbr =\oint_C\frac{e^{-z}\sin z}{z^2}\,dz}
+
+\EMdisp{f(z)\EMbr =e^{-z}\sin z,\quad\EMbr  z_0\EMbr =0,\qquad\EMbr  f'(z)\EMbr =-e^{-z}\sin z+e^{-z}\cos z,\qquad\EMbr  f'(z_0)\EMbr =f'(0)\EMbr =1}
+\EMdisp{I\EMbr =2\pi i\,f'(z_0)\EMbr =2\pi i}
+
+\end{EMexample}
+
+\begin{EMexercise}{مسئله}
+
+هرگاه \EMim{f(z)} در تمام صفحهٔ \EMim{z} تحلیلی و در تمام صفحه کران‌دار باشد، یعنی \EMim{|f(z)|<M}، ثابت کنید: \EMim{f(z)=k}، \EMim{k\in\mathbb{C}}.
+
+مسیر \EMim{C} را به صورت دایره‌ای به شعاع \EMim{R} و به مرکز \EMim{z_0} انتخاب می‌کنیم و \EMim{R} را به سمت بی‌نهایت میل می‌دهیم.
+\EMdisp{f'(z_0)\EMbr =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
+\EMdisp{|f'(z_0)|\EMbr =\left|\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\right|\le\frac1{2\pi}\oint_C\frac{|f(z)|}{|z-z_0|^2}\,|dz|\le\frac1{2\pi}\,\frac{M}{R^2}\oint_C|dz|\EMbr =\frac1{2\pi}\,\frac{M}{R^2}\cdot2\pi R\EMbr =\frac MR\to0\quad\EMbr (R\to\infty)}
+\EMdisp{\Longrightarrow\;|f'(z_0)|\EMbr =0\;\EMbr \Longrightarrow\;f'(z)\EMbr =0\;\EMbr \Longrightarrow\;f(z)\EMbr =k}
+
+\end{EMexercise}
+
+\begin{EMunit}
+
+\EMfigure{m12-liouville-circle}{دایرهٔ \EMim{C} به مرکز \EMim{z_0} و شعاع \EMim{R}}
+
+\end{EMunit}
+
+\begin{EMexercise}{}
+
+مطلوب است محاسبهٔ انتگرال‌های زیر:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{\displaystyle\oint_C\frac{z^2}{(2z-1)^4}\,dz}، \EMim{C}: دایرهٔ واحد
+\item
+  \EMim{\displaystyle\int_{1+i}^{1+3i}e^z\sin z\,dz}
+\item
+  \EMim{\displaystyle\int_{1+i}^{2+2i}\operatorname{Re}\{z^2\}\,dz} روی مسیر خط راست
+\item
+  \EMim{\displaystyle\oint_C\frac{e^{\cos z}\sin z}{1+z^6}\,dz} روی مسیر زیر
+\end{enumerate}
+
+\end{EMexercise}
+
+\begin{EMunit}
+
+\EMfigure{m12-exercise-circle}{مسیر تمرین ۴: دایره‌ای به مرکز \EMim{3+3i} و شعاع \EMim{r=1}}
+
+\end{EMunit}

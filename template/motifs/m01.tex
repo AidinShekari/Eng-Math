@@ -1,19 +1,13 @@
 \useasboundingbox (0,0) rectangle (15,9);
-% Complex numbers: the Argand plane, z = x+iy, its conjugate and the fifth roots of unity
-\begin{scope}[shift={(6.6,4.5)}]
-  \foreach \r in {1,2,3,4}{\draw[mfaint] (0,0) circle (\r);}
-  \foreach \a in {0,30,...,330}{\draw[mfaint] (0,0)--(\a:4.3);}
-  \draw[max] (-6.6,0)--(7.9,0) node[right,font=\small]{$\operatorname{Re}$};
-  \draw[max] (0,-4.4)--(0,4.45) node[above,font=\small]{$\operatorname{Im}$};
-  \draw[mjade,line width=1.1pt,fill=EMjade!8] (0:2) \foreach \k in {1,...,5}{ -- (72*\k:2)} -- cycle;
-  \foreach \k in {0,...,4}{\node[mdot,fill=EMjade] at (72*\k:2){};}
-  \draw[mline] (0,0) circle (2);
-  \draw[mdash] (38:3.7)--({3.7*cos(38)},0) node[below,font=\small]{$x$};
-  \draw[mdash] (38:3.7)--(0,{3.7*sin(38)}) node[left,font=\small]{$y$};
-  \draw[mvec] (0,0)--(38:3.7);\draw[mvecl] (0,0)--(-38:3.7);
-  \node[mdotr] at (38:3.7){};\node[mdotl] at (-38:3.7){};
-  \node[right,font=\large] at (38:3.8){$z=x+iy$};\node[right,font=\large,text=EMindigo!70] at (-38:3.8){$\bar z=x-iy$};
-  \draw[mrose,line width=1.1pt] (1.1,0) arc (0:38:1.1);\node[font=\small] at (1.45,0.4){$\theta$};
-  \node[font=\small,above,sloped] at (19:2.0){$|z|$};
-  \node[font=\fontsize{34}{36}\selectfont,text=EMindigo!14,anchor=west] at (-6.4,3.4){$i^2=-1$};
+% Fourier series: harmonics and their sum
+\begin{scope}[shift={(0.4,4.5)}]
+  \draw[max] (-0.2,0)--(14.4,0);
+  \draw[mfaint] (0,-3.4)--(0,3.4);\draw[mfaint] (7.2,-3.4)--(7.2,3.4);\draw[mfaint] (14.4,-3.4)--(14.4,3.4);
+  \draw[mdash] (0,-2.6)--(7.2,-2.6) (7.2,2.6)--(14.4,2.6) (7.2,-2.6)--(7.2,2.6);
+  \draw[mdash] (0,2.6)--(0,-2.6);
+  \draw[EMjade,line width=0.7pt,domain=0:14.4,samples=150] plot (\x,{2.6*1.2732*sin(0.43633*\x r)});
+  \draw[EMamber,line width=0.7pt,domain=0:14.4,samples=250] plot (\x,{2.6*1.2732/3*sin(3*0.43633*\x r)});
+  \draw[EMindigo!55,line width=0.7pt,domain=0:14.4,samples=300] plot (\x,{2.6*1.2732/5*sin(5*0.43633*\x r)});
+  \draw[EMviolet!70,line width=0.7pt,domain=0:14.4,samples=300] plot (\x,{2.6*1.2732/7*sin(7*0.43633*\x r)});
+  \draw[mrose,line width=1.8pt,domain=0:14.4,samples=400] plot (\x,{2.6*1.2732*(sin(0.43633*\x r)+sin(3*0.43633*\x r)/3+sin(5*0.43633*\x r)/5+sin(7*0.43633*\x r)/7)});
 \end{scope}

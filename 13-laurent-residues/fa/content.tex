@@ -1,0 +1,320 @@
+\EMhold
+
+\EMsection{سری لورنت}{سری لورنت}
+
+\begin{EMtheorem}{سری لورنت}
+
+اگر تابع \EMim{f(z)} تابعی تحلیلی در ناحیهٔ \EMim{D} باشد، سری لورنت این تابع حول نقطهٔ \EMim{z_0} به صورت زیر نوشته می‌شود:
+\EMdisp{f(z)\EMbr =\sum_{n=-\infty}^{\infty}a_n\,(z-z_0)^n,\qquad\EMbr  a_n\EMbr =\frac1{2\pi i}\oint_C\frac{f(v)}{(v-z_0)^{n+1}}\,dv}
+که در آن \EMim{C} دایره‌ای به مرکز \EMim{z_0} است و تابع در همهٔ نقاط داخل و روی این دایره، مگر استثنائاً در \EMim{z_0} تحلیلی است.
+
+شعاع همگرائی، فاصلهٔ \EMim{z_0} تا نزدیک‌ترین نقطهٔ غیرتحلیلی تابع \EMim{f(z)} است.
+
+\end{EMtheorem}
+
+برای \EMim{n} های نامنفی داریم:
+\EMdisp{a_n\EMbr =\frac1{2\pi i}\oint_C\frac{f(v)}{(v-z_0)^{n+1}}\,dv\EMbr =\frac{f^{(n)}(z_0)}{n!},\qquad\EMbr  n\EMbr =0,1,2,\dots}
+بنابراین خواهیم داشت:
+\EMdisp{\begin{aligned}
+f(z)&=\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n+\sum_{n=-\infty}^{-1}a_n(z-z_0)^n\\
+&=\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n+\sum_{n=1}^{\infty}a_{-n}(z-z_0)^{-n}\\
+&=\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n+\sum_{n=1}^{\infty}\frac{A_n}{(z-z_0)^n},\qquad A_n=a_{-n}
+\end{aligned}}
+\EMdisp{A_n\EMbr =a_{-n}\EMbr =\frac1{2\pi i}\oint_C\frac{f(v)}{(v-z_0)^{-n+1}}\,dv\EMbr =\frac1{2\pi i}\oint_C(v-z_0)^{n-1}f(v)\,dv,\qquad\EMbr  n\EMbr =1,2,\dots}
+
+\begin{EMimportant}{سری لورنت: بخش تیلور و بخش تکین}
+
+\EMdisp{f(z)\EMbr =\underbrace{\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n}_{\EMt{بخش سری تیلور}}+\underbrace{\sum_{n=1}^{\infty}\frac{A_n}{(z-z_0)^n}}_{\EMt{بخش تکین}},\qquad\EMbr  A_n\EMbr =\frac1{2\pi i}\oint_C(v-z_0)^{n-1}f(v)\,dv}
+
+\end{EMimportant}
+
+در صورتی که \EMim{z_0} نقطه‌ای غیر عادی (تکین) باشد، به عبارت دیگر تابع در این نقطه تحلیلی نباشد، بخش سری تیلور برای بیان تابع به تنهائی کافی نیست.
+
+\EMhold
+
+\EMsubsection{حالت‌های مختلف نقطهٔ \EMim{z_0}}{حالت‌های مختلف نقطهٔ z0}
+
+\begin{EMunit}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  اگر تمامی \EMim{A_n} ها صفر باشند، نقطهٔ \EMim{z_0} یک نقطهٔ \textbf{معمولی} (\lr{Regular}) نامیده می‌شود. سری لورنت در این حالت همان سری تیلور خواهد بود.
+\item
+  اگر \EMim{A_p\neq0} ولی \EMim{(A_n=0\ \ \forall n>p)}، آنگاه \EMim{z_0} را \textbf{قطب} (\lr{pole}) \textbf{از مرتبهٔ \EMim{p}} می‌نامند.
+\item
+  اگر \EMim{z_0} نقطهٔ عادی نبوده و ضمناً قطب نیز نباشد، (به عبارت دیگر مقداری مانند \EMim{p} یافت نشود به قسمی که \EMim{A_p\neq0} ولی \EMim{(A_n=0\ \ \forall n>p)})، آنگاه \EMim{z_0} را نقطهٔ \textbf{تکین اصلی} (\lr{Essential Singularity}) می‌نامند.
+\end{enumerate}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{مانده}{مانده}
+
+\begin{EMdefinition}{مانده (\lr{Residue})}
+
+مانده تابع \EMim{f(z)} در نقطهٔ \EMim{z_0}: \EMim{A_1}.
+\EMdisp{\operatorname{Res}\{f(z)\}\Big|_{z=z_0}\EMbr =A_1\EMbr =\frac1{2\pi i}\oint_Cf(v)\,dv}
+
+\end{EMdefinition}
+
+\begin{EMtheorem}{}
+
+اگر تابع \EMim{f(z)} در نقطهٔ \EMim{z_0} دارای قطب از مرتبهٔ \EMim{p} باشد داریم:
+\EMdisp{A_k\EMbr =\frac1{(p-k)!}\left.\frac{d^{\,p-k}}{dz^{\,p-k}}\Big[(z-z_0)^p\,f(z)\Big]\right|_{z=z_0},\qquad\EMbr  k\EMbr =1,2,\dots,p}
+
+\end{EMtheorem}
+
+\begin{EMproof}{}
+
+\EMdisp{f(z)\EMbr =\sum_{n=1}^{\infty}\frac{A_n}{(z-z_0)^n}+\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n}
+اگر تابع \EMim{f(z)} در نقطهٔ \EMim{z_0} دارای قطب از مرتبهٔ \EMim{p} باشد داریم:
+\EMdisp{f(z)\EMbr =\frac{A_p}{(z-z_0)^p}+\frac{A_{p-1}}{(z-z_0)^{p-1}}+\cdots+\frac{A_2}{(z-z_0)^2}+\frac{A_1}{z-z_0}+\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n}
+اگر طرفین را در \EMim{(z-z_0)^p} ضرب کنیم داریم:
+\EMdisp{(z-z_0)^pf(z)\EMbr =A_p+A_{p-1}(z-z_0)+\cdots+A_2(z-z_0)^{p-2}+A_1(z-z_0)^{p-1}+\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^{n+p}}
+حال اگر به \EMim{z} مقدار \EMim{z_0} بدهیم، داریم:
+\EMdisp{(z-z_0)^pf(z)\Big|_{z=z_0}\EMbr =A_p}
+اگر از طرفین \EMim{(z-z_0)^pf(z)} یک بار مشتق بگیریم و به \EMim{z} مقدار \EMim{z_0} بدهیم، داریم:
+\EMdisp{\begin{aligned}
+\frac{d}{dz}\Big[(z-z_0)^pf(z)\Big]\Big|_{z=z_0}&=\Bigg\{A_{p-1}+\cdots+A_2(p-2)(z-z_0)^{p-3}+A_1(p-1)(z-z_0)^{p-2}\\
+&\qquad+\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^{n+p-1}(n+p)\Bigg\}\Bigg|_{z=z_0}=A_{p-1}
+\end{aligned}}
+اگر از طرفین \EMim{(z-z_0)^pf(z)} دو بار مشتق بگیریم و به \EMim{z} مقدار \EMim{z_0} بدهیم، داریم:
+\EMdisp{\begin{aligned}
+\frac{d^2}{dz^2}\Big[(z-z_0)^pf(z)\Big]\Big|_{z=z_0}&=\Bigg\{2A_{p-2}+\cdots+A_2(p-2)(p-3)(z-z_0)^{p-4}+A_1(p-1)(p-2)(z-z_0)^{p-3}\\
+&\qquad+\sum_{n=0}^{\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^{n+p-2}(n+p)(n+p-1)\Bigg\}\Bigg|_{z=z_0}=2A_{p-2}
+\end{aligned}}
+\EMdisp{\Longrightarrow\quad\EMbr  A_{p-2}\EMbr =\frac1{2!}\left.\frac{d^2}{dz^2}\Big[(z-z_0)^pf(z)\Big]\right|_{z=z_0}}
+
+\end{EMproof}
+
+\begin{EMexercise}{}
+
+به همین ترتیب مشتق‌گیری را ادامه دهید و اثبات قضیه را کامل کنید.
+
+\end{EMexercise}
+
+\begin{EMremark}{نتیجه}
+
+در حالت خاص، در صورتی که تابع \EMim{f(z)} در نقطهٔ \EMim{z_0} دارای قطب از مرتبهٔ \EMim{p} باشد، مقدار مانده از رابطهٔ زیر به دست می‌آید:
+\EMdisp{\operatorname{Res}\{f(z)\}\EMbr =A_1\EMbr =\frac1{(p-1)!}\left.\frac{d^{\,p-1}}{dz^{\,p-1}}\Big[(z-z_0)^p\,f(z)\Big]\right|_{z=z_0}}
+
+\end{EMremark}
+
+\EMhold
+
+\EMsection{قضیهٔ مانده‌ها}{قضیهٔ مانده‌ها}
+
+\begin{EMtheorem}{قضیهٔ مانده‌ها}
+
+اگر تابع \EMim{f(z)} در همه‌جای داخل مسیر \EMim{C} به‌جز نقاط \EMim{z_1,z_2,\dots,z_n} تحلیلی باشد و مانده تابع در این نقاط به ترتیب \EMim{A_1^1,A_1^2,\dots,A_1^n} باشد، آنگاه:
+\EMdisp{\oint_Cf(z)\,dz\EMbr =2\pi i\sum_{k=1}^{n}A_1^k}
+
+\end{EMtheorem}
+
+\begin{EMunit}
+
+\EMfigure{m13-residue-theorem}{مسیر \EMim{C} و نقاط تکین \EMim{z_1,\dots,z_n} در داخل آن؛ حول هر نقطه
+دایره‌ای کوچک رسم شده است}
+
+\end{EMunit}
+
+اثبات به عنوان تمرین بر عهدهٔ خواننده است.
+
+\EMhold
+
+\EMsection{مثال‌هایی از بسط تیلور و لورنت}{مثال‌هایی از بسط تیلور و لورنت}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\dfrac1{z^4+1}} در همسایگی نقطهٔ \EMim{z_0=0}.
+
+دیده می‌شود که تابع \EMim{f(z)} در نقطهٔ \EMim{z_0=0} تحلیلی است و لذا این نقطه یک نقطهٔ معمولی است و سری لورنت همان سری تیلور (مک‌لورن) خواهد بود. لذا داریم:
+\EMdisp{f(z)\EMbr =f(0)+\frac1{1!}f^{(1)}(0)z+\frac1{2!}f^{(2)}(0)z^2+\frac1{3!}f^{(3)}(0)z^3+\cdots}
+سری هندسی:
+\EMdisp{1+q+q^2+q^3+q^4+\cdots\EMbr =\frac1{1-q},\qquad\EMbr  |q|<1}
+\EMdisp{\frac1{1+z^4}\EMbr =1-z^4+z^8-z^{12}+-\cdots,\qquad\EMbr  |z^4|<1\ \EMbr \Longrightarrow\ |z|<1}
+(سری تیلور/مک‌لورن؛ ناحیهٔ همگرائی با شعاع ۱.)
+\EMdisp{z^4+1\EMbr =0\;\EMbr \Longrightarrow\;z_1\EMbr =e^{i\pi/4},\quad\EMbr  z_2\EMbr =e^{i3\pi/4},\quad\EMbr  z_3\EMbr =e^{i5\pi/4},\quad\EMbr  z_4\EMbr =e^{i7\pi/4}}
+مشاهده می‌شود که فاصلهٔ \EMim{z_0=0} تا نزدیک‌ترین نقطهٔ غیرتحلیلی تابع (شعاع همگرائی) عدد ۱ می‌باشد.
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m13-radius-1}{چهار قطب \EMim{z^4+1=0} روی دایرهٔ واحد؛ شعاع همگرائی سری حول مبدأ برابر
+۱ است}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\dfrac{4z^2+30z+68}{(z+4)^2(z-2)}} در همسایگی نقطهٔ \EMim{z_0=0}.
+
+دیده می‌شود که تابع \EMim{f(z)} در نقطهٔ \EMim{z_0=0} تحلیلی است و لذا این نقطه یک نقطهٔ معمولی است و سری لورنت همان سری تیلور (مک‌لورن) خواهد بود. لذا داریم:
+\EMdisp{f(z)\EMbr =f(0)+\frac1{1!}f^{(1)}(0)z+\frac1{2!}f^{(2)}(0)z^2+\frac1{3!}f^{(3)}(0)z^3+\cdots}
+\EMdisp{\frac1{z-2}\EMbr =\frac{-1}{2-z}\EMbr =\frac{-1}2\,\frac1{1-z/2}\EMbr =\frac{-1}2\left(1+\frac z2+\frac{z^2}4+\frac{z^3}8+\cdots\right),\qquad\EMbr  \left|\frac z2\right|<1\ \EMbr \Longrightarrow\ |z|<2}
+\EMdisp{\frac1{4+z}\EMbr =\frac14\,\frac1{1+z/4}\EMbr =\frac14\left(1-\frac z4+\frac{z^2}{16}-\frac{z^3}{64}+\cdots\right),\qquad\EMbr  \left|-\frac z4\right|<1\ \EMbr \Longrightarrow\ |z|<4}
+\EMdisp{\frac d{dz}\left(\frac1{4+z}\right)\EMbr =\frac{-1}{(4+z)^2}\EMbr =\frac14\left(-\frac14+\frac{2z}{16}-\frac{3z^2}{64}+\cdots\right)\;\EMbr \Longrightarrow\;\frac1{(4+z)^2}\EMbr =\frac14\left(\frac14-\frac{2z}{16}+\frac{3z^2}{64}-\cdots\right)}
+\EMdisp{f(z)\EMbr =(4z^2+30z+68)\times\frac1{(z+4)^2}\times\frac1{z-2}}
+\EMdisp{f(z)\EMbr =(4z^2+30z+68)\times\left(\frac{-1}2\right)\left(1+\frac z2+\frac{z^2}4+\frac{z^3}8+\cdots\right)\times\frac14\left(\frac14-\frac z8+\frac{3z^2}{64}-\cdots\right)}
+\EMdisp{f(z)\EMbr =\frac{-1}{16}\left(34+15z+\frac{67}8z^2+\cdots\right),\qquad\EMbr  |z|<2}
+(ناحیهٔ همگرائی با شعاع ۲.)
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m13-radius-2}{قطب‌های \EMim{z=-4} و \EMim{z=2}؛ دایرهٔ همگرائی حول مبدأ شعاع ۲ دارد}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\cos z^2} در همسایگی نقطهٔ \EMim{z_0=0}.
+
+با توجه به تعریف تابع کسینوس، داریم:
+\EMdisp{\cos z\EMbr =1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+-\cdots}
+\EMdisp{f(z)\EMbr =\cos z^2\EMbr =1-\frac{z^4}{2!}+\frac{z^8}{4!}-\frac{z^{12}}{6!}+-\cdots}
+ناحیهٔ همگرائی تمام صفحهٔ مختلط با شعاع همگرائی بی‌نهایت.
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\dfrac{\cos z}{1-z^2}} در همسایگی نقطهٔ \EMim{z_0=0}.
+
+\EMdisp{\left\{\begin{aligned}
+\frac1{1-z^2}&=1+z^2+z^4+z^6+\cdots&&|z^2|<1\ \ \ |z|<1\\
+\cos z&=1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+-\cdots&&|z|<\infty
+\end{aligned}\right.}
+\EMdisp{\begin{aligned}
+f(z)=\frac{\cos z}{1-z^2}&=\big(1+z^2+z^4+z^6+\cdots\big)\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+-\cdots\right)\\
+&=1+\left(1-\frac1{2!}\right)z^2+\left(1+\frac1{4!}-\frac1{2!}\right)z^4+\cdots,\qquad |z|<1
+\end{aligned}}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\dfrac1{z^4}} در همسایگی نقطهٔ \EMim{z_0=1}.
+
+\EMdisp{g(z)\EMbr =\frac1z\EMbr =\frac1{z-1+1}\EMbr =\frac1{1+(z-1)}\EMbr =1-(z-1)+(z-1)^2-(z-1)^3+-\cdots,\qquad\EMbr  |z-1|<1}
+\EMdisp{\frac d{dz}g(z)\EMbr =\frac{-1}{z^2}\EMbr =-1+2(z-1)-3(z-1)^2+4(z-1)^3-+\cdots,\qquad\EMbr  |z-1|<1}
+\EMdisp{\frac{d^2}{dz^2}g(z)\EMbr =\frac2{z^3}\EMbr =2-6(z-1)+12(z-1)^2-20(z-1)^3+-\cdots,\qquad\EMbr  |z-1|<1}
+\EMdisp{\frac{d^3}{dz^3}g(z)\EMbr =\frac{-6}{z^4}\EMbr =-6+24(z-1)-60(z-1)^2-+\cdots,\qquad\EMbr  |z-1|<1}
+\EMdisp{f(z)\EMbr =\frac1{z^4}\EMbr =1-4(z-1)+10(z-1)^2-+\cdots}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m13-radius-3}{ناحیهٔ همگرائی سری حول \EMim{z_0=1} دایره‌ای به شعاع ۱ است (تا قطب
+\EMim{z=0})}
+
+\end{EMunit}
+
+\begin{EMexercise}{}
+
+مطلوب است بسط لورنت توابع زیر در همسایگی \EMim{z_0=0}:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{f_1(z)=\dfrac1{\sqrt{1-z^2}}}
+\item
+  \EMim{f_2(z)=\sin^{-1}z}
+\item
+  \EMim{f_3(z)=\dfrac{e^z}{z^2(z^2+1)}}
+\item
+  تابع \EMim{\sinh z} را بر حسب توانهائی از \EMim{(z-\pi i)} بسط داده، ثابت کنید: \EMim{\displaystyle\lim_{z\to\pi i}\frac{\sinh z}{z-\pi i}=-1}
+\item
+  ثابت کنید: \EMim{\displaystyle z\cosh z^2=z+\sum_{n=1}^{\infty}\frac1{(2n)!}\,z^{4n+1}}
+\end{enumerate}
+
+\end{EMexercise}
+
+\EMhold
+
+\EMsection{مثال‌هایی از نقاط تکین و مانده}{مثال‌هایی از نقاط تکین و مانده}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\dfrac{z}{(z+1)(z+4)^3}} در همسایگی نقاط غیرتحلیلی آن و محاسبهٔ مانده در آن نقاط.
+
+تابع در \EMim{z=-1} و \EMim{z=-4} تحلیلی نیست.
+
+\textbf{الف)} در همسایگی \EMim{z=-1} دایره‌ای به مرکز این نقطه و به شعاع کمتر از ۳ (\EMim{|z+1|<3}) نقطهٔ تکین (ایزولهٔ) \EMim{z=-4} را در بر ندارد.
+\EMdisp{\frac{z}{(z+4)^3}\EMbr =\frac{z+4-4}{(z+4)^3}\EMbr =\frac{z+4}{(z+4)^3}+\frac{-4}{(z+4)^3}\EMbr =\frac1{(z+4)^2}-\frac4{(z+4)^3}}
+\EMdisp{\frac1{z+4}\EMbr =\frac1{(z+1)+3}\EMbr =\frac13\,\frac1{1+\frac{z+1}3}\EMbr =\frac13\left[1-\frac{z+1}3+\left(\frac{z+1}3\right)^2-\left(\frac{z+1}3\right)^3+-\cdots\right]}
+\EMdisp{\frac{-1}{(z+4)^2}\EMbr =\frac13\left[-\frac13+\frac2{3^2}(z+1)-\frac3{3^3}(z+1)^2+-\cdots\right]\;\EMbr \Longrightarrow\;\frac1{(z+4)^2}\EMbr =\frac19-\frac2{27}(z+1)+\frac1{27}(z+1)^2-+\cdots}
+\EMdisp{\frac1{(z+4)^3}\EMbr =\frac16\left[\frac2{3^2}-\frac{2\times3}{3^3}(z+1)+\frac{3\times4}{3^4}(z+1)^2-\frac{4\times5}{3^5}(z+1)^3+-\cdots\right]\EMbr =\frac1{27}-\frac1{27}(z+1)+\frac2{81}(z+1)^2-+\cdots}
+\EMdisp{\frac z{(z+4)^3}\EMbr =\frac1{(z+4)^2}-\frac4{(z+4)^3}\EMbr =-\frac1{27}+\frac2{27}(z+1)-\frac5{81}(z+1)^2+\cdots}
+\EMdisp{f(z)\EMbr =\frac1{z+1}\,\frac z{(z+4)^3}\EMbr =-\frac1{27}\,\frac1{z+1}+\frac2{27}-\frac5{81}(z+1)+\cdots}
+نوع نقطهٔ تکین: قطب ساده (از مرتبهٔ ۱). مانده: \EMim{\operatorname{Res}\{f(z)\}\big|_{z=-1}=-\dfrac1{27}}.
+
+\textbf{ب)} در همسایگی \EMim{z=-4} دایره‌ای به مرکز این نقطه و به شعاع کمتر از ۳ (\EMim{|z+4|<3}) نقطهٔ تکین (ایزولهٔ) \EMim{z=-1} را در بر ندارد.
+\EMdisp{\frac z{z+1}\EMbr =\frac{z+1-1}{z+1}\EMbr =\frac{z+1}{z+1}-\frac1{z+1}\EMbr =1-\frac1{z+1}}
+\EMdisp{\frac1{z+1}\EMbr =\frac1{z+4-3}\EMbr =\frac1{-3+(z+4)}\EMbr =\frac{-1}3\,\frac1{1-\frac{z+4}3}\EMbr =\frac{-1}3\left[1+\frac{z+4}3+\frac{(z+4)^2}{3^2}+\cdots\right],\qquad\EMbr  |z+4|<3}
+\EMdisp{\frac z{z+1}\EMbr =1+\frac13+\frac1{3^2}(z+4)+\frac1{3^3}(z+4)^2+\frac1{3^4}(z+4)^3+\cdots}
+\EMdisp{f(z)\EMbr =\frac z{(z+1)(z+4)^3}\EMbr =\frac1{(z+4)^3}\,\frac z{z+1}\EMbr =\frac{4/3}{(z+4)^3}+\frac1{3^2}\frac1{(z+4)^2}+\frac1{3^3}\frac1{z+4}+\frac1{3^4}+\frac1{3^5}(z+4)+\frac1{3^6}(z+4)^2+\cdots}
+نوع نقطهٔ تکین: قطب از مرتبهٔ ۳. مانده: \EMim{\operatorname{Res}\{f(z)\}\big|_{z=-4}=\dfrac1{27}}.
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m13-poles-1}{قطب‌های \EMim{z=-1} و \EMim{z=-4} تابع \EMim{f(z)=\frac{z}{(z+1)(z+4)^3}}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=e^{1/z}} در همسایگی نقطهٔ غیرتحلیلی آن و محاسبهٔ مانده در آن نقطه.
+
+\EMdisp{e^z\EMbr =1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots\;\EMbr \Longrightarrow\;e^{1/z}\EMbr =1+\frac1z+\frac1{2!\,z^2}+\frac1{3!\,z^3}+\cdots}
+نوع نقطهٔ تکین: تکین اصلی (بی‌نهایت جمله با توان‌های منفی). مانده: \EMim{\operatorname{Res}\{f(z)\}\big|_{z=0}=1}.
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+مطلوب است محاسبهٔ سری لورنت تابع \EMim{f(z)=\cos\!\left(\dfrac z{z-1}\right)} در همسایگی نقطهٔ غیرتحلیلی آن و محاسبهٔ مانده در آن نقطه.
+
+\EMdisp{\frac z{z-1}\EMbr =1+\frac1{z-1}\;\EMbr \Longrightarrow\;\cos\!\left(\frac z{z-1}\right)\EMbr =\cos\!\left(1+\frac1{z-1}\right)\EMbr =\cos1\cos\!\left(\frac1{z-1}\right)-\sin1\sin\!\left(\frac1{z-1}\right)}
+\EMdisp{\cos z\EMbr =1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+-\cdots,\qquad\EMbr  \sin z\EMbr =z-\frac{z^3}{3!}+\frac{z^5}{5!}-+\cdots}
+\EMdisp{\begin{aligned}
+\cos\!\left(\frac z{z-1}\right)&=\cos1\left(1-\frac1{2!}\frac1{(z-1)^2}+\frac1{4!}\frac1{(z-1)^4}-+\cdots\right)\\
+&\quad-\sin1\left(\frac1{z-1}-\frac1{3!}\frac1{(z-1)^3}+\frac1{5!}\frac1{(z-1)^5}-+\cdots\right)\\
+&=\cos1-\sin1\,\frac1{z-1}-\cos1\,\frac1{2!}\frac1{(z-1)^2}+\sin1\,\frac1{3!}\frac1{(z-1)^3}+\cdots
+\end{aligned}}
+نوع نقطهٔ تکین: تکین اصلی. مانده: \EMim{\operatorname{Res}\{f(z)\}\big|_{z=1}=-\sin1}.
+
+\end{EMexample}
+
+\begin{EMtheorem}{مانده در قطب ساده}
+
+ثابت کنید هرگاه تابع \EMim{f(z)=q(z)/g(z)} بوده و \EMim{g(z)} در نقطهٔ \EMim{z_0} ریشهٔ مرتبهٔ اول داشته باشد، آنگاه
+\EMdisp{\operatorname{Res}\{f(z)\}\Big|_{z=z_0}\EMbr =\frac{q(z_0)}{g'(z_0)}}
+
+\end{EMtheorem}
+
+\begin{EMproof}{}
+
+چون نقطهٔ \EMim{z_0} قطب مرتبهٔ ۱ است داریم (\EMim{p=1}):
+\EMdisp{\begin{aligned}
+\operatorname{Res}\{f(z)\}\Big|_{z=z_0}=A_1&=\frac1{(p-1)!}\left.\frac{d^{\,p-1}}{dz^{\,p-1}}\Big[(z-z_0)^pf(z)\Big]\right|_{z=z_0}=(z-z_0)\frac{q(z)}{g(z)}\Bigg|_{z=z_0}\\
+&=(z-z_0)\frac{q(z)}{g(z)-g(z_0)}\Bigg|_{z=z_0}=\frac{q(z)}{\dfrac{g(z)-g(z_0)}{z-z_0}}\Bigg|_{z=z_0}=\frac{q(z_0)}{g'(z_0)}
+\end{aligned}}
+
+\end{EMproof}
+
+\begin{EMexercise}{}
+
+سری لورنت توابع زیر را حول \EMim{z=0} به دست آورده، نوع این نقطه را تعیین کنید.
+\EMdisp{f_1(z)\EMbr =\frac z{e^z-1},\qquad\EMbr  f_2(z)\EMbr =\frac{e^{-z}}{z^3},\qquad\EMbr  f_3(z)\EMbr =\frac1{z^2(1-z^2)},\qquad\EMbr  f_4(z)\EMbr =\frac{\sin z^2}{z^3}}
+
+\end{EMexercise}

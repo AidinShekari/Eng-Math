@@ -9,11 +9,12 @@ Layout (one folder per chapter, languages inside):
   template/figures/<name>.tex             drawings (```{.figure #name} in the sources)
 
 Usage:  python3 tools/build.py [--no-pdf] [--only fa|en] [--chapter 05] [--book-only]
-Needs:  pandoc >= 3, tectonic (or any XeLaTeX with the fonts of template/).
+Needs:  pandoc >= 3 and XeLaTeX (latexmk, or tectonic) with TeX Gyre Termes / Heros / Termes Math.
 """
 import argparse
 import os
 import re
+import shutil
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -28,16 +29,15 @@ BOOK = "EngineeringMath"
 # the three parts follow the three sets of slides
 PARTS = [
     ("1", {"fa": "۱", "en": "I"},
-     {"fa": "آنالیز مختلط", "en": "Complex Analysis"}, 1, 7),
+     {"fa": "تحلیل فوریه", "en": "Fourier Analysis"}, 1, 3),
     ("2", {"fa": "۲", "en": "II"},
-     {"fa": "آنالیز فوریه", "en": "Fourier Analysis"}, 8, 10),
+     {"fa": "معادلات دیفرانسیل با مشتقات جزئی", "en": "Partial Differential Equations"}, 4, 7),
     ("3", {"fa": "۳", "en": "III"},
-     {"fa": "معادلات دیفرانسیل با مشتقات جزئی و تبدیل لاپلاس",
-      "en": "Partial Differential Equations and the Laplace Transform"}, 11, 14),
+     {"fa": "آنالیز مختلط", "en": "Complex Analysis"}, 8, 14),
 ]
 COVER_SUBTITLE = {
-    "fa": "آنالیز مختلط \\ \\textbullet\\ آنالیز فوریه \\ \\textbullet\\ معادلات دیفرانسیل با مشتقات جزئی",
-    "en": "Complex Analysis \\ \\textbullet\\ Fourier Analysis \\ \\textbullet\\ Partial Differential Equations",
+    "fa": "تحلیل فوریه \\ \\textbullet\\ معادلات دیفرانسیل با مشتقات جزئی \\ \\textbullet\\ آنالیز مختلط",
+    "en": "Fourier Analysis \\ \\textbullet\\ Partial Differential Equations \\ \\textbullet\\ Complex Analysis",
 }
 COURSE = {"fa": "ریاضی مهندسی", "en": "Engineering Mathematics"}
 COURSE_NOTES = {"fa": "جزوهٔ کامل درس", "en": "Complete Lecture Notes"}
@@ -196,8 +196,11 @@ def build_sources(lang, only=None, book_only=False):
 
 
 def compile_tex(tex: Path):
-    r = subprocess.run(["tectonic", "--keep-logs", "--chatter", "minimal", tex.name],
-                       cwd=tex.parent, capture_output=True, text=True)
+    if shutil.which("latexmk"):
+        cmd = ["latexmk", "-xelatex", "-interaction=nonstopmode", "-halt-on-error", tex.name]
+    else:
+        cmd = ["tectonic", "--keep-logs", "--chatter", "minimal", tex.name]
+    r = subprocess.run(cmd, cwd=tex.parent, capture_output=True, text=True)
     log = tex.with_suffix(".log")
     missing, overfull, undef, underfull = set(), 0, 0, 0
     if log.exists():
@@ -215,7 +218,7 @@ def compile_tex(tex: Path):
     if missing:
         msg += f"  missing glyphs: {''.join(sorted(missing))}"
     if r.returncode != 0:
-        msg += "\n" + r.stderr[-3000:]
+        msg += "\n" + (r.stderr + r.stdout)[-3000:]
     return r.returncode == 0, msg
 
 

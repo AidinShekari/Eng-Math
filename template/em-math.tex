@@ -1,0 +1,7 @@
+% Mathematical typography, both editions: TeX Gyre Termes Math, the Times-style math font.
+% Variables are italic (unicode-math default: Latin and lower-case Greek italic, capital Greek
+% upright, as in Times textbooks); operators and functions (\sin, \log, \operatorname{Re}, ...)
+% are upright.  xepersian re-binds \mathrm to the Persian text font, so the upright and bold
+% math alphabets are pinned to the math font itself.
+\setmathfont{texgyretermes-math.otf}
+\AtBeginDocument{\let\mathrm\symup \let\mathbf\symbf \let\mathit\symit \let\mathsf\symsfup}

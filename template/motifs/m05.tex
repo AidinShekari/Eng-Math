@@ -1,11 +1,10 @@
 \useasboundingbox (0,0) rectangle (15,9);
-% Complex integration: a closed contour, the small circles around the points where f fails to be analytic
-\begin{scope}[shift={(7.4,4.5)}]
-  \foreach \a in {0,20,...,340}{\draw[mfaint] (0,0)--(\a:4.3);}
-  \draw[mline,line width=1.5pt,smooth cycle,tension=0.8,mmid]
-    plot coordinates{(-5.0,-0.3)(-4.0,2.6)(-1.4,3.8)(2.0,3.6)(4.9,1.8)(5.3,-0.8)(3.4,-3.4)(-0.6,-3.8)(-3.6,-2.8)};
-  \foreach \p/\r in {{(-2.6,0.9)}/0.62,{(0.4,-0.8)}/0.7,{(3.0,1.2)}/0.55}{
-    \draw[mrose,line width=1.1pt,mmid] \p circle (\r);\node[mdotr] at \p{};}
-  \draw[mdash,smooth cycle,tension=0.8] plot coordinates{(-4.3,-0.2)(-3.4,2.1)(-1.2,3.1)(2.0,3.0)(4.2,1.6)(4.6,-0.7)(3.0,-2.9)(-0.6,-3.2)(-3.0,-2.3)};
-  \node[font=\fontsize{30}{32}\selectfont,text=EMindigo!14] at (0.3,2.0){$\oint_C f(z)\,dz$};
+% The heat equation: a pulse spreading and flattening
+\begin{scope}[shift={(7.5,0.8)}]
+  \draw[max] (-7.0,0)--(7.2,0);\draw[mfaint] (0,0)--(0,7.4);
+  \foreach \s/\a/\f in {0.6/6.4/0.28,1.0/4.4/0.2,1.6/3.0/0.14,2.4/2.0/0.1,3.5/1.4/0.07}{
+    \fill[EMrose!\f] plot[domain=-6.8:6.8,samples=100] (\x,{\a*exp(-\x*\x/(2*\s*\s))}) -- (6.8,0) -- (-6.8,0) -- cycle;}
+  \foreach \s/\a in {0.6/6.4,1.0/4.4,1.6/3.0,2.4/2.0,3.5/1.4}{
+    \draw[mrose,line width=1.2pt,domain=-6.8:6.8,samples=100] plot (\x,{\a*exp(-\x*\x/(2*\s*\s))});}
+  \node[font=\small,anchor=west] at (0.5,6.4){$t_0$};\node[font=\small,anchor=west] at (1.2,1.55){$t_4$};
 \end{scope}

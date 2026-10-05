@@ -24,7 +24,7 @@ def write(name, text):
 u = np.linspace(-20, 20, 801)
 si = special.sici(u)[0]
 sinc = np.sinc(u / np.pi)
-write("m10-si", rf"""% Si(u) = integral of sin(w)/w from 0 to u (solid) and sin(u)/u (dashed); values from scipy.special.sici
+write("m03-si", rf"""% Si(u) = integral of sin(w)/w from 0 to u (solid) and sin(u)/u (dashed); values from scipy.special.sici
 \begin{{tikzpicture}}
   \begin{{axis}}[EMplot,width=11.5cm,height=5.2cm,xmin=-20,xmax=20,ymin=-1.9,ymax=1.9,
       xtick={{-20,-10,10,20}},ytick={{-1.571,1.571}},yticklabels={{$-\pi/2$,$\pi/2$}},
@@ -38,7 +38,7 @@ write("m10-si", rf"""% Si(u) = integral of sin(w)/w from 0 to u (solid) and sin(
 
 # --- the error function ------------------------------------------------------------------
 x = np.linspace(-2, 2, 201)
-write("m12-erf", rf"""% The error function; values from scipy.special.erf
+write("m05-erf", rf"""% The error function; values from scipy.special.erf
 \begin{{tikzpicture}}
   \begin{{axis}}[EMplot,width=10cm,height=5.4cm,xmin=-2.2,xmax=2.4,ymin=-1.25,ymax=1.25,
       xtick={{-2,-1,1,2}},ytick={{-1,-0.5,0.5,1}},xlabel={{$x$}},ylabel={{$\operatorname{{erf}}\,x$}}]
@@ -59,7 +59,7 @@ for t in (0.125, 0.5, 1, 2, 8):
     s = 2 * np.sqrt(t)
     ux = 50 * (special.erf((1 + x) / s) + special.erf((1 - x) / s))
     body += f"    \\addplot[{styles[t]},{dash[t]},line width=1.1pt] coordinates{{{coords(x, ux)}}};\n"
-write("m12-heat-pulse", rf"""% u(x,t) = (U0/2) [erf((1+x)/(2c sqrt t)) + erf((1-x)/(2c sqrt t))], U0 = 100, c = 1
+write("m05-heat-pulse", rf"""% u(x,t) = (U0/2) [erf((1+x)/(2c sqrt t)) + erf((1-x)/(2c sqrt t))], U0 = 100, c = 1
 \begin{{tikzpicture}}
   \begin{{axis}}[EMplot,width=11.5cm,height=6.4cm,xmin=-3.3,xmax=3.5,ymin=-8,ymax=118,
       xtick={{-3,-2,-1,1,2,3}},ytick={{0,100}},xlabel={{$x$}},ylabel={{$u(x,t)$}},clip=false]
@@ -92,7 +92,7 @@ for i, (tt, name) in enumerate(times):
     \addplot[EMcurve,line width=1.3pt] coordinates{{{coords(xs, ux)}}};
     \node[EMlabs,anchor=west] at (axis cs:1.1,0){{${shown}$}};
 """
-write("m11-triangle-time", rf"""% u(x,t) of the plucked string at t = 0, L/5c, 2L/5c, L/2c, 3L/5c (computed from d'Alembert's formula)
+write("m04-triangle-time", rf"""% u(x,t) of the plucked string at t = 0, L/5c, 2L/5c, L/2c, 3L/5c (computed from d'Alembert's formula)
 \begin{{tikzpicture}}
   \begin{{groupplot}}[group style={{group size=2 by 3,vertical sep=0.15cm,horizontal sep=1.6cm}},EMplot,width=5.8cm,height=2.2cm,xmin=-0.05,xmax=1.5,clip=false]
 {panels}  \end{{groupplot}}
@@ -112,7 +112,7 @@ for n in range(5):
     body_y += f"    \\addplot[{cols[n]},line width=1.1pt] coordinates{{{coords(xy[keep], yy[keep])}}};\n"
 labj = "".join(f"    \\node[EMlabs,text={cols[n]}] at (axis cs:{0.45 + 0.9 * n:.2f},{0.95 - 0.17 * n:.2f}){{$J_{n}$}};\n" for n in range(5))
 laby = "".join(f"    \\node[EMlabs,text={cols[n]}] at (axis cs:{0.75 + 0.95 * n:.2f},0.52){{$Y_{n}$}};\n" for n in range(5))
-write("m13-bessel", rf"""% Bessel functions of the first kind J_0..J_4 and of the second kind Y_0..Y_4 (scipy.special.jv, yv)
+write("m06-bessel", rf"""% Bessel functions of the first kind J_0..J_4 and of the second kind Y_0..Y_4 (scipy.special.jv, yv)
 \begin{{tikzpicture}}
   \begin{{groupplot}}[group style={{group size=2 by 1,horizontal sep=1.7cm}},EMplot,width=7.2cm,height=5.2cm,xmin=0,xmax=10.4,xtick={{0,5,10}},clip=true]
     \nextgroupplot[ymin=-0.5,ymax=1.1,ytick={{-0.5,0,0.5,1}},xlabel={{$x$}},title style={{font=\small}},title={{$J_n(x)$}}]
@@ -126,7 +126,7 @@ zeros = special.jn_zeros(0, 3)
 xj = np.linspace(0, 10.4, 400)
 marks = "".join(f"    \\node[EMhole] at (axis cs:{z:.4f},0){{}};\\node[EMlabs,above right] at (axis cs:{z:.4f},0){{$\\alpha_{i + 1}$}};\n"
                 for i, z in enumerate(zeros))
-write("m13-j0-zeros", rf"""% J_0(x) and its first three roots (scipy.special.jv, jn_zeros)
+write("m06-j0-zeros", rf"""% J_0(x) and its first three roots (scipy.special.jv, jn_zeros)
 \begin{{tikzpicture}}
   \begin{{axis}}[EMplot,width=10cm,height=5cm,xmin=0,xmax=10.8,ymin=-0.55,ymax=1.1,xtick={{0,5,10}},ytick={{-0.5,0,0.5,1}},xlabel={{$x$}},ylabel={{$J_0(x)$}}]
     \addplot[EMrose,line width=1.3pt] coordinates{{{coords(xj, special.jv(0, xj))}}};

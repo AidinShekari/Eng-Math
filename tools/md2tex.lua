@@ -16,8 +16,10 @@ local FIGDIR = os.getenv("EM_FIGDIR") or "template/figures"
 local ENVS = {
   definition = "EMdefinition", theorem = "EMtheorem", important = "EMimportant",
   example = "EMexample", exercise = "EMexercise", remark = "EMremark",
+  proof = "EMproof", lemma = "EMlemma", proposition = "EMproposition",
+  corollary = "EMcorollary",
 }
-local OPEN_ENVS = { proof = "EMproof", solution = "EMsolution" }
+local OPEN_ENVS = { solution = "EMsolution" }
 
 ---------------------------------------------------------------------------
 -- helpers
@@ -79,6 +81,7 @@ local function fix_math(s)
 end
 
 local function plain_math(s)    -- a bookmark-safe rendition of a formula
+  s = s:gsub("\\operatorname%s*{(%a+)}", "%1"):gsub("\\mathrm%s*{(%a+)}", "%1")
   return (s:gsub("[\\{}$^_]", ""))
 end
 
@@ -239,41 +242,116 @@ function CodeBlock(el)
   return rawb("\\EMfigure{" .. name .. "}{" .. tex .. "}")
 end
 
--- a heading that is followed by a figure (directly, or after one short paragraph) stays
--- with it: the guard reserves the room for the heading, the paragraph and the drawing
+-- keeping logical blocks together ---------------------------------------------------
+-- Outside the boxes the body is cut into "units": a paragraph with the equations, figures and
+-- lists that follow it (a figure is attached to a short lead-in only).  A unit is measured by
+-- the template and, when it fits on a page, never split between two pages.  A heading is held
+-- back until the box or unit after it has decided where it goes.
 local BOXENV = { EMdefinition = true, EMtheorem = true, EMexample = true, EMexercise = true,
-                  EMimportant = true, EMremark = true }
-local function keep_heading_with_figure(doc)
-  local blocks, out, i = doc.blocks, pandoc.List(), 1
-  local function head(b) return b.t == "RawBlock" and (b.text:match("^\\EMsection") or b.text:match("^\\EMsubsection")) end
-  local function fig(b) return b.t == "RawBlock" and b.text:match("^\\EMfigure{([^}]*)}") end
-  while i <= #blocks do
-    local b = blocks[i]
-    if head(b) then
-      local nxt, name, extra = blocks[i + 1], nil, 3
-      if nxt then name = fig(nxt) end
-      if not name and nxt and nxt.t == "Para" and #pandoc.utils.stringify(nxt) < 260 then
-        local nn = blocks[i + 2]
-        if nn then name = fig(nn); extra = 5 end
-      end
-      if name then out:insert(rawb("\\EMkeepfig{" .. name .. "}{" .. extra .. "}")) end
-      -- a heading (or a run of headings) followed by a box is held until the box has measured itself
-      if not name and nxt and nxt.t == "Para" and #nxt.content == 1 and nxt.content[1].t == "Math"
-         and nxt.content[1].mathtype == "DisplayMath" then
-        local _, rows = nxt.content[1].text:gsub("\\\\", "")
-        out:insert(rawb("\\Needspace{" .. (7 + 2 * rows) .. "\\baselineskip}"))
-      end
-      local j = i + 1
-      while blocks[j] and head(blocks[j]) do j = j + 1 end
-      local nb = blocks[j]
-      local benv = nb and nb.t == "RawBlock" and nb.text:match("^\\begin{(EM%a+)}")
-      if not name and benv and BOXENV[benv] then
-        out:insert(rawb("\\EMhold"))
-      end
-    end
-    out:insert(b); i = i + 1
+                  EMimportant = true, EMremark = true, EMproof = true, EMsolution = true,
+                  EMlemma = true, EMproposition = true, EMcorollary = true }
+local function rawtext(b) return b.t == "RawBlock" and b.text or "" end
+local function is_head(b) local s = rawtext(b); return s:match("^\\EMsection") or s:match("^\\EMsubsection") end
+local function is_fig(b) return rawtext(b):match("^\\EMfigure{") ~= nil end
+local function is_disp(b)
+  if b.t ~= "Para" then return false end
+  local n = 0
+  for _, x in ipairs(b.content) do
+    if x.t == "RawInline" and x.text:match("^\\EMdisp{") then n = n + 1
+    elseif x.t ~= "SoftBreak" and x.t ~= "Space" then return false end
   end
-  doc.blocks = out
+  return n > 0
+end
+local function kind(b)
+  if is_fig(b) then return "fig" end
+  if is_disp(b) then return "disp" end
+  if b.t == "Para" then return "text" end
+  if b.t == "BulletList" or b.t == "OrderedList" then return "list" end
+  return "other"
+end
+local function group_units(doc)
+  local blocks, out, depth = doc.blocks, pandoc.List(), 0
+  local cur, curtext, curhead = {}, 0, false
+  local function flush()
+    if #cur == 0 then return end
+    local rich = #cur > 1 or kind(cur[1]) ~= "text"
+    if rich then out:insert(rawb("\\begin{EMunit}")) end
+    for _, x in ipairs(cur) do out:insert(x) end
+    if rich then out:insert(rawb("\\end{EMunit}")) end
+    cur, curtext = {}, 0
+  end
+  for _, b in ipairs(blocks) do
+    local s = rawtext(b)
+    local benv = s:match("^\\begin{(EM%a+)}")
+    if benv and BOXENV[benv] then
+      if depth == 0 then flush() end
+      depth = depth + 1; out:insert(b)
+    elseif s:match("^\\end{(EM%a+)}") and BOXENV[s:match("^\\end{(EM%a+)}")] then
+      depth = depth - 1; out:insert(b)
+    elseif depth > 0 then out:insert(b)
+    else
+      local k = kind(b)
+      if k == "other" then flush(); out:insert(b)
+      elseif k == "text" then
+        -- a short lead-in (right after a heading, or ending in a colon) stays with what follows
+        if #cur == 1 and kind(cur[1]) == "text" and curtext < 260
+           and (curhead or pandoc.utils.stringify(cur[1]):match(":%s*$")) then
+          cur[#cur + 1] = b; curtext = #pandoc.utils.stringify(b); curhead = false
+        else
+          flush(); curhead = #out > 0 and is_head(out[#out]) and true or false
+          cur = { b }; curtext = #pandoc.utils.stringify(b)
+        end
+      elseif k == "fig" then
+        if #cur > 0 and curtext >= 420 then flush() end
+        cur[#cur + 1] = b
+      else cur[#cur + 1] = b end   -- disp, list
+      if k == "fig" then curtext = 0 end
+    end
+  end
+  flush()
+  -- a unit directly followed by a proof is joined to it
+  do
+    local joined, i = pandoc.List(), 1
+    while i <= #out do
+      local b = out[i]
+      if rawtext(b) == "\\end{EMunit}" and out[i + 1] and rawtext(out[i + 1]):match("^\\begin{EMproof}") then
+        -- find the matching \begin{EMunit} already emitted, and put the join before it
+        local k = #joined
+        while k > 0 and rawtext(joined[k]) ~= "\\begin{EMunit}" do k = k - 1 end
+        if k > 0 then
+          joined:insert(k, rawb("\\begin{EMjoin}"))
+          joined:insert(b)
+          local d = 0; local j = i + 1
+          while out[j] do
+            joined:insert(out[j])
+            local s = rawtext(out[j])
+            if s:match("^\\begin{EMproof}") then d = d + 1 elseif s:match("^\\end{EMproof}") then d = d - 1 end
+            j = j + 1
+            if d == 0 then break end
+          end
+          joined:insert(rawb("\\end{EMjoin}"))
+          i = j
+        else joined:insert(b); i = i + 1 end
+      else joined:insert(b); i = i + 1 end
+    end
+    out = joined
+  end
+  -- a heading before a box or a unit is held until that block has measured itself
+  local res = pandoc.List()
+  local i = 1
+  while i <= #out do
+    if is_head(out[i]) then
+      local j = i
+      while out[j + 1] and is_head(out[j + 1]) do j = j + 1 end
+      local nb = out[j + 1]
+      local s = nb and rawtext(nb) or ""
+      local benv = s:match("^\\begin{(EM%a+)}")
+      if benv and (benv == "EMunit" or benv == "EMjoin" or BOXENV[benv]) then res:insert(rawb("\\EMhold")) end
+      for k = i, j do res:insert(out[k]) end
+      i = j + 1
+    else res:insert(out[i]); i = i + 1 end
+  end
+  doc.blocks = res
   return doc
 end
 
@@ -282,5 +360,5 @@ end
 return {
   { traverse = "topdown", Header = Header, Div = Div, CodeBlock = CodeBlock },
   IF,
-  { Pandoc = keep_heading_with_figure },
+  { Pandoc = group_units },
 }
