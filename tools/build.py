@@ -160,7 +160,8 @@ def build_sources(lang, only=None, book_only=False):
     if not only:
         folder = ROOT / "00-full-notes" / lang
         folder.mkdir(parents=True, exist_ok=True)
-        parts = [f"\\EMcoverpage{{{COURSE[lang]}}}{{{COVER_SUBTITLE[lang]}}}{{{COURSE[other]}}}\n",
+        parts = [f"\\EMcoverpage{{{COURSE[lang]}}}{{{COVER_SUBTITLE[lang]}}}{{{COURSE[other]}}}"
+                 f"{{{COVER_SUBTITLE[other]}}}\n",
                  "\\pagenumbering{roman}\\setcounter{page}{1}\n\\EMcolophon\n"]
         # contents
         toc = ["\\EMsetmodule{0}{\\EMlangContents}{}\n\\begin{EMbooktoc}\n"]
