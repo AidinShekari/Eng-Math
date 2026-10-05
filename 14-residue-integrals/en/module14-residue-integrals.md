@@ -21,7 +21,7 @@ In these integrals the integrand is a function of sine or cosine.
 Evaluate the integral $\displaystyle\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx$ ($\omega>0$).
 
 ::: {.solution}
-Consider the function $f(z)=e^{i\omega z}\big/(1+z^2)^2$. It is not analytic at $z=i$ and $z=-i$. The path $C$ is the upper semicircle of radius $R$.
+Consider the function $f(z)=\dfrac{e^{i\omega z}}{(1+z^2)^2}$. It is not analytic at $z=i$ and $z=-i$. The path $C$ is the upper semicircle of radius $R$.
 $$\begin{aligned}
 \oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz&=2\pi i\times\operatorname{Res}\left\{\frac{e^{i\omega z}}{(1+z^2)^2}\right\}\Bigg|_{z=i}\\
 &=2\pi i\times\left[\frac d{dz}\left\{(z-i)^2\,\frac{e^{i\omega z}}{(z-i)^2(z+i)^2}\right\}\right]_{z=i}\\
@@ -31,7 +31,7 @@ $$\begin{aligned}
 \end{aligned}$$
 On the other hand
 $$\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz=\int_{-R}^{R}\frac{e^{i\omega x}}{(1+x^2)^2}\,dx+\int_0^\pi\frac{e^{i\omega Re^{it}}\,Rie^{it}}{(1+R^2e^{i2t})^2}\,dt$$
-and as $R\to\infty$ the integral along the semicircle vanishes, while the imaginary part of the integral along the real axis (the odd function $\sin\omega x/(1+x^2)^2$) is zero:
+and as $R\to\infty$ the integral along the semicircle vanishes, while the imaginary part of the integral along the real axis (the odd function $\dfrac{\sin\omega x}{(1+x^2)^2}$) is zero:
 $$\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\ \xrightarrow{\ R\to\infty\ }\ 2\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx$$
 $$\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx=\frac\pi4(\omega+1)e^{-\omega}$$
 :::

@@ -84,7 +84,9 @@ def postprocess(tex: str, lang: str) -> str:
     def keep(m):
         rows = m.group(0).count("\\\\\n")
         need = min(int(rows * 1.8) + 3, 22)
-        return f"\\Needspace{{{need}\\baselineskip}}\n" + m.group(0)
+        # a little air after every row so that fractions in the cells never touch the next row
+        body = m.group(0).replace("\\\\\n", "\\\\\\noalign{\\vskip 4pt}\n")
+        return f"\\Needspace{{{need}\\baselineskip}}\n" + body
     tex = re.sub(r"\\begin\{longtable\}.*?\\end\{longtable\}", keep, tex, flags=re.S)
     return tex
 

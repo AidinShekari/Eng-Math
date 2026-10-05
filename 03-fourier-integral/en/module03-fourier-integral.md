@@ -73,7 +73,7 @@ $$\operatorname{Si}(x)\triangleq\int_0^x\frac{\sin w}{w}\,dw$$
 - odd;
 - has finite asymptotic values at infinity.
 
-```{.figure #m03-si caption="The function $\\operatorname{Si}(u)$ (solid) and the function $\\sin u/u$ (dashed)"}
+```{.figure #m03-si caption="The function $\\operatorname{Si}(u)$ (solid) and the function $\\dfrac{\\sin u}{u}$ (dashed)"}
 ```
 
 ::: {.theorem title="Lemma"}
@@ -82,7 +82,7 @@ $$\int_0^\infty\frac{\sin\alpha w}{w}\,dw=\begin{cases}\dfrac\pi2&\alpha>0\\[1mm
 
 ::: {.proof}
 For $\alpha=0$ the lemma is obvious. With the substitution $\tau=\alpha w$:
-$$\int_0^x\frac{\sin\alpha w}{w}\,dw=\int_0^{\alpha x}\frac{\sin\tau}{\tau/\alpha}\,\frac{d\tau}{\alpha}=\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau=\operatorname{Si}(\alpha x),\qquad \operatorname{Si}(\alpha x)=-\operatorname{Si}(-\alpha x)$$
+$$\int_0^x\frac{\sin\alpha w}{w}\,dw=\int_0^{\alpha x}\frac{\sin\tau}{\frac\tau\alpha}\,\frac{d\tau}{\alpha}=\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau=\operatorname{Si}(\alpha x),\qquad \operatorname{Si}(\alpha x)=-\operatorname{Si}(-\alpha x)$$
 So it suffices to prove the lemma for positive values of $\alpha$.
 $$F(\alpha)\triangleq\int_0^\infty e^{-\alpha t}\frac{\sin t}{t}\,dt,\qquad F(0)=\operatorname{Si}(+\infty)=\;?$$
 $$F'(\alpha)=\int_0^\infty-t\,e^{-\alpha t}\frac{\sin t}t\,dt=-\int_0^\infty e^{-\alpha t}\sin t\,dt=-\left[\frac{e^{-\alpha t}}{1+\alpha^2}\big(-\alpha\sin t-\cos t\big)\right]_0^\infty=\frac{-1}{1+\alpha^2}$$
@@ -100,7 +100,7 @@ $$f(x)=\begin{cases}1&|x|<1\\ 0&|x|>1\end{cases}$$
 Since $f(x)$ is even, the Fourier sine transform vanishes: $B(\omega)=0$.
 $$A(\omega)=\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt=\int_{-1}^{1}\cos\omega t\,dt=\frac2\omega\sin\omega$$
 $$f(x)=\frac1\pi\int_0^\infty\frac2\omega\sin\omega\cos\omega x\,d\omega=\frac1\pi\int_0^\infty\frac1\omega\big[\sin(1-x)\omega+\sin(1+x)\omega\big]\,d\omega$$
-$$=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right]=\begin{cases}0&x<-1\\ 1/2&x=-1\\ 1&-1<x<1\\ 1/2&x=1\\ 0&x>1\end{cases}$$
+$$=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right]=\begin{cases}0&x<-1\\ \frac12&x=-1\\ 1&-1<x<1\\ \frac12&x=1\\ 0&x>1\end{cases}$$
 Note: the value of the Fourier integral at the points of discontinuity (using the lemma above).
 :::
 :::
@@ -203,7 +203,7 @@ $$xf(x)=\frac1\pi\int_0^\infty\big\{B'(\omega)\cos\omega x-A'(\omega)\sin\omega 
 ::: {.exercise}
 Prove the following identities:
 
-1. $\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \pi/2&x=0\\ \pi e^{-x}&x>0\end{cases}$
+1. $\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \frac\pi2&x=0\\ \pi e^{-x}&x>0\end{cases}$
 2. $\displaystyle\int_0^\infty\frac{\sin\pi w\,\sin xw}{1-w^2}\,dw=\begin{cases}\dfrac\pi2\sin x&0\le x\le\pi\\[1mm] 0&x>\pi\end{cases}$
 3. $\displaystyle\int_0^\infty\frac{1-\cos\pi w}{w}\sin xw\,dw=\begin{cases}\dfrac12\pi&0<x<\pi\\[1mm] 0&x>\pi\end{cases}$
 4. $\displaystyle\int_0^\infty\frac{\cos\frac12\pi w}{1-w^2}\cos xw\,dw=\begin{cases}\dfrac12\pi\cos x&0<|x|<\frac12\pi\\[1mm] 0&|x|\ge\frac12\pi\end{cases}$

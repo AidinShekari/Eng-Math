@@ -438,7 +438,7 @@ The second integral is zero. Why?
 
 Evaluate the integral \EMim{\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}} using Cauchy's integral formula.
 
-\EMdisp{\frac{1}{(x^2+1)(x^2+4)}\EMbr =\frac{A}{x^2+1}+\frac{B}{x^2+4}\EMbr =\frac{1/3}{x^2+1}+\frac{-1/3}{x^2+4}}
+\EMdisp{\frac{1}{(x^2+1)(x^2+4)}\EMbr =\frac{A}{x^2+1}+\frac{B}{x^2+4}\EMbr =\frac{\frac13}{x^2+1}+\frac{-\frac13}{x^2+4}}
 \EMdisp{\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}\EMbr =\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+1}-\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+4}}
 
 \textbf{First integral:} \EMim{I_1=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+1}} and \EMim{g_1(z)=\dfrac1{z^2+1}}:
@@ -572,8 +572,8 @@ Prove it by mathematical induction.
 Evaluate the following integral. (\EMim{C} is the unit circle.)
 \EMdisp{I\EMbr =\oint_C\frac{z^2}{(2z-1)^2}\,dz}
 
-\EMdisp{I\EMbr =\oint_C\frac{z^2}{4(z-1/2)^2}\,dz\EMbr =\frac14\oint_C\frac{z^2}{(z-1/2)^2}\,dz\EMbr =\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}\EMbr =\frac14\times2\pi i\times(2z)\Big|_{z=1/2}\EMbr =\frac\pi2\,i}
-(\EMim{z=1/2} lies inside the unit circle.)
+\EMdisp{I\EMbr =\oint_C\frac{z^2}{4\left(z-\frac12\right)^2}\,dz\EMbr =\frac14\oint_C\frac{z^2}{\left(z-\frac12\right)^2}\,dz\EMbr =\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}\EMbr =\frac14\times2\pi i\times(2z)\Big|_{z=1/2}\EMbr =\frac\pi2\,i}
+(\EMim{z=\frac12} lies inside the unit circle.)
 
 \end{EMexample}
 

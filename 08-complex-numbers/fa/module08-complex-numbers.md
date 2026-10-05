@@ -109,7 +109,7 @@ $$|z_1+z_2+\cdots+z_n|\le|z_1|+|z_2|+\cdots+|z_n|$$
 
 $$z=x+iy,\qquad \left.\begin{aligned}x&=|z|\cos\theta\\ y&=|z|\sin\theta\end{aligned}\right\}\;\Longrightarrow\; z=|z|\,(\cos\theta+i\sin\theta)$$
 
-$$\theta=\operatorname{Arg}(z)=\tan^{-1}(y/x),\qquad -\pi<\theta\le\pi$$
+$$\theta=\operatorname{Arg}(z)=\tan^{-1}\frac yx,\qquad -\pi<\theta\le\pi$$
 $$\arg(z)=\operatorname{Arg}(z)+2k\pi,\qquad k\in\mathbb{Z}$$
 
 ## ضرب دو عدد مختلط در فرم قطبی
@@ -177,5 +177,5 @@ $$z=1,\ \omega,\ \omega^2,\ \dots,\ \omega^{n-1}$$
 ::: {.exercise}
 - ریشه‌های معادلهٔ $z^6+6+8i=0$ را به دست آورده در صفحهٔ اعداد مختلط رسم کنید.
 - درستی اتحاد $1+z+z^2+\cdots+z^n=\dfrac{1-z^{n+1}}{1-z}$ را تحقیق کنید و سپس اتحاد زیر (اتحاد لاگرانژ) را نتیجه بگیرید.
-$$1+\cos\theta+\cos2\theta+\cdots+\cos n\theta=\frac12+\frac{\sin\!\left[\left(n+\frac12\right)\theta\right]}{2\sin(\theta/2)}$$
+$$1+\cos\theta+\cos2\theta+\cdots+\cos n\theta=\frac12+\frac{\sin\!\left[\left(n+\frac12\right)\theta\right]}{2\sin\frac\theta2}$$
 :::

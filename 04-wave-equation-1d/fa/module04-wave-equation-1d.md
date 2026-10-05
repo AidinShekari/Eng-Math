@@ -144,7 +144,7 @@ $$u(x,t)=\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx$$
 ::: {.exercise}
 (الف) مقدار نسبت $\dfrac{a_1^2}{a_1^2+a_2^2+\cdots}$ را به دست آورید.
 
-(ب) نسبت $a_{2n-1}/a_{2n+1}$ را بر حسب $n\in\mathbb{N}$ رسم کنید.
+(ب) نسبت $\dfrac{a_{2n-1}}{a_{2n+1}}$ را بر حسب $n\in\mathbb{N}$ رسم کنید.
 :::
 
 ## روش جداسازی متغیرها: مثال‌ها
@@ -229,9 +229,9 @@ $$\frac{\partial^2u}{\partial t^2}=c^2\frac{\partial^2u}{\partial x^2},\qquad u(
 $$f(x)=\begin{cases}\dfrac{2k}Lx&0<x<\dfrac L2\\[7mm] \dfrac{2k}L(L-x)&\dfrac L2<x<L\end{cases}$$
 
 ::: {.solution}
-با رسم $\frac12\tilde f(x+ct)$ و $\frac12\tilde f(x-ct)$ و جمع آنها در زمان‌های $t=0$، $t=L/5c$، $t=2L/5c$، $t=L/2c$ و $t=3L/5c$ شکل جواب به دست می‌آید.
+با رسم $\frac12\tilde f(x+ct)$ و $\frac12\tilde f(x-ct)$ و جمع آنها در زمان‌های $t=0$، $t=\frac{L}{5c}$، $t=\frac{2L}{5c}$، $t=\frac{L}{2c}$ و $t=\frac{3L}{5c}$ شکل جواب به دست می‌آید.
 :::
 :::
 
-```{.figure #m04-triangle-time caption="جواب مثال برای $t=0$، $L/5c$، $2L/5c$، $L/2c$ و $3L/5c$؛ در $t=L/2c$ شکل تار صاف است"}
+```{.figure #m04-triangle-time caption="جواب مثال برای $t=0$، $\frac{L}{5c}$، $\frac{2L}{5c}$، $\frac{L}{2c}$ و $\frac{3L}{5c}$؛ در $t=\frac{L}{2c}$ شکل تار صاف است"}
 ```

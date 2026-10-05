@@ -24,7 +24,7 @@
 
 \begin{EMexample}{}
 
-تابع \EMim{\sin x} تابعی با دورهٔ تناوب \EMim{2\pi} تناوبی است و \EMim{\sin2x} با دورهٔ تناوب اصلی \EMim{\pi} تناوبی است هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست. همینطور تابع \EMim{\sin3x} با دورهٔ تناوب \EMim{2\pi/3} تناوبی است، هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست.
+تابع \EMim{\sin x} تابعی با دورهٔ تناوب \EMim{2\pi} تناوبی است و \EMim{\sin2x} با دورهٔ تناوب اصلی \EMim{\pi} تناوبی است هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست. همینطور تابع \EMim{\sin3x} با دورهٔ تناوب \EMim{\frac{2\pi}{3}} تناوبی است، هر چند \EMim{2\pi} نیز دورهٔ تناوب آن هست.
 
 \end{EMexample}
 
@@ -177,16 +177,16 @@
 \Needspace{13\baselineskip}
 \begin{longtable}[c]{@{}ccc@{}}
 \toprule\noalign{}
-\rowcolor{EMindigoL}مشتق \EMim{f} & & انتگرال \EMim{g} \\
+\rowcolor{EMindigoL}مشتق \EMim{f} & & انتگرال \EMim{g} \\\noalign{\vskip 4pt}
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\EMim{f(x)} & \EMim{\searrow} & \EMim{g(x)} \\
-\EMim{f^{(1)}(x)} & \EMim{\searrow} & \EMim{G_1(x)} \\
-\EMim{f^{(2)}(x)} & \EMim{\searrow} & \EMim{G_2(x)} \\
-\EMim{f^{(3)}(x)} & \EMim{\searrow} & \EMim{G_3(x)} \\
-\EMim{\vdots} & & \EMim{\vdots} \\
+\EMim{f(x)} & \EMim{\searrow} & \EMim{g(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(1)}(x)} & \EMim{\searrow} & \EMim{G_1(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(2)}(x)} & \EMim{\searrow} & \EMim{G_2(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(3)}(x)} & \EMim{\searrow} & \EMim{G_3(x)} \\\noalign{\vskip 4pt}
+\EMim{\vdots} & & \EMim{\vdots} \\\noalign{\vskip 4pt}
 \end{longtable}
 
 \EMhold
@@ -227,8 +227,8 @@ b_n&=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx=\frac1\pi\left[\int_{-\pi}^{0}(-k
 
 \end{EMunit}
 
-با قرار دادن \EMim{x=\pi/2}:
-\EMdisp{f(\pi/2)\EMbr =\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =k\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \pi\EMbr =4\left(1-\frac13+\frac15-\frac17+-\cdots\right)}
+با قرار دادن \EMim{x=\frac\pi2}:
+\EMdisp{f\!\left(\frac\pi2\right)\EMbr =\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =k\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \pi\EMbr =4\left(1-\frac13+\frac15-\frac17+-\cdots\right)}
 
 \begin{EMexample}{}
 
@@ -250,7 +250,7 @@ b_n&=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx=\frac1\pi\left[\int_{-\pi}^{0}(-k
 
 \begin{EMunit}
 
-با قرار دادن \EMim{x=\pi/2}:
+با قرار دادن \EMim{x=\frac\pi2}:
 \EMdisp{f\!\left(\frac\pi2\right)\EMbr =\frac\pi2\EMbr =\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin\!\left(n\frac\pi2\right)\EMbr =2\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =\sum_{n=1}^{\infty}\frac2{2n-1}(-1)^{n+1}\ \EMbr \Longrightarrow\ \pi\EMbr =\sum_{n=1}^{\infty}\frac4{2n-1}(-1)^{n+1}}
 
 مقدار سری در نقطهٔ ناپیوستگی \EMim{x=\pi}:
@@ -358,11 +358,12 @@ b_n&=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx=\frac1\pi\left[\int_{-\pi}^{0}(-k
 
 مثال‌هایی از توابعی که شرایط دریشله را ندارند:
 
-\EMdisp{f(x)\EMbr =1/x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
-\EMdisp{f(x)\EMbr =\sin(1/x),\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+\EMdisp{f(x)\EMbr =\frac1x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+\EMdisp{f(x)\EMbr =\sin\frac1x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
 
-\EMfigure{m01-dirichlet}{توابعی که شرایط دریشله را ندارند: \EMim{1/x} (نامحدود)، \EMim{\sin(1/x)}
-(بی‌نهایت ماکزیمم و مینیمم) و تابع پله‌ای با بی‌نهایت پله}
+\EMfigure{m01-dirichlet}{توابعی که شرایط دریشله را ندارند: \EMim{\frac1x} (نامحدود)،
+\EMim{\sin\frac1x} (بی‌نهایت ماکزیمم و مینیمم) و تابع پله‌ای با بی‌نهایت
+پله}
 
 \end{EMunit}
 

@@ -27,7 +27,7 @@
 
 مطلوب است محاسبهٔ انتگرال \EMim{\displaystyle\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx} (\EMim{\omega>0}).
 
-تابع \EMim{f(z)=e^{i\omega z}\big/(1+z^2)^2} را در نظر می‌گیریم. این تابع در \EMim{z=i} و \EMim{z=-i} تحلیلی نیست. مسیر \EMim{C} نیم‌دایرهٔ بالایی به شعاع \EMim{R} است.
+تابع \EMim{f(z)=\dfrac{e^{i\omega z}}{(1+z^2)^2}} را در نظر می‌گیریم. این تابع در \EMim{z=i} و \EMim{z=-i} تحلیلی نیست. مسیر \EMim{C} نیم‌دایرهٔ بالایی به شعاع \EMim{R} است.
 \EMdisp{\begin{aligned}
 \oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz&=2\pi i\times\operatorname{Res}\left\{\frac{e^{i\omega z}}{(1+z^2)^2}\right\}\Bigg|_{z=i}\\
 &=2\pi i\times\left[\frac d{dz}\left\{(z-i)^2\,\frac{e^{i\omega z}}{(z-i)^2(z+i)^2}\right\}\right]_{z=i}\\
@@ -37,7 +37,7 @@
 \end{aligned}}
 از طرف دیگر
 \EMdisp{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}}{(1+x^2)^2}\,dx+\int_0^\pi\frac{e^{i\omega Re^{it}}\,Rie^{it}}{(1+R^2e^{i2t})^2}\,dt}
-و وقتی \EMim{R\to\infty} انتگرال روی نیم‌دایره صفر می‌شود و بخش موهومی انتگرال روی محور حقیقی (تابع فرد \EMim{\sin\omega x/(1+x^2)^2}) صفر است:
+و وقتی \EMim{R\to\infty} انتگرال روی نیم‌دایره صفر می‌شود و بخش موهومی انتگرال روی محور حقیقی (تابع فرد \EMim{\dfrac{\sin\omega x}{(1+x^2)^2}}) صفر است:
 \EMdisp{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\ \xrightarrow{\ R\to\infty\ }\ 2\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx}
 \EMdisp{\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx\EMbr =\frac\pi4(\omega+1)e^{-\omega}}
 

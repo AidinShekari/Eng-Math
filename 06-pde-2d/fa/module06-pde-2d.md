@@ -87,7 +87,7 @@ $$\frac{\partial u}{\partial t}=c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{
 $$\frac{\partial^2u}{\partial x^2}=X''YT,\qquad\frac{\partial^2u}{\partial y^2}=XY''T,\qquad\frac{\partial u}{\partial t}=XYT'\quad\Longrightarrow\quad XYT'=c^2\big(X''YT+XY''T\big)$$
 $$\frac{T'}{c^2T}=\frac{X''}X+\frac{Y''}Y=-\lambda^2,\qquad \frac{Y''}Y=-\lambda^2-\frac{X''}X=-\rho^2,\qquad\frac{X''}X=-\lambda^2+\rho^2=-\mu^2$$
 $$\begin{cases}X''+\mu^2X=0\\ Y''+\rho^2Y=0\\ T'+c^2\lambda^2T=0\end{cases}\qquad\lambda^2=\mu^2+\rho^2$$
-مشابه حالت موجی ($X_n(x)=A_n\sin\mu_nx$ با $\mu_n=n\pi/a$ و $Y_m(y)=B_m\sin\rho_my$ با $\rho_m=m\pi/b$) و با
+مشابه حالت موجی ($X_n(x)=A_n\sin\mu_nx$ با $\mu_n=\frac{n\pi}a$ و $Y_m(y)=B_m\sin\rho_my$ با $\rho_m=\frac{m\pi}b$) و با
 $$T_{nm}(t)=C_1e^{-c^2\lambda_{nm}^2t},\qquad\lambda_{nm}^2=\mu_n^2+\rho_m^2=\left(\frac{n\pi}a\right)^2+\left(\frac{m\pi}b\right)^2$$
 $$u_{nm}(x,y,t)=A_{nm}\sin\!\left(\frac{n\pi}ax\right)\sin\!\left(\frac{m\pi}by\right)e^{-c^2\lambda_{nm}^2t},\qquad n=1,2,\dots,\ m=1,2,\dots$$
 $$u(x,y,t)=\sum_{n=1}^{\infty}\sum_{m=1}^{\infty}A_{nm}\sin\!\left(\frac{n\pi}ax\right)\sin\!\left(\frac{m\pi}by\right)e^{-c^2\lambda_{nm}^2t}$$

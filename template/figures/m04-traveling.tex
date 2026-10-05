@@ -1,14 +1,14 @@
 % The odd periodic extension f~(x) and the two travelling halves 1/2 f~(x+ct) and 1/2 f~(x-ct)
 \vbox{\hbox{\begin{tikzpicture}
   \begin{axis}[EMplot,trig format plots=rad,width=12cm,height=3.6cm,xmin=-4.2,xmax=9.2,ymin=-1.6,ymax=1.6,
-      xtick={0,3},xticklabels={0,$L$},ytick=\empty,xlabel={$x$},axis y line=none,clip=false]
+      xtick={0,3},xticklabels={$0$,$L$},ytick=\empty,xlabel={$x$},axis y line=none,clip=false]
     \addplot[EMcurve,domain=-4:9,samples=200,smooth]{sin(pi*x/3)+0.4*sin(2*pi*x/3)};
     \addplot[line width=3pt,EMcurve,domain=0:3,samples=80,smooth,EMindigo!80!black]{sin(pi*x/3)+0.4*sin(2*pi*x/3)};
     \node[EMlab,anchor=south west] at (axis cs:0.1,1.25){$\tilde f(x)$};
   \end{axis}
 \end{tikzpicture}}\vskip0.8em\hbox{\begin{tikzpicture}
   \begin{axis}[EMplot,trig format plots=rad,width=12cm,height=4.4cm,xmin=-4.2,xmax=9.2,ymin=-1.1,ymax=1.1,
-      xtick={0,3},xticklabels={0,$L$},ytick=\empty,xlabel={$x$},axis y line=none,clip=false]
+      xtick={0,3},xticklabels={$0$,$L$},ytick=\empty,xlabel={$x$},axis y line=none,clip=false]
     \addplot[EMcurve3,domain=-4.2:6.5,samples=200,smooth,line width=1.2pt]{0.5*(sin(pi*(x+0.9)/3)+0.4*sin(2*pi*(x+0.9)/3))};
     \addplot[EMcurve2,domain=-2.5:9.2,samples=200,smooth,line width=1.2pt]{0.5*(sin(pi*(x-0.9)/3)+0.4*sin(2*pi*(x-0.9)/3))};
     \draw[EMvec,line width=1pt] (axis cs:-3.6,0.85)--(axis cs:-4.2,0.85);\draw[EMvec2,line width=1pt] (axis cs:8.4,0.85)--(axis cs:9.0,0.85);

@@ -44,12 +44,12 @@ The function $w=f(z)$ is continuous at the point $z=z_0$ if the following three 
 :::
 
 ::: {.example}
-Is the function $f(z)=\sin(1/z)$ continuous at $z=0$?
+Is the function $f(z)=\sin\frac1z$ continuous at $z=0$?
 :::
 
 ::: {.example}
 Is the function
-$$f(z)=\begin{cases}\sin(1/z)&z\neq0\\ 5+4i&z=0\end{cases}$$
+$$f(z)=\begin{cases}\sin\frac1z&z\neq0\\ 5+4i&z=0\end{cases}$$
 continuous at $z=0$?
 :::
 

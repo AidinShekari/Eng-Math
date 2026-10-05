@@ -24,7 +24,7 @@
 
 \begin{EMexample}{}
 
-The function \EMim{\sin x} is periodic with period \EMim{2\pi}, and \EMim{\sin2x} is periodic with fundamental period \EMim{\pi}, although \EMim{2\pi} is also a period of it. Likewise \EMim{\sin3x} is periodic with period \EMim{2\pi/3}, although \EMim{2\pi} is also a period of it.
+The function \EMim{\sin x} is periodic with period \EMim{2\pi}, and \EMim{\sin2x} is periodic with fundamental period \EMim{\pi}, although \EMim{2\pi} is also a period of it. Likewise \EMim{\sin3x} is periodic with period \EMim{\frac{2\pi}{3}}, although \EMim{2\pi} is also a period of it.
 
 \end{EMexample}
 
@@ -177,16 +177,16 @@ where \EMim{f^{(k)}} is the \EMim{k}-th derivative of \EMim{f} and \EMim{G_k} is
 \Needspace{13\baselineskip}
 \begin{longtable}[c]{@{}ccc@{}}
 \toprule\noalign{}
-\rowcolor{EMindigoL}derivatives of \EMim{f} & & integrals of \EMim{g} \\
+\rowcolor{EMindigoL}derivatives of \EMim{f} & & integrals of \EMim{g} \\\noalign{\vskip 4pt}
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\EMim{f(x)} & \EMim{\searrow} & \EMim{g(x)} \\
-\EMim{f^{(1)}(x)} & \EMim{\searrow} & \EMim{G_1(x)} \\
-\EMim{f^{(2)}(x)} & \EMim{\searrow} & \EMim{G_2(x)} \\
-\EMim{f^{(3)}(x)} & \EMim{\searrow} & \EMim{G_3(x)} \\
-\EMim{\vdots} & & \EMim{\vdots} \\
+\EMim{f(x)} & \EMim{\searrow} & \EMim{g(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(1)}(x)} & \EMim{\searrow} & \EMim{G_1(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(2)}(x)} & \EMim{\searrow} & \EMim{G_2(x)} \\\noalign{\vskip 4pt}
+\EMim{f^{(3)}(x)} & \EMim{\searrow} & \EMim{G_3(x)} \\\noalign{\vskip 4pt}
+\EMim{\vdots} & & \EMim{\vdots} \\\noalign{\vskip 4pt}
 \end{longtable}
 
 \EMhold
@@ -228,8 +228,8 @@ series of the square wave (the dashed line is the square wave itself)}
 
 \end{EMunit}
 
-Setting \EMim{x=\pi/2}:
-\EMdisp{f(\pi/2)\EMbr =\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =k\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \pi\EMbr =4\left(1-\frac13+\frac15-\frac17+-\cdots\right)}
+Setting \EMim{x=\frac\pi2}:
+\EMdisp{f\!\left(\frac\pi2\right)\EMbr =\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =k\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \pi\EMbr =4\left(1-\frac13+\frac15-\frac17+-\cdots\right)}
 
 \begin{EMexample}{}
 
@@ -252,7 +252,7 @@ extension}
 
 \begin{EMunit}
 
-Setting \EMim{x=\pi/2}:
+Setting \EMim{x=\frac\pi2}:
 \EMdisp{f\!\left(\frac\pi2\right)\EMbr =\frac\pi2\EMbr =\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin\!\left(n\frac\pi2\right)\EMbr =2\left(1-\frac13+\frac15-\frac17+-\cdots\right)\EMbr =\sum_{n=1}^{\infty}\frac2{2n-1}(-1)^{n+1}\ \EMbr \Longrightarrow\ \pi\EMbr =\sum_{n=1}^{\infty}\frac4{2n-1}(-1)^{n+1}}
 
 The value of the series at the point of discontinuity \EMim{x=\pi}:
@@ -362,12 +362,12 @@ If the function \EMim{f(x)} is periodic and \textbf{bounded}, has a \textbf{fini
 
 Examples of functions that do not satisfy Dirichlet's conditions:
 
-\EMdisp{f(x)\EMbr =1/x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
-\EMdisp{f(x)\EMbr =\sin(1/x),\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+\EMdisp{f(x)\EMbr =\frac1x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
+\EMdisp{f(x)\EMbr =\sin\frac1x,\quad\EMbr  0<x\le1,\qquad\EMbr  f(x+1)\EMbr =f(x)}
 
-\EMfigure{m01-dirichlet}{Functions that violate Dirichlet's conditions: \EMim{1/x} (unbounded),
-\EMim{\sin(1/x)} (infinitely many maxima and minima) and a staircase
-function with infinitely many steps}
+\EMfigure{m01-dirichlet}{Functions that violate Dirichlet's conditions: \EMim{\frac1x}
+(unbounded), \EMim{\sin\frac1x} (infinitely many maxima and minima) and
+a staircase function with infinitely many steps}
 
 \end{EMunit}
 

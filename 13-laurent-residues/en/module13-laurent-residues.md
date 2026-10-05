@@ -112,8 +112,8 @@ Find the Laurent series of $f(z)=\dfrac{4z^2+30z+68}{(z+4)^2(z-2)}$ in a neighbo
 ::: {.solution}
 We see that $f(z)$ is analytic at $z_0=0$, so this is a regular point and the Laurent series is the Taylor (Maclaurin) series. Hence
 $$f(z)=f(0)+\frac1{1!}f^{(1)}(0)z+\frac1{2!}f^{(2)}(0)z^2+\frac1{3!}f^{(3)}(0)z^3+\cdots$$
-$$\frac1{z-2}=\frac{-1}{2-z}=\frac{-1}2\,\frac1{1-z/2}=\frac{-1}2\left(1+\frac z2+\frac{z^2}4+\frac{z^3}8+\cdots\right),\qquad \left|\frac z2\right|<1\ \Longrightarrow\ |z|<2$$
-$$\frac1{4+z}=\frac14\,\frac1{1+z/4}=\frac14\left(1-\frac z4+\frac{z^2}{16}-\frac{z^3}{64}+\cdots\right),\qquad \left|-\frac z4\right|<1\ \Longrightarrow\ |z|<4$$
+$$\frac1{z-2}=\frac{-1}{2-z}=\frac{-1}2\,\frac1{1-\frac z2}=\frac{-1}2\left(1+\frac z2+\frac{z^2}4+\frac{z^3}8+\cdots\right),\qquad \left|\frac z2\right|<1\ \Longrightarrow\ |z|<2$$
+$$\frac1{4+z}=\frac14\,\frac1{1+\frac z4}=\frac14\left(1-\frac z4+\frac{z^2}{16}-\frac{z^3}{64}+\cdots\right),\qquad \left|-\frac z4\right|<1\ \Longrightarrow\ |z|<4$$
 $$\frac d{dz}\left(\frac1{4+z}\right)=\frac{-1}{(4+z)^2}=\frac14\left(-\frac14+\frac{2z}{16}-\frac{3z^2}{64}+\cdots\right)\;\Longrightarrow\;\frac1{(4+z)^2}=\frac14\left(\frac14-\frac{2z}{16}+\frac{3z^2}{64}-\cdots\right)$$
 $$f(z)=(4z^2+30z+68)\times\frac1{(z+4)^2}\times\frac1{z-2}$$
 $$f(z)=(4z^2+30z+68)\times\left(\frac{-1}2\right)\left(1+\frac z2+\frac{z^2}4+\frac{z^3}8+\cdots\right)\times\frac14\left(\frac14-\frac z8+\frac{3z^2}{64}-\cdots\right)$$
@@ -197,7 +197,7 @@ Type of singular point: a simple pole (of order $1$). Residue: $\operatorname{Re
 $$\frac z{z+1}=\frac{z+1-1}{z+1}=\frac{z+1}{z+1}-\frac1{z+1}=1-\frac1{z+1}$$
 $$\frac1{z+1}=\frac1{z+4-3}=\frac1{-3+(z+4)}=\frac{-1}3\,\frac1{1-\frac{z+4}3}=\frac{-1}3\left[1+\frac{z+4}3+\frac{(z+4)^2}{3^2}+\cdots\right],\qquad |z+4|<3$$
 $$\frac z{z+1}=1+\frac13+\frac1{3^2}(z+4)+\frac1{3^3}(z+4)^2+\frac1{3^4}(z+4)^3+\cdots$$
-$$f(z)=\frac z{(z+1)(z+4)^3}=\frac1{(z+4)^3}\,\frac z{z+1}=\frac{4/3}{(z+4)^3}+\frac1{3^2}\frac1{(z+4)^2}+\frac1{3^3}\frac1{z+4}+\frac1{3^4}+\frac1{3^5}(z+4)+\frac1{3^6}(z+4)^2+\cdots$$
+$$f(z)=\frac z{(z+1)(z+4)^3}=\frac1{(z+4)^3}\,\frac z{z+1}=\frac{\frac43}{(z+4)^3}+\frac1{3^2}\frac1{(z+4)^2}+\frac1{3^3}\frac1{z+4}+\frac1{3^4}+\frac1{3^5}(z+4)+\frac1{3^6}(z+4)^2+\cdots$$
 Type of singular point: a pole of order $3$. Residue: $\operatorname{Res}\{f(z)\}\big|_{z=-4}=\dfrac1{27}$.
 :::
 :::
@@ -230,7 +230,7 @@ Type of singular point: an essential singularity. Residue: $\operatorname{Res}\{
 :::
 
 ::: {.theorem title="Residue at a simple pole"}
-Prove that if $f(z)=q(z)/g(z)$ and $g(z)$ has a simple root at $z_0$, then
+Prove that if $f(z)=\dfrac{q(z)}{g(z)}$ and $g(z)$ has a simple root at $z_0$, then
 $$\operatorname{Res}\{f(z)\}\Big|_{z=z_0}=\frac{q(z_0)}{g'(z_0)}$$
 :::
 

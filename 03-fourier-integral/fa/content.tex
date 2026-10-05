@@ -99,8 +99,8 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
   دارای مقادیر مجانبی در بی‌نهایت.
 \end{itemize}
 
-\EMfigure{m03-si}{تابع \EMim{\operatorname{Si}(u)} (خط ممتد) و تابع \EMim{\sin u/u}
-(خط‌چین)}
+\EMfigure{m03-si}{تابع \EMim{\operatorname{Si}(u)} (خط ممتد) و تابع
+\EMim{\dfrac{\sin u}{u}} (خط‌چین)}
 
 \end{EMunit}
 
@@ -113,7 +113,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{EMproof}{}
 
 برای \EMim{\alpha=0} درستی لم واضح است. با تغییر متغیر \EMim{\tau=\alpha w}:
-\EMdisp{\int_0^x\frac{\sin\alpha w}{w}\,dw\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\tau/\alpha}\,\frac{d\tau}{\alpha}\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau\EMbr =\operatorname{Si}(\alpha x),\qquad\EMbr  \operatorname{Si}(\alpha x)\EMbr =-\operatorname{Si}(-\alpha x)}
+\EMdisp{\int_0^x\frac{\sin\alpha w}{w}\,dw\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\frac\tau\alpha}\,\frac{d\tau}{\alpha}\EMbr =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau\EMbr =\operatorname{Si}(\alpha x),\qquad\EMbr  \operatorname{Si}(\alpha x)\EMbr =-\operatorname{Si}(-\alpha x)}
 پس کافی است لم را فقط برای مقادیر مثبت \EMim{\alpha} ثابت کنیم.
 \EMdisp{F(\alpha)\triangleq\int_0^\infty e^{-\alpha t}\frac{\sin t}{t}\,dt,\qquad\EMbr  F(0)\EMbr =\operatorname{Si}(+\infty)\EMbr =\;?}
 \EMdisp{F'(\alpha)\EMbr =\int_0^\infty-t\,e^{-\alpha t}\frac{\sin t}t\,dt\EMbr =-\int_0^\infty e^{-\alpha t}\sin t\,dt\EMbr =-\left[\frac{e^{-\alpha t}}{1+\alpha^2}\big(-\alpha\sin t-\cos t\big)\right]_0^\infty\EMbr =\frac{-1}{1+\alpha^2}}
@@ -134,7 +134,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 چون تابع \EMim{f(x)} زوج است، تبدیل سینوسی فوریه صفر است: \EMim{B(\omega)=0}.
 \EMdisp{A(\omega)\EMbr =\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt\EMbr =\int_{-1}^{1}\cos\omega t\,dt\EMbr =\frac2\omega\sin\omega}
 \EMdisp{f(x)\EMbr =\frac1\pi\int_0^\infty\frac2\omega\sin\omega\cos\omega x\,d\omega\EMbr =\frac1\pi\int_0^\infty\frac1\omega\big[\sin(1-x)\omega+\sin(1+x)\omega\big]\,d\omega}
-\EMdisp{=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right]\EMbr =\begin{cases}0&x<-1\\ 1/2&x=-1\\ 1&-1<x<1\\ 1/2&x=1\\ 0&x>1\end{cases}}
+\EMdisp{=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right]\EMbr =\begin{cases}0&x<-1\\ \frac12&x=-1\\ 1&-1<x<1\\ \frac12&x=1\\ 0&x>1\end{cases}}
 توجه: مقدار انتگرال فوریه در نقاط ناپیوستگی (با استفاده از لم بالا).
 
 \end{EMexample}
@@ -281,7 +281,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \EMim{\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \pi/2&x=0\\ \pi e^{-x}&x>0\end{cases}}
+  \EMim{\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \frac\pi2&x=0\\ \pi e^{-x}&x>0\end{cases}}
 \item
   \EMim{\displaystyle\int_0^\infty\frac{\sin\pi w\,\sin xw}{1-w^2}\,dw=\begin{cases}\dfrac\pi2\sin x&0\le x\le\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}
 \item

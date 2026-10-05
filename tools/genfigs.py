@@ -27,7 +27,7 @@ sinc = np.sinc(u / np.pi)
 write("m03-si", rf"""% Si(u) = integral of sin(w)/w from 0 to u (solid) and sin(u)/u (dashed); values from scipy.special.sici
 \begin{{tikzpicture}}
   \begin{{axis}}[EMplot,width=11.5cm,height=5.2cm,xmin=-20,xmax=20,ymin=-1.9,ymax=1.9,
-      xtick={{-20,-10,10,20}},ytick={{-1.571,1.571}},yticklabels={{$-\pi/2$,$\pi/2$}},
+      xtick={{-20,-10,10,20}},ytick={{-1.571,1.571}},yticklabels={{$-\frac\pi2$,$\frac\pi2$}},
       xlabel={{$u$}},clip=false]
     \draw[EMdash] (axis cs:-20,1.5708)--(axis cs:20,1.5708);\draw[EMdash] (axis cs:-20,-1.5708)--(axis cs:20,-1.5708);
     \addplot[EMcurve2,dashed,thick,line width=0.8pt] coordinates{{{coords(u, sinc)}}};
@@ -81,7 +81,7 @@ def tri(xx):  # odd, 2L-periodic extension of the triangle  f = 2k x / L (x<L/2)
     r = np.mod(xx + L, 2 * L) - L
     return np.where(np.abs(r) <= L / 2, 2 * k * r / L, np.sign(r) * 2 * k * (L - np.abs(r)) / L)
 xs = np.linspace(0, L, 201)
-times = [(0, "0"), (0.2, r"L/5c"), (0.4, r"2L/5c"), (0.5, r"L/2c"), (0.6, r"3L/5c")]
+times = [(0, "0"), (0.2, r"\dfrac{L}{5c}"), (0.4, r"\dfrac{2L}{5c}"), (0.5, r"\dfrac{L}{2c}"), (0.6, r"\dfrac{3L}{5c}")]
 panels = ""
 for i, (tt, name) in enumerate(times):
     ct = tt * L

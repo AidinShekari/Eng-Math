@@ -1,9 +1,9 @@
 % Functions that violate Dirichlet's conditions on 0 < x <= 1 (period 1)
 \begin{tikzpicture}
   \begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.1cm},EMplot,width=5.3cm,height=4cm,xmin=0,xmax=1.15,xtick={0,1},clip=true]
-    \nextgroupplot[ymin=0,ymax=8,ytick=\empty,title style={font=\small},title={$1/x$}]
+    \nextgroupplot[ymin=0,ymax=8,ytick=\empty,title style={font=\small},title={$\dfrac1x$}]
       \addplot[EMcurve,domain=0.13:1,samples=100,smooth]{1/x};
-    \nextgroupplot[ymin=-1.5,ymax=1.5,ytick={-1,1},title style={font=\small},title={$\sin(1/x)$}]
+    \nextgroupplot[ymin=-1.5,ymax=1.5,ytick={-1,1},title style={font=\small},title={$\sin\dfrac1x$}]
       \addplot[EMcurve,domain=0.012:1,samples=1500]{sin(deg(1/x))};
     \nextgroupplot[ymin=0,ymax=1.2,ytick={1},title style={font=\small},title={$\ $}]
       \draw[EMcurve] (axis cs:0.50000,1.000)--(axis cs:1.00000,1.000);

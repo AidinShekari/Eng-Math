@@ -21,7 +21,7 @@ $$\oint_Cf(z)\,dz=2\pi i\sum_{k=1}^{n}A_1^k$$
 مطلوب است محاسبهٔ انتگرال $\displaystyle\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx$ ($\omega>0$).
 
 ::: {.solution}
-تابع $f(z)=e^{i\omega z}\big/(1+z^2)^2$ را در نظر می‌گیریم. این تابع در $z=i$ و $z=-i$ تحلیلی نیست. مسیر $C$ نیم‌دایرهٔ بالایی به شعاع $R$ است.
+تابع $f(z)=\dfrac{e^{i\omega z}}{(1+z^2)^2}$ را در نظر می‌گیریم. این تابع در $z=i$ و $z=-i$ تحلیلی نیست. مسیر $C$ نیم‌دایرهٔ بالایی به شعاع $R$ است.
 $$\begin{aligned}
 \oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz&=2\pi i\times\operatorname{Res}\left\{\frac{e^{i\omega z}}{(1+z^2)^2}\right\}\Bigg|_{z=i}\\
 &=2\pi i\times\left[\frac d{dz}\left\{(z-i)^2\,\frac{e^{i\omega z}}{(z-i)^2(z+i)^2}\right\}\right]_{z=i}\\
@@ -31,7 +31,7 @@ $$\begin{aligned}
 \end{aligned}$$
 از طرف دیگر
 $$\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz=\int_{-R}^{R}\frac{e^{i\omega x}}{(1+x^2)^2}\,dx+\int_0^\pi\frac{e^{i\omega Re^{it}}\,Rie^{it}}{(1+R^2e^{i2t})^2}\,dt$$
-و وقتی $R\to\infty$ انتگرال روی نیم‌دایره صفر می‌شود و بخش موهومی انتگرال روی محور حقیقی (تابع فرد $\sin\omega x/(1+x^2)^2$) صفر است:
+و وقتی $R\to\infty$ انتگرال روی نیم‌دایره صفر می‌شود و بخش موهومی انتگرال روی محور حقیقی (تابع فرد $\dfrac{\sin\omega x}{(1+x^2)^2}$) صفر است:
 $$\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\ \xrightarrow{\ R\to\infty\ }\ 2\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx$$
 $$\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx=\frac\pi4(\omega+1)e^{-\omega}$$
 :::

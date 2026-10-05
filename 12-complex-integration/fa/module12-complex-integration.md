@@ -292,7 +292,7 @@ $$\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx=\pi e^{-\omega}$$
 مطلوب است محاسبهٔ انتگرال $\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}$ با استفاده از فرمول انتگرال کشی.
 
 ::: {.solution}
-$$\frac{1}{(x^2+1)(x^2+4)}=\frac{A}{x^2+1}+\frac{B}{x^2+4}=\frac{1/3}{x^2+1}+\frac{-1/3}{x^2+4}$$
+$$\frac{1}{(x^2+1)(x^2+4)}=\frac{A}{x^2+1}+\frac{B}{x^2+4}=\frac{\frac13}{x^2+1}+\frac{-\frac13}{x^2+4}$$
 $$\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}=\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+1}-\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+4}$$
 
 **انتگرال اول:** $I_1=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+1}$ و $g_1(z)=\dfrac1{z^2+1}$:
@@ -389,8 +389,8 @@ $$\frac{n!}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz=f^{(n)}(z_0)$$
 $$I=\oint_C\frac{z^2}{(2z-1)^2}\,dz$$
 
 ::: {.solution}
-$$I=\oint_C\frac{z^2}{4(z-1/2)^2}\,dz=\frac14\oint_C\frac{z^2}{(z-1/2)^2}\,dz=\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}=\frac14\times2\pi i\times(2z)\Big|_{z=1/2}=\frac\pi2\,i$$
-($z=1/2$ داخل دایرهٔ واحد است.)
+$$I=\oint_C\frac{z^2}{4\left(z-\frac12\right)^2}\,dz=\frac14\oint_C\frac{z^2}{\left(z-\frac12\right)^2}\,dz=\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}=\frac14\times2\pi i\times(2z)\Big|_{z=1/2}=\frac\pi2\,i$$
+($z=\frac12$ داخل دایرهٔ واحد است.)
 :::
 :::
 

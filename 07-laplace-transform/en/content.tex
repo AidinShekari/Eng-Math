@@ -79,17 +79,17 @@ is in Section 6.9)}{Table of Laplace Transforms (Table 6.1 of the textbook; a lo
 \EMim{f(t)}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \EMim{\mathcal{L}(f)}
-\end{minipage} \\
+\end{minipage} \\\noalign{\vskip 4pt}
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-1 & \EMim{1} & \EMim{1/s} & & 7 & \EMim{\cos\omega t} & \EMim{\dfrac{s}{s^2+\omega^2}} \\
-2 & \EMim{t} & \EMim{1/s^2} & & 8 & \EMim{\sin\omega t} & \EMim{\dfrac{\omega}{s^2+\omega^2}} \\
-3 & \EMim{t^2} & \EMim{2!/s^3} & & 9 & \EMim{\cosh at} & \EMim{\dfrac{s}{s^2-a^2}} \\
-4 & \EMim{t^n} \EMim{(n=0,1,\dots)} & \EMim{\dfrac{n!}{s^{n+1}}} & & 10 & \EMim{\sinh at} & \EMim{\dfrac{a}{s^2-a^2}} \\
-5 & \EMim{t^a} (\EMim{a} positive) & \EMim{\dfrac{\Gamma(a+1)}{s^{a+1}}} & & 11 & \EMim{e^{at}\cos\omega t} & \EMim{\dfrac{s-a}{(s-a)^2+\omega^2}} \\
-6 & \EMim{e^{at}} & \EMim{\dfrac1{s-a}} & & 12 & \EMim{e^{at}\sin\omega t} & \EMim{\dfrac{\omega}{(s-a)^2+\omega^2}} \\
+1 & \EMim{1} & \EMim{\dfrac1s} & & 7 & \EMim{\cos\omega t} & \EMim{\dfrac{s}{s^2+\omega^2}} \\\noalign{\vskip 4pt}
+2 & \EMim{t} & \EMim{\dfrac1{s^2}} & & 8 & \EMim{\sin\omega t} & \EMim{\dfrac{\omega}{s^2+\omega^2}} \\\noalign{\vskip 4pt}
+3 & \EMim{t^2} & \EMim{\dfrac{2!}{s^3}} & & 9 & \EMim{\cosh at} & \EMim{\dfrac{s}{s^2-a^2}} \\\noalign{\vskip 4pt}
+4 & \EMim{t^n} \EMim{(n=0,1,\dots)} & \EMim{\dfrac{n!}{s^{n+1}}} & & 10 & \EMim{\sinh at} & \EMim{\dfrac{a}{s^2-a^2}} \\\noalign{\vskip 4pt}
+5 & \EMim{t^a} (\EMim{a} positive) & \EMim{\dfrac{\Gamma(a+1)}{s^{a+1}}} & & 11 & \EMim{e^{at}\cos\omega t} & \EMim{\dfrac{s-a}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
+6 & \EMim{e^{at}} & \EMim{\dfrac1{s-a}} & & 12 & \EMim{e^{at}\sin\omega t} & \EMim{\dfrac{\omega}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
 \end{longtable}
 
 \begin{EMunit}
@@ -113,21 +113,21 @@ With the unit step function
 Property
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Formula
-\end{minipage} \\
+\end{minipage} \\\noalign{\vskip 4pt}
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Definition of the Laplace transform & \EMim{F(s)=\mathcal{L}\{f(t)\}\triangleq\displaystyle\int_0^\infty f(t)e^{-st}\,dt} \\
-Inverse Laplace transform & \EMim{f(t)=\mathcal{L}^{-1}\{F(s)\}} \\
-Linearity & \EMim{\mathcal{L}\{af(t)+bg(t)\}=a\mathcal{L}\{f(t)\}+b\mathcal{L}\{g(t)\}} \\
-Time shift & \EMim{\mathcal{L}\{f(t-a)u(t-a)\}=e^{-as}F(s)} \\
-Shift in the \EMim{s} domain & \EMim{\mathcal{L}\{e^{at}f(t)\}=F(s-a)} \\
-Time scaling & \EMim{\mathcal{L}\{f(at)\}=\dfrac1aF(s/a)} \\
-Time derivative & \EMim{\mathcal{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f^{(1)}(0)-\cdots-f^{(n-1)}(0)} \\
-Time integral & \EMim{\mathcal{L}\left\{\displaystyle\int_0^tf(\tau)\,d\tau\right\}=\dfrac1sF(s)} \\
-Derivative in the \EMim{s} domain & \EMim{\mathcal{L}\{tf(t)\}=-F'(s)} \\
-Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=\displaystyle\int_s^\infty F(\nu)\,d\nu} \\
+Definition of the Laplace transform & \EMim{F(s)=\mathcal{L}\{f(t)\}\triangleq\displaystyle\int_0^\infty f(t)e^{-st}\,dt} \\\noalign{\vskip 4pt}
+Inverse Laplace transform & \EMim{f(t)=\mathcal{L}^{-1}\{F(s)\}} \\\noalign{\vskip 4pt}
+Linearity & \EMim{\mathcal{L}\{af(t)+bg(t)\}=a\mathcal{L}\{f(t)\}+b\mathcal{L}\{g(t)\}} \\\noalign{\vskip 4pt}
+Time shift & \EMim{\mathcal{L}\{f(t-a)u(t-a)\}=e^{-as}F(s)} \\\noalign{\vskip 4pt}
+Shift in the \EMim{s} domain & \EMim{\mathcal{L}\{e^{at}f(t)\}=F(s-a)} \\\noalign{\vskip 4pt}
+Time scaling & \EMim{\mathcal{L}\{f(at)\}=\dfrac1aF\!\left(\frac sa\right)} \\\noalign{\vskip 4pt}
+Time derivative & \EMim{\mathcal{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f^{(1)}(0)-\cdots-f^{(n-1)}(0)} \\\noalign{\vskip 4pt}
+Time integral & \EMim{\mathcal{L}\left\{\displaystyle\int_0^tf(\tau)\,d\tau\right\}=\dfrac1sF(s)} \\\noalign{\vskip 4pt}
+Derivative in the \EMim{s} domain & \EMim{\mathcal{L}\{tf(t)\}=-F'(s)} \\\noalign{\vskip 4pt}
+Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=\displaystyle\int_s^\infty F(\nu)\,d\nu} \\\noalign{\vskip 4pt}
 \end{longtable}
 
 \EMhold
@@ -183,7 +183,7 @@ We take the Laplace transform of both sides with respect to \EMim{t}:
 \EMdisp{\mathcal{L}_t\left\{\frac{\partial w}{\partial x}+x\frac{\partial w}{\partial t}\right\}\EMbr =\mathcal{L}_t\left\{\frac{\partial w}{\partial x}\right\}+x\,\mathcal{L}_t\left\{\frac{\partial w}{\partial t}\right\}\EMbr =0}
 \EMdisp{\frac\partial{\partial x}w(x,s)+x\big[s\,w(x,s)-w(x,0)\big]\EMbr =0,\qquad\EMbr  w(x,0)\EMbr =0}
 \EMdisp{\frac\partial{\partial x}w(x,s)+xs\,w(x,s)\EMbr =0\ \EMbr \Rightarrow\ \frac{dw}w\EMbr =-sx\,dx\ \EMbr \Rightarrow\ \ln w\EMbr =-s\frac{x^2}2+\ln C\ \EMbr \Rightarrow\ w(x,s)\EMbr =Ce^{-\frac{x^2}2s}}
-From \EMim{w(0,t)=t\,u(t)} we have \EMim{w(0,s)=\mathcal{L}\{w(0,t)\}=1/s^2=C}:
+From \EMim{w(0,t)=t\,u(t)} we have \EMim{w(0,s)=\mathcal{L}\{w(0,t)\}=\frac1{s^2}=C}:
 \EMdisp{w(x,s)\EMbr =\frac1{s^2}e^{-\frac{x^2}2s}}
 Using the time-shift property \EMim{\mathcal{L}\{f(t-a)u(t-a)\}=e^{-as}F(s)}:
 \EMdisp{w(x,t)\EMbr =\left(t-\frac{x^2}2\right)\times u\!\left(t-\frac{x^2}2\right)}

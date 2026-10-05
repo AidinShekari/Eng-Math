@@ -13,7 +13,7 @@ $$f(x+p)=f(x)\quad\Longrightarrow\quad f(x+np)=f(x)$$
 ### توابع متناوب سینوس و کسینوس
 
 ::: {.example}
-تابع $\sin x$ تابعی با دورهٔ تناوب $2\pi$ تناوبی است و $\sin2x$ با دورهٔ تناوب اصلی $\pi$ تناوبی است هر چند $2\pi$ نیز دورهٔ تناوب آن هست. همینطور تابع $\sin3x$ با دورهٔ تناوب $2\pi/3$ تناوبی است، هر چند $2\pi$ نیز دورهٔ تناوب آن هست.
+تابع $\sin x$ تابعی با دورهٔ تناوب $2\pi$ تناوبی است و $\sin2x$ با دورهٔ تناوب اصلی $\pi$ تناوبی است هر چند $2\pi$ نیز دورهٔ تناوب آن هست. همینطور تابع $\sin3x$ با دورهٔ تناوب $\frac{2\pi}{3}$ تناوبی است، هر چند $2\pi$ نیز دورهٔ تناوب آن هست.
 :::
 
 ```{.figure #m01-sincos caption="توابع $\\sin nx$ و $\\cos nx$ برای $n=1,2,3$ در بازهٔ $[0,2\\pi]$"}
@@ -143,8 +143,8 @@ $$S_1=\frac{4k}\pi\sin x,\qquad S_2=\frac{4k}\pi\left(\sin x+\frac13\sin3x\right
 ```{.figure #m01-partial-sums caption="مجموع‌های جزئی $S_1$، $S_2$ و $S_3$ سری فوریهٔ موج مربعی (خط‌چین خود موج مربعی است)"}
 ```
 
-با قرار دادن $x=\pi/2$:
-$$f(\pi/2)=\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)=k\quad\Longrightarrow\quad\pi=4\left(1-\frac13+\frac15-\frac17+-\cdots\right)$$
+با قرار دادن $x=\frac\pi2$:
+$$f\!\left(\frac\pi2\right)=\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)=k\quad\Longrightarrow\quad\pi=4\left(1-\frac13+\frac15-\frac17+-\cdots\right)$$
 
 ::: {.example}
 سری فوریهٔ تابع زیر را به دست آورید:
@@ -161,7 +161,7 @@ $$f(x)=\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin nx=2\left(\sin x-\frac12\sin2x+\
 ```{.figure #m01-sawtooth caption="موج دندانه‌اره‌ای $f(x)=x$ روی $[-\\pi,\\pi]$ با ادامهٔ متناوب"}
 ```
 
-با قرار دادن $x=\pi/2$:
+با قرار دادن $x=\frac\pi2$:
 $$f\!\left(\frac\pi2\right)=\frac\pi2=\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin\!\left(n\frac\pi2\right)=2\left(1-\frac13+\frac15-\frac17+-\cdots\right)=\sum_{n=1}^{\infty}\frac2{2n-1}(-1)^{n+1}\ \Longrightarrow\ \pi=\sum_{n=1}^{\infty}\frac4{2n-1}(-1)^{n+1}$$
 
 مقدار سری در نقطهٔ ناپیوستگی $x=\pi$:
@@ -241,10 +241,10 @@ $$\frac{f(x^+)+f(x^-)}{2}$$
 
 مثال‌هایی از توابعی که شرایط دریشله را ندارند:
 
-$$f(x)=1/x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
-$$f(x)=\sin(1/x),\quad 0<x\le1,\qquad f(x+1)=f(x)$$
+$$f(x)=\frac1x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
+$$f(x)=\sin\frac1x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
 
-```{.figure #m01-dirichlet caption="توابعی که شرایط دریشله را ندارند: $1/x$ (نامحدود)، $\\sin(1/x)$ (بی‌نهایت ماکزیمم و مینیمم) و تابع پله‌ای با بی‌نهایت پله"}
+```{.figure #m01-dirichlet caption="توابعی که شرایط دریشله را ندارند: $\frac1x$ (نامحدود)، $\\sin\\frac1x$ (بی‌نهایت ماکزیمم و مینیمم) و تابع پله‌ای با بی‌نهایت پله"}
 ```
 
 ## حل چند مسئله

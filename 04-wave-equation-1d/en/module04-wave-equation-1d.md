@@ -144,7 +144,7 @@ $$u(x,t)=\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx$$
 ::: {.exercise}
 (a) Find the ratio $\dfrac{a_1^2}{a_1^2+a_2^2+\cdots}$.
 
-(b) Plot the ratio $a_{2n-1}/a_{2n+1}$ as a function of $n\in\mathbb{N}$.
+(b) Plot the ratio $\dfrac{a_{2n-1}}{a_{2n+1}}$ as a function of $n\in\mathbb{N}$.
 :::
 
 ## The Method of Separation of Variables: Examples
@@ -229,9 +229,9 @@ $$\frac{\partial^2u}{\partial t^2}=c^2\frac{\partial^2u}{\partial x^2},\qquad u(
 $$f(x)=\begin{cases}\dfrac{2k}Lx&0<x<\dfrac L2\\[7mm] \dfrac{2k}L(L-x)&\dfrac L2<x<L\end{cases}$$
 
 ::: {.solution}
-Plotting $\frac12\tilde f(x+ct)$ and $\frac12\tilde f(x-ct)$ and adding them at the times $t=0$, $t=L/5c$, $t=2L/5c$, $t=L/2c$ and $t=3L/5c$ gives the shape of the solution.
+Plotting $\frac12\tilde f(x+ct)$ and $\frac12\tilde f(x-ct)$ and adding them at the times $t=0$, $t=\frac{L}{5c}$, $t=\frac{2L}{5c}$, $t=\frac{L}{2c}$ and $t=\frac{3L}{5c}$ gives the shape of the solution.
 :::
 :::
 
-```{.figure #m04-triangle-time caption="The solution of the example at $t=0$, $L/5c$, $2L/5c$, $L/2c$ and $3L/5c$; at $t=L/2c$ the string is flat"}
+```{.figure #m04-triangle-time caption="The solution of the example at $t=0$, $\frac{L}{5c}$, $\frac{2L}{5c}$, $\frac{L}{2c}$ and $\frac{3L}{5c}$; at $t=\frac{L}{2c}$ the string is flat"}
 ```

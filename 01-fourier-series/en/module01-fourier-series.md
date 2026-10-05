@@ -13,7 +13,7 @@ $$f(x+p)=f(x)\quad\Longrightarrow\quad f(x+np)=f(x)$$
 ### The Periodic Functions Sine and Cosine
 
 ::: {.example}
-The function $\sin x$ is periodic with period $2\pi$, and $\sin2x$ is periodic with fundamental period $\pi$, although $2\pi$ is also a period of it. Likewise $\sin3x$ is periodic with period $2\pi/3$, although $2\pi$ is also a period of it.
+The function $\sin x$ is periodic with period $2\pi$, and $\sin2x$ is periodic with fundamental period $\pi$, although $2\pi$ is also a period of it. Likewise $\sin3x$ is periodic with period $\frac{2\pi}{3}$, although $2\pi$ is also a period of it.
 :::
 
 ```{.figure #m01-sincos caption="The functions $\\sin nx$ and $\\cos nx$ for $n=1,2,3$ on $[0,2\\pi]$"}
@@ -143,8 +143,8 @@ $$S_1=\frac{4k}\pi\sin x,\qquad S_2=\frac{4k}\pi\left(\sin x+\frac13\sin3x\right
 ```{.figure #m01-partial-sums caption="The partial sums $S_1$, $S_2$ and $S_3$ of the Fourier series of the square wave (the dashed line is the square wave itself)"}
 ```
 
-Setting $x=\pi/2$:
-$$f(\pi/2)=\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)=k\quad\Longrightarrow\quad\pi=4\left(1-\frac13+\frac15-\frac17+-\cdots\right)$$
+Setting $x=\frac\pi2$:
+$$f\!\left(\frac\pi2\right)=\frac{4k}\pi\left(1-\frac13+\frac15-\frac17+-\cdots\right)=k\quad\Longrightarrow\quad\pi=4\left(1-\frac13+\frac15-\frac17+-\cdots\right)$$
 
 ::: {.example}
 Find the Fourier series of the following function:
@@ -161,7 +161,7 @@ $$f(x)=\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin nx=2\left(\sin x-\frac12\sin2x+\
 ```{.figure #m01-sawtooth caption="The sawtooth wave $f(x)=x$ on $[-\\pi,\\pi]$ with its periodic extension"}
 ```
 
-Setting $x=\pi/2$:
+Setting $x=\frac\pi2$:
 $$f\!\left(\frac\pi2\right)=\frac\pi2=\sum_{n=1}^{\infty}\frac2n(-1)^{n+1}\sin\!\left(n\frac\pi2\right)=2\left(1-\frac13+\frac15-\frac17+-\cdots\right)=\sum_{n=1}^{\infty}\frac2{2n-1}(-1)^{n+1}\ \Longrightarrow\ \pi=\sum_{n=1}^{\infty}\frac4{2n-1}(-1)^{n+1}$$
 
 The value of the series at the point of discontinuity $x=\pi$:
@@ -241,10 +241,10 @@ If the function $f(x)$ is periodic and **bounded**, has a **finite number of max
 
 Examples of functions that do not satisfy Dirichlet's conditions:
 
-$$f(x)=1/x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
-$$f(x)=\sin(1/x),\quad 0<x\le1,\qquad f(x+1)=f(x)$$
+$$f(x)=\frac1x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
+$$f(x)=\sin\frac1x,\quad 0<x\le1,\qquad f(x+1)=f(x)$$
 
-```{.figure #m01-dirichlet caption="Functions that violate Dirichlet's conditions: $1/x$ (unbounded), $\\sin(1/x)$ (infinitely many maxima and minima) and a staircase function with infinitely many steps"}
+```{.figure #m01-dirichlet caption="Functions that violate Dirichlet's conditions: $\frac1x$ (unbounded), $\\sin\\frac1x$ (infinitely many maxima and minima) and a staircase function with infinitely many steps"}
 ```
 
 ## Solving Some Problems

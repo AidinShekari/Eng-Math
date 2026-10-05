@@ -44,12 +44,12 @@ $$\lim_{z\to z_0}f(z)=l$$
 :::
 
 ::: {.example}
-آیا تابع $f(z)=\sin(1/z)$ در نقطهٔ $z=0$ پیوسته است؟
+آیا تابع $f(z)=\sin\frac1z$ در نقطهٔ $z=0$ پیوسته است؟
 :::
 
 ::: {.example}
 آیا تابع
-$$f(z)=\begin{cases}\sin(1/z)&z\neq0\\ 5+4i&z=0\end{cases}$$
+$$f(z)=\begin{cases}\sin\frac1z&z\neq0\\ 5+4i&z=0\end{cases}$$
 در نقطهٔ $z=0$ پیوسته است؟
 :::
 

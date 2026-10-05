@@ -293,7 +293,7 @@ $$\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx=\pi e^{-\omega}$$
 Evaluate the integral $\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}$ using Cauchy's integral formula.
 
 ::: {.solution}
-$$\frac{1}{(x^2+1)(x^2+4)}=\frac{A}{x^2+1}+\frac{B}{x^2+4}=\frac{1/3}{x^2+1}+\frac{-1/3}{x^2+4}$$
+$$\frac{1}{(x^2+1)(x^2+4)}=\frac{A}{x^2+1}+\frac{B}{x^2+4}=\frac{\frac13}{x^2+1}+\frac{-\frac13}{x^2+4}$$
 $$\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}=\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+1}-\frac13\int_{-\infty}^{\infty}\frac{dx}{x^2+4}$$
 
 **First integral:** $I_1=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+1}$ and $g_1(z)=\dfrac1{z^2+1}$:
@@ -390,8 +390,8 @@ Evaluate the following integral. ($C$ is the unit circle.)
 $$I=\oint_C\frac{z^2}{(2z-1)^2}\,dz$$
 
 ::: {.solution}
-$$I=\oint_C\frac{z^2}{4(z-1/2)^2}\,dz=\frac14\oint_C\frac{z^2}{(z-1/2)^2}\,dz=\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}=\frac14\times2\pi i\times(2z)\Big|_{z=1/2}=\frac\pi2\,i$$
-($z=1/2$ lies inside the unit circle.)
+$$I=\oint_C\frac{z^2}{4\left(z-\frac12\right)^2}\,dz=\frac14\oint_C\frac{z^2}{\left(z-\frac12\right)^2}\,dz=\frac14\times2\pi i\times\left.\frac{d}{dz}\big(z^2\big)\right|_{z=1/2}=\frac14\times2\pi i\times(2z)\Big|_{z=1/2}=\frac\pi2\,i$$
+($z=\frac12$ lies inside the unit circle.)
 :::
 :::
 
