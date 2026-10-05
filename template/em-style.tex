@@ -200,6 +200,67 @@
   \EMplace
   \BODY\par}
 
+% ---------- icons of the boxes ----------
+% Small vector icons drawn in TikZ on a 1em square, placed before the title of a box.  Direction
+% sensitive ones (stairs, flag, arrow) are mirrored in the Persian edition so that they point
+% along the reading direction.
+\ifEMrtl\def\EMiconx{-1.08em}\else\def\EMiconx{1.08em}\fi
+% only the direction-sensitive icons are mirrored in the Persian edition
+\expandafter\let\csname EMflip@steps\endcsname\relax
+\expandafter\let\csname EMflip@flag\endcsname\relax
+\expandafter\let\csname EMflip@arrow\endcsname\relax
+\newcommand{\EMicon}[2]{% name, colour
+  \ifcsname EMflip@#1\endcsname\let\EMix\EMiconx\else\def\EMix{1.08em}\fi
+  {\color{#2}\lr{\tikz[baseline=0.14em,x=\EMix,y=1.05em,line width=0.08em,line cap=round,line join=round]{%
+    \csname EMicon@#1\endcsname}}}\hspace{0.42em}}
+% definition: an open book
+\expandafter\def\csname EMicon@book\endcsname{%
+  \fill[opacity=0.14] (0.5,0.12) .. controls (0.65,0.2) .. (0.95,0.14) -- (0.95,0.84) .. controls (0.65,0.9) .. (0.5,0.78) -- cycle;
+  \draw (0.5,0.12)--(0.5,0.78);
+  \draw (0.5,0.78) .. controls (0.35,0.9) .. (0.05,0.84) -- (0.05,0.14) .. controls (0.35,0.2) .. (0.5,0.12);
+  \draw (0.5,0.78) .. controls (0.65,0.9) .. (0.95,0.84) -- (0.95,0.14) .. controls (0.65,0.2) .. (0.5,0.12);}
+% theorem: "therefore" in a ring
+\expandafter\def\csname EMicon@therefore\endcsname{%
+  \draw (0.5,0.5) circle (0.46);
+  \fill (0.5,0.71) circle (0.09) (0.31,0.34) circle (0.09) (0.69,0.34) circle (0.09);}
+% lemma: steps
+\expandafter\def\csname EMicon@steps\endcsname{%
+  \draw (0.04,0.1)--(0.34,0.1)--(0.34,0.4)--(0.64,0.4)--(0.64,0.7)--(0.96,0.7);
+  \draw (0.04,0.1)--(0.04,0.1);}
+% proposition: a pennant
+\expandafter\def\csname EMicon@flag\endcsname{%
+  \fill[opacity=0.18] (0.2,0.93)--(0.92,0.73)--(0.2,0.53)--cycle;
+  \draw (0.2,0.05)--(0.2,0.95);
+  \draw (0.2,0.93)--(0.92,0.73)--(0.2,0.53);}
+% corollary: an arrow leaving a point
+\expandafter\def\csname EMicon@arrow\endcsname{%
+  \fill (0.07,0.5) circle (0.08);
+  \draw (0.07,0.5)--(0.93,0.5);
+  \draw (0.62,0.8)--(0.93,0.5)--(0.62,0.2);}
+% key result: a star
+\expandafter\def\csname EMicon@star\endcsname{%
+  \filldraw[line width=0.04em] (0.500,1.000) -- (0.371,0.648) -- (-0.004,0.634) -- (0.291,0.402) -- (0.188,0.041) -- (0.500,0.250) -- (0.812,0.041) -- (0.709,0.402) -- (1.004,0.634) -- (0.629,0.648) -- cycle;}
+% example: a worked page
+\expandafter\def\csname EMicon@page\endcsname{%
+  \fill[opacity=0.14] (0.15,0.05)--(0.85,0.05)--(0.85,0.7)--(0.6,0.95)--(0.15,0.95)--cycle;
+  \draw (0.15,0.05)--(0.85,0.05)--(0.85,0.7)--(0.6,0.95)--(0.15,0.95)--cycle;
+  \draw (0.6,0.95)--(0.6,0.7)--(0.85,0.7);
+  \draw (0.3,0.48)--(0.7,0.48) (0.3,0.28)--(0.7,0.28);}
+% exercise: a pencil
+\expandafter\def\csname EMicon@pencil\endcsname{%
+  \fill[opacity=0.14] (0.08,0.08)--(0.202,0.358)--(0.772,0.928)--(0.928,0.772)--(0.358,0.202)--cycle;
+  \draw (0.08,0.08)--(0.202,0.358)--(0.772,0.928)--(0.928,0.772)--(0.358,0.202)--cycle;
+  \draw (0.202,0.358)--(0.358,0.202);}
+% remark: a light bulb
+\expandafter\def\csname EMicon@bulb\endcsname{%
+  \draw (0.5,0.64) circle (0.3);
+  \draw (0.4,0.37)--(0.4,0.2)--(0.6,0.2)--(0.6,0.37);
+  \draw (0.44,0.08)--(0.56,0.08);
+  \draw (0.5,0.22)--(0.5,0.5);}
+% proof: a tick
+\expandafter\def\csname EMicon@tick\endcsname{%
+  \draw[line width=0.13em] (0.08,0.5)--(0.38,0.14)--(0.92,0.86);}
+
 % ---------- the theorem family ----------
 \ifEMrtl
   \tcbset{EMbar/.style={borderline east={2.8pt}{0pt}{#1}}}
@@ -214,45 +275,46 @@
   overlay unbroken and first={},
   toprule at break=0pt,bottomrule at break=0pt}}
 \newcommand{\EMrule}[1]{\par\nobreak\vspace{0.2em}{\color{#1!35}\hrule height 0.4pt}\vspace{0.4em}\nobreak}
-\newcommand{\EMboxhead}[3]{%   colour, label word, title (may be empty)
+\newcommand{\EMboxhead}[4]{%   colour, icon, label word, title (may be empty)
   \refstepcounter{EMitem}\label{EMit:\EMmodkey:\arabic{EMitem}}%
-  {\EMheadfont\bfseries\color{#1}#2~\EMitemnum}%
-  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\EMrule{#1}}
-\newcommand{\EMboxheadplain}[2]{{\EMheadfont\bfseries\color{#1}#2}\EMrule{#1}}
-\newcommand{\EMboxheadnn}[3]{{\EMheadfont\bfseries\color{#1}#2}%
-  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\EMrule{#1}}
+  \EMicon{#2}{#1}{\EMheadfont\bfseries\color{#1}#3~\EMitemnum}%
+  \EMtitle{#1}{#4}\EMrule{#1}}
+% the separator between the number and a title: a thin vertical stroke
+\newcommand{\EMtitle}[2]{\if\relax\detokenize{#2}\relax\else{\ }{\color{#1!45}\rule[-0.22em]{0.5pt}{1.05em}}{\ }{\EMheadfont\color{#1}#2}\fi}
+\newcommand{\EMboxheadplain}[3]{\EMicon{#2}{#1}{\EMheadfont\bfseries\color{#1}#3}\EMrule{#1}}
+\newcommand{\EMboxheadnn}[4]{\EMicon{#2}{#1}{\EMheadfont\bfseries\color{#1}#3}\EMtitle{#1}{#4}\EMrule{#1}}
 % a numbered or plain box.  #1 env, #2 colour, #3 tint, #4 label word, #5 numbered (1/0)
-\newcommand{\EMmakebox}[5]{%
+\newcommand{\EMmakebox}[6]{% env, colour, tint, label, numbered, icon
   \NewEnviron{#1}[1]{%
     \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{%
-      \if#51\EMboxhead{#2}{#4}{##1}\else\EMboxheadnn{#2}{#4}{##1}\fi\BODY}{16pt}%
+      \if#51\EMboxhead{#2}{#6}{#4}{##1}\else\EMboxheadnn{#2}{#6}{#4}{##1}\fi\BODY}{16pt}%
     \EMplace
     \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=#2,colback=#3,colframe=#2!40!white]%
-    \if#51\EMboxhead{#2}{#4}{##1}\else\EMboxheadnn{#2}{#4}{##1}\fi
+    \if#51\EMboxhead{#2}{#6}{#4}{##1}\else\EMboxheadnn{#2}{#6}{#4}{##1}\fi
     \BODY\end{tcolorbox}}}
-\EMmakebox{EMdefinition}{EMindigo}{EMindigoL}{\EMlangDefinition}{1}
-\EMmakebox{EMtheorem}{EMrose}{EMroseL}{\EMlangTheorem}{1}
-\EMmakebox{EMlemma}{EMrose}{EMroseL}{\EMlangLemma}{1}
-\EMmakebox{EMproposition}{EMrose}{EMroseL}{\EMlangProposition}{1}
-\EMmakebox{EMcorollary}{EMrose}{EMroseL}{\EMlangCorollary}{1}
-\EMmakebox{EMexample}{EMjade}{EMjadeL}{\EMlangExample}{1}
-\EMmakebox{EMexercise}{EMamber}{EMamberL}{\EMlangExercise}{1}
-\EMmakebox{EMremark}{EMmuted}{white}{\EMlangRemark}{0}
+\EMmakebox{EMdefinition}{EMindigo}{EMindigoL}{\EMlangDefinition}{1}{book}
+\EMmakebox{EMtheorem}{EMrose}{EMroseL}{\EMlangTheorem}{1}{therefore}
+\EMmakebox{EMlemma}{EMrose}{EMroseL}{\EMlangLemma}{1}{steps}
+\EMmakebox{EMproposition}{EMrose}{EMroseL}{\EMlangProposition}{1}{flag}
+\EMmakebox{EMcorollary}{EMrose}{EMroseL}{\EMlangCorollary}{1}{arrow}
+\EMmakebox{EMexample}{EMjade}{EMjadeL}{\EMlangExample}{1}{page}
+\EMmakebox{EMexercise}{EMamber}{EMamberL}{\EMlangExercise}{1}{pencil}
+\EMmakebox{EMremark}{EMmuted}{white}{\EMlangRemark}{0}{bulb}
 % the key results: the same box, a stronger frame
 \NewEnviron{EMimportant}[1]{%
-  \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{\EMboxhead{EMrose}{\EMlangImportant}{#1}\BODY}{18pt}%
+  \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{\EMboxhead{EMrose}{star}{\EMlangImportant}{#1}\BODY}{18pt}%
   \EMplace
   \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMrose,colback=EMroseL,colframe=EMrose,boxrule=0.9pt,
     top=6pt,bottom=7pt]%
-  \EMboxhead{EMrose}{\EMlangImportant}{#1}\BODY\end{tcolorbox}}
+  \EMboxhead{EMrose}{star}{\EMlangImportant}{#1}\BODY\end{tcolorbox}}
 % a proof: a quiet box with a clear heading and a closing mark at the end of the last line
 \newcommand{\EMqed}{\par\nobreak\vspace{-0.15em}\nopagebreak{\hfill\color{EMindigo}\ensuremath{\blacksquare}}\par}
 \NewEnviron{EMproof}[1]{%
   \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{%
-    \EMboxheadplain{EMindigo}{\EMlangProof.}\BODY\EMqed}{16pt}%
+    \EMboxheadplain{EMindigo}{tick}{\EMlangProof.}\BODY\EMqed}{16pt}%
   \EMplace
   \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMindigo,colback=EMproofbg,colframe=EMindigo!30!white]%
-  \EMboxheadplain{EMindigo}{\EMlangProof.}\BODY\EMqed\end{tcolorbox}}
+  \EMboxheadplain{EMindigo}{tick}{\EMlangProof.}\BODY\EMqed\end{tcolorbox}}
 % a solution inside an example or an exercise: a run-in heading
 \newenvironment{EMsolution}{\par\noindent{\EMheadfont\bfseries\color{EMjade}\EMlangSolution.}\ }{\par}
 
