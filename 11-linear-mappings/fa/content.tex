@@ -1,0 +1,72 @@
+در این فصل برخی نگاشت‌های ساده از صفحهٔ دامنه (\EMim{z}) به صفحهٔ برد (\EMim{w}) بررسی می‌شوند.
+
+\EMhold
+
+\EMsection{انتقال}{انتقال}
+
+\begin{EMunit}
+
+\EMdisp{\begin{aligned}
+w=z+b&=(x+iy)+\operatorname{Re}\{b\}+i\operatorname{Im}\{b\}\\
+&=\big(x+\operatorname{Re}\{b\}\big)+i\big(y+\operatorname{Im}\{b\}\big)
+\end{aligned}}
+
+\EMfigure{m11-translation}{انتقال \EMim{w=z+b}: ناحیه‌ای از صفحهٔ \EMim{z} بدون تغییر شکل به اندازهٔ
+\EMim{b} جابه‌جا می‌شود}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{دوران}{دوران}
+
+\begin{EMunit}
+
+\EMdisp{w\EMbr =az,\qquad\EMbr  |a|\EMbr =1,\qquad\EMbr  a\EMbr =e^{i\varphi},\qquad\EMbr  \varphi\EMbr =\arg\{a\}}
+\EMdisp{z\EMbr =|z|e^{i\theta}\;\EMbr \Longrightarrow\;w\EMbr =|z|e^{i(\theta+\varphi)}}
+
+\EMfigure{m11-rotation}{دوران \EMim{w=az} با \EMim{|a|=1}: ناحیه‌ای از صفحهٔ \EMim{z} به اندازهٔ
+\EMim{\varphi=\arg a} حول مبدأ می‌چرخد}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{انبساط یا انقباض}{انبساط یا انقباض}
+
+\begin{EMunit}
+
+\EMdisp{w\EMbr =az,\qquad\EMbr  a\in\mathbb{R}^+}
+\EMdisp{z\EMbr =|z|e^{i\theta}\;\EMbr \Longrightarrow\;w\EMbr =a|z|e^{i\theta}}
+
+\EMfigure{m11-dilation}{انقباض \EMim{w=az} با \EMim{0<a<1}؛ برای \EMim{a>1} نگاشت یک انبساط است}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{نگاشت خطی کلی}{نگاشت خطی کلی}
+
+\begin{EMunit}
+
+\EMdisp{w\EMbr =az+b,\qquad\EMbr  a,b\in\mathbb{C}}
+
+\end{EMunit}
+
+الف) دوران به اندازهٔ \EMim{\arg a}
+ب) انبساط یا انقباض به اندازهٔ \EMim{|a|}
+ج) انتقال به اندازهٔ \EMim{b}
+
+\begin{EMexample}{}
+
+اگر \EMim{w=(1+i)z+(1-i)} مطلوب است تصویر مربع واحد.
+
+\EMdisp{w(0)\EMbr =1-i,\qquad\EMbr  w(1)\EMbr =2,\qquad\EMbr  w(i)\EMbr =0,\qquad\EMbr  w(1+i)\EMbr =1+i}
+
+\end{EMexample}
+
+\begin{EMunit}
+
+\EMfigure{m11-linear-example}{تصویر مربع واحد تحت نگاشت \EMim{w=(1+i)z+(1-i)}}
+
+\end{EMunit}

@@ -9,3 +9,14 @@
 *.xdv
 .DS_Store
 __pycache__/
+*.bbl
+*.blg
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.bcf
+*.pdf_tex
+*.pyc

@@ -4,15 +4,11 @@
 % ============================================================
 \input{\EMroot/em-packages}
 \usepackage{fontspec}
-\setmainfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold,
-  ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]
-\setsansfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Semibold, BoldFont=*-Bold,
-  ItalicFont=*-Italic]
-\setmonofont{lmmono10-regular}[Extension=.otf, Scale=0.9]
+\input{\EMroot/em-fonts-en}
 \newfontfamily\EMfarsi[Path=\EMroot/fonts/, Extension=.ttf, Script=Arabic, AutoFakeBold=1.3]{Vazirmatn-Regular}
 \newfontfamily\EMfaDisplay[Path=\EMroot/fonts/, Extension=.ttf, Script=Arabic]{Vazirmatn-Black}
 \usepackage{bidi}
-\setmathfont{LibertinusMath-Regular.otf}
+\input{\EMroot/em-math}
 
 \linespread{1.08}
 \newif\ifEMrtl \EMrtlfalse
@@ -31,6 +27,9 @@
 \def\EMlangChapterContents{In this chapter}
 \def\EMlangFigure{Figure}
 \def\EMlangDefinition{Definition}
+\def\EMlangLemma{Lemma}
+\def\EMlangProposition{Proposition}
+\def\EMlangCorollary{Corollary}
 \def\EMlangTheorem{Theorem}
 \def\EMlangImportant{Key result}
 \def\EMlangExample{Example}
@@ -63,9 +62,8 @@
 \newcommand{\EMcolophontext}{%
   These are the typeset lecture notes of the course \emph{Engineering Mathematics},
   taught by \EMlangInstructor. They follow the instructor's slides and keep their order, notation
-  and examples, in three parts: \textbf{complex analysis} (chapters 1--7), \textbf{Fourier
-  analysis} (chapters 8--10), and \textbf{partial differential equations and the Laplace
-  transform} (chapters 11--14).
+  and examples, in three parts: \textbf{Fourier analysis} (chapters 1--3), \textbf{partial differential
+  equations} (chapters 4--7), and \textbf{complex analysis} (chapters 8--14).
 
   The notes were compiled and typeset by \EMlangCompiler. Every figure is drawn in TikZ or
   PGFPlots from the underlying mathematical object. Slips in the slides that were corrected

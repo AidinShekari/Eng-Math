@@ -1,0 +1,383 @@
+\EMhold
+
+\EMsection{Complex Functions}{Complex Functions}
+
+\begin{EMunit}
+
+\EMfigure{m09-mapping}{A complex function \EMim{w=f(z)} maps points of the domain in the
+\EMim{z}-plane to points of the range in the \EMim{w}-plane}
+
+\EMdisp{z\EMbr =x+iy,\qquad\EMbr  w\EMbr =u+iv}
+\EMdisp{f:\mathbb{C}\to\mathbb{C},\qquad\EMbr  f:\begin{cases}u=u(x,y)\\ v=v(x,y)\end{cases}}
+
+\end{EMunit}
+
+\begin{EMexample}{}
+
+Consider the function \EMim{w=z^2}:
+\EMdisp{u+iv\EMbr =(x+iy)^2\EMbr =(x^2-y^2)+i(2xy)\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \begin{cases}u=x^2-y^2\\ v=2xy\end{cases}}
+
+\end{EMexample}
+
+\EMhold
+
+\EMsection{Some Important Loci}{Some Important Loci}
+
+\begin{EMunit}
+
+\EMfigure{m09-loci}{Important loci: a circle, the \EMim{\rho}-neighbourhood of a point
+\EMim{a}, and an annular region}
+
+\EMdisp{|z|\EMbr =1,\qquad\EMbr  |z-a|\EMbr =\rho,\qquad\EMbr  |z-a|<\rho,\qquad\EMbr  \rho_1<|z-a|<\rho_2}
+
+\end{EMunit}
+
+The set \EMim{|z-a|<\rho} is called the \EMim{\rho}-neighbourhood of \EMim{a}.
+
+\EMhold
+
+\EMsection{Limits of Complex Functions}{Limits of Complex Functions}
+
+\begin{EMdefinition}{Limit}
+
+If for every \EMim{\varepsilon>0} one can find \EMim{\delta>0} such that \EMim{|z-z_0|<\delta} implies \EMim{|f(z)-l|<\varepsilon}, then
+\EMdisp{\lim_{z\to z_0}f(z)\EMbr =l}
+Hence for all points inside the circle of centre \EMim{z_0} and radius \EMim{\delta}, \EMim{f(z)} must lie inside the circle of centre \EMim{l} and radius \EMim{\varepsilon}. Here \EMim{\varepsilon} is given and \EMim{\delta(\varepsilon)} has to be found. Clearly the concept of limit here is broader than that for real functions.
+
+\end{EMdefinition}
+
+\begin{EMunit}
+
+\EMfigure{m09-limit}{The definition of the limit: the \EMim{\delta}-neighbourhood of
+\EMim{z_0} in the \EMim{z}-plane and the
+\EMim{\varepsilon}-neighbourhood of \EMim{l} in the \EMim{w}-plane}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{Continuity of Complex Functions}{Continuity of Complex Functions}
+
+\begin{EMdefinition}{Continuity at a point}
+
+The function \EMim{w=f(z)} is continuous at the point \EMim{z=z_0} if the following three conditions hold:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{f(z)} is defined at \EMim{z=z_0}.
+\item
+  \EMim{\displaystyle\lim_{z\to z_0}f(z)} exists.
+\item
+  \EMim{\displaystyle\lim_{z\to z_0}f(z)=f(z_0)}.
+\end{enumerate}
+
+\end{EMdefinition}
+
+\begin{EMexample}{}
+
+Is the function \EMim{f(z)=\sin(1/z)} continuous at \EMim{z=0}?
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Is the function
+\EMdisp{f(z)\EMbr =\begin{cases}\sin(1/z)&z\neq0\\ 5+4i&z=0\end{cases}}
+continuous at \EMim{z=0}?
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Is the function
+\EMdisp{f(z)\EMbr =\begin{cases}3z^3+4&z\neq0\\ 17&z=0\end{cases}}
+continuous at \EMim{z=0}?
+
+\end{EMexample}
+
+\EMhold
+
+\EMsubsection{Properties of Continuous Complex Functions}{Properties of Continuous Complex Functions}
+
+\begin{EMtheorem}{Theorems}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \EMim{f(z),g(z)} are continuous at \EMim{z_0}, then \EMim{f(z)\pm g(z)} is continuous at \EMim{z_0}.
+\item
+  If \EMim{f(z),g(z)} are continuous at \EMim{z_0}, then \EMim{f(z)\times g(z)} is continuous at \EMim{z_0}.
+\item
+  If \EMim{f(z),g(z)} are continuous at \EMim{z_0} and \EMim{g(z_0)\neq0}, then \EMim{\dfrac{f(z)}{g(z)}} is continuous at \EMim{z_0}.
+\end{enumerate}
+
+\end{EMtheorem}
+
+\begin{EMdefinition}{Continuity on a domain}
+
+The function \EMim{w=f(z)} is continuous on the domain \EMim{D} if \EMim{f} is continuous at every point of \EMim{D}.
+
+Domain: all the points inside a closed curve.
+
+\end{EMdefinition}
+
+\begin{EMunit}
+
+\EMfigure{m09-domain}{A domain \EMim{D} in the complex plane}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{The Derivative of Complex Functions}{The Derivative of Complex Functions}
+
+\begin{EMdefinition}{Derivative}
+
+The function \EMim{w=f(z)} is differentiable at the point \EMim{z=z_0} if the following limit exists:
+\EMdisp{f'(z_0)\EMbr =\lim_{|\Delta z|\to0}\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}}
+
+\end{EMdefinition}
+
+\begin{EMremark}{}
+
+The existence of the derivative of a complex function requires stricter conditions than for real functions: since \EMim{z_0} can be approached from \emph{all} directions in the \EMim{z}-plane, this limit must exist and must not depend on the chosen path towards \EMim{z_0}.
+
+\end{EMremark}
+
+\begin{EMunit}
+
+\EMfigure{m09-approach}{Approaching the point \EMim{z_0} from all directions}
+
+\end{EMunit}
+
+\EMhold
+
+\EMsection{The Cauchy--Riemann Conditions}{The Cauchy–Riemann Conditions}
+
+\begin{EMtheorem}{Necessary condition for differentiability}
+
+A necessary condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold:
+\EMdisp{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad\EMbr  w\EMbr =u+iv\EMbr =f(x+iy)\EMbr =f(z)}
+
+\end{EMtheorem}
+
+\begin{EMproof}{}
+
+\EMdisp{f'(z)\EMbr =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z},\qquad\EMbr  z\EMbr =x+iy,\qquad\EMbr  \Delta z\EMbr =\Delta x+i\Delta y}
+\EMdisp{\begin{aligned}
+f(z+\Delta z)-f(z)&=\big[u(x+\Delta x,y+\Delta y)+iv(x+\Delta x,y+\Delta y)\big]-\big[u(x,y)+iv(x,y)\big]\\
+&=\big[u(x+\Delta x,y+\Delta y)-u(x,y)\big]+i\big[v(x+\Delta x,y+\Delta y)-v(x,y)\big]
+\end{aligned}}
+\EMdisp{\frac{f(z+\Delta z)-f(z)}{\Delta z}\EMbr =\frac{u(x+\Delta x,y+\Delta y)-u(x,y)}{\Delta x+i\Delta y}+i\,\frac{v(x+\Delta x,y+\Delta y)-v(x,y)}{\Delta x+i\Delta y}}
+A necessary condition for the existence of the derivative of \EMim{w=f(z)} is that the value of the limit defining \EMim{f'(z)} does not change if we approach \EMim{z} from any direction (in particular along the horizontal or the vertical direction).
+
+\textbf{Path 1: the vertical direction.} \EMim{\Delta z=\Delta x+i\Delta y} with \EMim{\Delta x=0}, i.e.~\EMim{\Delta z=i\Delta y}:
+\EMdisp{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta y\to0}\left[\frac{u(x,y+\Delta y)-u(x,y)}{i\Delta y}+i\,\frac{v(x,y+\Delta y)-v(x,y)}{i\Delta y}\right]\\
+&=\frac1i\,\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}=\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y}
+\end{aligned}}
+
+\textbf{Path 2: the horizontal direction.} \EMim{\Delta z=\Delta x+i\Delta y} with \EMim{\Delta y=0}, i.e.~\EMim{\Delta z=\Delta x}:
+\EMdisp{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta x\to0}\left[\frac{u(x+\Delta x,y)-u(x,y)}{\Delta x}+i\,\frac{v(x+\Delta x,y)-v(x,y)}{\Delta x}\right]\\
+&=\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}
+\end{aligned}}
+
+Therefore
+\EMdisp{f'(z)\EMbr =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y}\EMbr =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}}
+and equating real and imaginary parts:
+
+\end{EMproof}
+
+\begin{EMunit}
+
+\EMfigure{m09-cr-paths}{Two paths towards \EMim{z}: the vertical direction
+(\EMim{\Delta z=i\Delta y}) and the horizontal direction
+(\EMim{\Delta z=\Delta x})}
+
+\end{EMunit}
+
+\begin{EMimportant}{The Cauchy--Riemann conditions}
+
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial v}{\partial y},\qquad\EMbr  \frac{\partial u}{\partial y}\EMbr =-\frac{\partial v}{\partial x}}
+
+\end{EMimportant}
+
+\begin{EMremark}{Consequence}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If these conditions do not hold, the derivative does not exist at the point \EMim{z}.
+\item
+  The following ways of computing the derivative are suggested:
+  \EMdisp{f'(z)\EMbr =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\EMbr =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y}\EMbr =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}\EMbr =\frac{\partial u}{\partial x}-i\,\frac{\partial u}{\partial y}\EMbr =\frac{\partial v}{\partial y}+i\,\frac{\partial v}{\partial x}}
+\end{enumerate}
+
+\end{EMremark}
+
+\begin{EMtheorem}{Sufficient condition for differentiability}
+
+A sufficient condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold.
+
+The proof is beyond the scope of this class.
+
+\end{EMtheorem}
+
+\begin{EMtheorem}{The Cauchy--Riemann theorem}
+
+A necessary and sufficient condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold.
+\EMdisp{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad\EMbr  w\EMbr =u+iv\EMbr =f(x+iy)\EMbr =f(z)}
+
+\end{EMtheorem}
+
+\EMhold
+
+\EMsubsection{A Consequence of the Cauchy--Riemann Conditions (Analyticity of a
+Function)}{A Consequence of the Cauchy–Riemann Conditions (Analyticity of a Function)}
+
+\begin{EMunit}
+
+Differentiating the Cauchy--Riemann conditions with respect to \EMim{x} and \EMim{y}:
+
+\EMdisp{\left.\begin{aligned}\frac{\partial^2u}{\partial x^2}&=\frac{\partial^2v}{\partial x\partial y}\\[1mm] \frac{\partial^2u}{\partial y^2}&=-\frac{\partial^2v}{\partial x\partial y}\end{aligned}\right\}\ \xrightarrow{\ \text{add}\ }\ \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\EMbr =0}
+
+\EMdisp{\left.\begin{aligned}\frac{\partial^2u}{\partial x\partial y}&=\frac{\partial^2v}{\partial y^2}\\[1mm] \frac{\partial^2u}{\partial x\partial y}&=-\frac{\partial^2v}{\partial x^2}\end{aligned}\right\}\ \xrightarrow{\ \text{subtract}\ }\ \frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2}\EMbr =0}
+
+\end{EMunit}
+
+\begin{EMremark}{Consequence}
+
+The real and imaginary parts of an analytic function satisfy the two-dimensional Laplace equation.
+
+\end{EMremark}
+
+\EMhold
+
+\EMsection{Differentiability of Complex Functions: Examples}{Differentiability of Complex Functions: Examples}
+
+\begin{EMexample}{}
+
+Consider the function \EMim{w=z^2}; is it analytic?
+
+\EMdisp{w\EMbr =f(z)\EMbr =z^2\EMbr =(x+iy)^2\EMbr =(x^2-y^2)+i\,2xy,\qquad\EMbr  u(x,y)\EMbr =x^2-y^2,\qquad\EMbr  v(x,y)\EMbr =2xy}
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =2x\EMbr =\frac{\partial v}{\partial y}\ \EMcheck \qquad\EMbr \qquad\EMbr  \frac{\partial u}{\partial y}\EMbr =-2y\EMbr =-\frac{\partial v}{\partial x}\ \EMcheck }
+\EMdisp{f'(z)\EMbr =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}\EMbr =2x+i\,2y\EMbr =2(x+iy)\EMbr =2z}
+\EMdisp{\nabla^2u\EMbr =2-2\EMbr =0,\qquad\EMbr  \nabla^2v\EMbr =0+0\EMbr =0}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Consider the function \EMim{w=|z|^2}; is it analytic?
+
+\EMdisp{w\EMbr =f(z)\EMbr =|z|^2\EMbr =(x+iy)(x-iy)\EMbr =x^2+y^2,\qquad\EMbr  u(x,y)\EMbr =x^2+y^2,\qquad\EMbr  v(x,y)\EMbr =0}
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =2x,\quad\EMbr  \frac{\partial v}{\partial y}\EMbr =0,\qquad\EMbr  \frac{\partial u}{\partial y}\EMbr =2y,\quad\EMbr  -\frac{\partial v}{\partial x}\EMbr =0}
+\EMdisp{\nabla^2u\EMbr =2+2\EMbr =4,\qquad\EMbr  \nabla^2v\EMbr =0+0\EMbr =0}
+Analytic nowhere except at the origin.
+
+\end{EMexample}
+
+\begin{EMexercise}{}
+
+Determine whether each of the following functions is analytic. When it is, find its derivative.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \EMim{f(z)=\bar z}
+\item
+  \EMim{f(z)=\operatorname{Re}\{z\}}
+\item
+  \EMim{f(z)=z^3+2z^2+3i}
+\end{enumerate}
+
+\end{EMexercise}
+
+\EMhold
+
+\EMsection{Analytic Complex Functions}{Analytic Complex Functions}
+
+\begin{EMexample}{}
+
+\EMim{u=x^2-y^2} is the real part of an analytic function \EMim{f(z)}. Find \EMim{f(z)}.
+
+Since \EMim{f(z)} is analytic, its real and imaginary parts satisfy the Cauchy--Riemann conditions, and consequently they must also satisfy the two-dimensional Laplace equation.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  First check whether the real part satisfies the two-dimensional Laplace equation:
+  \EMdisp{\nabla^2u\EMbr =\frac{\partial^2}{\partial x^2}(x^2-y^2)+\frac{\partial^2}{\partial y^2}(x^2-y^2)\EMbr =2-2\EMbr =0\ \EMcheck }
+\item
+  We use the Cauchy--Riemann relations:
+  \EMdisp{\frac{\partial u}{\partial x}\EMbr =2x\EMbr =\frac{\partial v}{\partial y}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  v(x,y)\EMbr =2xy+\varphi(x)}
+  \EMdisp{-\frac{\partial v}{\partial x}\EMbr =-2y-\varphi'(x)\EMbr =\frac{\partial u}{\partial y}\EMbr =-2y\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \varphi'(x)\EMbr =0\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \varphi(x)\EMbr =c,\ \ c\in\mathbb{R}}
+  \EMdisp{f(z)\EMbr =(x^2-y^2)+i(2xy+c)\EMbr =z^2+C}
+\end{enumerate}
+
+\end{EMexample}
+
+\begin{EMexample}{}
+
+Let \EMim{u=\cos x\cosh y}.
+(a) Show that this function is harmonic in the plane (\EMim{\nabla^2u=0}).
+(b) Find \EMim{v(x,y)} such that \EMim{u+iv} is analytic.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Check whether the real part satisfies the two-dimensional Laplace equation:
+  \EMdisp{\nabla^2u\EMbr =\frac{\partial^2}{\partial x^2}(\cos x\cosh y)+\frac{\partial^2}{\partial y^2}(\cos x\cosh y)\EMbr =-\cos x\cosh y+\cos x\cosh y\EMbr =0\ \EMcheck }
+\item
+  We use the Cauchy--Riemann relations:
+  \EMdisp{\frac{\partial u}{\partial x}\EMbr =-\sin x\cosh y\EMbr =\frac{\partial v}{\partial y}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  v(x,y)\EMbr =-\sin x\sinh y+\varphi(x)}
+  \EMdisp{-\frac{\partial v}{\partial x}\EMbr =\cos x\sinh y-\varphi'(x)\EMbr =\frac{\partial u}{\partial y}\EMbr =\cos x\sinh y\quad\EMbr \EMbr \Longrightarrow\quad\EMbr \varphi'(x)\EMbr =0}
+  \EMdisp{\varphi(x)\EMbr =c,\ \ c\in\mathbb{R}\quad\EMbr \EMbr \Longrightarrow\quad\EMbr  v(x,y)\EMbr =-\sin x\sinh y+c}
+\end{enumerate}
+
+\end{EMexample}
+
+\EMhold
+
+\EMsection{The Cauchy--Riemann Conditions in Polar Coordinates}{The Cauchy–Riemann Conditions in Polar Coordinates}
+
+\begin{EMunit}
+
+\EMdisp{\begin{cases}x=r\cos\theta\\ y=r\sin\theta\end{cases}\qquad\EMbr \begin{cases}r=\sqrt{x^2+y^2}\\ \theta=\tan^{-1}\dfrac{y}{x}\end{cases}\qquad\EMbr  r_x\EMbr =\frac{x}{r},\quad\EMbr \theta_x\EMbr =\frac{-y}{r^2},\quad\EMbr  r_y\EMbr =\frac{y}{r},\quad\EMbr \theta_y\EMbr =\frac{x}{r^2}}
+
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial u}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial u}{\partial\theta}\frac{\partial\theta}{\partial x}\EMbr =\frac xr\frac{\partial u}{\partial r}-\frac{y}{r^2}\frac{\partial u}{\partial\theta}\EMbr =\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta}}
+
+\EMdisp{\frac{\partial v}{\partial y}\EMbr =\frac{\partial v}{\partial r}\frac{\partial r}{\partial y}+\frac{\partial v}{\partial\theta}\frac{\partial\theta}{\partial y}\EMbr =\frac yr\frac{\partial v}{\partial r}+\frac{x}{r^2}\frac{\partial v}{\partial\theta}\EMbr =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+
+\EMdisp{\frac{\partial u}{\partial x}\EMbr =\frac{\partial v}{\partial y}\;\EMbr \Longrightarrow\;\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta}\EMbr =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+
+\end{EMunit}
+
+\begin{EMunit}
+
+Similarly
+
+\EMdisp{\frac{\partial u}{\partial y}\EMbr =-\frac{\partial v}{\partial x}\;\EMbr \Longrightarrow\;\sin\theta\frac{\partial u}{\partial r}+\frac1r\cos\theta\frac{\partial u}{\partial\theta}\EMbr =-\cos\theta\frac{\partial v}{\partial r}+\frac1r\sin\theta\frac{\partial v}{\partial\theta}}
+
+\end{EMunit}
+
+\begin{EMimportant}{The Cauchy--Riemann conditions in polar form}
+
+\EMdisp{\frac{\partial u}{\partial r}\EMbr =\frac1r\frac{\partial v}{\partial\theta},\qquad\EMbr  -\frac1r\frac{\partial u}{\partial\theta}\EMbr =\frac{\partial v}{\partial r}}
+
+\end{EMimportant}
+
+\begin{EMexercise}{}
+
+Using the Cauchy--Riemann conditions in polar form, prove that \EMim{u} and \EMim{v} satisfy Laplace's equation in polar form, i.e.
+\EMdisp{\nabla^2u\EMbr =u_{rr}+\frac1{r^2}u_{\theta\theta}+\frac1ru_r\EMbr =0,\qquad\EMbr  \nabla^2v\EMbr =v_{rr}+\frac1{r^2}v_{\theta\theta}+\frac1rv_r\EMbr =0}
+
+\end{EMexercise}

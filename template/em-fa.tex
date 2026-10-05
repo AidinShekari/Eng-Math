@@ -6,13 +6,9 @@
 \usepackage{xepersian}
 
 \settextfont[Path=\EMroot/fonts/, Extension=.ttf, AutoFakeBold=1.3, Scale=1.0]{Vazirmatn-Regular}
-\setlatintextfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Regular, BoldFont=*-Bold,
-  ItalicFont=*-Italic, BoldItalicFont=*-BoldItalic]
-\setlatinsansfont{LibertinusSerif}[Extension=.otf, UprightFont=*-Semibold, BoldFont=*-Bold,
-  ItalicFont=*-Italic]
-\setlatinmonofont{lmmono10-regular}[Extension=.otf, Scale=0.9]
+\input{\EMroot/em-fonts-fa}
 \defpersianfont\EMfaDisplay[Path=\EMroot/fonts/, Extension=.ttf]{Vazirmatn-Black}
-\setmathfont{LibertinusMath-Regular.otf}
+\input{\EMroot/em-math}
 
 \linespread{1.32}
 \newif\ifEMrtl \EMrtltrue
@@ -29,6 +25,9 @@
 \def\EMlangChapterContents{مطالب این فصل}
 \def\EMlangFigure{شکل}
 \def\EMlangDefinition{تعریف}
+\def\EMlangLemma{لم}
+\def\EMlangProposition{گزاره}
+\def\EMlangCorollary{نتیجه}
 \def\EMlangTheorem{قضیه}
 \def\EMlangImportant{نتیجهٔ مهم}
 \def\EMlangExample{مثال}
@@ -61,8 +60,8 @@
 \newcommand{\EMcolophontext}{%
   این جزوه، متن حروف‌چینی‌شدهٔ درس \emph{ریاضی مهندسی} به استادی \EMlangInstructor\ است.
   ترتیب مطالب، نمادگذاری و مثال‌ها همان اسلایدهای استاد است و در سه بخش آمده است:
-  \textbf{آنالیز مختلط} (فصل‌های ۱ تا ۷)، \textbf{آنالیز فوریه} (فصل‌های ۸ تا ۱۰) و
-  \textbf{معادلات دیفرانسیل با مشتقات جزئی و تبدیل لاپلاس} (فصل‌های ۱۱ تا ۱۴).
+  \textbf{تحلیل فوریه} (فصل‌های ۱ تا ۳)، \textbf{معادلات دیفرانسیل با مشتقات جزئی}
+  (فصل‌های ۴ تا ۷) و \textbf{آنالیز مختلط} (فصل‌های ۸ تا ۱۴).
 
   جمع‌آوری و حروف‌چینی: \EMlangCompiler. همهٔ شکل‌ها با TikZ یا PGFPlots و از روی شیء ریاضی
   مربوطه رسم شده‌اند. اشتباهات تایپی اسلایدها که هنگام حروف‌چینی اصلاح شده‌اند در فایل

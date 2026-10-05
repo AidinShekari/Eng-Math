@@ -21,6 +21,7 @@
 \definecolor{EMmuted}{HTML}{6B6B85}
 \definecolor{EMviolet}{HTML}{6B3FA0}
 \definecolor{EMline}{HTML}{CFCEE2}
+\definecolor{EMproofbg}{HTML}{F6F6FB}
 \color{EMink}
 
 % ---------- bidi-aware helpers ----------
@@ -51,7 +52,7 @@
 \def\circlearrowleft{\mathord{\acwopencirclearrow}}
 \def\blacksquare{\mathord{\mdlgblksquare}}
 \def\square{\mathord{\mdlgwhtsquare}}
-\setoperatorfont\mathrm
+\setoperatorfont\symup
 % a displayed formula, centred and always left to right.  The filter marks the places where it
 % may be broken (before a top-level =, \Rightarrow ..., after \qquad); the macro fills lines
 % greedily by their measured width and indents the continuation lines.  A formula that fits
@@ -81,6 +82,7 @@
   \EMdproc#1\EMbr\EMdend
   \ifnum\EMdlines>0 \EMdflush \else
     \setbox\EMdvb\hbox{\EMdline{\the\EMdcur}}\fi
+  \ifdim\wd\EMdvb>\linewidth\setbox\EMdvb\hbox{\resizebox{\linewidth}{!}{\box\EMdvb}}\fi
   \noindent\hfil\box\EMdvb\hfil\par\endgroup\nopagebreak[2]\vspace{0.1em}}
 \relpenalty=9999 \binoppenalty=9999
 \emergencystretch=3em
@@ -104,6 +106,13 @@
 \newcounter{EMitem}[EMchap]
 \newcounter{EMfig}[EMchap]
 \renewcommand{\thesection}{\arabic{EMchap}.\arabic{section}}
+% unique PDF anchors across chapters; chapters are bookmark level 1, sections level 2
+\renewcommand{\theHsection}{\arabic{EMchap}.\arabic{section}}
+\renewcommand{\theHEMitem}{\arabic{EMchap}.\arabic{EMitem}}
+\renewcommand{\theHEMfig}{\arabic{EMchap}.\arabic{EMfig}}
+\makeatletter\renewcommand*{\toclevel@section}{2}\makeatother
+% Persian digits for a bookmark title (expandable)
+\newcommand{\EMbmnum}[1]{\ifEMrtl\ifcase#1 ۰\or ۱\or ۲\or ۳\or ۴\or ۵\or ۶\or ۷\or ۸\or ۹\or ۱۰\or ۱۱\or ۱۲\or ۱۳\or ۱۴\else #1\fi\else#1\fi}
 \newcommand{\EMitemnum}{\EMnum{\arabic{EMchap}.\arabic{EMitem}}}
 \newcommand{\EMfignum}{\EMnum{\arabic{EMchap}.\arabic{EMfig}}}
 
@@ -134,15 +143,15 @@
   \par\Needspace{9\baselineskip}\vspace{1.3em}%
   \refstepcounter{section}\label{EMsec:\EMmodkey:\arabic{section}}%
   \addcontentsline{toc}{section}{\texorpdfstring{#1}{#2}}%
-  \noindent\EMsectag\hspace{0.7em}{\EMheadfont\bfseries\Large\color{EMindigo}#1}\par\nobreak
+  \noindent\EMsectag\hspace{0.7em}{\EMheadfont\bfseries\Large\color{EMindigo}\hyphenpenalty=10000 \exhyphenpenalty=10000 #1}\par\nobreak
   \vspace{0.25em}{\color{EMline}\hrule height 0.6pt}\vspace{0.6em}\nobreak}
 \newcommand{\EMsubsectionreal}[2]{%
   \par\Needspace{6\baselineskip}\vspace{0.9em}%
   \noindent{\color{EMrose}\rule[0.1em]{0.32em}{0.78em}}\hspace{0.55em}%
-  {\EMheadfont\bfseries\large\color{EMink}#1}\par\nobreak\vspace{0.25em}\nobreak}
+  {\EMheadfont\bfseries\large\color{EMink}\hyphenpenalty=10000 \exhyphenpenalty=10000 #1}\par\nobreak\vspace{0.25em}\nobreak}
 
-% a heading followed by a box is held back until the box knows how much room it needs; the two
-% then move together
+% a heading followed by a box (or a unit, see below) is held back until that block knows how
+% much room it needs; the heading and the block then move together
 \newif\ifEMhold
 \def\EMpending{}\newcount\EMpendn
 \newcommand{\EMhold}{\global\EMholdtrue}
@@ -152,57 +161,99 @@
 \newcommand{\EMflush}{\par\ifnum\EMpendn>0
   \begingroup\global\EMholdfalse\EMpending\endgroup
   \global\let\EMpending\empty\global\EMpendn=0 \fi\global\EMholdfalse}
+
+% ---------- keeping a logical block on one page ----------
+% A block (a box, or a "unit": a paragraph with its equations, a figure with its lead-in)
+% is typeset once into a box to measure it.  If it fits on a page it is kept whole: when it
+% does not fit in what is left of the current page it moves to the next page.  A block longer
+% than a page stays breakable and starts with room for its head and a few lines.
 \newdimen\EMpendht
-\newcommand{\EMboxstart}{% decides the room, then places the held headings
-  \EMpendht=\dimexpr\EMpendn\baselineskip*4\relax
-  \ifdim\EMboxht<0.58\textheight
-    \Needspace*{\dimexpr\EMboxht+\EMpendht\relax}\def\EMboxopt{unbreakable}%
-  \else\Needspace*{\dimexpr9\baselineskip+\EMpendht\relax}\def\EMboxopt{}\fi
-  \EMflush}
+\newdimen\EMboxht
+\newdimen\EMkeepmax
+\newcount\EMsvitem \newcount\EMsvfig
+\newcommand{\EMsavecnt}{\EMsvitem=\value{EMitem}\relax\EMsvfig=\value{EMfig}\relax}
+\newcommand{\EMrestorecnt}{\setcounter{EMitem}{\EMsvitem}\setcounter{EMfig}{\EMsvfig}}
+% #1 = width of the measured text, #2 = what is measured, #3 = extra height (padding)
+\newcommand{\EMmeasureraw}[3]{\EMsavecnt
+  \setbox0\vbox{\hsize#1\linewidth\hsize\columnwidth\hsize\parindent0pt\relax
+    \setlength{\parskip}{0.45em}#2\par}%
+  \EMrestorecnt
+  \EMboxht=\dimexpr\ht0+\dp0+#3\relax}
+\newif\ifEMnoplace
+\newcommand{\EMplace}{% decides the room, then places the held headings
+  \ifEMnoplace\def\EMboxopt{unbreakable}\else
+  \EMkeepmax=\dimexpr\textheight-1.5\baselineskip\relax
+  \EMpendht=\dimexpr\EMpendn\baselineskip*3\relax
+  \ifdim\EMboxht<\EMkeepmax
+    \Needspace*{\dimexpr\EMboxht+\EMpendht+0.6\baselineskip\relax}\def\EMboxopt{unbreakable}%
+  \else\Needspace*{\dimexpr7\baselineskip+\EMpendht\relax}\def\EMboxopt{}\fi
+  \EMflush\fi}
+% a join: a statement and the proof that follows it are one block when together they fit on a page
+\NewEnviron{EMjoin}{%
+  \EMnoplacetrue\EMmeasureraw{\linewidth}{\BODY}{0pt}\EMnoplacefalse
+  \ifdim\EMboxht<\dimexpr\textheight-1.5\baselineskip\relax
+    \EMplace\EMnoplacetrue\BODY\EMnoplacefalse
+  \else\EMplace\BODY\fi\par}
+% a unit: ordinary text that belongs together (generated by the filter)
+\NewEnviron{EMunit}{%
+  \EMmeasureraw{\linewidth}{\BODY}{0pt}%
+  \EMplace
+  \BODY\par}
 
 % ---------- the theorem family ----------
 \ifEMrtl
-  \tcbset{EMbar/.style={borderline east={2.6pt}{0pt}{#1}}}
+  \tcbset{EMbar/.style={borderline east={2.8pt}{0pt}{#1}}}
 \else
-  \tcbset{EMbar/.style={borderline west={2.6pt}{0pt}{#1}}}
+  \tcbset{EMbar/.style={borderline west={2.8pt}{0pt}{#1}}}
 \fi
-\tcbset{EMbase/.style={enhanced,breakable,frame hidden,sharp corners,
-  left=7pt,right=7pt,top=5pt,bottom=5pt,before skip=0.9em,after skip=0.9em,
-  before upper={\parindent0pt\setlength{\parskip}{0.45em}}}}
+% one box style: a thin hairline all round in a soft tone of the colour, a stronger bar on the
+% leading edge, a very light tint, a hairline under the heading
+\tcbset{EMbase/.style={enhanced,breakable,sharp corners,boxrule=0.5pt,
+  left=9pt,right=9pt,top=5pt,bottom=6pt,before skip=0.9em,after skip=0.9em,
+  before upper={\parindent0pt\setlength{\parskip}{0.45em}},
+  overlay unbroken and first={},
+  toprule at break=0pt,bottomrule at break=0pt}}
+\newcommand{\EMrule}[1]{\par\nobreak\vspace{0.2em}{\color{#1!35}\hrule height 0.4pt}\vspace{0.4em}\nobreak}
 \newcommand{\EMboxhead}[3]{%   colour, label word, title (may be empty)
   \refstepcounter{EMitem}\label{EMit:\EMmodkey:\arabic{EMitem}}%
   {\EMheadfont\bfseries\color{#1}#2~\EMitemnum}%
-  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\par\nobreak\vspace{0.15em}}
-% a box is measured first: a short one is kept whole (moved to the next page when it does not
-% fit), a long one may break but starts with room for its head and a few lines
-\newdimen\EMboxht
-\newcommand{\EMboxbody}[1]{\parindent0pt\setlength{\parskip}{0.45em}#1}
-\newcommand{\EMmeasure}[1]{\setbox0\vbox{\hsize\dimexpr\linewidth-17pt\relax\EMboxbody{#1}}%
-  \EMboxht=\dimexpr\ht0+\dp0+3\baselineskip+22pt\relax}
-\newcommand{\EMmakebox}[5]{% env, main colour, tint, label word, numbered(1/0)
+  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\EMrule{#1}}
+\newcommand{\EMboxheadplain}[2]{{\EMheadfont\bfseries\color{#1}#2}\EMrule{#1}}
+\newcommand{\EMboxheadnn}[3]{{\EMheadfont\bfseries\color{#1}#2}%
+  \if\relax\detokenize{#3}\relax\else{\ }\EMsep{\ }{\EMheadfont\color{#1}#3}\fi\EMrule{#1}}
+% a numbered or plain box.  #1 env, #2 colour, #3 tint, #4 label word, #5 numbered (1/0)
+\newcommand{\EMmakebox}[5]{%
   \NewEnviron{#1}[1]{%
-    \EMmeasure{\BODY}%
-    \EMboxstart
-    \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=#2,colback=#3]%
-    \if#51\EMboxhead{#2}{#4}{##1}\else
-      {\EMheadfont\bfseries\color{#2}##1}\par\nobreak\vspace{0.1em}\fi
+    \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{%
+      \if#51\EMboxhead{#2}{#4}{##1}\else\EMboxheadnn{#2}{#4}{##1}\fi\BODY}{16pt}%
+    \EMplace
+    \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=#2,colback=#3,colframe=#2!40!white]%
+    \if#51\EMboxhead{#2}{#4}{##1}\else\EMboxheadnn{#2}{#4}{##1}\fi
     \BODY\end{tcolorbox}}}
 \EMmakebox{EMdefinition}{EMindigo}{EMindigoL}{\EMlangDefinition}{1}
 \EMmakebox{EMtheorem}{EMrose}{EMroseL}{\EMlangTheorem}{1}
+\EMmakebox{EMlemma}{EMrose}{EMroseL}{\EMlangLemma}{1}
+\EMmakebox{EMproposition}{EMrose}{EMroseL}{\EMlangProposition}{1}
+\EMmakebox{EMcorollary}{EMrose}{EMroseL}{\EMlangCorollary}{1}
 \EMmakebox{EMexample}{EMjade}{EMjadeL}{\EMlangExample}{1}
 \EMmakebox{EMexercise}{EMamber}{EMamberL}{\EMlangExercise}{1}
 \EMmakebox{EMremark}{EMmuted}{white}{\EMlangRemark}{0}
-% the key results: framed, stronger
+% the key results: the same box, a stronger frame
 \NewEnviron{EMimportant}[1]{%
-  \EMmeasure{\BODY}%
-  \EMboxstart
-  \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMrose,colback=EMroseL,frame hidden,
-    boxrule=0.8pt,colframe=EMrose,frame style={draw=EMrose},borderline={0.7pt}{0pt}{EMrose},
-    top=6pt,bottom=6pt]%
+  \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{\EMboxhead{EMrose}{\EMlangImportant}{#1}\BODY}{18pt}%
+  \EMplace
+  \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMrose,colback=EMroseL,colframe=EMrose,boxrule=0.9pt,
+    top=6pt,bottom=7pt]%
   \EMboxhead{EMrose}{\EMlangImportant}{#1}\BODY\end{tcolorbox}}
-% proof and solution: open text, a closing mark for proofs
-\newenvironment{EMproof}{\par\Needspace{5\baselineskip}\noindent{\EMheadfont\bfseries\color{EMindigo}\EMlangProof.}\ }%
-  {\hfill\ensuremath{\blacksquare}\par}
+% a proof: a quiet box with a clear heading and a closing mark at the end of the last line
+\newcommand{\EMqed}{\par\nobreak\vspace{-0.15em}\nopagebreak{\hfill\color{EMindigo}\ensuremath{\blacksquare}}\par}
+\NewEnviron{EMproof}[1]{%
+  \EMmeasureraw{\dimexpr\linewidth-20pt\relax}{%
+    \EMboxheadplain{EMindigo}{\EMlangProof.}\BODY\EMqed}{16pt}%
+  \EMplace
+  \begin{tcolorbox}[EMbase,\EMboxopt,EMbar=EMindigo,colback=EMproofbg,colframe=EMindigo!30!white]%
+  \EMboxheadplain{EMindigo}{\EMlangProof.}\BODY\EMqed\end{tcolorbox}}
+% a solution inside an example or an exercise: a run-in heading
 \newenvironment{EMsolution}{\par\noindent{\EMheadfont\bfseries\color{EMjade}\EMlangSolution.}\ }{\par}
 
 % ---------- header / footer ----------
@@ -343,7 +394,7 @@
 % #1 key, #2 number, #3 title, #4 title in the other language.  The chapter contents follow
 % on the same page (\EMchapterend closes it); the text starts on the next page.
 \newcommand{\EMchapterpage}[4]{%
-  \clearpage\pdfbookmark[1]{\EMlangChapter~#2: #3}{EMch@#1}\phantomsection\label{EMch:#1}%
+  \clearpage\pdfbookmark[1]{\EMlangChapter~\EMbmnum{#2}: #3}{EMch@#1}\phantomsection\label{EMch:#1}%
   \thispagestyle{plain}%
   \begin{tikzpicture}[remember picture,overlay]
     \fill[EMindigo] ([xshift=\ifEMrtl-1.1cm\else0cm\fi]current page.north \ifEMrtl east\else west\fi) rectangle
@@ -353,11 +404,11 @@
   \par\noindent\hbox to\linewidth{{\EMheadfont\bfseries\large\color{EMmuted}\EMlangChapter}\hfill}\par\vspace{-0.5em}
   \noindent\hbox to\linewidth{{\EMheadfont\bfseries\fontsize{96}{100}\selectfont\color{EMrose!85}\EMnum{#2}}\hfill}\par\vspace{0.1em}
   {\color{EMrose}\rule{3.2cm}{2pt}}\par\vspace{0.7em}
-  {\EMheadfont\bfseries\fontsize{27}{35}\selectfont\color{EMindigo}#3\par}
+  {\EMheadfont\bfseries\fontsize{25}{31}\selectfont\color{EMindigo}\hyphenpenalty=10000 \exhyphenpenalty=10000 \raggedright#3\par}
   \vspace{0.3em}{\large\color{EMmuted}\EMother{#4}\par}
-  \vspace{0.9em}
+  \vspace{0.4em}
   \begin{center}
-    \begin{tikzpicture}[scale=0.95]
+    \begin{tikzpicture}[scale=0.78]
       \clip (0,0) rectangle (15,9);
       \EMmotif{#1}
     \end{tikzpicture}
