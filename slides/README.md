@@ -6,6 +6,7 @@ the order are those of the notes (`NN-slug/<lang>/content.tex`); nothing is summ
 | | PowerPoint | PDF (one page per slide) | Beamer source (and its PDF, one page per click) |
 |---|---|---|---|
 | فارسی | `EngineeringMath-slider-fa.pptx` | `EngineeringMath-slider-fa.pdf` | `main-fa.tex` + `fa/*.tex` (`main-fa.pdf`) |
+| English | `EngineeringMath-slider-en.pptx` | `EngineeringMath-slider-en.pdf` | `main-en.tex` + `en/*.tex` (`main-en.pdf`) |
 
 Fonts: **B Nazanin** for Persian, **Times New Roman** for English (and for Latin words in the
 Persian deck); formulas in Cambria Math (PowerPoint) / TeX Gyre Termes Math (Beamer). Both text

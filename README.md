@@ -13,6 +13,11 @@ Corrections and additions are listed in [REVIEW.md](REVIEW.md).
 - [English](00-full-notes/en/EngineeringMath-en.pdf)
 - [فارسی](00-full-notes/fa/EngineeringMath-fa.pdf)
 
+## Slides / اسلایدها
+Slide decks made from these notes, one step per click (see [slides/README.md](slides/README.md)):
+- فارسی: [PowerPoint](slides/EngineeringMath-slider-fa.pptx) · [PDF](slides/EngineeringMath-slider-fa.pdf) · [Beamer](slides/main-fa.tex)
+- English: [PowerPoint](slides/EngineeringMath-slider-en.pptx) · [PDF](slides/EngineeringMath-slider-en.pdf) · [Beamer](slides/main-en.tex)
+
 ## Chapters (English)
 | # | Chapter | PDF |
 |---|---|---|

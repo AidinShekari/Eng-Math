@@ -1,0 +1,95 @@
+\section{Linear Mappings}
+\def\EMfootchapter{Chapter 11 \ \textbullet\ Linear Mappings}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Chapter 11: Linear Mappings}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Translation}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Rotation}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Dilation or Contraction}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{The General Linear Mapping}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Linear Mappings}
+\begin{uncoverenv}<2->
+\EMp{This chapter examines some simple mappings from the domain plane (\EMim{z}) to the range plane (\EMim{w}).}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Translation}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{\begin{aligned}
+w=z+b&=(x+iy)+\operatorname{Re}\{b\}+i\operatorname{Im}\{b\}\\
+&=\big(x+\operatorname{Re}\{b\}\big)+i\big(y+\operatorname{Im}\{b\}\big)
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{67.8bp}{\uncover<3->{\EMfigure{0.990}{m11-translation}{Translation \EMim{w=z+b}: a region of the \EMim{z}-plane is shifted by \EMim{b} without changing its shape}}}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Rotation}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{w =az,\qquad |a| =1,\qquad a =e^{i\varphi},\qquad \varphi =\arg\{a\}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{z =|z|e^{i\theta}\; \Longrightarrow\;w =|z|e^{i(\theta+\varphi)}}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{76.2bp}{\uncover<4->{\EMfigure{0.990}{m11-rotation}{Rotation \EMim{w=az} with \EMim{|a|=1}: a region of the \EMim{z}-plane is rotated about the origin by \EMim{\varphi=\arg a}}}}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Dilation or Contraction}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{w =az,\qquad a\in\mathbb{R}^+}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{z =|z|e^{i\theta}\; \Longrightarrow\;w =a|z|e^{i\theta}}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{75.7bp}{\uncover<4->{\EMfigure{0.990}{m11-dilation}{Contraction \EMim{w=az} with \EMim{0<a<1}; for \EMim{a>1} the mapping is a dilation}}}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{The General Linear Mapping}
+\begin{uncoverenv}<2->
+\EMeq{w =az+b,\qquad a,b\in\mathbb{C}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{a rotation by \EMim{\arg a}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{a dilation or contraction by \EMim{|a|}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{3.}{\dimexpr\linewidth-26bp\relax}{a translation by \EMim{b}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{The General Linear Mapping (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\EMp{For \EMim{w=(1+i)z+(1-i)}, find the image of the unit square.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{w(0) =1-i,\qquad w(1) =2,\qquad w(i) =0,\qquad \\[4pt] w(1+i) =1+i}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{141.6bp}{\uncover<3->{\EMfigure{0.994}{m11-linear-example}{The image of the unit square under the mapping \EMim{w=(1+i)z+(1-i)}}}}
+\end{frame}
