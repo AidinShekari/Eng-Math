@@ -1,0 +1,59 @@
+% ============================================================
+%  Engineering Mathematics — slides: packages, palette and macros shared by
+%  the Beamer decks (main-fa.tex, main-en.tex) and by the measuring runs of
+%  tools/build_slides.py.  \EMroot must point to ../template.
+%  Packages are loaded before xepersian/bidi (see em-fa.tex).
+% ============================================================
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{calc}
+\usepackage{array,booktabs,longtable,colortbl}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,decorations.markings,decorations.pathreplacing,patterns,positioning,intersections,through,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween,groupplots}
+\usepackage[most]{tcolorbox}
+\usepackage{pifont}
+
+% ---------- palette (the notes) ----------
+\definecolor{EMink}{HTML}{1E1F3B}
+\definecolor{EMindigo}{HTML}{33307F}
+\definecolor{EMindigoL}{HTML}{EDECF8}
+\definecolor{EMrose}{HTML}{B3215A}
+\definecolor{EMroseL}{HTML}{FAEAF1}
+\definecolor{EMjade}{HTML}{0F7B6C}
+\definecolor{EMjadeL}{HTML}{E6F4F1}
+\definecolor{EMamber}{HTML}{B5700F}
+\definecolor{EMamberL}{HTML}{FCF1DE}
+\definecolor{EMmuted}{HTML}{6B6B85}
+\definecolor{EMviolet}{HTML}{6B3FA0}
+\definecolor{EMline}{HTML}{CFCEE2}
+\definecolor{EMproofbg}{HTML}{F6F6FB}
+% ---------- slide palette (after the instructor's slides: light title bar, pastel boxes) ----------
+\definecolor{SLbar}{HTML}{D6E6F5}
+\definecolor{SLbarEdge}{HTML}{9DBEDF}
+\definecolor{SLtitle}{HTML}{1E2A4A}
+\definecolor{SLfoot}{HTML}{7A7F93}
+\definecolor{SLdefL}{HTML}{E3F1FB}\definecolor{SLdef}{HTML}{2E6DA4}
+\definecolor{SLthmL}{HTML}{E8F6DE}\definecolor{SLthm}{HTML}{3F7F2A}
+\definecolor{SLimpL}{HTML}{FFF6C7}\definecolor{SLimp}{HTML}{A07800}
+\definecolor{SLexL}{HTML}{EAF4FB}\definecolor{SLex}{HTML}{1F6FA8}
+\definecolor{SLexeL}{HTML}{FCEFDF}\definecolor{SLexe}{HTML}{B5650F}
+\definecolor{SLremL}{HTML}{FDEBDD}\definecolor{SLrem}{HTML}{C0572A}
+\definecolor{SLprfL}{HTML}{F3F3F8}\definecolor{SLprf}{HTML}{5A5C7A}
+
+% ---------- macros of the generated bodies ----------
+\newcommand{\EMim}[1]{\ifEMrtl\lr{$#1$}\else$#1$\fi}
+\newcommand{\EMt}[1]{\mbox{\ifEMrtl\RL{\persianfont #1}\else#1\fi}}
+\newcommand{\EMtx}[2]{\ifEMrtl\EMt{#2}\else\text{#1}\fi}
+\newcommand{\EMcheck}{\mathord{\text{\textcolor{EMjade}{\ding{51}}}}}
+\def\circlearrowright{\mathord{\cwopencirclearrow}}
+\def\circlearrowleft{\mathord{\acwopencirclearrow}}
+\providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+\ifEMrtl\newcommand{\EML}[2]{\RL{\persianfont #2}}\else\newcommand{\EML}[2]{#1}\fi
+\newcommand{\EMfig}[1]{\begingroup\fontsize{11}{13}\selectfont\ifEMrtl\begin{latin}\fi\input{\EMroot/figures/#1}\ifEMrtl\end{latin}\fi\endgroup}
+\AtBeginDocument{\input{\EMroot/figures/em-diagram-styles}}
+\AtBeginDocument{\def\setminus{\mathbin{\backslash}}}

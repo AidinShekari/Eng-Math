@@ -1,0 +1,522 @@
+\def\EMtitlesize{24}
+\begin{frame}{Part II}
+\begin{tikzpicture}[remember picture,overlay]
+\node[fill=SLbar,draw=SLbarEdge,line width=0.8bp,rounded corners=4bp,minimum width=520bp,minimum height=170bp] (b) at ([yshift=-20bp]current page.center) {};
+\node[text=SLthm,font=\bfseries\fontsize{30}{36}\selectfont] at ([yshift=36bp]b.center) {\EMdir{Part II}};
+\node[text=SLdef,font=\fontsize{24}{30}\selectfont] at ([yshift=-30bp]b.center) {\EMdir{Partial Differential Equations}};
+\end{tikzpicture}
+\end{frame}
+
+\section{The One-Dimensional Wave Equation and Separation of Variables}
+\def\EMfootchapter{Chapter 4 \ \textbullet\ The One-Dimensional Wave Equation and Separation of Variables}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 4: The One-Dimensional Wave Equation and Separation of Variables}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Introduction}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The One-Dimensional Wave Equation}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Solving the One-Dimensional Wave Equation}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Method of Separation of Variables: Examples}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The One-Dimensional Wave Equation with Nonzero Boundary Values}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Introduction}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{An equation in which a function and its derivatives appear.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{def}{2}{}
+\begin{uncoverenv}<3->
+\EMp{An equation written in terms of only one independent variable, with the derivatives of the function taken only with respect to that variable.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{def}{3}{}
+\begin{uncoverenv}<4->
+\EMp{A differential equation in which the function depends on several independent variables and the partial derivatives of the function with respect to the different variables appear in the equation.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<5->
+\EMp{\textbf{The wave equation:}}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad \frac{\partial^2u}{\partial t^2} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad \frac{\partial^2u}{\partial t^2} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{\textbf{The heat equation:}}
+\vspace{3bp}
+\EMeq{\frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2},\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Introduction (continued)}
+\begin{uncoverenv}<2->
+\EMp{\textbf{Laplace's equation:}}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2} =0,\qquad \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2} =0,\qquad \nabla^2u =0}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The One-Dimensional Wave Equation}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMp{Modelling a vibrating string (deriving the equation governing \EMim{u(x,t)}).}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\textbf{Physical assumptions:}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The mass is distributed uniformly along the string (a homogeneous string), and the string is perfectly flexible.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The string is stretched so tightly that the force of gravity on it is negligible.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The deflection of the string from equilibrium is very small.}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{189.1bp}{\uncover<7->{\EMfigure{1.420}{m04-string}{A segment \EMim{PQ} of the vibrating string: the tensions \EMim{T_1} and \EMim{T_2} at its ends, at angles \EMim{\alpha} and \EMim{\beta}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The One-Dimensional Wave Equation (continued)}
+\begin{uncoverenv}<2->
+\EMeq{T_1\cos\alpha =T_2\cos\beta =T =\text{const.}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{T_2\sin\beta-T_1\sin\alpha =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{where \EMim{\rho} is the mass density of the string and \EMim{\Delta s} the differential of the string length. Dividing by \EMim{T}:}
+\vspace{3bp}
+\EMeq{T\big(\tan\beta-\tan\alpha\big) =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}\quad \Longrightarrow\quad T\left(\frac{\partial u}{\partial x}\bigg|_{(x+\Delta x,t)}-\frac{\partial u}{\partial x}\bigg|_{(x,t)}\right) =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{By the mean value theorem (\EMim{f(b)-f(a)=f'(l)(b-a)}, \EMim{l\in[a,b]}):}
+\vspace{3bp}
+\EMeq{T\left(\frac{\partial u}{\partial x}\bigg|_{(x+\Delta x,t)}-\frac{\partial u}{\partial x}\bigg|_{(x,t)}\right) =T\frac{\partial^2u}{\partial x^2}\bigg|_{(l,t)}\Delta x =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2},\qquad x<l<x+\Delta x}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{By assumption \EMim{\displaystyle\lim_{\Delta x\to0}\frac{\Delta x}{\Delta s}=1}, so}
+\vspace{3bp}
+\EMeq{T\frac{\partial^2u}{\partial x^2} =\rho\frac{\partial^2u}{\partial t^2},\qquad c^2\triangleq\frac T\rho\quad \Longrightarrow\quad \frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The One-Dimensional Wave Equation (continued)}
+\begin{uncoverenv}<2->
+\EMp{For a unique solution of this equation we need boundary conditions and initial conditions:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Boundary conditions: \EMim{u(0,t)=u(L,t)=0}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Initial conditions: \EMim{u(x,0)=f(x)} and \EMim{u_t(x,0)=g(x)}, where \EMim{u_t\triangleq\dfrac{\partial u}{\partial t}}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation}
+\begin{uncoverenv}<2->
+\EMeq{\begin{cases}\dfrac{\partial^2u}{\partial t^2}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Here we solve the equation by \textbf{separation of variables}. Assume}
+\vspace{3bp}
+\EMeq{u(x,t) =X(x)\times T(t)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{\partial^2u}{\partial x^2} =X''(x)T(t),\qquad \frac{\partial^2u}{\partial t^2} =X(x)T''(t)\quad \Longrightarrow\quad X(x)T''(t) =c^2X''(x)T(t)\quad \Longrightarrow\quad \frac{T''}{c^2T} =\frac{X''}{X} =k}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{\EMim{k} must necessarily be a negative number. Examining the cases:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{\textbf{If \EMim{k=0}:}}
+\vspace{3bp}
+\EMeq{\frac{X''}{X} =0\  \Rightarrow\ X'' =0\  \Rightarrow\ X(x) =Ax+B,\qquad X(0) =0 \Rightarrow B =0,\quad X(L) =0 \Rightarrow A =0\  \Rightarrow\ X(x) =0}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{uncoverenv}<2->
+\EMp{\textbf{If \EMim{k>0} (\EMim{k=\lambda^2}):}}
+\vspace{3bp}
+\EMeq{\frac{X''}{X} =\lambda^2\  \Rightarrow\ X''-\lambda^2X =0\  \Rightarrow\ X(x) =Ae^{\lambda x}+Be^{-\lambda x},\qquad X(0) =0 \Rightarrow A+B =0,\quad X(L) =0 \Rightarrow Ae^{\lambda L}+Be^{-\lambda L} \\[4pt] =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\Longrightarrow\ A =B =0\  \Rightarrow\ X(x) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{Hence \EMim{k} must be negative (\EMim{k=-\lambda^2}):}
+\vspace{3bp}
+\EMeq{\frac{T''}{c^2T} =\frac{X''}{X} =-\lambda^2\quad \Longrightarrow\quad \begin{cases}X''+\lambda^2X=0\\ T''+c^2\lambda^2T=0\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{X(x) =A\cos\lambda x+B\sin\lambda x,\qquad X(0) =0 \Rightarrow A =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{X(L) =0\  \Rightarrow\ B\sin\lambda L =0\  \Rightarrow\ \lambda L =n\pi\ \ (n\in\mathbb{Z})\  \Rightarrow\ \lambda =\frac{n\pi}L =\lambda_n}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{X_n(x) =B_n\sin\lambda_nx,\qquad \lambda_n =\frac{n\pi}L\ \ (n\in\mathbb{Z})}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<8->
+\EMeq{T''+c^2\lambda_n^2T =0\  \Rightarrow\ T_n(t) =C_n\cos(c\lambda_nt)+D_n\sin(c\lambda_nt)}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{uncoverenv}<2->
+\EMeq{u_n(x,t) =X_n(x)\times T_n(t) =B_n\sin\lambda_nx\times\big(C_n\cos(c\lambda_nt)+D_n\sin(c\lambda_nt)\big)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Superposing the solutions:}
+\vspace{3bp}
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}\left[a_n\cos\!\left(\frac{cn\pi}Lt\right)+b_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{\textbf{Applying the initial conditions.} The condition \EMim{u(x,0)=f(x)}:}
+\vspace{3bp}
+\EMeq{u(x,0) =\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}Lx =f(x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{\EMim{f(x)} has been set equal to a periodic odd function, so to compute the unknown Fourier coefficients we must regard \EMim{f(x)} as a periodic odd function (with period \EMim{2L}). Then}
+\vspace{3bp}
+\EMeq{a_n =\frac2{2L}\int_{-L}^{L}f(x)\sin\!\left(\frac{2\pi}{2L}nx\right)dx =\frac1L\int_{-L}^{L}f(x)\sin\!\left(\frac{n\pi}Lx\right)dx =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{uncoverenv}<2->
+\EMp{The condition \EMim{u_t(x,0)=g(x)}:}
+\vspace{3bp}
+\EMeq{u_t(x,t) =\sum_{n=1}^{\infty}\left[-a_n\frac{cn\pi}L\sin\!\left(\frac{cn\pi}Lt\right)+b_n\frac{cn\pi}L\cos\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{u_t(x,0) =\sum_{n=1}^{\infty}b_n\frac{cn\pi}L\sin\frac{n\pi}Lx =g(x)\quad \Longrightarrow\quad b_n =\frac2{cn\pi}\int_0^Lg(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}\left[a_n\cos\!\left(\frac{cn\pi}Lt\right)+b_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{a_n =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx,\qquad b_n =\frac2{cn\pi}\int_0^Lg(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Find the solution of the following one-dimensional wave equation.}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =k\sin2x,\qquad u_t(x,0) =0}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since the initial velocity of the vibrating string is zero, \EMim{g(x)=0\Rightarrow b_n=0}. Hence (\EMim{c=1}, \EMim{L=\pi}):}
+\vspace{3bp}
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{cn\pi}Lt\right)\sin\frac{n\pi}Lx =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{a_n =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx =\frac2\pi\int_0^\pi k\sin2x\sin nx\,dx =\begin{cases}0&n\neq2\\ k&n=2\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{u(x,t) =k\sin2x\cos2t}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.361}{m04-mode2}{The second mode of the string: \EMim{u(x,t)=k\sin2x\cos2t} at different times}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Find the solution of the following one-dimensional wave equation.}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =f(x),\qquad u_t(x,0) =0}
+\EMgap
+\EMp{where \EMim{f(x)} is the triangular function: \EMim{f(x)=\dfrac kax} for \EMim{0\le x\le a} and \EMim{f(x)=\dfrac k{a-\pi}(x-\pi)} for \EMim{a\le x\le\pi}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{\EMim{u_t(x,0)=g(x)=0\Rightarrow b_n=0} and}
+\vspace{3bp}
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx+\frac2\pi\int_a^\pi\frac k{a-\pi}(x-\pi)\sin nx\,dx\\
+&=\frac{2k}{a\pi}\left[x\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_0^a+\frac{2k}{(a-\pi)\pi}\left[(x-\pi)\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_a^\pi\\
+&=\cdots=\frac{2k\sin na}{an^2(\pi-a)}
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{u(x,t) =\frac{2k}{a(\pi-a)}\sum_{n=1}^{\infty}\frac{\sin na}{n^2}\cos nt\,\sin nx}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{95.1bp}{\uncover<3->{\EMfigure{1.381}{m04-triangle}{The triangular initial profile \EMim{f(x)} with peak value \EMim{k} at \EMim{x=a}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Find the solution of the following one-dimensional wave equation.}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =kx(\pi-x),\qquad u_t(x,0) =0}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{\EMim{g(x)=0\Rightarrow b_n=0} and}
+\vspace{3bp}
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{a_n =\frac2\pi\int_0^\pi kx(\pi-x)\sin nx\,dx =\frac{2k}\pi\Big[(-x^2+\pi x)\Big(\frac{-1}n\cos nx\Big)-(-2x+\pi)\Big(\frac{-1}{n^2}\sin nx\Big)+(-2)\Big(\frac1{n^3}\cos nx\Big)\Big]_0^\pi \\[4pt] =\cdots =\frac{4k\big(1-(-1)^n\big)}{\pi n^3}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{u(x,t) =\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.381}{m04-parabola}{The parabolic initial profile \EMim{f(x)=kx(\pi-x)}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Solving the One-Dimensional Wave Equation (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{Find the ratio \EMim{\dfrac{a_1^2}{a_1^2+a_2^2+\cdots}}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{Plot the ratio \EMim{\dfrac{a_{2n-1}}{a_{2n+1}}} as a function of \EMim{n\in\mathbb{N}}.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Method of Separation of Variables: Examples}
+\begin{EMbox}{ex}{1}{}
+\EMp{Solve the following differential equation by separation of variables: \EMim{xu_x=yu_y}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{x\frac{\partial u}{\partial x} =y\frac{\partial u}{\partial y},\qquad u(x,y) =X(x)\cdot Y(y)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{xX'Y =yXY'\  \Rightarrow\ \frac{xX'}X =\frac{yY'}Y =k}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{X'}X =\frac kx\  \Rightarrow\ \ln X =k\ln x+c_1\  \Rightarrow\ X(x) =C_1x^k,\qquad \frac{Y'}Y =\frac ky\  \Rightarrow\ \ln Y =k\ln y+c_2\  \Rightarrow\ Y(y) =C_2y^k}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{u(x,y) =X(x)Y(y) =C_1x^kC_2y^k =C(xy)^k}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Method of Separation of Variables: Examples (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Solve the following differential equation by separation of variables: \EMim{u_{xx}+u_{yy}=0}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{u(x,y) =X(x)\cdot Y(y)\  \Rightarrow\ X''Y+XY'' =0\  \Rightarrow\ \frac{X''}X =-\frac{Y''}Y =k}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{cases}X''-kX=0\ \Rightarrow\ X(x)=Ae^{\sqrt kx}+Be^{-\sqrt kx}\\ Y''+kY=0\ \Rightarrow\ Y(y)=Ce^{\sqrt{-k}\,y}+De^{-\sqrt{-k}\,y}\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{u(x,y) =X(x)Y(y) =\big(Ae^{\sqrt kx}+Be^{-\sqrt kx}\big)\big(Ce^{\sqrt{-k}\,y}+De^{-\sqrt{-k}\,y}\big)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Method of Separation of Variables: Examples (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Solve the following differential equation by separation of variables: \EMim{x^2u_{xy}=-3y^2u}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{x^2\frac{\partial^2u}{\partial x\partial y}+3y^2u =0,\qquad u(x,y) =X(x)\cdot Y(y)\  \Rightarrow\ x^2X'Y'+3y^2XY =0\  \Rightarrow\ \frac{x^2X'}X =\frac{-3y^2Y}{Y'} =k}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{X'}X =\frac k{x^2}\  \Rightarrow\ \ln X =\frac{-k}x+c_1\  \Rightarrow\ X(x) =C_1e^{-k/x}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{Y'}Y =\frac{-3y^2}k\  \Rightarrow\ \ln Y =-\frac{y^3}k+c_2\  \Rightarrow\ Y(y) =C_2e^{-y^3/k}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{u(x,y) =X(x)Y(y) =C_1e^{-k/x}\times C_2e^{-y^3/k} =Ce^{-(k/x+y^3/k)}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The One-Dimensional Wave Equation with Nonzero Boundary Values}
+\begin{EMbox}{ex}{1}{}
+\EMp{Find the solution of the following one-dimensional wave equation.}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =P_0,\quad u(L,t) =P_1,\quad u(x,0) =f(x),\quad u_t(x,0) =g(x)}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{u(x,t) =w(x,t)+v(x)\quad \Longrightarrow\quad \begin{cases}w(0,t)+v(0)=P_0\\ w(L,t)+v(L)=P_1\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial^2w}{\partial t^2} =c^2\left(\frac{\partial^2w}{\partial x^2}+\frac{\partial^2v}{\partial x^2}\right)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{We choose \EMim{v(x)} so that the problem for \EMim{w} has homogeneous boundary conditions:}
+\vspace{3bp}
+\EMeq{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=P_0\\ v(L)=P_1\end{cases}\quad \Longrightarrow\quad v(x) =\left(\frac{P_1-P_0}L\right)x+P_0}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{22}
+\begin{frame}{The One-Dimensional Wave Equation with Nonzero Boundary Values (continued)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{\begin{cases}\dfrac{\partial^2w}{\partial t^2}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases}\quad \Longrightarrow\quad w(x,t) =\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{u(x,t) =\underbrace{\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}_{w(x,t)}+\underbrace{\left(\frac{P_1-P_0}L\right)x+P_0}_{v(x)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{The initial condition \EMim{u(x,0)=f(x)}:}
+\vspace{3bp}
+\EMeq{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx =f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\triangleq f_1(x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{A_n =\frac2L\int_0^Lf_1(x)\sin\frac{n\pi}Lx\,dx =\frac2L\int_0^L\left[f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\right]\sin\frac{n\pi}Lx\,dx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{22}
+\begin{frame}{The One-Dimensional Wave Equation with Nonzero Boundary Values (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Find \EMim{B_n} in the cases (a) \EMim{g(x)=0} and (b) \EMim{g(x)} arbitrary.}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{22}
+\begin{frame}{The One-Dimensional Wave Equation with Zero Initial Velocity (Travelling Waves)}
+\begin{uncoverenv}<2->
+\EMp{If the initial velocity is zero (\EMim{g(x)=0}), then}
+\vspace{3bp}
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{cn\pi}Lt\right)\sin\frac{n\pi}Lx,\qquad u(x,0) =\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}Lx =f(x)\equiv\tilde f(x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Using \EMim{\sin\alpha\cos\beta=\frac12\big(\sin(\alpha+\beta)+\sin(\alpha-\beta)\big)}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+u(x,t)&=\sum_{n=1}^{\infty}a_n\frac12\left[\sin\!\left(\frac{n\pi}Lx+\frac{cn\pi}Lt\right)+\sin\!\left(\frac{n\pi}Lx-\frac{cn\pi}Lt\right)\right]\\
+&=\frac12\sum_{n=1}^{\infty}a_n\left[\sin\frac{n\pi}L(x+ct)+\sin\frac{n\pi}L(x-ct)\right]\\
+&=\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x+ct)+\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x-ct)=\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{u(x,t) =\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{19}
+\begin{frame}{The One-Dimensional Wave Equation with Zero Initial Velocity (Travelling Waves) (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{imp}{1}{}
+\begin{uncoverenv}<2->
+\EMp{\EMim{\tilde f} is the odd periodic extension (with period \EMim{2L}) of the initial function \EMim{f}; the solution is the superposition of two waves of half the initial amplitude travelling at speed \EMim{c} in opposite directions.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{115.6bp}{\uncover<3->{\EMfigure{1.138}{m04-traveling}{The odd periodic extension \EMim{\tilde f(x)} and the two waves \EMim{\frac12\tilde f(x+ct)} and \EMim{\frac12\tilde f(x-ct)} travelling in opposite directions}}}
+\end{frame}
+
+\def\EMtitlesize{19}
+\begin{frame}{The One-Dimensional Wave Equation with Zero Initial Velocity (Travelling Waves) (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\EMp{Plot the solution of the following one-dimensional wave equation, assuming zero initial velocity, at different times.}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(L,t) =0,\qquad u(x,0) \\[4pt] =f(x),\qquad u_t(x,0) =0}
+\EMgap
+\EMeq{f(x) =\begin{cases}\dfrac{2k}Lx&0<x<\dfrac L2\\\noalign{\vskip 7mm} \dfrac{2k}L(L-x)&\dfrac L2<x<L\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Plotting \EMim{\frac12\tilde f(x+ct)} and \EMim{\frac12\tilde f(x-ct)} and adding them at the times \EMim{t=0}, \EMim{t=\frac{L}{5c}}, \EMim{t=\frac{2L}{5c}}, \EMim{t=\frac{L}{2c}} and \EMim{t=\frac{3L}{5c}} gives the shape of the solution.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{293.1bp}{\uncover<3->{\EMfigure{1.264}{m04-triangle-time}{The solution of the example at \EMim{t=0}, \EMim{\frac{L}{5c}}, \EMim{\frac{2L}{5c}}, \EMim{\frac{L}{2c}} and \EMim{\frac{3L}{5c}}; at \EMim{t=\frac{L}{2c}} the string is flat}}}
+\end{frame}

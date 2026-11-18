@@ -1,0 +1,476 @@
+\section{The Fourier Integral}
+\def\EMfootchapter{Chapter 3 \ \textbullet\ The Fourier Integral}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 3: The Fourier Integral}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Fourier Analysis of Non-Periodic Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Fourier Integral}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Complex Form of the Fourier Integral (the Fourier Transform)}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Function \EMim{\operatorname{Si}(u)}}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Examples of the Fourier Integral}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Some Properties of the Fourier Integral}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Fourier Analysis of Non-Periodic Functions}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMp{To be able to use Fourier analysis for non-periodic functions, we first regard the function as periodic and then let the period tend to infinity.}
+\end{uncoverenv}
+\EMgap
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\tilde f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{a_0 =\frac1T\int_{-T/2}^{T/2}f(x)\,dx,\qquad a_n =\frac2T\int_{-T/2}^{T/2}f(x)\cos\frac{2\pi}Tnx\,dx,\qquad \\[4pt] b_n =\frac2T\int_{-T/2}^{T/2}f(x)\sin\frac{2\pi}Tnx\,dx}
+\end{uncoverenv}
+\end{minipage}
+\EMside{76.2bp}{\uncover<3->{\EMfigure{1.100}{m03-periodic-extension}{A non-periodic function \EMim{f(x)} and its periodic extension \EMim{\tilde f(x)} with period \EMim{T}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Fourier Analysis of Non-Periodic Functions (continued)}
+\begin{uncoverenv}<2->
+\EMeq{\begin{aligned}
+\tilde f(x)&=\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\sum_{n=1}^{\infty}\Bigg\{\left(\frac2T\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tnt\,dt\right)\cos\frac{2\pi}Tnx\\
+&\qquad+\left(\frac2T\int_{-T/2}^{T/2}f(t)\sin\frac{2\pi}Tnt\,dt\right)\sin\frac{2\pi}Tnx\Bigg\}
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\tilde f(x) =\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\left(\cos\frac{2\pi}Tnt\cos\frac{2\pi}Tnx+\sin\frac{2\pi}Tnt\sin\frac{2\pi}Tnx\right)dt\right\}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\tilde f(x) =\left(\frac1T\int_{-T/2}^{T/2}f(t)\,dt\right)+\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tn(t-x)\,dt\right\}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{To obtain the Fourier analysis of the function \EMim{f(x)} we must let \EMim{T} tend to \textbf{infinity}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Suppose \EMim{f(x)} is an integrable function, so that}
+\vspace{3bp}
+\EMeq{\lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}f(t)\,dt =0}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Fourier Analysis of Non-Periodic Functions (continued)}
+\begin{uncoverenv}<2->
+\EMp{Then}
+\vspace{3bp}
+\EMeq{f(x) =\lim_{T\to\infty}\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tn(t-x)\,dt\right\}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\omega_n\triangleq\frac{2\pi}Tn\quad \Longrightarrow\quad \Delta\omega\triangleq\omega_n-\omega_{n-1} =\frac{2\pi}Tn-\frac{2\pi}T(n-1) =\frac{2\pi}T\quad \Longrightarrow\quad \frac2T =\frac{\Delta\omega}\pi}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\lim_{T\to\infty}\frac1\pi\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\omega_n(t-x)\,dt\right\}\Delta\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{If \EMim{T\to\infty}, then \EMim{\sum_{n=1}^{\infty}\to\int_0^\infty}, \EMim{\Delta\omega\to d\omega} and \EMim{\omega_n\to\omega}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega t\cos\omega x+\sin\omega t\sin\omega x\big)\,dt\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\left\{\cos\omega x\int_{-\infty}^{\infty}\big(f(t)\cos\omega t\big)\,dt+\sin\omega x\int_{-\infty}^{\infty}\big(f(t)\sin\omega t\big)\,dt\right\}d\omega
+\end{aligned}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Fourier Analysis of Non-Periodic Functions (continued)}
+\begin{uncoverenv}<2->
+\EMeq{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt,\qquad B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\quad \Longrightarrow\quad f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Fourier Integral}
+\begin{EMbox}{imp}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\qquad \text{(the Fourier integral; synthesis equation)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt\qquad \text{(the Fourier cosine transform)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\qquad \text{(the Fourier sine transform)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{(the analysis equations)}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{thm}{5}{}
+\begin{uncoverenv}<6->
+\EMp{A sufficient condition for the existence of the Fourier integral of a function \EMim{f(x)} is that the function be piecewise continuous, have right and left derivatives at every point, and be absolutely integrable, i.e.}
+\vspace{3bp}
+\EMeq{\int_{-\infty}^{\infty}|f(x)|\,dx<\infty}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMp{At points of discontinuity, the value of the Fourier integral equals the average of the left and right limits of \EMim{f(x)} at those points.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Form of the Fourier Integral (the Fourier Transform)}
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{The expression \EMim{\displaystyle\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt} is an even function of \EMim{\omega}, hence}
+\vspace{3bp}
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{and the expression \EMim{\displaystyle\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt} is an odd function of \EMim{\omega}, hence}
+\vspace{3bp}
+\EMeq{\frac{-i}{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt\right\}d\omega =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega-\frac i{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt\right\}d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega(t-x)-i\sin\omega(t-x)\big)\,dt\right\}d\omega}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Form of the Fourier Integral (the Fourier Transform) (continued)}
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega(t-x)}\,dt\right\}d\omega =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\right\}e^{i\omega x}\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega x}\,d\omega\qquad \text{(the Fourier integral; synthesis equation)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{F(\omega) =\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\qquad \text{(the Fourier transform; analysis equation)}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<5->
+\EMp{The complex form of the Fourier series (review):}
+\vspace{3bp}
+\EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx}\quad \text{(Fourier series; synthesis equation)},\qquad c_n =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx\quad \\[4pt] \text{(Fourier coefficients; analysis equation)}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Function \EMim{\operatorname{Si}(u)}}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{\operatorname{Si}(x)\triangleq\int_0^x\frac{\sin w}{w}\,dw}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{odd;}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{has finite asymptotic values at infinity.}
+\end{uncoverenv}
+\EMgap
+\EMgap
+\begin{EMbox}{thm}{5}{}
+\begin{uncoverenv}<6->
+\EMeq{\int_0^\infty\frac{\sin\alpha w}{w}\,dw =\begin{cases}\dfrac\pi2&\alpha>0\\\noalign{\vskip 1mm} 0&\alpha=0\\\noalign{\vskip 1mm} -\dfrac\pi2&\alpha<0\end{cases}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{prf}{6}{}
+\begin{uncoverenv}<7->
+\EMp{For \EMim{\alpha=0} the lemma is obvious. With the substitution \EMim{\tau=\alpha w}:}
+\vspace{3bp}
+\EMeq{\int_0^x\frac{\sin\alpha w}{w}\,dw =\int_0^{\alpha x}\frac{\sin\tau}{\frac\tau\alpha}\,\frac{d\tau}{\alpha} =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau =\operatorname{Si}(\alpha x),\qquad \\[4pt] \operatorname{Si}(\alpha x) =-\operatorname{Si}(-\alpha x)}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{119.3bp}{\uncover<5->{\EMfigure{1.159}{m03-si}{The function \EMim{\operatorname{Si}(u)} (solid) and the function \EMim{\dfrac{\sin u}{u}} (dashed)}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Function \EMim{\operatorname{Si}(u)} (continued)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{So it suffices to prove the lemma for positive values of \EMim{\alpha}.}
+\vspace{3bp}
+\EMeq{F(\alpha)\triangleq\int_0^\infty e^{-\alpha t}\frac{\sin t}{t}\,dt,\qquad F(0) =\operatorname{Si}(+\infty) =\;?}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{F'(\alpha) =\int_0^\infty-t\,e^{-\alpha t}\frac{\sin t}t\,dt =-\int_0^\infty e^{-\alpha t}\sin t\,dt =-\left[\frac{e^{-\alpha t}}{1+\alpha^2}\big(-\alpha\sin t-\cos t\big)\right]_0^\infty =\frac{-1}{1+\alpha^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\alpha>0:\quad F(\alpha) =-\tan^{-1}\alpha+C,\qquad F(\alpha\to\infty) =0\quad \Longrightarrow\quad C =F(\infty)+\tan^{-1}\infty =\frac\pi2}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{F(\alpha) =-\tan^{-1}\alpha+\frac\pi2\quad \Longrightarrow\quad F(0) =\operatorname{Si}(+\infty) =\frac\pi2}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral}
+\begin{EMbox}{ex}{1}{}
+\EMp{Express the rectangular pulse below as a Fourier integral.}
+\vspace{3bp}
+\EMeq{f(x) =\begin{cases}1&|x|<1\\ 0&|x|>1\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since \EMim{f(x)} is even, the Fourier sine transform vanishes: \EMim{B(\omega)=0}.}
+\vspace{3bp}
+\EMeq{A(\omega) =\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt =\int_{-1}^{1}\cos\omega t\,dt =\frac2\omega\sin\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\frac2\omega\sin\omega\cos\omega x\,d\omega =\frac1\pi\int_0^\infty\frac1\omega\big[\sin(1-x)\omega+\sin(1+x)\omega\big]\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{=\frac1\pi\left[\int_0^\infty\frac{\sin(1-x)\omega}\omega\,d\omega+\int_0^\infty\frac{\sin(1+x)\omega}\omega\,d\omega\right] =\begin{cases}0&x<-1\\ \frac12&x=-1\\ 1&-1<x<1\\ \frac12&x=1\\ 0&x>1\end{cases}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMp{Note: the value of the Fourier integral at the points of discontinuity (using the lemma above).}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{69.2bp}{\uncover<3->{\EMfigure{1.318}{m03-pulse}{The rectangular pulse \EMim{f(x)=1} for \EMim{|x|<1}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Express the exponential function below as a Fourier integral.}
+\vspace{3bp}
+\EMeq{f(x) =\begin{cases}0&x<0\\ e^{-x}&x>0\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{A(\omega) =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx =\int_0^\infty e^{-x}\cos\omega x\,dx =\frac{e^{-x}}{1+\omega^2}\big(-\cos\omega x+\omega\sin\omega x\big)\Big|_0^\infty =\frac1{1+\omega^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{B(\omega) =\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx =\int_0^\infty e^{-x}\sin\omega x\,dx =\frac{e^{-x}}{1+\omega^2}\big(-\sin\omega x-\omega\cos\omega x\big)\Big|_0^\infty =\frac\omega{1+\omega^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega =\frac1\pi\int_0^\infty\frac{\cos\omega x+\omega\sin\omega x}{1+\omega^2}\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{f(x =0) =\frac1\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega =\frac1\pi\Big[\tan^{-1}\omega\Big]_0^\infty =\frac1\pi\times\frac\pi2 =\frac12}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Express the function below as a Fourier integral.}
+\vspace{3bp}
+\EMeq{f(x) =e^{-|x|}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since \EMim{f(x)} is even, the Fourier sine transform vanishes.}
+\vspace{3bp}
+\EMeq{A(\omega) =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx =2\int_0^\infty e^{-x}\cos\omega x\,dx =\frac{2e^{-x}}{1+\omega^2}\big(-\cos\omega x+\omega\sin\omega x\big)\Big|_0^\infty =\frac2{1+\omega^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{B(\omega) =\int_{-\infty}^{\infty}e^{-|x|}\sin\omega x\,dx =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega =\frac2\pi\int_0^\infty\frac{\cos\omega x}{1+\omega^2}\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{f(x =0) =\frac2\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega =\frac2\pi\Big[\tan^{-1}\omega\Big]_0^\infty =\frac2\pi\times\frac\pi2 =1}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.318}{m03-exp-abs}{The function \EMim{f(x)=e^{-|x|}}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Express the function below as a Fourier integral.}
+\vspace{3bp}
+\EMeq{f(x) =\begin{cases}\sin x&|x|\le\pi\\ 0&|x|>\pi\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since \EMim{f(x)} is odd, the Fourier cosine transform vanishes.}
+\vspace{3bp}
+\EMeq{A(\omega) =\int_{-\pi}^{\pi}\sin x\cos\omega x\,dx =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{B(\omega) =\int_{-\pi}^{\pi}\sin x\sin\omega x\,dx =2\int_0^\pi\sin x\sin\omega x\,dx =\int_0^\pi\big[\cos(1-\omega)x-\cos(1+\omega)x\big]dx \\[4pt] =\left[\frac{\sin(1-\omega)x}{1-\omega}-\frac{\sin(1+\omega)x}{1+\omega}\right]_0^\pi =\frac{2\sin(\omega\pi)}{1-\omega^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega =\frac2\pi\int_0^\infty\frac{\sin(\omega\pi)\sin\omega x}{1-\omega^2}\,d\omega}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.253}{m03-sine-pulse}{The function \EMim{f(x)=\sin x} for \EMim{|x|\le\pi} and zero outside}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Examples of the Fourier Integral (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Express the function below as a Fourier integral.}
+\vspace{3bp}
+\EMeq{f(x) =\begin{cases}x^2&|x|\le a\\ 0&|x|>a\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since \EMim{f(x)} is even, the Fourier sine transform vanishes.}
+\vspace{3bp}
+\EMeq{B(\omega) =\int_{-a}^{a}x^2\sin\omega x\,dx =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{A(\omega) =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx =2\int_0^ax^2\cos\omega x\,dx =2\left[\frac{x^2}\omega\sin\omega x+\frac{2x}{\omega^2}\cos\omega x-\frac2{\omega^3}\sin\omega x\right]_0^a \\[4pt] =2\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\frac2\pi\int_0^\infty\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]\cos\omega x\,d\omega}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Some Properties of the Fourier Integral}
+\begin{uncoverenv}<2->
+\EMp{All the properties follow from the synthesis and analysis equations:}
+\vspace{3bp}
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega,\qquad A(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx,\qquad B(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Time Scaling}
+\begin{uncoverenv}<2->
+\EMeq{f(x)\to f(ax),\quad a\in\mathbb{R}\quad \Longrightarrow\quad \begin{cases}A(\omega)\to\dfrac1{|a|}A\!\left(\dfrac\omega a\right)\\\noalign{\vskip 2mm} B(\omega)\to\dfrac1{|a|}B\!\left(\dfrac\omega a\right)\end{cases}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{prf}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{A_1(\omega) =\int_{-\infty}^{\infty}f(ax)\cos\omega x\,dx\ \ \begin{cases}\underset{u=ax}{\overset{a>0}{=}}\ \displaystyle\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,\frac{du}a=\frac1aA\!\left(\frac\omega a\right)\\\noalign{\vskip 3mm}\underset{u=ax}{\overset{a<0}{=}}\ \displaystyle\int_{+\infty}^{-\infty}f(u)\cos\frac\omega au\,\frac{du}a=-\frac1a\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,du=-\frac1aA\!\left(\frac\omega a\right)\end{cases}\  \\[4pt] \Longrightarrow\ A_1(\omega) =\frac1{|a|}A\!\left(\frac\omega a\right)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Parseval's Identity}
+\begin{uncoverenv}<2->
+\EMeq{\int_{-\infty}^{\infty}f^2(x)\,dx =\frac1\pi\int_0^\infty\big\{A^2(\omega)+B^2(\omega)\big\}\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{prf}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+\int_{-\infty}^{\infty}f^2(x)\,dx&=\int_{-\infty}^{\infty}f(x)\left(\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\right)dx\\
+&=\frac1\pi\int_0^\infty\left\{A(\omega)\left[\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx\right]+B(\omega)\left[\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx\right]\right\}d\omega\\
+&=\frac1\pi\int_0^\infty\big\{A^2(\omega)+B^2(\omega)\big\}\,d\omega
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Time Derivative}
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\quad \Longrightarrow\quad f'(x) =\frac1\pi\int_0^\infty\big\{\omega B(\omega)\cos\omega x-\omega A(\omega)\sin\omega x\big\}\,d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{(using the rule for differentiating an integral:)}
+\vspace{3bp}
+\EMeq{\frac\partial{\partial z}\int_{a(z)}^{b(z)}f(x,z)\,dx =\int_{a(z)}^{b(z)}\frac{\partial f(x,z)}{\partial z}\,dx+f\big(b(z),z\big)\frac{db(z)}{dz}-f\big(a(z),z\big)\frac{da(z)}{dz}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Frequency Derivative}
+\begin{uncoverenv}<2->
+\EMeq{\frac{dA(\omega)}{d\omega} =A'(\omega) =\int_{-\infty}^{\infty}-xf(x)\sin\omega x\,dx\quad \Longrightarrow\quad \int_{-\infty}^{\infty}\big(xf(x)\big)\sin\omega x\,dx =-A'(\omega)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{dB(\omega)}{d\omega} =B'(\omega) =\int_{-\infty}^{\infty}xf(x)\cos\omega x\,dx\quad \Longrightarrow\quad \int_{-\infty}^{\infty}\big(xf(x)\big)\cos\omega x\,dx =B'(\omega)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{xf(x) =\frac1\pi\int_0^\infty\big\{B'(\omega)\cos\omega x-A'(\omega)\sin\omega x\big\}\,d\omega}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Frequency Derivative (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Prove the following identities:}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\cos xw+w\sin xw}{1+w^2}\,dw=\begin{cases}0&x<0\\ \frac\pi2&x=0\\ \pi e^{-x}&x>0\end{cases}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\sin\pi w\,\sin xw}{1-w^2}\,dw=\begin{cases}\dfrac\pi2\sin x&0\le x\le\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{3.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{1-\cos\pi w}{w}\sin xw\,dw=\begin{cases}\dfrac12\pi&0<x<\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{4.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\cos\frac12\pi w}{1-w^2}\cos xw\,dw=\begin{cases}\dfrac12\pi\cos x&0<|x|<\frac12\pi\\\noalign{\vskip 1mm} 0&|x|\ge\frac12\pi\end{cases}}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Frequency Derivative (continued)}
+\begin{EMbox}{exe}{1}{}
+\begin{uncoverenv}<2->
+\EMitem{5.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\sin w-w\cos w}{w^2}\sin xw\,dw=\begin{cases}\dfrac12\pi x&0<x<1\\\noalign{\vskip 1mm} \dfrac14\pi&x=1\\\noalign{\vskip 1mm} 0&x>1\end{cases}}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}

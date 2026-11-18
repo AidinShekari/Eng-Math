@@ -1,0 +1,470 @@
+\section{Complex Functions, the Derivative and the Cauchy--Riemann Conditions}
+\def\EMfootchapter{Chapter 9 \ \textbullet\ Complex Functions, the Derivative and the Cauchy--Riemann Conditions}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 9: Complex Functions, the Derivative and the Cauchy--Riemann Conditions}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Complex Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Some Important Loci}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Limits of Complex Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Continuity of Complex Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Derivative of Complex Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Cauchy--Riemann Conditions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Differentiability of Complex Functions: Examples}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Analytic Complex Functions}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Cauchy--Riemann Conditions in Polar Coordinates}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Complex Functions}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{z =x+iy,\qquad w =u+iv}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f:\mathbb{C}\to\mathbb{C},\qquad f:\begin{cases}u=u(x,y)\\ v=v(x,y)\end{cases}}
+\end{uncoverenv}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.037}{m09-mapping}{A complex function \EMim{w=f(z)} maps points of the domain in the \EMim{z}-plane to points of the range in the \EMim{w}-plane}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Consider the function \EMim{w=z^2}:}
+\vspace{3bp}
+\EMeq{u+iv =(x+iy)^2 =(x^2-y^2)+i(2xy)\quad \Longrightarrow\quad \begin{cases}u=x^2-y^2\\ v=2xy\end{cases}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Some Important Loci}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{|z| =1,\qquad |z-a| =\rho,\qquad |z-a|<\rho,\qquad \\[4pt] \rho_1<|z-a|<\rho_2}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{The set \EMim{|z-a|<\rho} is called the \EMim{\rho}-neighbourhood of \EMim{a}.}
+\end{uncoverenv}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{0.819}{m09-loci}{Important loci: a circle, the \EMim{\rho}-neighbourhood of a point \EMim{a}, and an annular region}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Limits of Complex Functions}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{If for every \EMim{\varepsilon>0} one can find \EMim{\delta>0} such that \EMim{|z-z_0|<\delta} implies \EMim{|f(z)-l|<\varepsilon}, then}
+\vspace{3bp}
+\EMeq{\lim_{z\to z_0}f(z) =l}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Hence for all points inside the circle of centre \EMim{z_0} and radius \EMim{\delta}, \EMim{f(z)} must lie inside the circle of centre \EMim{l} and radius \EMim{\varepsilon}. Here \EMim{\varepsilon} is given and \EMim{\delta(\varepsilon)} has to be found. Clearly the concept of limit here is broader than that for real functions.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{211.6bp}{\uncover<4->{\EMfigure{1.028}{m09-limit}{The definition of the limit: the \EMim{\delta}-neighbourhood of \EMim{z_0} in the \EMim{z}-plane and the \EMim{\varepsilon}-neighbourhood of \EMim{l} in the \EMim{w}-plane}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Continuity of Complex Functions}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{The function \EMim{w=f(z)} is continuous at the point \EMim{z=z_0} if the following three conditions hold:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)} is defined at \EMim{z=z_0}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\lim_{z\to z_0}f(z)} exists.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{3.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\lim_{z\to z_0}f(z)=f(z_0)}.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Continuity of Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Is the function \EMim{f(z)=\sin\frac1z} continuous at \EMim{z=0}?}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Continuity of Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Is the function}
+\vspace{3bp}
+\EMeq{f(z) =\begin{cases}\sin\frac1z&z\neq0\\ 5+4i&z=0\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{continuous at \EMim{z=0}?}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Continuity of Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Is the function}
+\vspace{3bp}
+\EMeq{f(z) =\begin{cases}3z^3+4&z\neq0\\ 17&z=0\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{continuous at \EMim{z=0}?}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Properties of Continuous Complex Functions}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{If \EMim{f(z),g(z)} are continuous at \EMim{z_0}, then \EMim{f(z)\pm g(z)} is continuous at \EMim{z_0}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{If \EMim{f(z),g(z)} are continuous at \EMim{z_0}, then \EMim{f(z)\times g(z)} is continuous at \EMim{z_0}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{3.}{\dimexpr\linewidth-26bp\relax}{If \EMim{f(z),g(z)} are continuous at \EMim{z_0} and \EMim{g(z_0)\neq0}, then \EMim{\dfrac{f(z)}{g(z)}} is continuous at \EMim{z_0}.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{def}{4}{}
+\begin{uncoverenv}<5->
+\EMp{The function \EMim{w=f(z)} is continuous on the domain \EMim{D} if \EMim{f} is continuous at every point of \EMim{D}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{Domain: all the points inside a closed curve.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{217.5bp}{\uncover<7->{\EMfigure{1.500}{m09-domain}{A domain \EMim{D} in the complex plane}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Derivative of Complex Functions}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{The function \EMim{w=f(z)} is differentiable at the point \EMim{z=z_0} if the following limit exists:}
+\vspace{3bp}
+\EMeq{f'(z_0) =\lim_{|\Delta z|\to0}\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{2}{}
+\begin{uncoverenv}<3->
+\EMp{The existence of the derivative of a complex function requires stricter conditions than for real functions: since \EMim{z_0} can be approached from \emph{all} directions in the \EMim{z}-plane, this limit must exist and must not depend on the chosen path towards \EMim{z_0}.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{217.5bp}{\uncover<4->{\EMfigure{1.500}{m09-approach}{Approaching the point \EMim{z_0} from all directions}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{A necessary condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold:}
+\vspace{3bp}
+\EMeq{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad w =u+iv =f(x+iy) =f(z)}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{prf}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{f'(z) =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z},\qquad z =x+iy,\qquad \Delta z =\Delta x+i\Delta y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\begin{aligned}
+f(z+\Delta z)-f(z)&=\big[u(x+\Delta x,y+\Delta y)+iv(x+\Delta x,y+\Delta y)\big]-\big[u(x,y)+iv(x,y)\big]\\
+&=\big[u(x+\Delta x,y+\Delta y)-u(x,y)\big]+i\big[v(x+\Delta x,y+\Delta y)-v(x,y)\big]
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{f(z+\Delta z)-f(z)}{\Delta z} =\frac{u(x+\Delta x,y+\Delta y)-u(x,y)}{\Delta x+i\Delta y}+i\,\frac{v(x+\Delta x,y+\Delta y)-v(x,y)}{\Delta x+i\Delta y}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions (continued)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{A necessary condition for the existence of the derivative of \EMim{w=f(z)} is that the value of the limit defining \EMim{f'(z)} does not change if we approach \EMim{z} from any direction (in particular along the horizontal or the vertical direction).}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\textbf{Path 1: the vertical direction.} \EMim{\Delta z=\Delta x+i\Delta y} with \EMim{\Delta x=0}, i.e.~\EMim{\Delta z=i\Delta y}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta y\to0}\left[\frac{u(x,y+\Delta y)-u(x,y)}{i\Delta y}+i\,\frac{v(x,y+\Delta y)-v(x,y)}{i\Delta y}\right]\\
+&=\frac1i\,\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}=\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y}
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions (continued)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{\textbf{Path 2: the horizontal direction.} \EMim{\Delta z=\Delta x+i\Delta y} with \EMim{\Delta y=0}, i.e.~\EMim{\Delta z=\Delta x}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta x\to0}\left[\frac{u(x+\Delta x,y)-u(x,y)}{\Delta x}+i\,\frac{v(x+\Delta x,y)-v(x,y)}{\Delta x}\right]\\
+&=\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Therefore}
+\vspace{3bp}
+\EMeq{f'(z) =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y} =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{and equating real and imaginary parts:}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial v}{\partial y},\qquad \frac{\partial u}{\partial y} =-\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{3}{}
+\begin{uncoverenv}<4->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{If these conditions do not hold, the derivative does not exist at the point \EMim{z}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{The following ways of computing the derivative are suggested:}
+\vspace{3bp}
+\EMeq{f'(z) =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z} =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y} \\[4pt] =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =\frac{\partial u}{\partial x}-i\,\frac{\partial u}{\partial y} =\frac{\partial v}{\partial y}+i\,\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{thm}{5}{}
+\begin{uncoverenv}<6->
+\EMp{A sufficient condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMp{The proof is beyond the scope of this class.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.077}{m09-cr-paths}{Two paths towards \EMim{z}: the vertical direction (\EMim{\Delta z=i\Delta y}) and the horizontal direction (\EMim{\Delta z=\Delta x})}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions (continued)}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{A necessary and sufficient condition for the complex function \EMim{w=f(z)} to be differentiable is that the Cauchy--Riemann conditions hold.}
+\vspace{3bp}
+\EMeq{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad w =u+iv =f(x+iy) =f(z)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{23}
+\begin{frame}{A Consequence of the Cauchy--Riemann Conditions (Analyticity of a Function)}
+\begin{uncoverenv}<2->
+\EMp{Differentiating the Cauchy--Riemann conditions with respect to \EMim{x} and \EMim{y}:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\left.\begin{aligned}\frac{\partial^2u}{\partial x^2}&=\frac{\partial^2v}{\partial x\partial y}\\[1mm] \frac{\partial^2u}{\partial y^2}&=-\frac{\partial^2v}{\partial x\partial y}\end{aligned}\right\}\ \xrightarrow{\ \text{add}\ }\ \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\left.\begin{aligned}\frac{\partial^2u}{\partial x\partial y}&=\frac{\partial^2v}{\partial y^2}\\[1mm] \frac{\partial^2u}{\partial x\partial y}&=-\frac{\partial^2v}{\partial x^2}\end{aligned}\right\}\ \xrightarrow{\ \text{subtract}\ }\ \frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2} =0}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{rem}{4}{}
+\begin{uncoverenv}<5->
+\EMp{The real and imaginary parts of an analytic function satisfy the two-dimensional Laplace equation.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Differentiability of Complex Functions: Examples}
+\begin{EMbox}{ex}{1}{}
+\EMp{Consider the function \EMim{w=z^2}; is it analytic?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{w =f(z) =z^2 =(x+iy)^2 =(x^2-y^2)+i\,2xy,\qquad u(x,y) =x^2-y^2,\qquad v(x,y) =2xy}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =2x =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =-2y =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f'(z) =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =2x+i\,2y =2(x+iy) =2z}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\nabla^2u =2-2 =0,\qquad \nabla^2v =0+0 =0}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Differentiability of Complex Functions: Examples (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Consider the function \EMim{w=|z|^2}; is it analytic?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{w =f(z) =|z|^2 =(x+iy)(x-iy) =x^2+y^2,\qquad u(x,y) =x^2+y^2,\qquad v(x,y) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =2x,\quad \frac{\partial v}{\partial y} =0,\qquad \frac{\partial u}{\partial y} =2y,\quad -\frac{\partial v}{\partial x} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\nabla^2u =2+2 =4,\qquad \nabla^2v =0+0 =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{Analytic nowhere except at the origin.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Differentiability of Complex Functions: Examples (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Determine whether each of the following functions is analytic. When it is, find its derivative.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=\bar z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=\operatorname{Re}\{z\}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{3.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=z^3+2z^2+3i}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Analytic Complex Functions}
+\begin{EMbox}{ex}{1}{}
+\EMp{\EMim{u=x^2-y^2} is the real part of an analytic function \EMim{f(z)}. Find \EMim{f(z)}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Since \EMim{f(z)} is analytic, its real and imaginary parts satisfy the Cauchy--Riemann conditions, and consequently they must also satisfy the two-dimensional Laplace equation.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{First check whether the real part satisfies the two-dimensional Laplace equation:}
+\vspace{3bp}
+\EMeq{\nabla^2u =\frac{\partial^2}{\partial x^2}(x^2-y^2)+\frac{\partial^2}{\partial y^2}(x^2-y^2) =2-2 =0\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{We use the Cauchy--Riemann relations:}
+\vspace{3bp}
+\EMeq{\frac{\partial u}{\partial x} =2x =\frac{\partial v}{\partial y}\quad \Longrightarrow\quad v(x,y) =2xy+\varphi(x)}
+\vspace{3bp}
+\EMeq{-\frac{\partial v}{\partial x} =-2y-\varphi'(x) =\frac{\partial u}{\partial y} =-2y\quad \Longrightarrow\quad \varphi'(x) =0\quad \Longrightarrow\quad \varphi(x) =c,\ \ c\in\mathbb{R}}
+\vspace{3bp}
+\EMeq{f(z) =(x^2-y^2)+i(2xy+c) =z^2+C}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Analytic Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Let \EMim{u=\cos x\cosh y}.
+(a) Show that this function is harmonic in the plane (\EMim{\nabla^2u=0}).
+(b) Find \EMim{v(x,y)} such that \EMim{u+iv} is analytic.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{1.}{\dimexpr\linewidth-26bp\relax}{Check whether the real part satisfies the two-dimensional Laplace equation:}
+\vspace{3bp}
+\EMeq{\nabla^2u =\frac{\partial^2}{\partial x^2}(\cos x\cosh y)+\frac{\partial^2}{\partial y^2}(\cos x\cosh y) =-\cos x\cosh y+\cos x\cosh y =0\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{2.}{\dimexpr\linewidth-26bp\relax}{We use the Cauchy--Riemann relations:}
+\vspace{3bp}
+\EMeq{\frac{\partial u}{\partial x} =-\sin x\cosh y =\frac{\partial v}{\partial y}\quad \Longrightarrow\quad v(x,y) =-\sin x\sinh y+\varphi(x)}
+\vspace{3bp}
+\EMeq{-\frac{\partial v}{\partial x} =\cos x\sinh y-\varphi'(x) =\frac{\partial u}{\partial y} =\cos x\sinh y\quad \Longrightarrow\quad \varphi'(x) =0}
+\vspace{3bp}
+\EMeq{\varphi(x) =c,\ \ c\in\mathbb{R}\quad \Longrightarrow\quad v(x,y) =-\sin x\sinh y+c}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions in Polar Coordinates}
+\begin{uncoverenv}<2->
+\EMeq{\begin{cases}x=r\cos\theta\\ y=r\sin\theta\end{cases}\qquad \begin{cases}r=\sqrt{x^2+y^2}\\ \theta=\tan^{-1}\dfrac{y}{x}\end{cases}\qquad r_x =\frac{x}{r},\quad \theta_x =\frac{-y}{r^2},\quad r_y =\frac{y}{r},\quad \theta_y =\frac{x}{r^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial u}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial u}{\partial\theta}\frac{\partial\theta}{\partial x} =\frac xr\frac{\partial u}{\partial r}-\frac{y}{r^2}\frac{\partial u}{\partial\theta} =\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{\partial v}{\partial y} =\frac{\partial v}{\partial r}\frac{\partial r}{\partial y}+\frac{\partial v}{\partial\theta}\frac{\partial\theta}{\partial y} =\frac yr\frac{\partial v}{\partial r}+\frac{x}{r^2}\frac{\partial v}{\partial\theta} =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial v}{\partial y}\; \Longrightarrow\;\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta} =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{Similarly}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{\frac{\partial u}{\partial y} =-\frac{\partial v}{\partial x}\; \Longrightarrow\;\sin\theta\frac{\partial u}{\partial r}+\frac1r\cos\theta\frac{\partial u}{\partial\theta} =-\cos\theta\frac{\partial v}{\partial r}+\frac1r\sin\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{7}{}
+\begin{uncoverenv}<8->
+\EMeq{\frac{\partial u}{\partial r} =\frac1r\frac{\partial v}{\partial\theta},\qquad -\frac1r\frac{\partial u}{\partial\theta} =\frac{\partial v}{\partial r}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Cauchy--Riemann Conditions in Polar Coordinates (continued)}
+\begin{EMbox}{exe}{1}{\textbf{Exercise 9.20}}
+\EMp{Using the Cauchy--Riemann conditions in polar form, prove that \EMim{u} and \EMim{v} satisfy Laplace's equation in polar form, i.e.}
+\vspace{3bp}
+\EMeq{\nabla^2u =u_{rr}+\frac1{r^2}u_{\theta\theta}+\frac1ru_r =0,\qquad \nabla^2v =v_{rr}+\frac1{r^2}v_{\theta\theta}+\frac1rv_r =0}
+\end{EMbox}
+\end{frame}

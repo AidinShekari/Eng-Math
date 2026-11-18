@@ -1,0 +1,260 @@
+\section{Properties of Fourier Series, Parseval's Theorem and the Complex Form}
+\def\EMfootchapter{Chapter 2 \ \textbullet\ Properties of Fourier Series, Parseval's Theorem and the Complex Form}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 2: Properties of Fourier Series, Parseval's Theorem and the Complex Form}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Approximating a Periodic Function by a Finite Trigonometric Series}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Differentiation and Integration of Fourier Series}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Rayleigh's Theorem}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Parseval's Theorem}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Complex Form of the Fourier Series}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Approximating a Periodic Function by a Finite Trigonometric Series}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{For an \EMim{N}-term approximation of a periodic function \EMim{f(x)} by a series of sines and cosines, the best coefficients (in the MMSE sense) are the Fourier series coefficients.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<3->
+\EMp{Consider a periodic function with period \EMim{2\pi}:}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos nx+b_n\sin nx,\qquad f(x) =f(x+2\pi)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{The \EMim{N}-term trigonometric approximation:}
+\vspace{3bp}
+\EMeq{f(x) \approx a_0+\sum_{n=1}^{N}a_n\cos nx+b_n\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{Is the following trigonometric approximation not \textbf{better}?}
+\vspace{3bp}
+\EMeq{F(x)\triangleq\alpha_0+\sum_{n=1}^{N}\alpha_n\cos nx+\beta_n\sin nx}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{23}
+\begin{frame}{Approximating a Periodic Function by a Finite Trigonometric Series (continued)}
+\begin{uncoverenv}<2->
+\EMp{What is the \textbf{criterion} for an approximation being better? One criterion: the error function:}
+\vspace{3bp}
+\EMeq{E(x) =\big|f(x)-F(x)\big| =\left|f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right|}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{A good criterion: the mean squared error:}
+\vspace{3bp}
+\EMeq{D\triangleq\int_{-\pi}^{\pi}E^2(x)\,dx =\int_{-\pi}^{\pi}\left|f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right|^2dx}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{prf}{3}{}
+\begin{uncoverenv}<4->
+\EMp{For the best approximation we minimize the mean squared error. This is done by differentiating \EMim{D} with respect to the coefficients of the trigonometric series and setting these derivatives equal to zero. In other words:}
+\vspace{3bp}
+\EMeq{\frac{\partial D}{\partial\alpha_0} =-2\int_{-\pi}^{\pi}\left[f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right]dx =0}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{23}
+\begin{frame}{Approximating a Periodic Function by a Finite Trigonometric Series (continued)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{\int_{-\pi}^{\pi}f(x)\,dx =\int_{-\pi}^{\pi}\left[\alpha_0+\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right]dx =2\pi\alpha_0\quad \Longrightarrow\quad \alpha_0 =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx =a_0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial D}{\partial\alpha_m} =0\quad \Longrightarrow\quad \alpha_m =\frac1\pi\int_{-\pi}^{\pi}f(x)\cos mx\,dx =a_m}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{\partial D}{\partial\beta_m} =0\quad \Longrightarrow\quad \beta_m =\frac1\pi\int_{-\pi}^{\pi}f(x)\sin mx\,dx =b_m}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{The best finite trigonometric approximation of a periodic function is the finite Fourier series.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Differentiation and Integration of Fourier Series}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{If \EMim{f(x)} is periodic with period \EMim{T}, continuous and has a Fourier series, then its derivative is also periodic, and its Fourier series is obtained by differentiating the Fourier series of the function.}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\Longrightarrow\quad f'(x) =\sum_{n=1}^{\infty}\left(\frac{2\pi}Tnb_n\right)\cos\frac{2\pi}Tnx+\left(-\frac{2\pi}Tna_n\right)\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{thm}{3}{}
+\begin{uncoverenv}<4->
+\EMp{If \EMim{f(x)} is periodic with period \EMim{T} and has a Fourier series, then the definite integral of this function can be computed by integrating the Fourier series of the function.}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Differentiation and Integration of Fourier Series (continued)}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{\Longrightarrow\quad \int_0^xf(t)\,dt =a_0x+\sum_{n=1}^{\infty}\left(\frac T{2\pi n}a_n\sin\frac{2\pi}Tnx-\frac T{2\pi n}b_n\cos\frac{2\pi}Tnx+\frac T{2\pi n}b_n\right)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Rayleigh's Theorem}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{If the functions \EMim{f(x)} and \EMim{g(x)} are periodic with period \EMim{T} and their Fourier series exist as}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{g(x) =\alpha_0+\sum_{n=1}^{\infty}\alpha_n\cos\frac{2\pi}Tnx+\beta_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{then}
+\vspace{3bp}
+\EMeq{\frac2T\int_Tf(x)\,\overline{g(x)}\,dx =2a_0\overline{\alpha_0}+\sum_{n=1}^{\infty}a_n\overline{\alpha_n}+b_n\overline{\beta_n}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Rayleigh's Theorem (continued)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{Proof, assuming \EMim{g(x)} is real:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+\frac2T\int_Tf(x)g(x)\,dx&=\frac2T\int_Tf(x)\left(\alpha_0+\sum_{n=1}^{\infty}\alpha_n\cos\frac{2\pi}Tnx+\beta_n\sin\frac{2\pi}Tnx\right)dx\\
+&=\frac2T\int_Tf(x)\alpha_0\,dx+\sum_{n=1}^{\infty}\frac2T\int_Tf(x)\left(\alpha_n\cos\frac{2\pi}Tnx+\beta_n\sin\frac{2\pi}Tnx\right)dx\\
+&=\underbrace{\frac2T\int_Tf(x)\,dx}_{2a_0}\,\alpha_0+\sum_{n=1}^{\infty}\underbrace{\frac2T\int_Tf(x)\cos\frac{2\pi}Tnx\,dx}_{a_n}\,\alpha_n+\underbrace{\frac2T\int_Tf(x)\sin\frac{2\pi}Tnx\,dx}_{b_n}\,\beta_n\\
+&=2a_0\alpha_0+\sum_{n=1}^{\infty}a_n\alpha_n+b_n\beta_n
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Parseval's Theorem}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{If the function \EMim{f(x)} is periodic with period \EMim{T} and its Fourier series exists as}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{then}
+\vspace{3bp}
+\EMeq{\frac2T\int_T|f(x)|^2\,dx =2|a_0|^2+\sum_{n=1}^{\infty}\big(|a_n|^2+|b_n|^2\big)}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{prf}{3}{}
+\begin{uncoverenv}<4->
+\EMp{In Rayleigh's identity, replacing \EMim{g(x)} by \EMim{f(x)} gives Parseval's identity.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<5->
+\EMp{By Parseval's identity, the power of the function \EMim{f(x)} can be obtained from the Fourier coefficients. If the function is expressed by an \EMim{N}-term approximation of sines and cosines, then by the relation above the power of the approximating function is less than the power of \EMim{f(x)}, and we have:}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Parseval's Theorem (continued)}
+\begin{EMbox}{imp}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{\frac2T\int_T|f(x)|^2\,dx\ \ge\ 2|a_0|^2+\sum_{n=1}^{N}\big(|a_n|^2+|b_n|^2\big)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Parseval's Theorem (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{For the function \EMim{f(x)} below, how many terms of the Fourier series are needed for at least 94 percent of the power to remain in the approximating function?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\sum_{n=1}^{\infty}\frac{2k}{n\pi}(1-\cos n\pi)\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac2T\int_T|f(x)|^2\,dx =\frac1\pi\int_{-\pi}^{\pi}k^2\,dx =\frac2\pi\big[k^2x\big]_0^\pi =2k^2}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{\displaystyle\sum_{n=1}^{N}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2}\ge0.94}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{\displaystyle\sum_{n=1}^{7}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9496,\qquad \frac{\displaystyle\sum_{n=1}^{5}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9331\quad \Longrightarrow\quad N =7}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Parseval's Theorem (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.119}{m02-power-example}{The square wave \EMim{\pm k} with period \EMim{2\pi} used in the power example}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Form of the Fourier Series}
+\begin{uncoverenv}<2->
+\EMp{Suppose \EMim{f(x)} is periodic and, merely for simplicity, has period \EMim{2\pi}. Then}
+\vspace{3bp}
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos nx+b_n\sin nx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Using Euler's formula \EMim{e^{ix}=\cos x+i\sin x}:}
+\vspace{3bp}
+\EMeq{\cos nx =\frac{e^{inx}+e^{-inx}}2,\qquad \sin nx =\frac{e^{inx}-e^{-inx}}{2i},\qquad \frac1i =-i}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\left(\frac{e^{inx}+e^{-inx}}2\right)+b_n\left(\frac{e^{inx}-e^{-inx}}{2i}\right) =\underbrace{a_0}_{c_0}+\sum_{n=1}^{\infty}\underbrace{\left(\frac{a_n-ib_n}2\right)}_{c_n}e^{inx}+\underbrace{\left(\frac{a_n+ib_n}2\right)}_{c_{-n}}e^{-inx}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{c_n =\frac{a_n-ib_n}2 =\frac12\left\{\frac1\pi\int_{2\pi}f(x)\cos nx\,dx-i\frac1\pi\int_{2\pi}f(x)\sin nx\,dx\right\} =\frac1{2\pi}\int_{2\pi}f(x)\big(\cos nx-i\sin nx\big)\,dx \\[4pt] =\frac1{2\pi}\int_{2\pi}f(x)e^{-inx}\,dx}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Form of the Fourier Series (continued)}
+\begin{uncoverenv}<2->
+\EMeq{c_{-n} =\frac{a_n+ib_n}2 =\frac1{2\pi}\int_{2\pi}f(x)\big(\cos nx+i\sin nx\big)\,dx =\frac1{2\pi}\int_{2\pi}f(x)e^{inx}\,dx}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{inx},\qquad c_n =\frac1{2\pi}\int_{2\pi}f(x)e^{-inx}\,dx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{For an arbitrary period:}
+\vspace{3bp}
+\EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx},\qquad c_n =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac1T\int_T|f(x)|^2\,dx =\sum_{n=-\infty}^{\infty}|c_n|^2}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}

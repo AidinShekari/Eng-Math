@@ -1,0 +1,156 @@
+\section{Evaluating Definite Integrals by Residues}
+\def\EMfootchapter{Chapter 14 \ \textbullet\ Evaluating Definite Integrals by Residues}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 14: Evaluating Definite Integrals by Residues}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Integrals of the First Class}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Integrals of the Second Class}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Evaluating Definite Integrals by Residues}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{If the function \EMim{f(z)} is analytic everywhere inside the path \EMim{C} except at the points \EMim{z_1,z_2,\dots,z_n}, and the residues of the function at these points are \EMim{A_1^1,A_1^2,\dots,A_1^n} respectively, then}
+\vspace{3bp}
+\EMeq{\oint_Cf(z)\,dz =2\pi i\sum_{k=1}^{n}A_1^k}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<3->
+\EMp{Many different kinds of integrals can be solved by the method of residues. Two classes of them are mentioned here:}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{def}{3}{}
+\begin{uncoverenv}<4->
+\EMp{In these integrals the denominator of the integrand is a polynomial, and the numerator is a polynomial, an exponential, or a sine or cosine function (which can also be expressed exponentially).}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{def}{4}{}
+\begin{uncoverenv}<5->
+\EMp{In these integrals the integrand is a function of sine or cosine.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the First Class}
+\begin{EMbox}{ex}{1}{}
+\EMp{Evaluate the integral \EMim{\displaystyle\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx} (\EMim{\omega>0}).}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{Consider the function \EMim{f(z)=\dfrac{e^{i\omega z}}{(1+z^2)^2}}. It is not analytic at \EMim{z=i} and \EMim{z=-i}. The path \EMim{C} is the upper semicircle of radius \EMim{R}.}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz&=2\pi i\times\operatorname{Res}\left\{\frac{e^{i\omega z}}{(1+z^2)^2}\right\}\Bigg|_{z=i}\\
+&=2\pi i\times\left[\frac d{dz}\left\{(z-i)^2\,\frac{e^{i\omega z}}{(z-i)^2(z+i)^2}\right\}\right]_{z=i}\\
+&=2\pi i\times\left[\frac{i\omega e^{i\omega z}(z+i)-2e^{i\omega z}}{(z+i)^3}\right]_{z=i}\\
+&=2\pi i\times e^{-\omega}\left(\frac{i\omega(2i)-2}{(2i)^3}\right)\\
+&=2\pi i\times e^{-\omega}\,\frac{\omega+1}{4i}=\frac\pi2(\omega+1)e^{-\omega}
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the First Class (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMp{On the other hand}
+\vspace{3bp}
+\EMeq{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz =\int_{-R}^{R}\frac{e^{i\omega x}}{(1+x^2)^2}\,dx+\int_0^\pi\frac{e^{i\omega Re^{it}}\,Rie^{it}}{(1+R^2e^{i2t})^2}\,dt}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{and as \EMim{R\to\infty} the integral along the semicircle vanishes, while the imaginary part of the integral along the real axis (the odd function \EMim{\dfrac{\sin\omega x}{(1+x^2)^2}}) is zero:}
+\vspace{3bp}
+\EMeq{\oint_C\frac{e^{i\omega z}}{(1+z^2)^2}\,dz\ \xrightarrow{\ R\to\infty\ }\ 2\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\int_0^\infty\frac{\cos\omega x}{(1+x^2)^2}\,dx =\frac\pi4(\omega+1)e^{-\omega}}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{145.8bp}{\uncover<5->{\EMfigure{1.500}{m14-semicircle}{The upper semicircular path; the double pole \EMim{z=i} lies inside the path and \EMim{z=-i} outside it}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the Second Class}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{\int_0^{2\pi}f(a\cos t,\,b\sin t)\,dt}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{To solve such integrals we put \EMim{z=e^{it}}. Then}
+\vspace{3bp}
+\EMeq{dz =ie^{it}\,dt\; \Longrightarrow\;dt =\frac{dz}{ie^{it}} =\frac{dz}{iz}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\sin t =\frac{e^{it}-e^{-it}}{2i} =\frac{z-z^{-1}}{2i},\qquad \cos t =\frac{e^{it}+e^{-it}}2 =\frac{z+z^{-1}}2}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{4}{}
+\begin{uncoverenv}<5->
+\EMeq{\int_0^{2\pi}f(a\cos t,\,b\sin t)\,dt =\oint_Cf\!\left(a\,\frac{z+z^{-1}}{2},\;b\,\frac{z-z^{-1}}{2i}\right)\frac{dz}{iz}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<6->
+\EMp{Here \EMim{C} is the unit circle, and the integral is easily solved with the method of residues.}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{206.8bp}{\uncover<7->{\EMfigure{1.500}{m14-unit-circle}{The unit circle \EMim{z=e^{it}}, \EMim{0\le t\le2\pi}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the Second Class (continued)}
+\begin{EMbox}{ex}{1}{}
+\EMp{Evaluate the integral \EMim{\displaystyle\int_0^{2\pi}\frac1{2+\cos x}\,dx}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{z =e^{ix},\qquad dz =ie^{ix}dx,\qquad dx =\frac{dz}{iz},\qquad \cos x =\frac{z+z^{-1}}2 =\frac{z^2+1}{2z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{2+\cos x =2+\frac{z^2+1}{2z} =\frac{z^2+4z+1}{2z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\int_0^{2\pi}\frac1{2+\cos x}\,dx =\oint_C\frac{2z}{z^2+4z+1}\,\frac{dz}{iz} =\frac2i\oint_C\frac1{z^2+4z+1}\,dz =\frac2i\times2\pi i\times\sum_k\operatorname{Res}\left\{\frac1{z^2+4z+1}\right\}\Bigg|_{z=z_k}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{z^2+4z+1 =0\; \Longrightarrow\;z_1 =-2+\sqrt3 \approx-0.27,\qquad z_2 =-2-\sqrt3 \approx-3.73}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{Only \EMim{z_1} lies inside the unit circle.}
+\vspace{3bp}
+\EMeq{\int_0^{2\pi}\frac1{2+\cos x}\,dx =4\pi\times\operatorname{Res}\left\{\frac1{z^2+4z+1}\right\}\Bigg|_{z=z_1} =4\pi\left[\big(z+2-\sqrt3\big)\frac1{\big(z+2-\sqrt3\big)\big(z+2+\sqrt3\big)}\right]_{z_1=-2+\sqrt3} =\frac{2\pi}{\sqrt3}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the Second Class (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m14-poles-cos}{The unit circle and the poles \EMim{z_1\approx-0.27} (inside) and \EMim{z_2\approx-3.73} (outside)}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Integrals of the Second Class (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Using the residue theorem, evaluate the following definite integrals:}
+\vspace{3bp}
+\EMeq{I_1 =\int_0^{2\pi}\frac{dt}{1-2p\cos t+p^2},\qquad I_2 =\int_{-\infty}^{\infty}\frac{\sin2x}{x^2+x+1}\,dx}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{I_3 =\int_{-\infty}^{\infty}\frac{x}{(x^2-2x+2)^2}\,dx,\qquad I_4 =\int_{-\infty}^{\infty}\frac{\cos^4x}{(x^2+1)(x^2+4)}\,dx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}

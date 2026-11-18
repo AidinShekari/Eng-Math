@@ -1,0 +1,77 @@
+% ============================================================
+%  Engineering Mathematics — Beamer look of the slide decks (main-fa.tex, main-en.tex)
+%  A white 960 x 540 bp slide (16:9), a light title bar at the top of every frame,
+%  pastel boxes (after the instructor's slides).  The same geometry as the PowerPoint files.
+% ============================================================
+\geometry{paperwidth=960bp,paperheight=540bp}
+\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=40bp,text margin right=40bp}
+\setbeamercovered{invisible}
+\setbeamercolor{normal text}{fg=EMink,bg=white}
+\setbeamercolor{frametitle}{fg=SLtitle}
+% direction-dependent styles (the reading start side is the right one in Persian)
+\ifEMrtl
+  \tikzset{EMbarshade/.style={right color=SLbar,left color=SLbar!35!white},
+    EMstart/.style={anchor=east},EMend/.style={anchor=west}}
+  \def\EMstartx{-38bp}\def\EMstartside{east}\def\EMendside{west}\def\EMfootx{-40bp}\def\EMfootxe{40bp}
+  \tcbset{EMside/.style={borderline east={5bp}{0bp}{#1},left=12bp,right=17bp}}
+\else
+  \tikzset{EMbarshade/.style={left color=SLbar,right color=SLbar!35!white},
+    EMstart/.style={anchor=west},EMend/.style={anchor=east}}
+  \def\EMstartx{38bp}\def\EMstartside{west}\def\EMendside{east}\def\EMfootx{40bp}\def\EMfootxe{-40bp}
+  \tcbset{EMside/.style={borderline west={5bp}{0bp}{#1},left=17bp,right=12bp}}
+\fi
+\newcommand{\EMbody}{\fontsize{18}{\EMlead\dimexpr18pt\relax}\selectfont}
+\newcommand{\EMdir}[1]{\ifEMrtl\RL{#1}\else#1\fi}
+\newcommand{\EMalign}{\ifEMrtl\raggedleft\else\raggedright\fi}
+
+% ---- the title bar: always drawn, on every overlay of the frame ----
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{tikzpicture}[remember picture,overlay]
+    \shade[rounded corners=3bp,EMbarshade,draw=SLbarEdge,line width=0.8bp]
+      ([xshift=22bp,yshift=-14bp]current page.north west) rectangle ([xshift=-22bp,yshift=-62bp]current page.north east);
+    \node[EMstart,text=SLtitle,font=\bfseries\fontsize{\EMtitlesize}{\EMtitlesize}\selectfont,inner sep=0pt]
+      at ([xshift=\EMstartx,yshift=-38bp]current page.north \EMstartside) {\EMdir{\insertframetitle}};
+  \end{tikzpicture}%
+  \vskip 80bp}
+\def\EMtitlesize{24}
+% ---- footer: chapter on the reading start side, slide number on the other ----
+\def\EMfootchapter{}
+\setbeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[EMstart,text=SLfoot,font=\fontsize{10}{12}\selectfont,inner sep=0pt]
+      at ([xshift=\EMfootx,yshift=18bp]current page.south \EMstartside) {\EMdir{\EMfootchapter}};
+    \node[EMend,text=SLfoot,font=\fontsize{10}{12}\selectfont,inner sep=0pt]
+      at ([xshift=\EMfootxe,yshift=18bp]current page.south \EMendside) {\insertframenumber};
+  \end{tikzpicture}}
+
+% ---- pieces ----
+% a paragraph of text
+\newcommand{\EMp}[1]{{\EMbody\EMalign\strut#1\strut\par}}
+% a list item: #1 marker, #2 width of the text, #3 text; the marker on the reading start side
+\newcommand{\EMitem}[3]{{\EMbody\noindent\makebox[26bp][c]{\color{SLdef}#1}\parbox[t]{#2}{\EMalign\strut#3\strut}\par}}
+% a displayed formula: lines centred, never broken by TeX (the lines were decided by the build)
+\newcommand{\EMeq}[2][1]{\par\vspace{3bp}{\EMbody\centering
+  \ifdim#1pt<1pt\scalebox{#1}{$\displaystyle\begin{gathered}#2\end{gathered}$}\else$\displaystyle\begin{gathered}#2\end{gathered}$\fi\par}\vspace{3bp}}
+\newcommand{\EMgap}{\par\vspace{7bp}}
+% a figure with its caption
+\newcommand{\EMfigure}[3]{{\centering\scalebox{#1}{\EMfig{#2}}\par\vspace{6bp}
+  {\fontsize{14}{\EMlead\dimexpr14pt\relax}\selectfont\color{EMmuted}#3\par}}}
+% boxes: #1 kind (def, thm, imp, ex, exe, rem, prf), #2 overlay from which the box shows,
+% #3 heading (empty on a continuation slide)
+\newenvironment{EMbox}[3]{%
+  \alt<#2->{\def\EMboxop{1}}{\def\EMboxop{0}}%
+  \begin{tcolorbox}[enhanced,sharp corners,boxrule=0.6bp,colback=SL#1L,colframe=SL#1!35!white,
+    opacityframe=\EMboxop,opacityback=\EMboxop,EMside={SL#1,opacity=\EMboxop},top=6bp,bottom=8bp,
+    before skip=9bp,after skip=9bp]%
+  \if\relax\detokenize{#3}\relax\else
+    \uncover<#2->{{\fontsize{17}{\EMlead\dimexpr17pt\relax}\selectfont\EMalign\color{SL#1}#3\par}}\vspace{4bp}\fi}
+  {\end{tcolorbox}}
+% two columns: the text on the reading start side, the figure on the other
+\newenvironment{EMtwocol}[1]{\begin{minipage}[t]{500bp}}{\end{minipage}}
+\newcommand{\EMside}[2]{\hfill\begin{minipage}[t]{360bp}\vspace*{#1}#2\end{minipage}}
+% a slide whose single piece is taller than the slide is scaled as a whole
+\newcommand{\EMshrink}[2]{\scalebox{#1}{\parbox[t]{880bp}{#2}}}

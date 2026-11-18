@@ -1,0 +1,358 @@
+\def\EMtitlesize{24}
+\begin{frame}{Part III}
+\begin{tikzpicture}[remember picture,overlay]
+\node[fill=SLbar,draw=SLbarEdge,line width=0.8bp,rounded corners=4bp,minimum width=520bp,minimum height=170bp] (b) at ([yshift=-20bp]current page.center) {};
+\node[text=SLthm,font=\bfseries\fontsize{30}{36}\selectfont] at ([yshift=36bp]b.center) {\EMdir{Part III}};
+\node[text=SLdef,font=\fontsize{24}{30}\selectfont] at ([yshift=-30bp]b.center) {\EMdir{Complex Analysis}};
+\end{tikzpicture}
+\end{frame}
+
+\section{Complex Numbers}
+\def\EMfootchapter{Chapter 8 \ \textbullet\ Complex Numbers}
+\def\EMtitlesize{24}
+\begin{frame}{Chapter 8: Complex Numbers}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Set of Complex Numbers}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Four Basic Operations}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Properties of Addition and Multiplication}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Complex Conjugate}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Triangle Inequality}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Polar Form of Complex Numbers}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Multiplying Two Complex Numbers in Polar Form}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The \EMim{m}-th Root of a Complex Number}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Set of Complex Numbers}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{The set of complex numbers generalizes the real numbers on the real line to a plane of numbers having two components, a real one and an imaginary one.}
+\vspace{3bp}
+\EMeq{\mathbb{R}\to\mathbb{C}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<3->
+\EMeq{\mathbb{C} =\{(x,y)\mid x,y\in\mathbb{R}\},\qquad z =(x,y),\qquad x =\operatorname{Re}\{z\},\qquad y \\[4pt] =\operatorname{Im}\{z\}}
+\end{uncoverenv}
+\EMgap
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{Magnitude or norm of a complex number:}
+\vspace{3bp}
+\EMeq{|z| =\sqrt{x^2+y^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{Phase or argument:}
+\vspace{3bp}
+\EMeq{\theta =\measuredangle z =\tan^{-1}\!\left(\frac{y}{x}\right),\qquad z =|z|\measuredangle\theta}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{x =|z|\cos\theta,\qquad y =|z|\sin\theta}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<8->
+\EMeq{z =x\times(1,0)+y\times(0,1) =x+iy}
+\end{uncoverenv}
+\end{minipage}
+\EMside{176.7bp}{\uncover<4->{\EMfigure{1.500}{m08-complex-plane}{The complex number \EMim{z=(x,y)} in the complex plane; its modulus \EMim{|z|} and argument \EMim{\theta}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Set of Complex Numbers (continued)}
+\begin{EMbox}{imp}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{i^2 =-1}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Four Basic Operations}
+\begin{uncoverenv}<2->
+\EMp{Let \EMim{z_1=(a_1,b_1)=a_1+ib_1} and \EMim{z_2=(a_2,b_2)=a_2+ib_2}.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\textbf{(I) Addition:}}
+\vspace{3bp}
+\EMeq{z_1+z_2 =(a_1+a_2,\,b_1+b_2) =a_1+a_2+i(b_1+b_2)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{\textbf{(II) Subtraction:}}
+\vspace{3bp}
+\EMeq{z_1-z_2 =(a_1-a_2,\,b_1-b_2) =a_1-a_2+i(b_1-b_2)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{\textbf{(III) Multiplication:}}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+z_1\times z_2&=(a_1+ib_1)\times(a_2+ib_2)\\
+&=a_1\times a_2+a_1\times ib_2+ib_1\times a_2+ib_1\times ib_2\\
+&=(a_1a_2-b_1b_2)+i(a_1b_2+b_1a_2)
+\end{aligned}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Four Basic Operations (continued)}
+\begin{uncoverenv}<2->
+\EMp{Multiplication by a real number:}
+\vspace{3bp}
+\EMeq{\forall\alpha\in\mathbb{R}:\quad \alpha z_1 =\alpha a_1+i\alpha b_1}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\textbf{(IV) Division:}}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)(a_2-ib_2)}{(a_2+ib_2)(a_2-ib_2)}\\
+&=\frac{(a_1a_2+b_1b_2)+i(b_1a_2-a_1b_2)}{a_2^2+b_2^2}
+=\frac{a_1a_2+b_1b_2}{a_2^2+b_2^2}+i\,\frac{b_1a_2-a_1b_2}{a_2^2+b_2^2}
+\end{aligned}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Properties of Addition and Multiplication}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{The set of complex numbers, together with addition and multiplication, forms a field that cannot be ordered.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<3->
+\EMp{For \EMim{z_1,z_2,z_3\in\mathbb{C}}:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{z_1+z_2\in\mathbb{C},\qquad z_1\times z_2\in\mathbb{C}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{z_1+z_2 =z_2+z_1,\qquad z_1\times z_2 =z_2\times z_1}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{(z_1+z_2)+z_3 =z_1+(z_2+z_3),\qquad (z_1z_2)z_3 =z_1(z_2z_3)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{z_1(z_2+z_3) =z_1z_2+z_1z_3}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<8->
+\EMeq{z_1+(0,0) =z_1+0 =z_1,\qquad z_1+(-z_1) =(0,0) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<9->
+\EMeq{-z_1 =-(a_1,b_1) =(-a_1,-b_1) =-a_1-ib_1}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<10->
+\EMeq{z_1\times(1,0) =z_1\times1 =z_1,\qquad z_1\times z_1^{-1} =(1,0) =1}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<11->
+\EMeq{z_1^{-1} =\left(\frac{a_1}{a_1^2+b_1^2},\frac{-b_1}{a_1^2+b_1^2}\right) =\frac{a_1}{a_1^2+b_1^2}-i\,\frac{b_1}{a_1^2+b_1^2}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Properties of Addition and Multiplication (continued)}
+\begin{EMbox}{rem}{1}{}
+\begin{uncoverenv}<2->
+\EMp{An order relation \EMim{z_1<z_2} cannot be defined on the set of complex numbers.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Conjugate}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{z =x+iy\quad \Longrightarrow\quad \bar z\triangleq x-iy}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Conjugate (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\EMp{Plot the conjugate of the complex number \EMim{z=5+2i} in the complex plane.}
+\end{EMbox}
+\end{minipage}
+\EMside{69.2bp}{\uncover<2->{\EMfigure{1.500}{m08-conjugate}{The complex number \EMim{z=5+2i} and its conjugate \EMim{\bar z=5-2i}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Complex Conjugate (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Prove the following statements.}
+\vspace{3bp}
+\EMeq{\operatorname{Re}\{z\} =\frac12\,(z+\bar z),\qquad \operatorname{Im}\{z\} =\frac{1}{2i}\,(z-\bar z),\qquad |z|^2 =z\cdot\bar z}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{\overline{z_1+z_2} =\bar z_1+\bar z_2,\qquad \overline{z_1\cdot z_2} =\bar z_1\cdot\bar z_2,\qquad \overline{\left(\frac{z_1}{z_2}\right)} =\frac{\bar z_1}{\bar z_2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{|z| =|\bar z|,\qquad |\operatorname{Re}\{z\}|\le|z|,\qquad |\operatorname{Im}\{z\}|\le|z|}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Triangle Inequality}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m08-triangle}{The triangle inequality: a triangle with vertices \EMim{0}, \EMim{z_1} and \EMim{z_1+z_2}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Triangle Inequality (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Prove the triangle inequality for any two complex numbers: \EMim{|z_1+z_2|\le|z_1|+|z_2|}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Prove the general form of the triangle inequality for \EMim{n} arbitrary complex numbers:}
+\vspace{3bp}
+\EMeq{|z_1+z_2+\cdots+z_n|\le|z_1|+|z_2|+\cdots+|z_n|}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Prove that \EMim{|z_1+z_2|\ge|z_1|-|z_2|}.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The Polar Form of Complex Numbers}
+\begin{uncoverenv}<2->
+\EMeq{z =x+iy,\qquad \left.\begin{aligned}x&=|z|\cos\theta\\ y&=|z|\sin\theta\end{aligned}\right\}\; \Longrightarrow\; z =|z|\,(\cos\theta+i\sin\theta)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\theta =\operatorname{Arg}(z) =\tan^{-1}\frac yx,\qquad -\pi<\theta\le\pi}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\arg(z) =\operatorname{Arg}(z)+2k\pi,\qquad k\in\mathbb{Z}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Multiplying Two Complex Numbers in Polar Form}
+\begin{uncoverenv}<2->
+\EMeq{z_1 =|z_1|(\cos\theta_1+i\sin\theta_1),\qquad z_2 =|z_2|(\cos\theta_2+i\sin\theta_2)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+z_1\cdot z_2&=|z_1||z_2|(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)\\
+&=|z_1||z_2|\big[(\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)\\
+&\qquad\qquad+\,i(\sin\theta_1\cos\theta_2+\cos\theta_1\sin\theta_2)\big]
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{z_1\cdot z_2 =|z_1||z_2|\big[\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)\big]}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{4}{}
+\begin{uncoverenv}<5->
+\EMp{When two complex numbers are multiplied, their magnitudes are multiplied and their phases are added.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{5}{}
+\begin{uncoverenv}<6->
+\EMp{If a complex number is raised to a natural power, its magnitude is raised to that power and its argument (phase) is multiplied by it (prove by induction). In other words:}
+\vspace{3bp}
+\EMeq{z^k =|z|^k(\cos k\theta+i\sin k\theta)}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<7->
+\EMeq{z^k =\big[|z|(\cos\theta+i\sin\theta)\big]^k =|z|^k(\cos\theta+i\sin\theta)^k =|z|^k(\cos k\theta+i\sin k\theta)}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{7}{}
+\begin{uncoverenv}<8->
+\EMeq{(\cos\theta+i\sin\theta)^k =\cos k\theta+i\sin k\theta}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{Multiplying Two Complex Numbers in Polar Form (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMp{Using De Moivre's formula, express \EMim{\cos3\theta} and \EMim{\cos4\theta} in terms of \EMim{\cos\theta} and \EMim{\sin\theta}.}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The \EMim{m}-th Root of a Complex Number}
+\begin{uncoverenv}<2->
+\EMeq{w =\sqrt[m]{z} =z^{1/m},\qquad z =|z|(\cos\theta+i\sin\theta)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{z =w^m,\qquad w =|w|(\cos\varphi+i\sin\varphi)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{z =|z|(\cos\theta+i\sin\theta) =|w|^m(\cos m\varphi+i\sin m\varphi)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{|w|^m =|z|\; \Longrightarrow\;|w| =\sqrt[m]{|z|}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{m\varphi =\theta+2k\pi\; \Longrightarrow\;\varphi =\frac{\theta+2k\pi}{m},\qquad k =0,1,2,\dots,m-1}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{6}{}
+\begin{uncoverenv}<7->
+\EMeq{w =\sqrt[m]{z} =\sqrt[m]{|z|}\left[\cos\!\left(\frac{\theta+2k\pi}{m}\right)+i\sin\!\left(\frac{\theta+2k\pi}{m}\right)\right],\qquad k =0,1,2,\dots,m-1}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The \EMim{m}-th Root of a Complex Number (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\EMp{What are the roots of the equation \EMim{z^n=1}?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{z =\sqrt[n]{1},\qquad 1 =1\measuredangle0\; \Longrightarrow\; z \\[4pt] =\cos\!\left(\frac{2k\pi}{n}\right)+i\sin\!\left(\frac{2k\pi}{n}\right),\qquad k =0,1,\dots,n-1}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{Defining \EMim{\omega=1\measuredangle\dfrac{2\pi}{n}}, the roots are}
+\vspace{3bp}
+\EMeq{z =1,\ \omega,\ \omega^2,\ \dots,\ \omega^{n-1}}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{220.4bp}{\uncover<4->{\EMfigure{0.916}{m08-roots-of-unity}{The roots \EMim{z=\sqrt[3]{1}}, \EMim{z=\sqrt[4]{1}} and \EMim{z=\sqrt[5]{1}} on the unit circle}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{The \EMim{m}-th Root of a Complex Number (continued)}
+\begin{EMbox}{exe}{1}{}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Find the roots of the equation \EMim{z^6+6+8i=0} and plot them in the complex plane.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Verify the identity \EMim{1+z+z^2+\cdots+z^n=\dfrac{1-z^{n+1}}{1-z}} and then derive the following identity (Lagrange's identity).}
+\vspace{3bp}
+\EMeq{1+\cos\theta+\cos2\theta+\cdots+\cos n\theta =\frac12+\frac{\sin\!\left[\left(n+\frac12\right)\theta\right]}{2\sin\frac\theta2}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
