@@ -282,7 +282,7 @@ $$\lim_{R\to\infty}\left|e^{i\omega Re^{it}}\right|=\lim_{R\to\infty}\left|e^{i\
 از طرف دیگر در انتگرال $I_1$ بقیهٔ انتگرند زمانی که $R$ بی‌نهایت می‌شود به سمت صفر میل می‌کند. پس حد $I_1$ وقتی $R\to\infty$ صفر می‌شود.
 
 بنابراین
-$$\pi e^{-\omega}=\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}=\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}=\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2}=\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}$$
+$$\pi e^{-\omega}=\lim_{R\to\infty}\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}=\int_{-\infty}^{\infty}\frac{e^{i\omega x}\,dx}{1+x^2}=\int_{-\infty}^{\infty}\frac{(\cos\omega x+i\sin\omega x)\,dx}{1+x^2}=\int_{-\infty}^{\infty}\frac{\cos\omega x\,dx}{1+x^2}+i\int_{-\infty}^{\infty}\frac{\sin\omega x\,dx}{1+x^2}$$
 انتگرال دوم صفر است. چرا؟
 $$\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx=\pi e^{-\omega}$$
 :::

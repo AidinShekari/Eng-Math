@@ -181,7 +181,7 @@ $$\nabla^2u=2-2=0,\qquad \nabla^2v=0+0=0$$
 $$w=f(z)=|z|^2=(x+iy)(x-iy)=x^2+y^2,\qquad u(x,y)=x^2+y^2,\qquad v(x,y)=0$$
 $$\frac{\partial u}{\partial x}=2x,\quad \frac{\partial v}{\partial y}=0,\qquad \frac{\partial u}{\partial y}=2y,\quad -\frac{\partial v}{\partial x}=0$$
 $$\nabla^2u=2+2=4,\qquad \nabla^2v=0+0=0$$
-تحلیلی در هیچ‌جا به جز مبدأ.
+فقط در مبدأ مشتق‌پذیر است و بنابراین در هیچ نقطه‌ای تحلیلی نیست (تحلیلی بودن به یک همسایگی کامل نیاز دارد).
 :::
 :::
 

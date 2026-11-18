@@ -139,11 +139,11 @@ Find the solution of the following one-dimensional heat equation.
 
 We solve this problem by \textbf{separation of variables}: \EMim{u(x,t)=X(x)\times T(t)}.
 \EMdisp{\frac{T'}{c^2T}\EMbr =\frac{X''}X\EMbr =-\lambda^2\ \EMbr \Rightarrow\ \begin{cases}X''+\lambda^2X=0\ \Rightarrow\ X(x)=A\cos\lambda x+B\sin\lambda x\\ T'+c^2\lambda^2T=0\end{cases}}
-\EMdisp{X'(x)\EMbr =-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad\EMbr  X'(0)\EMbr =0\EMbr \Rightarrow B\EMbr =0,\qquad\EMbr  X'(L)\EMbr =0\EMbr \Rightarrow-A\lambda\sin\lambda L\EMbr =0\EMbr \Rightarrow\lambda L\EMbr =n\pi\EMbr \Rightarrow\lambda_n\EMbr =\frac{n\pi}L}
+\EMdisp{X'(x)\EMbr =-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad\EMbr  X'(0)\EMbr =0\EMbr \Rightarrow B\EMbr =0,\qquad\EMbr  X'(L)\EMbr =0\EMbr \Rightarrow-A\lambda\sin\lambda L\EMbr =0\EMbr \Rightarrow\lambda L\EMbr =n\pi\EMbr \Rightarrow\lambda_n\EMbr =\frac{n\pi}L\quad\EMbr (n\EMbr =0,1,2,\dots)}
 \EMdisp{X_n(x)\EMbr =A_n\cos\lambda_nx,\qquad\EMbr  T_n(t)\EMbr =C_ne^{-(c\lambda_n)^2t}}
-\EMdisp{u(x,t)\EMbr =\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L}
-The initial condition \EMim{u(x,0)=\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)} gives
-\EMdisp{B_n\EMbr =\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx}
+\EMdisp{u(x,t)\EMbr =B_0+\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad\EMbr  \lambda_n\EMbr =\frac{n\pi}L}
+(\EMim{\lambda_0=0} gives the constant term \EMim{B_0}.) The initial condition \EMim{u(x,0)=B_0+\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)} gives
+\EMdisp{B_0\EMbr =\frac1L\int_0^Lf(x)\,dx,\qquad\EMbr  B_n\EMbr =\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx}
 
 \end{EMexample}
 

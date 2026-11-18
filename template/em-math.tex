@@ -5,3 +5,5 @@
 % math alphabets are pinned to the math font itself.
 \setmathfont{texgyretermes-math.otf}
 \AtBeginDocument{\let\mathrm\symup \let\mathbf\symbf \let\mathit\symit \let\mathsf\symsfup}
+% TeX Gyre Termes Math has no U+29F5 (set minus): build it from the backslash
+\AtBeginDocument{\def\setminus{\mathbin{\backslash}}}

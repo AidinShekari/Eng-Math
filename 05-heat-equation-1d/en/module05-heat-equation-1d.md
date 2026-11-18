@@ -108,11 +108,11 @@ $$\frac{\partial u}{\partial t}=c^2\frac{\partial^2u}{\partial x^2},\qquad u_x(0
 ::: {.solution}
 We solve this problem by **separation of variables**: $u(x,t)=X(x)\times T(t)$.
 $$\frac{T'}{c^2T}=\frac{X''}X=-\lambda^2\ \Rightarrow\ \begin{cases}X''+\lambda^2X=0\ \Rightarrow\ X(x)=A\cos\lambda x+B\sin\lambda x\\ T'+c^2\lambda^2T=0\end{cases}$$
-$$X'(x)=-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad X'(0)=0\Rightarrow B=0,\qquad X'(L)=0\Rightarrow-A\lambda\sin\lambda L=0\Rightarrow\lambda L=n\pi\Rightarrow\lambda_n=\frac{n\pi}L$$
+$$X'(x)=-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad X'(0)=0\Rightarrow B=0,\qquad X'(L)=0\Rightarrow-A\lambda\sin\lambda L=0\Rightarrow\lambda L=n\pi\Rightarrow\lambda_n=\frac{n\pi}L\quad(n=0,1,2,\dots)$$
 $$X_n(x)=A_n\cos\lambda_nx,\qquad T_n(t)=C_ne^{-(c\lambda_n)^2t}$$
-$$u(x,t)=\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad \lambda_n=\frac{n\pi}L$$
-The initial condition $u(x,0)=\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)$ gives
-$$B_n=\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx$$
+$$u(x,t)=B_0+\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad \lambda_n=\frac{n\pi}L$$
+($\lambda_0=0$ gives the constant term $B_0$.) The initial condition $u(x,0)=B_0+\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)$ gives
+$$B_0=\frac1L\int_0^Lf(x)\,dx,\qquad B_n=\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx$$
 :::
 :::
 

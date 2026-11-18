@@ -181,7 +181,7 @@ Consider the function $w=|z|^2$; is it analytic?
 $$w=f(z)=|z|^2=(x+iy)(x-iy)=x^2+y^2,\qquad u(x,y)=x^2+y^2,\qquad v(x,y)=0$$
 $$\frac{\partial u}{\partial x}=2x,\quad \frac{\partial v}{\partial y}=0,\qquad \frac{\partial u}{\partial y}=2y,\quad -\frac{\partial v}{\partial x}=0$$
 $$\nabla^2u=2+2=4,\qquad \nabla^2v=0+0=0$$
-Analytic nowhere except at the origin.
+Differentiable only at the origin, hence analytic nowhere (analyticity needs a whole neighbourhood).
 :::
 :::
 

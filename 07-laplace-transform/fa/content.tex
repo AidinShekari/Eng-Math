@@ -57,15 +57,16 @@
 
 \EMsubsection{جدول تبدیل‌های لاپلاس (جدول ۶٫۱ کتاب؛ جدول مفصل‌تر در فصل ۶٫۹ کتاب)}{جدول تبدیل‌های لاپلاس (جدول ۶٫۱ کتاب؛ جدول مفصل‌تر در فصل ۶٫۹ کتاب)}
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{15\baselineskip}
 \begin{longtable}[c]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0909}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0909}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}@{}}
 \toprule\noalign{}
 \rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -90,6 +91,7 @@
 5 & \EMim{t^a} (\EMim{a} مثبت) & \EMim{\dfrac{\Gamma(a+1)}{s^{a+1}}} & & 11 & \EMim{e^{at}\cos\omega t} & \EMim{\dfrac{s-a}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
 6 & \EMim{e^{at}} & \EMim{\dfrac1{s-a}} & & 12 & \EMim{e^{at}\sin\omega t} & \EMim{\dfrac{\omega}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
 \end{longtable}
+}
 
 \begin{EMunit}
 
@@ -102,10 +104,11 @@
 با تعریف تابع پلهٔ واحد
 \EMdisp{u(t)\triangleq\begin{cases}1&t\ge0\\ 0&t<0\end{cases}}
 
+{\def\LTcaptype{none} % do not increment counter
 \Needspace{22\baselineskip}
 \begin{longtable}[c]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4444}}
-  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5556}}@{}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4444}}
+  >{\centering\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5556}}@{}}
 \toprule\noalign{}
 \rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\raggedright
 عنوان خاصیت
@@ -127,6 +130,7 @@
 مشتق در حوزهٔ \EMim{s} & \EMim{\mathcal{L}\{tf(t)\}=-F'(s)} \\\noalign{\vskip 4pt}
 انتگرال در حوزهٔ \EMim{s} & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=\displaystyle\int_s^\infty F(\nu)\,d\nu} \\\noalign{\vskip 4pt}
 \end{longtable}
+}
 
 \EMhold
 
