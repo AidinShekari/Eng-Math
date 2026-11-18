@@ -1,0 +1,337 @@
+\section{توابع مختلط مقدماتی}
+\def\EMfootchapter{فصل ۱۰ \ \textbullet\ توابع مختلط مقدماتی}
+\def\EMtitlesize{24}
+\begin{frame}{فصل ۱۰: توابع مختلط مقدماتی}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تابع نمایی}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{توابع مثلثاتی}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{توابع هذلولی‌گون}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تابع لگاریتم}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مختلط مقدماتی}
+\begin{uncoverenv}<2->
+\EMp{توابع مقدماتی مختلط تعمیم توابع مقدماتی حقیقی‌اند (\lr{Elementary Complex Functions}).}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع نمایی}
+\begin{uncoverenv}<2->
+\EMp{تابع نمایی حقیقی \EMim{f(x)=e^x} دارای خواص زیر است:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+&1)\quad f(x_1+x_2)=f(x_1)f(x_2)\qquad &&e^{x_1}e^{x_2}=e^{x_1+x_2}\\
+&2)\quad \frac{d}{dx}f(x)=f(x)\qquad &&\frac{d}{dx}e^x=e^x\\
+&3)\quad e^x=1+x+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}+\cdots
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{تابع نمایی مختلط را با الهام از خاصیت سوم تعریف می‌کنیم و سایر خواص را در مورد این تابع تحقیق می‌نمائیم.}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{def}{4}{}
+\begin{uncoverenv}<5->
+\EMeq{w =e^z\triangleq1+z+\frac{z^2}{2!}+\cdots+\frac{z^n}{n!}+\cdots}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع نمایی (ادامه)}
+\begin{uncoverenv}<2->
+\EMp{اگر در تعریف تابع نمایی مختلط به جای \EMim{z} مقدار \EMim{z=iy} قرار دهیم:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+e^{iy}&=1+iy+\frac1{2!}(iy)^2+\frac1{3!}(iy)^3+\cdots\\
+&=1+iy-\frac1{2!}y^2-\frac{i}{3!}y^3+\frac1{4!}y^4+\frac{i}{5!}y^5+\cdots\\
+&=\underbrace{\left(1-\frac1{2!}y^2+\frac1{4!}y^4+\cdots\right)}_{\cos y}+i\underbrace{\left(y-\frac1{3!}y^3+\frac1{5!}y^5+\cdots\right)}_{\sin y}=\cos y+i\sin y
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{w =e^z =e^{x+iy} =e^xe^{iy} =e^x(\cos y+i\sin y)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع نمایی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{آیا تابع \EMim{w=e^z} تحلیلی است؟}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{u(x,y) =e^x\cos y,\qquad v(x,y) =e^x\sin y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =e^x\cos y =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =-e^x\sin y =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{چون شرایط کشی--ریمان در تمام صفحهٔ مختلط برقرار است، تابع \EMim{w=e^z} در تمام صفحهٔ مختلط مشتق‌پذیر است.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع نمایی (ادامه)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\EMp{مشتق تابع \EMim{w=e^z} را به‌دست آورید.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{\frac{d}{dz}e^z =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =e^x\cos y+ie^x\sin y \\[4pt] =e^x(\cos y+i\sin y) =e^z}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
+\EMp{از این پس می‌توانیم هر عدد مختلط را به صورت نمائی نمایش دهیم:}
+\vspace{3bp}
+\EMeq{z =x+iy =|z|(\cos\theta+i\sin\theta) =|z|\,e^{i\theta}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<4->
+\EMp{مشاهده می‌شود که:}
+\vspace{3bp}
+\EMeq{e^{z+i2k\pi} =e^ze^{i2k\pi} =e^z\big[\cos(2k\pi)+i\sin(2k\pi)\big] =e^z}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{پس تابع \EMim{w=e^z} در صفحهٔ اعداد مختلط تابعی متناوب با دورهٔ تناوب \EMim{i2\pi} است.}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{223.3bp}{\uncover<6->{\EMfigure{1.500}{m10-exp-strip}{باند اصلی تابع نمایی: \EMim{-\pi<y\le\pi}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مثلثاتی}
+\begin{uncoverenv}<2->
+\EMeq{e^{i\theta} =\cos\theta+i\sin\theta\quad \Longrightarrow\quad e^{-i\theta} =\cos\theta-i\sin\theta}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\Longrightarrow\quad \cos\theta =\frac{e^{i\theta}+e^{-i\theta}}{2},\qquad \sin\theta =\frac{e^{i\theta}-e^{-i\theta}}{2i}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{def}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{\cos z\triangleq\frac{e^{iz}+e^{-iz}}{2},\qquad \sin z\triangleq\frac{e^{iz}-e^{-iz}}{2i}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مثلثاتی (ادامه)}
+\begin{uncoverenv}<2->
+\EMeq{\begin{aligned}
+\cos z&=\frac12\Big[e^{i(x+iy)}+e^{-i(x+iy)}\Big]=\frac12\Big[e^{ix}e^{-y}+e^{-ix}e^{y}\Big]\\
+&=\frac12\Big[e^{-y}(\cos x+i\sin x)+e^{y}(\cos x-i\sin x)\Big]\\
+&=\cos x\left(\frac{e^y+e^{-y}}{2}\right)-i\sin x\left(\frac{e^y-e^{-y}}{2}\right)\\
+&=\cos x\cosh y-i\sin x\sinh y
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{aligned}
+\sin z&=\frac1{2i}\Big[e^{i(x+iy)}-e^{-i(x+iy)}\Big]=\frac1{2i}\Big[e^{ix}e^{-y}-e^{-ix}e^{y}\Big]\\
+&=\frac1{2i}\Big[e^{-y}(\cos x+i\sin x)-e^{y}(\cos x-i\sin x)\Big]\\
+&=\sin x\left(\frac{e^y+e^{-y}}{2}\right)+i\cos x\left(\frac{e^y-e^{-y}}{2}\right)\\
+&=\sin x\cosh y+i\cos x\sinh y
+\end{aligned}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تحلیلی بودن و مشتق‌پذیری \EMim{\cos z}}
+\begin{uncoverenv}<2->
+\EMeq{\cos z =u(x,y)+iv(x,y) =\cos x\cosh y-i\sin x\sinh y,\qquad u =\cos x\cosh y,\quad v =-\sin x\sinh y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =-\sin x\cosh y =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =\cos x\sinh y =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{پس این تابع در همهٔ صفحهٔ مختلط تحلیلی است. مشتق این تابع را توسط یکی از روش‌های ذکر شده به‌دست می‌آوریم:}
+\vspace{3bp}
+\EMeq{f'(z) =\frac{d}{dz}\cos z =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =-\sin x\cosh y-i\cos x\sinh y =-\sin z}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تحلیلی بودن و مشتق‌پذیری \EMim{\sin z}}
+\begin{uncoverenv}<2->
+\EMeq{\sin z =u(x,y)+iv(x,y) =\sin x\cosh y+i\cos x\sinh y,\qquad u =\sin x\cosh y,\quad v =\cos x\sinh y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =\cos x\cosh y =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =\sin x\sinh y =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{پس این تابع در همهٔ صفحهٔ مختلط تحلیلی است و}
+\vspace{3bp}
+\EMeq{f'(z) =\frac{d}{dz}\sin z =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =\cos x\cosh y-i\sin x\sinh y =\cos z}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{4}{}
+\begin{uncoverenv}<5->
+\EMeq{(\sin z)' =\cos z,\qquad (\cos z)' =-\sin z}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{بی‌کرانی \EMim{\sin z} و \EMim{\cos z}}
+\begin{uncoverenv}<2->
+\EMeq{|\cos z| =\sqrt{\cos^2x\cosh^2y+\sin^2x\sinh^2y} =\sqrt{\cos^2x+\sinh^2y},\qquad (\cosh^2y =1+\sinh^2y,\ \ \sin^2x =1-\cos^2x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{|\sin z| =\sqrt{\sin^2x\cosh^2y+\cos^2x\sinh^2y} =\sqrt{\sin^2x+\sinh^2y},\qquad (\cosh^2y =1+\sinh^2y,\ \ \cos^2x =1-\sin^2x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{از آنجائی که \EMim{\sinh y} تابعی بی‌کران است، پس توابع \EMim{\cos z} و \EMim{\sin z} توابعی \textbf{بی‌کران} خواهند بود.}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تناوب}
+\begin{uncoverenv}<2->
+\EMeq{\begin{aligned}
+\cos(z+2\pi)&=\cos(x+iy+2\pi)=\cos(x+2\pi)\cosh y-i\sin(x+2\pi)\sinh y\\
+&=\cos x\cosh y-i\sin x\sinh y=\cos z
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{به همین ترتیب \EMim{\sin(z+2\pi)=\sin z}.}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تناوب (ادامه)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m10-trig-strip}{باند اصلی توابع \EMim{\sin z} و \EMim{\cos z}: \EMim{-\pi<x\le\pi}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{نکته}
+\begin{uncoverenv}<2->
+\EMeq{\cos(iy) =\cosh y,\qquad \sin(iy) =i\sinh y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\cos(x+iy) =\cos x\cos(iy)-\sin x\sin(iy) =\cos x\cosh y-i\sin x\sinh y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\sin(x+iy) =\sin x\cos(iy)+\cos x\sin(iy) =\sin x\cosh y+i\cos x\sinh y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{سایر توابع مثلثاتی:}
+\vspace{3bp}
+\EMeq{\tan z\triangleq\frac{\sin z}{\cos z},\qquad \cot z\triangleq\frac{\cos z}{\sin z},\qquad \sec z\triangleq\frac1{\cos z},\qquad \csc z\triangleq\frac1{\sin z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{(\tan z)' =\sec^2z,\quad \dots}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع هذلولی‌گون}
+\begin{uncoverenv}<2->
+\EMeq{\cosh z\triangleq\frac{e^z+e^{-z}}{2},\qquad \sinh z\triangleq\frac{e^z-e^{-z}}{2},\qquad e^z =e^x(\cos y+i\sin y)}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع هذلولی‌گون (ادامه)}
+\begin{EMbox}{exe}{1}{}
+\EMp{تحقیق کنید:}
+\vspace{3bp}
+\EMeq{\cosh z =\cosh x\cos y+i\sinh x\sin y,\qquad \sinh z =\sinh x\cos y+i\cosh x\sin y}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع هذلولی‌گون (ادامه)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{exe}{1}{}
+\EMp{تحقیق کنید توابع \EMim{\cosh z} و \EMim{\sinh z} در تمام صفحهٔ مختلط تحلیلی‌اند و مشتق آنها از طریق روابط زیر به دست می‌آید:}
+\vspace{3bp}
+\EMeq{(\cosh z)' =\sinh z,\qquad (\sinh z)' =\cosh z}
+\end{EMbox}
+\begin{uncoverenv}<2->
+\EMeq{\tanh z =\frac{\sinh z}{\cosh z},\quad \coth z =\frac{\cosh z}{\sinh z},\quad \operatorname{sech}z =\frac1{\cosh z},\quad \\[4pt] \operatorname{csch}z =\frac1{\sinh z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\cosh(z+i2\pi) =\cosh(z),\qquad \sinh(z+i2\pi) =\sinh(z)}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{223.3bp}{\uncover<4->{\EMfigure{1.500}{m10-hyp-strip}{باند اصلی توابع هذلولی‌گون: \EMim{-\pi<y\le\pi}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع لگاریتم}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMeq{w =\ln z,\qquad z =|z|e^{i\arg z} =e^w =e^{\ln|z|}e^{i\arg z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{w =\ln z =\ln|z|+i\arg z =\ln\!\big(x^2+y^2\big)^{1/2}+i\tan^{-1}\frac yx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{u(x,y) =\frac12\ln\!\big(x^2+y^2\big),\qquad v(x,y) =\tan^{-1}\frac yx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{\partial u}{\partial x} =\frac{x}{x^2+y^2} =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =\frac{y}{x^2+y^2} =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{بنابراین تابع لگاریتم در تمام صفحهٔ مختلط بجز مبدأ تحلیلی است.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{\frac{d}{dz}\ln z =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =\frac{x}{x^2+y^2}+i\,\frac{-y}{x^2+y^2} =\frac{\bar z}{z\bar z} =\frac1z}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<8->
+\EMeq{z =re^{i\theta} =re^{i(\theta+2k\pi)}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<9->
+\EMp{برای آنکه تعریف تابع نقض نشود برد این تابع ناحیهٔ نشان داده شده در شکل است.}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{223.3bp}{\uncover<10->{\EMfigure{1.500}{m10-log-range}{برد تابع لگاریتم: نوار \EMim{-\pi<\operatorname{Im}w\le\pi}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تابع لگاریتم (ادامه)}
+\begin{uncoverenv}<2->
+\EMp{خواص زیر برای تابع لگاریتم برقرارند:}
+\vspace{3bp}
+\EMeq{\ln(z_1\times z_2) =\ln z_1+\ln z_2,\qquad \ln\!\left(\frac{z_1}{z_2}\right) =\ln z_1-\ln z_2,\qquad \ln(z^c) =c\ln z}
+\end{uncoverenv}
+\end{frame}

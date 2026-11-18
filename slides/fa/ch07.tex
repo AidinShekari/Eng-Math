@@ -1,0 +1,242 @@
+\section{تبدیل لاپلاس}
+\def\EMfootchapter{فصل ۷ \ \textbullet\ تبدیل لاپلاس}
+\def\EMtitlesize{24}
+\begin{frame}{فصل ۷: تبدیل لاپلاس}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تبدیل لاپلاس یک‌طرفه}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{استفاده از تبدیل لاپلاس در حل معادلات دیفرانسیل}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{F(s) =\mathcal{L}\{f(t)\}\triangleq\int_0^\infty f(t)\,e^{-st}\,dt\qquad \Longleftrightarrow\qquad f(t) =\mathcal{L}^{-1}\{F(s)\}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{uncoverenv}<3->
+\EMp{تبدیل لاپلاس یکی از ابزارهای مهم در کاربردهای مختلف مهندسی و ریاضی است. یکی از کاربردهای تبدیل لاپلاس حل معادلات دیفرانسیل است (فصل ۶ کتاب مرجع درس را مطالعه فرمایید).}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{تبدیل لاپلاس یک عملگر خطی است:}
+\vspace{3bp}
+\EMeq{\mathcal{L}\{af(t)+bg(t)\} =a\,\mathcal{L}\{f(t)\}+b\,\mathcal{L}\{g(t)\}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMeq{f(t) =\begin{cases}1&t\ge0\\ 0&t<0\end{cases}\  \Longrightarrow\ \mathcal{L}\{f(t)\} =F(s) =\;?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{\mathcal{L}\{f(t)\} =\int_0^\infty1\times e^{-st}\,dt =-\frac1se^{-st}\Big|_0^\infty =\frac1s}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMeq{f(t) =\begin{cases}e^{at}&t\ge0\\ 0&t<0\end{cases}\  \Longrightarrow\ \mathcal{L}\{f(t)\} =F(s) =\;?}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{\mathcal{L}\{f(t)\} =\int_0^\infty e^{at}\times e^{-st}\,dt =\int_0^\infty e^{-(s-a)t}\,dt =-\frac1{s-a}e^{-(s-a)t}\Big|_0^\infty =\frac1{s-a}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMeq{\mathcal{L}\{\cosh(at)\} =\mathcal{L}\left\{\tfrac12e^{at}+\tfrac12e^{-at}\right\} =\tfrac12\mathcal{L}\{e^{at}\}+\tfrac12\mathcal{L}\{e^{-at}\} =\frac12\frac1{s-a}+\frac12\frac1{s+a} =\frac s{s^2-a^2}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMeq{\mathcal{L}\{\sinh(at)\} =\mathcal{L}\left\{\tfrac12e^{at}-\tfrac12e^{-at}\right\} =\tfrac12\mathcal{L}\{e^{at}\}-\tfrac12\mathcal{L}\{e^{-at}\} =\frac12\frac1{s-a}-\frac12\frac1{s+a} =\frac a{s^2-a^2}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{با استفاده از \EMim{\displaystyle\int e^{ax}\cos nx\,dx=\frac{e^{ax}}{a^2+n^2}\big(a\cos nx+n\sin nx\big)}:}
+\vspace{3bp}
+\EMeq{\mathcal{L}\{\cos\omega t\} =\int_0^\infty\cos\omega t\,e^{-st}\,dt =\frac{e^{-st}}{s^2+\omega^2}\big(-s\cos\omega t+\omega\sin\omega t\big)\Big|_0^\infty =\frac s{s^2+\omega^2}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{تبدیل لاپلاس یک‌طرفه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{با استفاده از \EMim{\displaystyle\int e^{ax}\sin nx\,dx=\frac{e^{ax}}{a^2+n^2}\big(a\sin nx-n\cos nx\big)}:}
+\vspace{3bp}
+\EMeq{\mathcal{L}\{\sin\omega t\} =\int_0^\infty\sin\omega t\,e^{-st}\,dt =\frac{e^{-st}}{s^2+\omega^2}\big(-s\sin\omega t-\omega\cos\omega t\big)\Big|_0^\infty =\frac\omega{s^2+\omega^2}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{جدول تبدیل‌های لاپلاس (جدول ۶٫۱ کتاب؛ جدول مفصل‌تر در فصل ۶٫۹ کتاب)}
+\begin{uncoverenv}<2->
+{\EMbody\centering\scalebox{1.000}{\parbox{880bp}{\setlength{\columnwidth}{792pt}\centering \begin{tabular}{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0909}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}@{}}
+\toprule\noalign{}
+\rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\EMim{f(t)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\EMim{\mathcal{L}(f)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\EMim{f(t)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\EMim{\mathcal{L}(f)}
+\end{minipage} \\\noalign{\vskip 4pt}
+\midrule\noalign{}
+
+1 & \EMim{1} & \EMim{\dfrac1s} & & 7 & \EMim{\cos\omega t} & \EMim{\dfrac{s}{s^2+\omega^2}} \\\noalign{\vskip 4pt}
+2 & \EMim{t} & \EMim{\dfrac1{s^2}} & & 8 & \EMim{\sin\omega t} & \EMim{\dfrac{\omega}{s^2+\omega^2}} \\\noalign{\vskip 4pt}
+3 & \EMim{t^2} & \EMim{\dfrac{2!}{s^3}} & & 9 & \EMim{\cosh at} & \EMim{\dfrac{s}{s^2-a^2}} \\\noalign{\vskip 4pt}
+4 & \EMim{t^n} \EMim{(n=0,1,\dots)} & \EMim{\dfrac{n!}{s^{n+1}}} & & 10 & \EMim{\sinh at} & \EMim{\dfrac{a}{s^2-a^2}} \\\noalign{\vskip 4pt}
+5 & \EMim{t^a} (\EMim{a} مثبت) & \EMim{\dfrac{\Gamma(a+1)}{s^{a+1}}} & & 11 & \EMim{e^{at}\cos\omega t} & \EMim{\dfrac{s-a}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
+6 & \EMim{e^{at}} & \EMim{\dfrac1{s-a}} & & 12 & \EMim{e^{at}\sin\omega t} & \EMim{\dfrac{\omega}{(s-a)^2+\omega^2}} \\\noalign{\vskip 4pt}
+\bottomrule
+\end{tabular}}}\par}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\Gamma(x) =\int_0^\infty e^{-t}t^{x-1}\,dt}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{خواص تبدیل لاپلاس یک‌طرفه (جدول فصل ۶٫۸ کتاب)}
+\begin{uncoverenv}<2->
+\EMp{با تعریف تابع پلهٔ واحد}
+\vspace{3bp}
+\EMeq{u(t)\triangleq\begin{cases}1&t\ge0\\ 0&t<0\end{cases}}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{خواص تبدیل لاپلاس یک‌طرفه (جدول فصل ۶٫۸ کتاب) (ادامه)}
+\begin{uncoverenv}<2->
+{\EMbody\centering\scalebox{1.000}{\parbox{880bp}{\setlength{\columnwidth}{792pt}\centering \begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4444}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5556}}@{}}
+\toprule\noalign{}
+\rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\raggedright
+عنوان خاصیت
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+خاصیت
+\end{minipage} \\\noalign{\vskip 4pt}
+\midrule\noalign{}
+
+تعریف تبدیل لاپلاس & \EMim{F(s)=\mathcal{L}\{f(t)\}\triangleq\displaystyle\int_0^\infty f(t)e^{-st}\,dt} \\\noalign{\vskip 4pt}
+معکوس تبدیل لاپلاس & \EMim{f(t)=\mathcal{L}^{-1}\{F(s)\}} \\\noalign{\vskip 4pt}
+خطی بودن & \EMim{\mathcal{L}\{af(t)+bg(t)\}=a\mathcal{L}\{f(t)\}+b\mathcal{L}\{g(t)\}} \\\noalign{\vskip 4pt}
+شیفت زمانی & \EMim{\mathcal{L}\{f(t-a)u(t-a)\}=e^{-as}F(s)} \\\noalign{\vskip 4pt}
+شیفت در حوزهٔ \EMim{s} & \EMim{\mathcal{L}\{e^{at}f(t)\}=F(s-a)} \\\noalign{\vskip 4pt}
+تغییر مقیاس زمانی & \EMim{\mathcal{L}\{f(at)\}=\dfrac1aF\!\left(\frac sa\right)} \\\noalign{\vskip 4pt}
+مشتق زمانی & \EMim{\mathcal{L}\{f^{(n)}(t)\}=s^nF(s)-s^{n-1}f(0)-s^{n-2}f^{(1)}(0)-\cdots-f^{(n-1)}(0)} \\\noalign{\vskip 4pt}
+انتگرال زمانی & \EMim{\mathcal{L}\left\{\displaystyle\int_0^tf(\tau)\,d\tau\right\}=\dfrac1sF(s)} \\\noalign{\vskip 4pt}
+مشتق در حوزهٔ \EMim{s} & \EMim{\mathcal{L}\{tf(t)\}=-F'(s)} \\\noalign{\vskip 4pt}
+انتگرال در حوزهٔ \EMim{s} & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=\displaystyle\int_s^\infty F(\nu)\,d\nu} \\\noalign{\vskip 4pt}
+\bottomrule
+\end{tabular}}}\par}
+\end{uncoverenv}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{استفاده از تبدیل لاپلاس در حل معادلات دیفرانسیل}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{uncoverenv}<2->
+\EMp{مراحل حل یک معادلهٔ دیفرانسیل با شرایط اولیه با استفاده از تبدیل لاپلاس:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{۱.}{\dimexpr\linewidth-26bp\relax}{تبدیل مسئلهٔ مقدار اولیه به یک مسئلهٔ جبری؛}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{۲.}{\dimexpr\linewidth-26bp\relax}{محاسبهٔ جواب مسئلهٔ جبری؛}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{۳.}{\dimexpr\linewidth-26bp\relax}{حل مسئلهٔ مقدار اولیه (بازگرداندن جواب به حوزهٔ زمان).}
+\end{uncoverenv}
+\EMgap
+\end{minipage}
+\EMside{162.2bp}{\uncover<6->{\EMfigure{0.746}{m07-solve-scheme}{مراحل حل مسئلهٔ مقدار اولیه با تبدیل لاپلاس: مسئلهٔ مقدار اولیه \EMim{\xrightarrow{1}} مسئلهٔ جبری \EMim{\xrightarrow{2}} جواب مسئلهٔ جبری \EMim{\xrightarrow{3}} جواب مسئلهٔ مقدار اولیه}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{معادلات دیفرانسیل معمولی}
+\begin{EMbox}{ex}{1}{}
+\EMp{معادلهٔ دیفرانسیل \EMim{y''-y=t}، \EMim{y(0)=1}، \EMim{y'(0)=1} را با استفاده از تبدیل لاپلاس حل کنید.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{s^2Y-sy(0)-y'(0)-Y =\frac1{s^2}\  \Longrightarrow\ (s^2-1)Y(s) =s+1+\frac1{s^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{Y(s) =\frac{s+1}{s^2-1}+\frac1{s^2(s^2-1)} =\frac1{s-1}+\left(\frac1{s^2-1}-\frac1{s^2}\right)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{y(t) =\mathcal{L}^{-1}\{Y(s)\} =\mathcal{L}^{-1}\left\{\frac1{s-1}\right\}+\mathcal{L}^{-1}\left\{\frac1{s^2-1}\right\}-\mathcal{L}^{-1}\left\{\frac1{s^2}\right\} =e^tu(t)+\sinh t\,u(t)-t\,u(t)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{معادلات دیفرانسیل با مشتقات جزئی}
+\begin{EMbox}{ex}{1}{}
+\EMp{معادلهٔ دیفرانسیل با مشتقات جزئی زیر را با استفاده از تبدیل لاپلاس حل کنید.}
+\vspace{3bp}
+\EMeq{\frac{\partial w}{\partial x}+x\frac{\partial w}{\partial t} =0,\qquad w(x,0) =0,\qquad w(0,t) =t\,u(t)}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{از طرفین نسبت به \EMim{t} تبدیل لاپلاس می‌گیریم:}
+\vspace{3bp}
+\EMeq{\mathcal{L}_t\left\{\frac{\partial w}{\partial x}+x\frac{\partial w}{\partial t}\right\} =\mathcal{L}_t\left\{\frac{\partial w}{\partial x}\right\}+x\,\mathcal{L}_t\left\{\frac{\partial w}{\partial t}\right\} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac\partial{\partial x}w(x,s)+x\big[s\,w(x,s)-w(x,0)\big] =0,\qquad w(x,0) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac\partial{\partial x}w(x,s)+xs\,w(x,s) =0\  \Rightarrow\ \frac{dw}w =-sx\,dx\  \Rightarrow\ \ln w =-s\frac{x^2}2+\ln C\  \Rightarrow\ w(x,s) =Ce^{-\frac{x^2}2s}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{از شرط \EMim{w(0,t)=t\,u(t)} داریم \EMim{w(0,s)=\mathcal{L}\{w(0,t)\}=\frac1{s^2}=C}:}
+\vspace{3bp}
+\EMeq{w(x,s) =\frac1{s^2}e^{-\frac{x^2}2s}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{معادلات دیفرانسیل با مشتقات جزئی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMp{با استفاده از خاصیت شیفت زمانی \EMim{\mathcal{L}\{f(t-a)u(t-a)\}=e^{-as}F(s)}:}
+\vspace{3bp}
+\EMeq{w(x,t) =\left(t-\frac{x^2}2\right)\times u\!\left(t-\frac{x^2}2\right)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}

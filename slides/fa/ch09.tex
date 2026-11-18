@@ -1,0 +1,478 @@
+\section{توابع مختلط، مشتق و شرایط کشی--ریمان}
+\def\EMfootchapter{فصل ۹ \ \textbullet\ توابع مختلط، مشتق و شرایط کشی--ریمان}
+\def\EMtitlesize{24}
+\begin{frame}{فصل ۹: توابع مختلط، مشتق و شرایط کشی--ریمان}
+{\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
+\vspace{10bp}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{توابع مختلط}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{چند مکان هندسی مهم}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{حد توابع مختلط}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{پیوستگی توابع مختلط}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مشتق توابع مختلط}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط کشی--ریمان}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مشتق‌پذیری توابع مختلط: مثال‌ها}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{توابع مختلط تحلیلی}
+\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط کشی--ریمان در مختصات قطبی}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مختلط}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{z =x+iy,\qquad w =u+iv}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f:\mathbb{C}\to\mathbb{C},\qquad f:\begin{cases}u=u(x,y)\\ v=v(x,y)\end{cases}}
+\end{uncoverenv}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.034}{m09-mapping}{تابع مختلط \EMim{w=f(z)} نقاط دامنه در صفحهٔ \EMim{z} را به نقاط برد در صفحهٔ \EMim{w} می‌نگارد}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مختلط (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{تابع \EMim{w=z^2} را در نظر بگیرید:}
+\vspace{3bp}
+\EMeq{u+iv =(x+iy)^2 =(x^2-y^2)+i(2xy)\quad \Longrightarrow\quad \begin{cases}u=x^2-y^2\\ v=2xy\end{cases}}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{چند مکان هندسی مهم}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{|z| =1,\qquad |z-a| =\rho,\qquad |z-a|<\rho,\qquad \\[4pt] \rho_1<|z-a|<\rho_2}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{مجموعهٔ \EMim{|z-a|<\rho} را \EMim{\rho}-همسایگی \EMim{a} می‌نامند.}
+\end{uncoverenv}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{0.817}{m09-loci}{مکان‌های هندسی مهم: دایره، \EMim{\rho}-همسایگی نقطهٔ \EMim{a} و ناحیهٔ حلقوی}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{حد توابع مختلط}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{اگر به ازاء هر \EMim{\varepsilon>0} بتوان \EMim{\delta>0} به‌دست آورد، به طوری که از نامساوی \EMim{|z-z_0|<\delta} نتیجه شود \EMim{|f(z)-l|<\varepsilon}، آنگاه}
+\vspace{3bp}
+\EMeq{\lim_{z\to z_0}f(z) =l}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{بنابراین به ازاء کلیهٔ نقاط داخل دایره‌ای به مرکز \EMim{z_0} و به شعاع \EMim{\delta} لازم است که \EMim{f(z)} داخل دایره‌ای به مرکز \EMim{l} و به شعاع \EMim{\varepsilon} باشد. در اینجا \EMim{\varepsilon} داده می‌شود و \EMim{\delta(\varepsilon)} را بایستی به‌دست آورد. واضح است مفهوم حد در اینجا گسترده‌تر از حد در توابع حقیقی است.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{233.9bp}{\uncover<4->{\EMfigure{1.026}{m09-limit}{تعریف حد: دایرهٔ \EMim{\delta}-همسایگی \EMim{z_0} در صفحهٔ \EMim{z} و دایرهٔ \EMim{\varepsilon}-همسایگی \EMim{l} در صفحهٔ \EMim{w}}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{پیوستگی توابع مختلط}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{تابع \EMim{w=f(z)} در نقطهٔ \EMim{z=z_0} پیوسته است هرگاه سه شرط زیر برقرار باشد:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{۱.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)} در نقطهٔ \EMim{z=z_0} معین باشد.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{۲.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\lim_{z\to z_0}f(z)} وجود داشته باشد.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{۳.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\lim_{z\to z_0}f(z)=f(z_0)} باشد.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{پیوستگی توابع مختلط (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{آیا تابع \EMim{f(z)=\sin\frac1z} در نقطهٔ \EMim{z=0} پیوسته است؟}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{پیوستگی توابع مختلط (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{آیا تابع}
+\vspace{3bp}
+\EMeq{f(z) =\begin{cases}\sin\frac1z&z\neq0\\ 5+4i&z=0\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{در نقطهٔ \EMim{z=0} پیوسته است؟}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{پیوستگی توابع مختلط (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{آیا تابع}
+\vspace{3bp}
+\EMeq{f(z) =\begin{cases}3z^3+4&z\neq0\\ 17&z=0\end{cases}}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{در نقطهٔ \EMim{z=0} پیوسته است؟}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{خواص توابع مختلط پیوسته}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMitem{۱.}{\dimexpr\linewidth-26bp\relax}{اگر توابع \EMim{f(z),g(z)} در نقطهٔ \EMim{z_0} پیوسته باشند، آنگاه \EMim{f(z)\pm g(z)} در \EMim{z_0} پیوسته است.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{۲.}{\dimexpr\linewidth-26bp\relax}{اگر توابع \EMim{f(z),g(z)} در نقطهٔ \EMim{z_0} پیوسته باشند، آنگاه \EMim{f(z)\times g(z)} در \EMim{z_0} پیوسته است.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{۳.}{\dimexpr\linewidth-26bp\relax}{اگر توابع \EMim{f(z),g(z)} در نقطهٔ \EMim{z_0} پیوسته باشند و \EMim{g(z_0)\neq0} آنگاه \EMim{\dfrac{f(z)}{g(z)}} در \EMim{z_0} پیوسته است.}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{def}{4}{}
+\begin{uncoverenv}<5->
+\EMp{تابع \EMim{w=f(z)} در میدان \EMim{D} پیوسته است هرگاه تابع \EMim{f} در تمام نقاط میدان \EMim{D} پیوسته باشد.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{میدان: تمام نقاط داخل یک منحنی بسته.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{214.7bp}{\uncover<7->{\EMfigure{1.500}{m09-domain}{میدان \EMim{D} در صفحهٔ مختلط}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{مشتق توابع مختلط}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{def}{1}{}
+\begin{uncoverenv}<2->
+\EMp{تابع \EMim{w=f(z)} در نقطهٔ \EMim{z=z_0} مشتق‌پذیر است هرگاه حد زیر موجود باشد:}
+\vspace{3bp}
+\EMeq{f'(z_0) =\lim_{|\Delta z|\to0}\frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{2}{}
+\begin{uncoverenv}<3->
+\EMp{وجود مشتق در توابع مختلط نیازمند شرایط سخت‌تری نسبت به توابع حقیقی است، زیرا اگر در صفحهٔ \EMim{z} از \emph{تمام} جهات به نقطهٔ \EMim{z_0} نزدیک شویم، بایستی این حد موجود بوده به مسیر انتخابی بستگی به سمت \EMim{z_0} بستگی نداشته باشد.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{214.7bp}{\uncover<4->{\EMfigure{1.500}{m09-approach}{نزدیک شدن به نقطهٔ \EMim{z_0} از تمام جهات}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{شرط لازم برای آنکه تابع مختلط \EMim{w=f(z)} مشتق‌پذیر باشد آن‌است که شرایط کشی--ریمان (شرایط مقابل) برقرار باشند:}
+\vspace{3bp}
+\EMeq{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad w =u+iv =f(x+iy) =f(z)}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{prf}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{f'(z) =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z},\qquad z =x+iy,\qquad \Delta z =\Delta x+i\Delta y}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\begin{aligned}
+f(z+\Delta z)-f(z)&=\big[u(x+\Delta x,y+\Delta y)+iv(x+\Delta x,y+\Delta y)\big]-\big[u(x,y)+iv(x,y)\big]\\
+&=\big[u(x+\Delta x,y+\Delta y)-u(x,y)\big]+i\big[v(x+\Delta x,y+\Delta y)-v(x,y)\big]
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{f(z+\Delta z)-f(z)}{\Delta z} =\frac{u(x+\Delta x,y+\Delta y)-u(x,y)}{\Delta x+i\Delta y}+i\,\frac{v(x+\Delta x,y+\Delta y)-v(x,y)}{\Delta x+i\Delta y}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان (ادامه)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{شرط لازم برای وجود مشتق \EMim{w=f(z)} آن است که اگر از هر جهت به نقطهٔ \EMim{z} نزدیک شویم (از جمله در راستای افقی یا عمودی) مقدار حد مربوط به \EMim{f'(z)} تغییر نکند.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\textbf{مسیر ۱: راستای قائم.} \EMim{\Delta z=\Delta x+i\Delta y} و \EMim{\Delta x=0}، یعنی \EMim{\Delta z=i\Delta y}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta y\to0}\left[\frac{u(x,y+\Delta y)-u(x,y)}{i\Delta y}+i\,\frac{v(x,y+\Delta y)-v(x,y)}{i\Delta y}\right]\\
+&=\frac1i\,\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}=\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y}
+\end{aligned}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان (ادامه)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{\textbf{مسیر ۲: راستای افقی.} \EMim{\Delta z=\Delta x+i\Delta y} و \EMim{\Delta y=0}، یعنی \EMim{\Delta z=\Delta x}:}
+\vspace{3bp}
+\EMeq{\begin{aligned}
+f'(z)&=\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z}\\
+&=\lim_{\Delta x\to0}\left[\frac{u(x+\Delta x,y)-u(x,y)}{\Delta x}+i\,\frac{v(x+\Delta x,y)-v(x,y)}{\Delta x}\right]\\
+&=\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}
+\end{aligned}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{بنابراین}
+\vspace{3bp}
+\EMeq{f'(z) =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y} =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{و با مساوی قرار دادن بخش‌های حقیقی و موهومی:}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان (ادامه)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial v}{\partial y},\qquad \frac{\partial u}{\partial y} =-\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{rem}{3}{}
+\begin{uncoverenv}<4->
+\EMitem{۱.}{\dimexpr\linewidth-26bp\relax}{اگر این شرایط برقرار نباشد مشتق در نقطهٔ \EMim{z} وجود ندارد.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMitem{۲.}{\dimexpr\linewidth-26bp\relax}{روش‌های زیر جهت مشتق‌گیری پیشنهاد می‌شود:}
+\vspace{3bp}
+\EMeq{f'(z) =\lim_{|\Delta z|\to0}\frac{f(z+\Delta z)-f(z)}{\Delta z} =\frac{\partial v}{\partial y}-i\,\frac{\partial u}{\partial y} \\[4pt] =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =\frac{\partial u}{\partial x}-i\,\frac{\partial u}{\partial y} =\frac{\partial v}{\partial y}+i\,\frac{\partial v}{\partial x}}
+\end{uncoverenv}
+\end{EMbox}
+\begin{EMbox}{thm}{5}{}
+\begin{uncoverenv}<6->
+\EMp{شرط کافی برای آنکه تابع مختلط \EMim{w=f(z)} مشتق‌پذیر باشد آن‌است که شرایط کشی--ریمان برقرار باشند.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMp{اثبات خارج از حوصلهٔ کلاس است.}
+\end{uncoverenv}
+\end{EMbox}
+\end{minipage}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.074}{m09-cr-paths}{دو مسیر نزدیک شدن به \EMim{z}: راستای قائم (\EMim{\Delta z=i\Delta y}) و راستای افقی (\EMim{\Delta z=\Delta x})}}}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان (ادامه)}
+\begin{EMbox}{thm}{1}{}
+\begin{uncoverenv}<2->
+\EMp{شرط لازم و کافی برای آنکه تابع مختلط \EMim{w=f(z)} مشتق‌پذیر باشد آن‌است که شرایط کشی--ریمان (شرایط مقابل) برقرار باشند.}
+\vspace{3bp}
+\EMeq{\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y}\\\noalign{\vskip 2mm} \dfrac{\partial u}{\partial y}=-\dfrac{\partial v}{\partial x}\end{cases}\qquad w =u+iv =f(x+iy) =f(z)}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{نتیجهٔ برقراری شرایط کشی--ریمان (تحلیلی بودن یک تابع)}
+\begin{uncoverenv}<2->
+\EMp{از شرایط کشی--ریمان نسبت به \EMim{x} و \EMim{y} مشتق می‌گیریم:}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\left.\begin{aligned}\frac{\partial^2u}{\partial x^2}&=\frac{\partial^2v}{\partial x\partial y}\\[1mm] \frac{\partial^2u}{\partial y^2}&=-\frac{\partial^2v}{\partial x\partial y}\end{aligned}\right\}\ \xrightarrow{\ \EMt{جمع}\ }\ \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\left.\begin{aligned}\frac{\partial^2u}{\partial x\partial y}&=\frac{\partial^2v}{\partial y^2}\\[1mm] \frac{\partial^2u}{\partial x\partial y}&=-\frac{\partial^2v}{\partial x^2}\end{aligned}\right\}\ \xrightarrow{\ \EMt{تفریق}\ }\ \frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2} =0}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{rem}{4}{}
+\begin{uncoverenv}<5->
+\EMp{قسمت حقیقی و موهومی یک تابع تحلیلی در معادلهٔ لاپلاس دوبعدی صدق می‌کند.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{مشتق‌پذیری توابع مختلط: مثال‌ها}
+\begin{EMbox}{ex}{1}{}
+\EMp{تابع \EMim{w=z^2} را در نظر بگیرید؛ آیا این تابع تحلیلی است؟}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{w =f(z) =z^2 =(x+iy)^2 =(x^2-y^2)+i\,2xy,\qquad u(x,y) =x^2-y^2,\qquad v(x,y) =2xy}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =2x =\frac{\partial v}{\partial y}\ \EMcheck \qquad \qquad \frac{\partial u}{\partial y} =-2y =-\frac{\partial v}{\partial x}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{f'(z) =\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x} =2x+i\,2y =2(x+iy) =2z}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\nabla^2u =2-2 =0,\qquad \nabla^2v =0+0 =0}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{مشتق‌پذیری توابع مختلط: مثال‌ها (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{تابع \EMim{w=|z|^2} را در نظر بگیرید؛ آیا این تابع تحلیلی است؟}
+\EMgap
+\begin{uncoverenv}<2->
+\EMeq{w =f(z) =|z|^2 =(x+iy)(x-iy) =x^2+y^2,\qquad u(x,y) =x^2+y^2,\qquad v(x,y) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =2x,\quad \frac{\partial v}{\partial y} =0,\qquad \frac{\partial u}{\partial y} =2y,\quad -\frac{\partial v}{\partial x} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\nabla^2u =2+2 =4,\qquad \nabla^2v =0+0 =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMp{تحلیلی در هیچ‌جا به جز مبدأ.}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{مشتق‌پذیری توابع مختلط: مثال‌ها (ادامه)}
+\begin{EMbox}{exe}{1}{}
+\EMp{بررسی کنید آیا هر کدام از توابع زیر تحلیلی‌اند. در صورت تحلیلی بودن مشتق آن توابع را به دست آورید.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMitem{۱.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=\bar z}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMitem{۲.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=\operatorname{Re}\{z\}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMitem{۳.}{\dimexpr\linewidth-26bp\relax}{\EMim{f(z)=z^3+2z^2+3i}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مختلط تحلیلی}
+\begin{EMbox}{ex}{1}{}
+\EMp{\EMim{u=x^2-y^2} قسمت حقیقی یک تابع تحلیلی \EMim{f(z)} است. مطلوب است محاسبهٔ \EMim{f(z)}.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{از آنجائی که \EMim{f(z)} تحلیلی است، قسمت‌های حقیقی و موهومی تابع در شرایط کوشی--ریمان صدق می‌کنند و در نتیجه این قسمت‌ها در معادلهٔ لاپلاس دو بعدی نیز باید صدق کنند.}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{۱) اول چک کنیم که آیا قسمت حقیقی تابع در معادلهٔ لاپلاس ۲ بعدی صدق می‌کند؟}
+\vspace{3bp}
+\EMeq{\nabla^2u =\frac{\partial^2}{\partial x^2}(x^2-y^2)+\frac{\partial^2}{\partial y^2}(x^2-y^2) =2-2 =0\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMp{۲) از روابط کشی--ریمان استفاده می‌کنیم:}
+\vspace{3bp}
+\EMeq{\frac{\partial u}{\partial x} =2x =\frac{\partial v}{\partial y}\quad \Longrightarrow\quad v(x,y) =2xy+\varphi(x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{-\frac{\partial v}{\partial x} =-2y-\varphi'(x) =\frac{\partial u}{\partial y} =-2y\quad \Longrightarrow\quad \varphi'(x) =0\quad \Longrightarrow\quad \varphi(x) =c,\ \ c\in\mathbb{R}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMeq{f(z) =(x^2-y^2)+i(2xy+c) =z^2+C}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{توابع مختلط تحلیلی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{اگر \EMim{u=\cos x\cosh y}،
+الف) نشان دهید این تابع در صفحه هارمونیک است (\EMim{\nabla^2u=0}).
+ب) تابع \EMim{v(x,y)} را چنان بیابید که \EMim{u+iv} تحلیلی شود.}
+\EMgap
+\begin{uncoverenv}<2->
+\EMp{الف) چک کنیم که آیا قسمت حقیقی تابع در معادلهٔ لاپلاس ۲ بعدی صدق می‌کند؟}
+\vspace{3bp}
+\EMeq{\nabla^2u =\frac{\partial^2}{\partial x^2}(\cos x\cosh y)+\frac{\partial^2}{\partial y^2}(\cos x\cosh y) =-\cos x\cosh y+\cos x\cosh y =0\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{ب) از روابط کشی--ریمان استفاده می‌کنیم:}
+\vspace{3bp}
+\EMeq{\frac{\partial u}{\partial x} =-\sin x\cosh y =\frac{\partial v}{\partial y}\quad \Longrightarrow\quad v(x,y) =-\sin x\sinh y+\varphi(x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{-\frac{\partial v}{\partial x} =\cos x\sinh y-\varphi'(x) =\frac{\partial u}{\partial y} =\cos x\sinh y\quad \Longrightarrow\quad \varphi'(x) =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\varphi(x) =c,\ \ c\in\mathbb{R}\quad \Longrightarrow\quad v(x,y) =-\sin x\sinh y+c}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان در مختصات قطبی}
+\begin{uncoverenv}<2->
+\EMeq{\begin{cases}x=r\cos\theta\\ y=r\sin\theta\end{cases}\qquad \begin{cases}r=\sqrt{x^2+y^2}\\ \theta=\tan^{-1}\dfrac{y}{x}\end{cases}\qquad r_x =\frac{x}{r},\quad \theta_x =\frac{-y}{r^2},\quad r_y =\frac{y}{r},\quad \theta_y =\frac{x}{r^2}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial u}{\partial r}\frac{\partial r}{\partial x}+\frac{\partial u}{\partial\theta}\frac{\partial\theta}{\partial x} =\frac xr\frac{\partial u}{\partial r}-\frac{y}{r^2}\frac{\partial u}{\partial\theta} =\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{\frac{\partial v}{\partial y} =\frac{\partial v}{\partial r}\frac{\partial r}{\partial y}+\frac{\partial v}{\partial\theta}\frac{\partial\theta}{\partial y} =\frac yr\frac{\partial v}{\partial r}+\frac{x}{r^2}\frac{\partial v}{\partial\theta} =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
+\EMeq{\frac{\partial u}{\partial x} =\frac{\partial v}{\partial y}\; \Longrightarrow\;\cos\theta\frac{\partial u}{\partial r}-\frac1r\sin\theta\frac{\partial u}{\partial\theta} =\sin\theta\frac{\partial v}{\partial r}+\frac1r\cos\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<6->
+\EMp{مشابهاً}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<7->
+\EMeq{\frac{\partial u}{\partial y} =-\frac{\partial v}{\partial x}\; \Longrightarrow\;\sin\theta\frac{\partial u}{\partial r}+\frac1r\cos\theta\frac{\partial u}{\partial\theta} =-\cos\theta\frac{\partial v}{\partial r}+\frac1r\sin\theta\frac{\partial v}{\partial\theta}}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{7}{}
+\begin{uncoverenv}<8->
+\EMeq{\frac{\partial u}{\partial r} =\frac1r\frac{\partial v}{\partial\theta},\qquad -\frac1r\frac{\partial u}{\partial\theta} =\frac{\partial v}{\partial r}}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{24}
+\begin{frame}{شرایط کشی--ریمان در مختصات قطبی (ادامه)}
+\begin{EMbox}{exe}{1}{\textbf{تمرین \lr{\persianfont ۹.۲۰}}}
+\EMp{با استفاده از شرایط کشی--ریمان در فرم قطبی ثابت کنید که \EMim{u} و \EMim{v} در معادلهٔ لاپلاس در فرم قطبی صدق می‌کنند، یعنی:}
+\vspace{3bp}
+\EMeq{\nabla^2u =u_{rr}+\frac1{r^2}u_{\theta\theta}+\frac1ru_r =0,\qquad \nabla^2v =v_{rr}+\frac1{r^2}v_{\theta\theta}+\frac1rv_r =0}
+\end{EMbox}
+\end{frame}
