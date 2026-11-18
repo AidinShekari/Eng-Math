@@ -25,7 +25,7 @@ def unit_tex(unit, slide, pager, narrow):
         if e.kind == "para":
             out.append(r"\EMp{%s}" % e.tex)
         elif e.kind == "item":
-            mark = r"%d." % e.index if e.ordered else r"\textbullet"
+            mark = r"%d." % e.index if e.ordered else r"\lr{\textbullet}"
             if slide["lang"] == "fa" and e.ordered:
                 mark = L.num("fa", str(e.index)) + "."
             out.append(r"\EMitem{%s}{\dimexpr\linewidth-26bp\relax}{%s}" % (mark, e.tex))
@@ -46,8 +46,7 @@ def unit_tex(unit, slide, pager, narrow):
             sc = pager.fig_full_scale(e)
             out.append(r"\EMfigure{%.3f}{%s}{%s}" % (sc, e.name, e.tex))
         elif e.kind == "table":
-            s = pager.S[e.jid + "_tab"]
-            sc = min(1.0, L.CW / s["wd"])
+            sc = pager.table_scale(e)
             out.append(r"{\EMbody\centering\scalebox{%.3f}{\parbox{%dbp}{%s}}\par}" % (sc, int(L.CW), table_tex(e.tex)))
     return "\n".join(x for x in out if x)
 
@@ -62,7 +61,7 @@ def content_frame(slide, pager, lang):
     narrow = slide["narrow"]
     lines = []
     fs = title_fontsize(slide, pager, title)
-    lines.append(r"\def\EMtitlesize{%s}" % fs)
+    lines.append(tdef(fs))
     lines.append(r"\begin{frame}{%s}" % title)
     if slide.get("shrink", 1.0) < 0.999:
         lines.append(r"\EMshrink{%.3f}{" % slide["shrink"])
@@ -82,7 +81,7 @@ def content_frame(slide, pager, lang):
                     lab, t = u.box.head
                     if slide["lang"] == "fa":
                         lab = re.sub(r"([۰-۹0-9]+\.[۰-۹0-9]+)", r"\\lr{\\persianfont \1}", lab)
-                    head = r"\textbf{%s}%s" % (lab, (r"\ \ |\ \ " + t) if t else "")
+                    head = r"\textbf{%s}%s" % (lab, (r"\ \ \lr{|}\ \ " + t) if t else "")
                 lines.append(r"\begin{EMbox}{%s}{%d}{%s}" % (u.box.kind, max(st, 1), head))
         elif not first:
             lines.append(r"\EMgap")
@@ -115,14 +114,13 @@ def content_frame(slide, pager, lang):
     return "\n".join(lines)
 
 
+def tdef(size):
+    return r"\def\EMtitlesize{%d}\def\EMtitleskip{%d}" % (size, round(size * 1.2))
+
+
 def title_fontsize(slide, pager, title):
-    w = pager.deck.title_w.get(title)
-    if not w:
-        return L.TITLE
-    room = L.BAR["w"] - 36
-    if w <= room:
-        return L.TITLE
-    return max(14, int(L.TITLE * room / w))
+    size, two = L.title_style(pager.deck.title_w.get(title))
+    return size
 
 
 def cover_frame(deck):
@@ -150,29 +148,33 @@ def cover_frame(deck):
 
 def part_frame(slide, lang):
     numeral, title, first, rng = slide["part"]
-    return r"""\def\EMtitlesize{%d}
+    return tdef(L.TITLE) + r"""
 \begin{frame}{%s}
 \begin{tikzpicture}[remember picture,overlay]
 \node[fill=SLbar,draw=SLbarEdge,line width=0.8bp,rounded corners=4bp,minimum width=520bp,minimum height=170bp] (b) at ([yshift=-20bp]current page.center) {};
 \node[text=SLthm,font=\bfseries\fontsize{30}{36}\selectfont] at ([yshift=36bp]b.center) {\EMdir{%s}};
 \node[text=SLdef,font=\fontsize{24}{30}\selectfont] at ([yshift=-30bp]b.center) {\EMdir{%s}};
 \end{tikzpicture}
-\end{frame}""" % (L.TITLE, slide["title"], slide["title"], title)
+\end{frame}""" % (slide["title"], slide["title"], title)
 
 
 def chapter_frame(slide, lang):
     ch = slide["ch"]
-    items = "\n".join(r"\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{%s}" % t for t in ch.sections)
-    return r"""\def\EMtitlesize{%d}
+    items = "\n".join(r"\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{%s}" % t for t in ch.sections)
+    return tdef(title_fontsize(slide, deck_pager[0], slide["title"])) + r"""
 \begin{frame}{%s}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign %s\par}
 \vspace{10bp}
 %s
-\end{frame}""" % (L.TITLE, slide["title"], L.LABELS[lang]["contents"], items)
+\end{frame}""" % (slide["title"], L.LABELS[lang]["contents"], items)
+
+
+deck_pager = [None]
 
 
 def write(deck):
     lang = deck.lang
+    deck_pager[0] = deck.pager
     outdir = SLIDES / lang
     outdir.mkdir(exist_ok=True)
     for f in outdir.glob("*.tex"):
@@ -205,6 +207,8 @@ def write(deck):
             fr = (r"\section{%s}" % chap_title[s["chapter"]]) + "\n" + r"\def\EMfootchapter{%s}" % foot + "\n" + chapter_frame(s, lang)
         else:
             fr = content_frame(s, pager, lang)
+        if lang == "fa":  # B Nazanin has no bullet: take it from the Latin font
+            fr = re.sub(r"(?<!\\lr\{)\\textbullet", r"\\lr{\\textbullet}", fr)
         cur.append((s["chapter"], s["kind"], fr))
     flush(curname, [f for _, _, f in cur])
     rtl = lang == "fa"
@@ -215,8 +219,10 @@ def write(deck):
             r"\documentclass[t,12pt]{beamer}",
             r"\newif\ifEMrtl " + (r"\EMrtltrue" if rtl else r"\EMrtlfalse"),
             r"\def\EMroot{../template}",
+            r"\def\EMslidefonts{fonts/}",
+            (r"\def\EMfigdir{figures-fa}" if rtl else ""),
             r"\input{em-slides-common}",
-            (r"\usepackage{xepersian}" if rtl else r"\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMroot/fonts/,Extension=.ttf,Script=Arabic]{Vazirmatn-Regular}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}"),
+            (r"\usepackage{xepersian}" if rtl else r"\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMslidefonts,Script=Arabic]{BNazanin.ttf}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}"),
             r"\input{em-fonts-%s}" % lang,
             r"\input{em-beamer}",
             r"\title{%s}" % ("ریاضی مهندسی" if rtl else "Engineering Mathematics"),

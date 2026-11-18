@@ -1,0 +1,8 @@
+% A rod 0 <= x <= L with a temperature profile u(x,t)
+\begin{tikzpicture}
+  \draw[EMax] (-0.5,0)--(6.8,0) node[EMlab,right]{$x$};\draw[EMax] (0,-0.4)--(0,3.1) node[EMlab,above]{$u(x,t)$};
+  \draw[EMcurve2,line width=3pt,line cap=butt] (0,0)--(6,0);
+  \draw[EMcurve,domain=0:6,samples=60,smooth] plot ({\x},{2.2*sin(pi*\x/6 r)});
+  \node[EMlabs,below] at (0,-0.12){$0$};\node[EMlabs,below] at (6,-0.12){$L$};
+  \node[EMlabs,below] at (3,-0.2){\EML{rod}{میله}};
+\end{tikzpicture}

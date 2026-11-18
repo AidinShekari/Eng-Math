@@ -1,0 +1,6 @@
+% The rectangle 0 <= x <= a, 0 <= y <= b
+\begin{tikzpicture}[scale=1.15]
+  \filldraw[EMfill,draw=EMindigo,line width=0.9pt] (0,0) rectangle (4,2.4);
+  \draw[EMax] (-0.6,0)--(4.8,0) node[EMlab,right]{$x$};\draw[EMax] (0,-0.5)--(0,3.1) node[EMlab,above]{$y$};
+  \node[EMlabs,below] at (4,-0.05){$a$};\node[EMlabs,left] at (-0.05,2.4){$b$};
+\end{tikzpicture}

@@ -1,8 +1,9 @@
-% Fonts of the English deck: TeX Gyre Heros (a Helvetica-style sans, for the screen) for the
-% text, TeX Gyre Termes Math for the mathematics (as in the notes).
-\setmainfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
-  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
-\setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
-  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+% Fonts of the English deck: Times New Roman (TeX Gyre Termes, its metric clone, where Times New
+% Roman is not installed) for the text, TeX Gyre Termes Math for the mathematics, B Nazanin
+% (slides/fonts) for the few Persian words.
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+     ItalicFont=*-italic, BoldItalicFont=*-bolditalic]}
 \setmathfont{texgyretermes-math.otf}
-\def\EMlead{1.22}
+\def\EMlead{1.17}

@@ -1,24 +1,24 @@
-\section{روش دالامبر و معادلهٔ انتقال حرارت یک‌بعدی}
-\def\EMfootchapter{فصل ۵ \ \textbullet\ روش دالامبر و معادلهٔ انتقال حرارت یک‌بعدی}
-\def\EMtitlesize{24}
-\begin{frame}{فصل ۵: روش دالامبر و معادلهٔ انتقال حرارت یک‌بعدی}
+\section{روش دالامبر و معادلۀ انتقال حرارت یک‌بعدی}
+\def\EMfootchapter{فصل ۵ \ \lr{\textbullet}\ روش دالامبر و معادلۀ انتقال حرارت یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{فصل ۵: روش دالامبر و معادلۀ انتقال حرارت یک‌بعدی}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معادلهٔ دیفرانسیل انتقال حرارت}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معادلهٔ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تابع خطا}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{روش دالامبر در حل معادلۀ موجی یک‌بعدی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معادلۀ دیفرانسیل انتقال حرارت}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معادلۀ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{تابع خطا}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی}
 \begin{uncoverenv}<2->
 \EMeq{\begin{cases}\dfrac{\partial^2u}{\partial t^2}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMp{با استفاده از تغییر متغیرها به شکل زیر معادلهٔ دیفرانسیل را بازنویسی و حل می‌کنیم.}
+\EMp{با استفاده از تغییر متغیرها به شکل زیر معادلۀ دیفرانسیل را بازنویسی و حل می‌کنیم.}
 \vspace{3bp}
 \EMeq{u(x,t) \Rightarrow u(\varphi,\psi),\qquad \begin{cases}\varphi=x+ct\\ \psi=x-ct\end{cases}}
 \end{uncoverenv}
@@ -32,8 +32,8 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
 \EMeq{\frac{\partial^2u}{\partial x^2} =\frac\partial{\partial x}\left(\frac{\partial u}{\partial\varphi}+\frac{\partial u}{\partial\psi}\right) =\left(\frac{\partial^2u}{\partial\varphi^2}+\frac{\partial^2u}{\partial\varphi\partial\psi}\right)\cdot1+\left(\frac{\partial^2u}{\partial\psi\partial\varphi}+\frac{\partial^2u}{\partial\psi^2}\right)\cdot1 =\frac{\partial^2u}{\partial\varphi^2}+2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}}
 \end{uncoverenv}
@@ -43,15 +43,15 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \EMp{به طریق مشابه تساوی زیر را ثابت کنید:}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =c^2\left(\frac{\partial^2u}{\partial\varphi^2}-2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right)}
 \end{EMbox}
 \begin{uncoverenv}<2->
-\EMp{با قرار دادن دو رابطهٔ بالا در معادلهٔ دیفرانسیل موجی یک‌بعدی:}
+\EMp{با قرار دادن دو رابطۀ بالا در معادلۀ دیفرانسیل موجی یک‌بعدی:}
 \vspace{3bp}
 \EMeq{c^2\left(\frac{\partial^2u}{\partial\varphi^2}-2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right) =c^2\left(\frac{\partial^2u}{\partial\varphi^2}+2\frac{\partial^2u}{\partial\varphi\partial\psi}+\frac{\partial^2u}{\partial\psi^2}\right)\quad \Longrightarrow\quad \frac{\partial^2u}{\partial\varphi\partial\psi} =0}
 \end{uncoverenv}
@@ -59,7 +59,7 @@
 \begin{uncoverenv}<3->
 \EMp{\textbf{حل عمومی:}}
 \vspace{3bp}
-\EMeq{\frac{\partial u}{\partial\varphi} =\phi_1(\varphi)\  \Rightarrow\ u(\varphi,\psi) =\int\phi_1(\varphi)\,d\varphi+\Psi(\psi) =\Phi(\varphi)+\Psi(\psi)\quad \Longrightarrow\quad u(x,t) =\Phi(x+ct)+\Psi(x-ct)}
+\EMeq{\frac{\partial u}{\partial\varphi} =\phi_1(\varphi)\  \Rightarrow\ u(\varphi,\psi) =\int\phi_1(\varphi)\,d\varphi+\Psi(\psi) =\Phi(\varphi)+\Psi(\psi)\quad \Longrightarrow\quad u(x,t) \\[4pt] =\Phi(x+ct)+\Psi(x-ct)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
@@ -67,62 +67,60 @@
 \vspace{3bp}
 \EMeq{u(x,0) =\Phi(x)+\Psi(x) =f(x)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{u_t(x,t) =\frac{\partial\Phi}{\partial\varphi}\frac{\partial\varphi}{\partial t}+\frac{\partial\Psi}{\partial\psi}\frac{\partial\psi}{\partial t} =c\Phi'(\varphi)-c\Psi'(\psi) =c\Phi'(x+ct)-c\Psi'(x-ct)}
-\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
-\EMeq{u_t(x,0) =c\Phi'(x)-c\Psi'(x) =c\big[\Phi'(x)-\Psi'(x)\big] =g(x)}
+\EMeq{u_t(x,t) =\frac{\partial\Phi}{\partial\varphi}\frac{\partial\varphi}{\partial t}+\frac{\partial\Psi}{\partial\psi}\frac{\partial\psi}{\partial t} =c\Phi'(\varphi)-c\Psi'(\psi) =c\Phi'(x+ct)-c\Psi'(x-ct)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{\begin{cases}\Phi(x)+\Psi(x)=f(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases} \Rightarrow\begin{cases}\Phi'(x)+\Psi'(x)=f'(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases} \Rightarrow\begin{cases}\Phi'(x)=\dfrac12f'(x)+\dfrac1{2c}g(x)\\\noalign{\vskip 2mm} \Psi'(x)=\dfrac12f'(x)-\dfrac1{2c}g(x)\end{cases}}
+\EMeq{u_t(x,0) =c\Phi'(x)-c\Psi'(x) =c\big[\Phi'(x)-\Psi'(x)\big] =g(x)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMeq{\begin{cases}\Phi(x)=\dfrac12f(x)+\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_1\\\noalign{\vskip 2mm} \Psi(x)=\dfrac12f(x)-\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_2\end{cases}}
+\EMeq{\begin{cases}\Phi(x)+\Psi(x)=f(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases} \Rightarrow\begin{cases}\Phi'(x)+\Psi'(x)=f'(x)\\ \Phi'(x)-\Psi'(x)=\dfrac1cg(x)\end{cases} \Rightarrow\begin{cases}\Phi'(x)=\dfrac12f'(x)+\dfrac1{2c}g(x)\\\noalign{\vskip 2mm} \Psi'(x)=\dfrac12f'(x)-\dfrac1{2c}g(x)\end{cases}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMeq{u(x,t) =\frac12\left(f(x+ct)+\frac1c\int_0^{x+ct}g(s)\,ds\right)+\frac12\left(f(x-ct)-\frac1c\int_0^{x-ct}g(s)\,ds\right)+k_1+k_2}
+\EMeq{\begin{cases}\Phi(x)=\dfrac12f(x)+\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_1\\\noalign{\vskip 2mm} \Psi(x)=\dfrac12f(x)-\dfrac1{2c}\displaystyle\int_0^xg(s)\,ds+k_2\end{cases}}
 \end{uncoverenv}
 \EMgap
-\begin{EMbox}{imp}{5}{}
 \begin{uncoverenv}<6->
-\EMeq{u(x,t) =\frac12\Big[f(x+ct)+f(x-ct)\Big]+\frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds+K,\qquad u(0,0) =0\  \Rightarrow\ K =0}
+\EMeq{u(x,t) =\frac12\left(f(x+ct)+\frac1c\int_0^{x+ct}g(s)\,ds\right)+\frac12\left(f(x-ct)-\frac1c\int_0^{x-ct}g(s)\,ds\right)+k_1+k_2}
 \end{uncoverenv}
-\end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
+\EMeq{u(x,t) =\frac12\Big[f(x+ct)+f(x-ct)\Big]+\frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds+K,\qquad u(0,0) =0\  \Rightarrow\ K =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMeq{u(x,t) =\frac12\Big[f(x+ct)+f(x-ct)\Big]+\frac1{2c}\int_{x-ct}^{x+ct}g(s)\,ds}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{روش دالامبر در حل معادلهٔ موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{روش دالامبر در حل معادلۀ موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{exe}{1}{}
-\EMp{ثابت کنید که اگر بخواهیم شرایط مرزی برقرار باشند بایستی در رابطهٔ بالا توابع \EMim{f(x)} و \EMim{g(x)} هر دو تناوبی با دورهٔ تناوب \EMim{2L} بوده و فرد باشند.}
+\EMp{ثابت کنید که اگر بخواهیم شرایط مرزی برقرار باشند بایستی در رابطۀ بالا توابع \EMim{f(x)} و \EMim{g(x)} هر دو تناوبی با دورۀ تناوب \EMim{2L} بوده و فرد باشند.}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ دیفرانسیل انتقال حرارت}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ دیفرانسیل انتقال حرارت}
 \begin{uncoverenv}<2->
 \EMeq{\frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2},\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \EMgap
 \begin{uncoverenv}<3->
@@ -130,18 +128,18 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط مرزی (\lr{Boundary Conditions}): \EMim{u(0,t)=u(L,t)=0}}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{شرایط مرزی (\lr{Boundary Conditions}): \EMim{u(0,t)=u(L,t)=0}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط اولیه (\lr{Initial Conditions}): \EMim{u(x,0)=f(x)}}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{شرایط اولیه (\lr{Initial Conditions}): \EMim{u(x,0)=f(x)}}
 \end{uncoverenv}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m05-rod}{میلهٔ یک‌بعدی \EMim{0\le x\le L} با توزیع دمای \EMim{u(x,t)}}}}
+\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m05-rod}{میلۀ یک‌بعدی \EMim{0\le x\le L} با توزیع دمای \EMim{u(x,t)}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی}
 \begin{uncoverenv}<2->
 \EMeq{\begin{cases}\dfrac{\partial u}{\partial t}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\end{cases}}
 \end{uncoverenv}
@@ -153,7 +151,7 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMp{\EMim{k} باید حتماً یک عدد منفی باشد (برای \EMim{k=0} و \EMim{k>0} دقیقاً مانند مسئلهٔ موجی \EMim{X(x)=0} به دست می‌آید). با \EMim{k=-\lambda^2}:}
+\EMp{\EMim{k} باید حتماً یک عدد منفی باشد (برای \EMim{k=0} و \EMim{k>0} دقیقاً مانند مسئلۀ موجی \EMim{X(x)=0} به دست می‌آید). با \EMim{k=-\lambda^2}:}
 \vspace{3bp}
 \EMeq{\frac{T'}{c^2T} =\frac{X''}X =-\lambda^2\quad \Longrightarrow\quad \begin{cases}X''+\lambda^2X=0\\ T'+c^2\lambda^2T=0\end{cases}}
 \end{uncoverenv}
@@ -161,48 +159,48 @@
 \begin{uncoverenv}<5->
 \EMeq{X(x) =A\cos\lambda x+B\sin\lambda x,\quad X(0) =0 \Rightarrow A =0,\qquad X(L) =0 \Rightarrow B\sin\lambda L =0 \Rightarrow\lambda =\frac{n\pi}L =\lambda_n}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<6->
-\EMeq{X_n(x) =B_n\sin\lambda_nx,\qquad T'+c^2\lambda_n^2T =0\  \Rightarrow\ T_n(t) =C_ne^{-(c\lambda_n)^2t}}
-\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
-\EMeq{u_n(x,t) =X_n(x)\times T_n(t) =B_n\sin\!\left(\frac{n\pi}Lx\right)\times C_ne^{-\left(\frac{cn\pi}L\right)^2t}}
+\EMeq{X_n(x) =B_n\sin\lambda_nx,\qquad T'+c^2\lambda_n^2T =0\  \Rightarrow\ T_n(t) =C_ne^{-(c\lambda_n)^2t}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{u(x,t) =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx),\qquad \lambda_n =\frac{n\pi}L}
+\EMeq{u_n(x,t) =X_n(x)\times T_n(t) =B_n\sin\!\left(\frac{n\pi}Lx\right)\times C_ne^{-\left(\frac{cn\pi}L\right)^2t}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
+\EMeq{u(x,t) =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx),\qquad \lambda_n =\frac{n\pi}L}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<5->
 \EMp{شرط اولیه \EMim{u(x,0)=f(x)}:}
 \vspace{3bp}
 \EMeq{u(x,0) =\sum_{n=1}^{\infty}A_n\sin\lambda_nx =f(x)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMp{تابع \EMim{f(x)} با یک تابع تناوبی و فرد برابر شده است، بنابراین برای محاسبهٔ ضرایب مجهول فوریه باید \EMim{f(x)} را یک تابع تناوبی (با دورهٔ تناوب \EMim{2L}) و فرد فرض کنیم:}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\begin{uncoverenv}<2->
+\EMp{تابع \EMim{f(x)} با یک تابع تناوبی و فرد برابر شده است، بنابراین برای محاسبۀ ضرایب مجهول فوریه باید \EMim{f(x)} را یک تابع تناوبی (با دورۀ تناوب \EMim{2L}) و فرد فرض کنیم:}
 \vspace{3bp}
 \EMeq{A_n =\frac2{2L}\int_{-L}^{L}f(x)\sin\!\left(\frac{2\pi}{2L}nx\right)dx =\frac1L\int_{-L}^{L}f(x)\sin\!\left(\frac{n\pi}Lx\right)dx =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
 \end{uncoverenv}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
-\begin{EMbox}{imp}{1}{}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
 \EMeq{u(x,t) =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx),\qquad \lambda_n =\frac{n\pi}L,\qquad A_n =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial u}{\partial t} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(10,t) =0,\qquad u(x,0) =f(x) =\begin{cases}x&0\le x<5\\ 10-x&5\le x\le10\end{cases}}
 \EMgap
@@ -217,17 +215,22 @@ A_n&=\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx=0.2\int_0^5x\sin\!\le
 \begin{uncoverenv}<3->
 \EMeq{u(x,t) =\sum_{n=1}^{\infty}\left(\frac{40}{n^2\pi^2}\sin\frac{n\pi}2\right)e^{-\left(\frac{cn\pi}{10}\right)^2t}\sin\!\left(\frac{n\pi}{10}x\right)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMp{(با \EMim{c=1}.)}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =T_0,\qquad u(L,t) =T_1,\qquad u(x,0) =f(x)}
 \EMgap
@@ -238,32 +241,37 @@ A_n&=\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx=0.2\int_0^5x\sin\!\le
 \begin{uncoverenv}<3->
 \EMeq{\frac{\partial w}{\partial t} =c^2\left(\frac{\partial^2w}{\partial x^2}+\frac{\partial^2v}{\partial x^2}\right)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMeq{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=T_0\\ v(L)=T_1\end{cases} \Rightarrow\ v(x) =\left(\frac{T_1-T_0}L\right)x+T_0,\qquad \begin{cases}\dfrac{\partial w}{\partial t}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases} \Rightarrow\ w(x,t) =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
-\EMeq{u(x,t) =\underbrace{\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}_{w(x,t)}+\underbrace{\left(\frac{T_1-T_0}L\right)x+T_0}_{v(x)},\qquad \lambda_n =\frac{n\pi}L}
+\EMeq{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=T_0\\ v(L)=T_1\end{cases} \Rightarrow\ v(x) =\left(\frac{T_1-T_0}L\right)x+T_0,\qquad \begin{cases}\dfrac{\partial w}{\partial t}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases} \Rightarrow\ w(x,t) \\[4pt] =\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMp{شرط اولیه:}
-\vspace{3bp}
-\EMeq{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx =f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\triangleq f_1(x)\  \Longrightarrow\ A_n =\frac2L\int_0^L\left[f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\right]\sin\frac{n\pi}Lx\,dx}
+\EMeq{u(x,t) =\underbrace{\sum_{n=1}^{\infty}A_ne^{-(c\lambda_n)^2t}\sin(\lambda_nx)}_{w(x,t)}+\underbrace{\left(\frac{T_1-T_0}L\right)x+T_0}_{v(x)},\qquad \lambda_n =\frac{n\pi}L}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
+\begin{uncoverenv}<2->
+\EMp{شرط اولیه:}
+\vspace{3bp}
+\EMeq{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx =f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\triangleq f_1(x)\  \Longrightarrow\ A_n \\[4pt] =\frac2L\int_0^L\left[f(x)-\left(\frac{T_1-T_0}L\right)x-T_0\right]\sin\frac{n\pi}Lx\,dx}
+\end{uncoverenv}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\EMp{جواب معادلۀ انتقال حرارت یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2},\qquad u_x(0,t) =u_x(L,t) =0,\qquad u(x,0) =f(x)}
 \EMgap
@@ -274,32 +282,32 @@ A_n&=\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx=0.2\int_0^5x\sin\!\le
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{X'(x) =-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad X'(0) =0 \Rightarrow B =0,\qquad X'(L) =0 \Rightarrow-A\lambda\sin\lambda L =0 \Rightarrow\lambda L =n\pi \Rightarrow\lambda_n \\[4pt] =\frac{n\pi}L}
+\EMeq{X'(x) =-A\lambda\sin\lambda x+B\lambda\cos\lambda x,\qquad X'(0) =0 \Rightarrow B =0,\qquad X'(L) =0 \Rightarrow-A\lambda\sin\lambda L =0 \Rightarrow\lambda L \\[4pt] =n\pi \Rightarrow\lambda_n =\frac{n\pi}L\quad (n =0,1,2,\dots)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
 \EMeq{X_n(x) =A_n\cos\lambda_nx,\qquad T_n(t) =C_ne^{-(c\lambda_n)^2t}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{u(x,t) =\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad \lambda_n =\frac{n\pi}L}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل انتقال حرارت یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
-\EMp{شرط اولیه \EMim{u(x,0)=\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)}:}
+\EMeq{u(x,t) =B_0+\sum_{n=1}^{\infty}B_ne^{-(c\lambda_n)^2t}\cos(\lambda_nx),\qquad \lambda_n =\frac{n\pi}L}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{(به ازای \EMim{\lambda_0=0} جملۀ ثابت \EMim{B_0} به دست می‌آید.) شرط اولیه \EMim{u(x,0)=B_0+\sum_{n=1}^{\infty}B_n\cos\!\left(\dfrac{n\pi}Lx\right)=f(x)}:}
 \vspace{3bp}
-\EMeq{B_n =\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx}
+\EMeq{B_0 =\frac1L\int_0^Lf(x)\,dx,\qquad B_n =\frac2L\int_0^Lf(x)\cos\!\left(\frac{n\pi}Lx\right)dx}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی}
 \begin{uncoverenv}<2->
 \EMeq{\begin{cases}\dfrac{\partial u}{\partial t}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(\infty,t)=u(-\infty,t)=0\\ u(x,0)=f(x),\quad-\infty<x<\infty\end{cases}}
 \end{uncoverenv}
@@ -311,25 +319,28 @@ A_n&=\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx=0.2\int_0^5x\sin\!\le
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMeq{u_\lambda(x,t) =\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\quad \Longrightarrow\quad u(x,t) =\frac1\pi\int_0^\infty\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda}
-\end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMp{صحت معادله:}
-\vspace{3bp}
-\EMeq{\frac{\partial^2u}{\partial x^2} =\frac1\pi\int_0^\infty-\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda,\qquad \frac{\partial u}{\partial t} =\frac1\pi\int_0^\infty-c^2\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda\  \Rightarrow\ \frac{\partial u}{\partial t} \\[4pt] =c^2\frac{\partial^2u}{\partial x^2}\ \EMcheck}
+\EMeq{u_\lambda(x,t) =\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\quad \Longrightarrow\quad u(x,t) \\[4pt] =\frac1\pi\int_0^\infty\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی (ادامه)}
 \begin{uncoverenv}<2->
+\EMp{صحت معادله:}
+\vspace{3bp}
+\EMeq{\frac{\partial^2u}{\partial x^2} =\frac1\pi\int_0^\infty-\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda,\qquad \frac{\partial u}{\partial t} =\frac1\pi\int_0^\infty-c^2\lambda^2\big[A\cos\lambda x+B\sin\lambda x\big]e^{-c^2\lambda^2t}\,d\lambda\  \\[4pt] \Rightarrow\ \frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2}\ \EMcheck}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{\textbf{اعمال شرط اولیه:} \EMim{u(x,0)=\dfrac1\pi\displaystyle\int_0^\infty\big[A(\lambda)\cos\lambda x+B(\lambda)\sin\lambda x\big]d\lambda=f(x)}، یعنی انتگرال فوریه (فصل ۳):}
 \vspace{3bp}
 \EMeq{A(\lambda) =\mathfrak{I}_C\{f(x)\} =\int_{-\infty}^{\infty}f(x)\cos\lambda x\,dx,\qquad B(\lambda) =\mathfrak{I}_S\{f(x)\} =\int_{-\infty}^{\infty}f(x)\sin\lambda x\,dx}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<3->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ انتقال حرارت یک‌بعدی بر روی مفتول نامتناهی (ادامه)}
+\begin{uncoverenv}<2->
 \EMeq{\begin{aligned}
 u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lambda\nu\,d\nu\right)\cos\lambda x+\left(\int_{-\infty}^{\infty}f(\nu)\sin\lambda\nu\,d\nu\right)\sin\lambda x\right]e^{-c^2\lambda^2t}\,d\lambda\\
 &=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(\nu)\big[\cos\lambda\nu\cos\lambda x+\sin\lambda\nu\sin\lambda x\big]d\nu\right\}e^{-c^2\lambda^2t}\,d\lambda\\
@@ -337,14 +348,14 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{aligned}}
 \end{uncoverenv}
 \EMgap
-\begin{EMbox}{imp}{3}{}
-\begin{uncoverenv}<4->
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
 \EMeq{u(x,t) =\frac1\pi\int_{-\infty}^{\infty}f(\nu)\left\{\int_0^\infty e^{-c^2\lambda^2t}\cos\lambda(x-\nu)\,d\lambda\right\}d\nu}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{لم‌های ریاضی}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
@@ -353,7 +364,7 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{EMbox}
 \begin{EMbox}{prf}{2}{}
 \begin{uncoverenv}<3->
-\EMeq{I^2 =\int_0^\infty e^{-x^2}dx\times\int_0^\infty e^{-y^2}dy =\int_0^\infty\!\!\int_0^\infty e^{-(x^2+y^2)}\,dx\,dy\ \overset{\rho^2=x^2+y^2}{=}\ \int_0^{\pi/2}\!\!\int_0^\infty\rho\,e^{-\rho^2}\,d\rho\,d\theta =\int_0^{\pi/2}\left[\frac{-1}2e^{-\rho^2}\right]_0^\infty d\theta \\[4pt] =\frac\pi4}
+\EMeq{I^2 =\int_0^\infty e^{-x^2}dx\times\int_0^\infty e^{-y^2}dy =\int_0^\infty\!\!\int_0^\infty e^{-(x^2+y^2)}\,dx\,dy\ \overset{\rho^2=x^2+y^2}{=}\ \int_0^{\pi/2}\!\!\int_0^\infty\rho\,e^{-\rho^2}\,d\rho\,d\theta \\[4pt] =\int_0^{\pi/2}\left[\frac{-1}2e^{-\rho^2}\right]_0^\infty d\theta =\frac\pi4}
 \end{uncoverenv}
 \end{EMbox}
 \begin{EMbox}{thm}{3}{}
@@ -368,13 +379,13 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{لم‌های ریاضی (ادامه)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
 \EMp{با انتگرال‌گیری جزء به جزء (\EMim{du=-2se^{-s^2}ds}، \EMim{v=\sin2bs}):}
 \vspace{3bp}
-\EMeq{\frac{dI(b)}{db} =e^{-s^2}\sin2bs\Big|_0^\infty-2b\int_0^\infty e^{-s^2}\cos2bs\,ds =-2b\,I(b)\  \Rightarrow\ I(b) =ke^{-b^2},\qquad I(0) =k =\int_0^\infty e^{-s^2}ds \\[4pt] =\frac{\sqrt\pi}2}
+\EMeq{\frac{dI(b)}{db} =e^{-s^2}\sin2bs\Big|_0^\infty-2b\int_0^\infty e^{-s^2}\cos2bs\,ds =-2b\,I(b)\  \Rightarrow\ I(b) =ke^{-b^2},\qquad I(0) =k \\[4pt] =\int_0^\infty e^{-s^2}ds =\frac{\sqrt\pi}2}
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<3->
@@ -393,7 +404,7 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{لم‌های ریاضی (ادامه)}
 \begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
@@ -402,7 +413,7 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تابع خطا}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -416,27 +427,27 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{خاصیت تقارن فرد: \EMim{\operatorname{erf}(-x)=-\operatorname{erf}(x)}}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{خاصیت تقارن فرد: \EMim{\operatorname{erf}(-x)=-\operatorname{erf}(x)}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{خاصیت مجانبی: \EMim{\operatorname{erf}(\infty)=1}}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{خاصیت مجانبی: \EMim{\operatorname{erf}(\infty)=1}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<6->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{بسط مک‌لورن این تابع به صورت زیر است (با بسط \EMim{e^x} شروع و این تساوی را ثابت کنید):}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{بسط مک‌لورن این تابع به صورت زیر است (با بسط \EMim{e^x} شروع و این تساوی را ثابت کنید):}
 \vspace{3bp}
 \EMeq{\operatorname{erf}(x) =\frac2{\sqrt\pi}\left[x-\frac{x^3}{1!\times3}+\frac{x^5}{2!\times5}-\frac{x^7}{3!\times7}+-\cdots\right] \\[4pt] =\frac2{\sqrt\pi}\sum_{n=1}^{\infty}(-1)^{n+1}\frac{x^{2n-1}}{(n-1)!\,(2n-1)}}
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{222.9bp}{\uncover<7->{\EMfigure{1.385}{m05-erf}{نمودار تابع خطا \EMim{\operatorname{erf}(x)} برای \EMim{-2\le x\le2}}}}
+\EMside{221.6bp}{\uncover<7->{\EMfigure{1.389}{m05-erf}{نمودار تابع خطا \EMim{\operatorname{erf}(x)} برای \EMim{-2\le x\le2}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تابع خطا (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ بالا را با فرض شرط اولیهٔ مقابل به دست آورید.}
+\EMp{جواب معادلۀ بالا را با فرض شرط اولیۀ مقابل به دست آورید.}
 \vspace{3bp}
 \EMeq{f(x) =\begin{cases}U_0&|x|<1\\ 0&|x|\ge1\end{cases}}
 \EMgap
@@ -449,24 +460,25 @@ u(x,t)&=\frac1\pi\int_0^\infty\left[\left(\int_{-\infty}^{\infty}f(\nu)\cos\lamb
 \begin{uncoverenv}<3->
 \EMeq{=\frac{U_0}{\sqrt\pi}\left\{\int_{-\frac{1+x}{2c\sqrt t}}^{0}e^{-z^2}dz+\int_0^{\frac{1-x}{2c\sqrt t}}e^{-z^2}dz\right\} =\frac{U_0}{\sqrt\pi}\frac{\sqrt\pi}2\left\{\frac2{\sqrt\pi}\int_0^{\frac{1+x}{2c\sqrt t}}e^{-z^2}dz+\frac2{\sqrt\pi}\int_0^{\frac{1-x}{2c\sqrt t}}e^{-z^2}dz\right\}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMeq{u(x,t) =\frac{U_0}2\left[\operatorname{erf}\!\left(\frac{1+x}{2c\sqrt t}\right)+\operatorname{erf}\!\left(\frac{1-x}{2c\sqrt t}\right)\right]}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تابع خطا (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{u(x,t) =\frac{U_0}2\left[\operatorname{erf}\!\left(\frac{1+x}{2c\sqrt t}\right)+\operatorname{erf}\!\left(\frac{1-x}{2c\sqrt t}\right)\right]}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.190}{m05-heat-pulse}{توزیع دما \EMim{u(x,t)} در لحظه‌های \EMim{t=0}، \EMim{\frac18}، \EMim{\frac12}، \EMim{1}، \EMim{2} و \EMim{8} برای پالس اولیهٔ \EMim{U_0=100} و \EMim{c=1}}}}
+\EMside{82.5bp}{\uncover<3->{\EMfigure{1.193}{m05-heat-pulse}{توزیع دما \EMim{u(x,t)} در لحظه‌های \EMim{t=0}، \EMim{\frac18}، \EMim{\frac12}، \EMim{1}، \EMim{2} و \EMim{8} برای پالس اولیۀ \EMim{U_0=100} و \EMim{c=1}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تابع خطا (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ بالا را با فرض شرط اولیهٔ مقابل به دست آورید.}
+\EMp{جواب معادلۀ بالا را با فرض شرط اولیۀ مقابل به دست آورید.}
 \vspace{3bp}
 \EMeq{f(x) =\begin{cases}1&x>0\\ 0&x\le0\end{cases}}
 \EMgap

@@ -1,0 +1,22 @@
+% The image of the unit square under w = (1+i) z + (1-i)
+\begin{tikzpicture}[scale=1.5]
+  \begin{scope}
+    \draw[EMgrid] (-0.5,-0.5) grid (1.5,1.5);
+    \draw[EMax] (-0.7,0)--(1.8,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-0.7)--(0,1.8) node[EMlab,above]{$\operatorname{Im}$};
+    \filldraw[EMfill,draw=EMindigo,line width=0.9pt] (0,0)--(1,0)--(1,1)--(0,1)--cycle;
+    \node[EMlabg,below left] at (0,0){$0$};\node[EMlabg,below right] at (1,0){$1$};
+    \node[EMlabg,above right] at (1,1){$1+i$};\node[EMlabg,above left] at (0,1){$i$};
+    \node[EMlab] at (0.5,-1.1){\EML{$z$-plane}{صفحۀ $z$}};
+  \end{scope}
+  \begin{scope}[xshift=4.6cm]
+    \draw[EMgrid] (-0.5,-1.5) grid (2.5,1.5);
+    \draw[EMax] (-0.7,0)--(2.8,0) node[EMlab,right]{$\operatorname{Re}$};
+    \draw[EMax] (0,-1.7)--(0,1.8) node[EMlab,above]{$\operatorname{Im}$};
+    \filldraw[EMfill2,draw=EMrose,line width=0.9pt] (1,-1)--(2,0)--(1,1)--(0,0)--cycle;
+    \node[EMlabg,below] at (1,-1){$1-i$};\node[EMlabg,below right=1pt] at (2,0){$2$};
+    \node[EMlabg,above] at (1,1){$1+i$};\node[EMlabg,below left] at (0,0){$0$};
+    \node[EMlab] at (1,-2.1){\EML{$w$-plane}{صفحۀ $w$}};
+  \end{scope}
+  \draw[EMvec2,line width=1.2pt] (1.75,1.85) to[bend left=20] node[EMlabg,above,pos=0.5]{$w=(1+i)z+(1-i)$} (3.65,1.85);
+\end{tikzpicture}

@@ -1,22 +1,22 @@
 \section{انتگرال فوریه}
-\def\EMfootchapter{فصل ۳ \ \textbullet\ انتگرال فوریه}
-\def\EMtitlesize{24}
+\def\EMfootchapter{فصل ۳ \ \lr{\textbullet}\ انتگرال فوریه}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{فصل ۳: انتگرال فوریه}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تحلیل فوریه برای توابع غیرتناوبی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{انتگرال فوریه}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{صورت مختلط انتگرال فوریه (تبدیل فوریه)}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معرفی تابع \EMim{\operatorname{Si}(u)}}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مثال‌های انتگرال فوریه}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{بعضی خواص انتگرال فوریه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{تحلیل فوریه برای توابع غیرتناوبی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{انتگرال فوریه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{صورت مختلط انتگرال فوریه (تبدیل فوریه)}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معرفی تابع \EMim{\operatorname{Si}(u)}}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{مثال‌های انتگرال فوریه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{بعضی خواص انتگرال فوریه}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تحلیل فوریه برای توابع غیرتناوبی}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
-\EMp{برای آنکه بتوانیم از ابزار تحلیل فوریه در توابع غیرتناوبی استفاده کنیم، ابتدا تابع را تناوبی فرض می‌کنیم و سپس دورهٔ تناوب را به سمت بی‌نهایت میل می‌دهیم.}
+\EMp{برای آنکه بتوانیم از ابزار تحلیل فوریه در توابع غیرتناوبی استفاده کنیم، ابتدا تابع را تناوبی فرض می‌کنیم و سپس دورۀ تناوب را به سمت بی‌نهایت میل می‌دهیم.}
 \end{uncoverenv}
 \EMgap
 \EMgap
@@ -25,13 +25,13 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMeq{a_0 =\frac1T\int_{-T/2}^{T/2}f(x)\,dx,\qquad a_n =\frac2T\int_{-T/2}^{T/2}f(x)\cos\frac{2\pi}Tnx\,dx,\qquad \\[4pt] b_n =\frac2T\int_{-T/2}^{T/2}f(x)\sin\frac{2\pi}Tnx\,dx}
+\EMeq{a_0 =\frac1T\int_{-T/2}^{T/2}f(x)\,dx,\qquad a_n \\[4pt] =\frac2T\int_{-T/2}^{T/2}f(x)\cos\frac{2\pi}Tnx\,dx,\qquad b_n \\[4pt] =\frac2T\int_{-T/2}^{T/2}f(x)\sin\frac{2\pi}Tnx\,dx}
 \end{uncoverenv}
 \end{minipage}
-\EMside{87.5bp}{\uncover<3->{\EMfigure{1.097}{m03-periodic-extension}{تابع غیرتناوبی \EMim{f(x)} و ادامهٔ متناوب آن \EMim{\tilde f(x)} با دورهٔ تناوب \EMim{T}}}}
+\EMside{67.9bp}{\uncover<3->{\EMfigure{1.099}{m03-periodic-extension}{تابع غیرتناوبی \EMim{f(x)} و ادامۀ متناوب آن \EMim{\tilde f(x)} با دورۀ تناوب \EMim{T}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تحلیل فوریه برای توابع غیرتناوبی (ادامه)}
 \begin{uncoverenv}<2->
 \EMeq{\begin{aligned}
@@ -49,34 +49,34 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{جهت به دست آوردن تحلیل فوریه برای تابع \EMim{f(x)} لازم است \EMim{T} را به سمت \textbf{بی‌نهایت} میل دهیم.}
-\end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<6->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{فرض کنید تابع \EMim{f(x)} یک تابع انتگرال‌پذیر است و داریم:}
-\vspace{3bp}
-\EMeq{\lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}f(t)\,dt =0}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{جهت به دست آوردن تحلیل فوریه برای تابع \EMim{f(x)} لازم است \EMim{T} را به سمت \textbf{بی‌نهایت} میل دهیم.}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تحلیل فوریه برای توابع غیرتناوبی (ادامه)}
 \begin{uncoverenv}<2->
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{فرض کنید تابع \EMim{f(x)} یک تابع انتگرال‌پذیر است و داریم:}
+\vspace{3bp}
+\EMeq{\lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}f(t)\,dt =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{در این صورت خواهیم داشت:}
 \vspace{3bp}
 \EMeq{f(x) =\lim_{T\to\infty}\frac2T\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\frac{2\pi}Tn(t-x)\,dt\right\}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
+\begin{uncoverenv}<4->
 \EMeq{\omega_n\triangleq\frac{2\pi}Tn\quad \Longrightarrow\quad \Delta\omega\triangleq\omega_n-\omega_{n-1} =\frac{2\pi}Tn-\frac{2\pi}T(n-1) =\frac{2\pi}T\quad \Longrightarrow\quad \frac2T =\frac{\Delta\omega}\pi}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<5->
 \EMeq{f(x) =\lim_{T\to\infty}\frac1\pi\sum_{n=1}^{\infty}\left\{\int_{-T/2}^{T/2}f(t)\cos\omega_n(t-x)\,dt\right\}\Delta\omega}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تحلیل فوریه برای توابع غیرتناوبی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{اگر \EMim{T\to\infty}، آنگاه \EMim{\sum_{n=1}^{\infty}\to\int_0^\infty}، \EMim{\Delta\omega\to d\omega} و \EMim{\omega_n\to\omega}:}
@@ -89,15 +89,15 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt,\qquad B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\quad \Longrightarrow\quad f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega}
+\EMeq{A(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\cos\omega t\,dt,\qquad B(\omega)\triangleq\int_{-\infty}^{\infty}f(t)\sin\omega t\,dt\quad \Longrightarrow\quad f(x) \\[4pt] =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{انتگرال فوریه}
 \begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
-\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\qquad \EMt{(انتگرال فوریه؛ رابطهٔ سنتز)}}
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\qquad \EMt{(انتگرال فوریه؛ رابطۀ سنتز)}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
@@ -125,7 +125,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{صورت مختلط انتگرال فوریه (تبدیل فوریه)}
 \begin{uncoverenv}<2->
 \EMeq{f(x) =\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega}
@@ -146,35 +146,35 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{uncoverenv}<5->
 \EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,dt\right\}d\omega-\frac i{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\sin\omega(t-x)\,dt\right\}d\omega}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<6->
-\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega(t-x)-i\sin\omega(t-x)\big)\,dt\right\}d\omega}
-\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{صورت مختلط انتگرال فوریه (تبدیل فوریه) (ادامه)}
 \begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)\big(\cos\omega(t-x)-i\sin\omega(t-x)\big)\,dt\right\}d\omega}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega(t-x)}\,dt\right\}d\omega =\frac1{2\pi}\int_{-\infty}^{\infty}\left\{\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\right\}e^{i\omega x}\,d\omega}
 \end{uncoverenv}
 \EMgap
-\begin{EMbox}{imp}{2}{}
-\begin{uncoverenv}<3->
-\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega x}\,d\omega\qquad \EMt{(انتگرال فوریه؛ رابطهٔ سنتز)}}
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
+\EMeq{f(x) =\frac1{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega x}\,d\omega\qquad \EMt{(انتگرال فوریه؛ رابطۀ سنتز)}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
-\EMeq{F(\omega) =\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\qquad \EMt{(تبدیل فوریه؛ رابطهٔ آنالیز)}}
+\begin{uncoverenv}<5->
+\EMeq{F(\omega) =\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt\qquad \EMt{(تبدیل فوریه؛ رابطۀ آنالیز)}}
 \end{uncoverenv}
 \end{EMbox}
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<6->
 \EMp{صورت مختلط سری فوریه (یادآوری):}
 \vspace{3bp}
-\EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx}\quad \EMt{(سری فوریه؛ رابطهٔ سنتز)},\qquad c_n =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx\quad \EMt{(ضرایب سری فوریه؛ رابطهٔ آنالیز)}}
+\EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx}\quad \EMt{(سری فوریه؛ رابطۀ سنتز)},\qquad c_n =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx\quad \EMt{(ضرایب سری فوریه؛ رابطۀ آنالیز)}}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{معرفی تابع \EMim{\operatorname{Si}(u)}}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -182,11 +182,11 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{فرد؛}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{فرد؛}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{دارای مقادیر مجانبی در بی‌نهایت.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{دارای مقادیر مجانبی در بی‌نهایت.}
 \end{uncoverenv}
 \EMgap
 \EMgap
@@ -195,41 +195,40 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \EMeq{\int_0^\infty\frac{\sin\alpha w}{w}\,dw =\begin{cases}\dfrac\pi2&\alpha>0\\\noalign{\vskip 1mm} 0&\alpha=0\\\noalign{\vskip 1mm} -\dfrac\pi2&\alpha<0\end{cases}}
 \end{uncoverenv}
 \end{EMbox}
-\begin{EMbox}{prf}{6}{}
-\begin{uncoverenv}<7->
-\EMp{برای \EMim{\alpha=0} درستی لم واضح است. با تغییر متغیر \EMim{\tau=\alpha w}:}
-\vspace{3bp}
-\EMeq{\int_0^x\frac{\sin\alpha w}{w}\,dw =\int_0^{\alpha x}\frac{\sin\tau}{\frac\tau\alpha}\,\frac{d\tau}{\alpha} =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau =\operatorname{Si}(\alpha x),\qquad \\[4pt] \operatorname{Si}(\alpha x) =-\operatorname{Si}(-\alpha x)}
-\end{uncoverenv}
-\end{EMbox}
 \end{minipage}
-\EMside{126.8bp}{\uncover<5->{\EMfigure{1.155}{m03-si}{تابع \EMim{\operatorname{Si}(u)} (خط ممتد) و تابع \EMim{\dfrac{\sin u}{u}} (خط‌چین)}}}
+\EMside{139.2bp}{\uncover<5->{\EMfigure{1.158}{m03-si}{تابع \EMim{\operatorname{Si}(u)} (خط ممتد) و تابع \EMim{\dfrac{\sin u}{u}} (خط‌چین)}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{معرفی تابع \EMim{\operatorname{Si}(u)} (ادامه)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
+\EMp{برای \EMim{\alpha=0} درستی لم واضح است. با تغییر متغیر \EMim{\tau=\alpha w}:}
+\vspace{3bp}
+\EMeq{\int_0^x\frac{\sin\alpha w}{w}\,dw =\int_0^{\alpha x}\frac{\sin\tau}{\frac\tau\alpha}\,\frac{d\tau}{\alpha} =\int_0^{\alpha x}\frac{\sin\tau}{\tau}\,d\tau =\operatorname{Si}(\alpha x),\qquad \operatorname{Si}(\alpha x) =-\operatorname{Si}(-\alpha x)}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{پس کافی است لم را فقط برای مقادیر مثبت \EMim{\alpha} ثابت کنیم.}
 \vspace{3bp}
 \EMeq{F(\alpha)\triangleq\int_0^\infty e^{-\alpha t}\frac{\sin t}{t}\,dt,\qquad F(0) =\operatorname{Si}(+\infty) =\;?}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
+\begin{uncoverenv}<4->
 \EMeq{F'(\alpha) =\int_0^\infty-t\,e^{-\alpha t}\frac{\sin t}t\,dt =-\int_0^\infty e^{-\alpha t}\sin t\,dt =-\left[\frac{e^{-\alpha t}}{1+\alpha^2}\big(-\alpha\sin t-\cos t\big)\right]_0^\infty =\frac{-1}{1+\alpha^2}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<5->
 \EMeq{\alpha>0:\quad F(\alpha) =-\tan^{-1}\alpha+C,\qquad F(\alpha\to\infty) =0\quad \Longrightarrow\quad C =F(\infty)+\tan^{-1}\infty =\frac\pi2}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<6->
 \EMeq{F(\alpha) =-\tan^{-1}\alpha+\frac\pi2\quad \Longrightarrow\quad F(0) =\operatorname{Si}(+\infty) =\frac\pi2}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه}
 \begin{EMbox}{ex}{1}{}
 \EMp{مطلوب است بیان تابع پالس مستطیلی زیر به صورت انتگرال فوریه.}
@@ -248,7 +247,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
@@ -261,10 +260,10 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{274.8bp}{\uncover<4->{\EMfigure{1.313}{m03-pulse}{پالس مستطیلی \EMim{f(x)=1} برای \EMim{|x|<1}}}}
+\EMside{272.6bp}{\uncover<4->{\EMfigure{1.317}{m03-pulse}{پالس مستطیلی \EMim{f(x)=1} برای \EMim{|x|<1}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \EMp{مطلوب است بیان تابع نمایی زیر به صورت انتگرال فوریه.}
@@ -289,7 +288,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \EMp{مطلوب است بیان تابع زیر به صورت انتگرال فوریه.}
@@ -309,21 +308,22 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{uncoverenv}<4->
 \EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega =\frac2\pi\int_0^\infty\frac{\cos\omega x}{1+\omega^2}\,d\omega}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{f(x =0) =\frac2\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega =\frac2\pi\Big[\tan^{-1}\omega\Big]_0^\infty =\frac2\pi\times\frac\pi2 =1}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{f(x =0) =\frac2\pi\int_0^\infty\frac1{1+\omega^2}\,d\omega =\frac2\pi\Big[\tan^{-1}\omega\Big]_0^\infty =\frac2\pi\times\frac\pi2 \\[4pt] =1}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.313}{m03-exp-abs}{تابع \EMim{f(x)=e^{-|x|}}}}}
+\EMside{119.3bp}{\uncover<3->{\EMfigure{1.317}{m03-exp-abs}{تابع \EMim{f(x)=e^{-|x|}}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \EMp{مطلوب است بیان تابع زیر به صورت انتگرال فوریه.}
@@ -339,21 +339,22 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{uncoverenv}<3->
 \EMeq{B(\omega) =\int_{-\pi}^{\pi}\sin x\sin\omega x\,dx =2\int_0^\pi\sin x\sin\omega x\,dx =\int_0^\pi\big[\cos(1-\omega)x-\cos(1+\omega)x\big]dx \\[4pt] =\left[\frac{\sin(1-\omega)x}{1-\omega}-\frac{\sin(1+\omega)x}{1+\omega}\right]_0^\pi =\frac{2\sin(\omega\pi)}{1-\omega^2}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega =\frac2\pi\int_0^\infty\frac{\sin(\omega\pi)\sin\omega x}{1-\omega^2}\,d\omega}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega \\[4pt] =\frac2\pi\int_0^\infty\frac{\sin(\omega\pi)\sin\omega x}{1-\omega^2}\,d\omega}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.249}{m03-sine-pulse}{تابع \EMim{f(x)=\sin x} برای \EMim{|x|\le\pi} و صفر در بیرون}}}
+\EMside{140.2bp}{\uncover<3->{\EMfigure{1.252}{m03-sine-pulse}{تابع \EMim{f(x)=\sin x} برای \EMim{|x|\le\pi} و صفر در بیرون}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \EMp{مطلوب است بیان تابع زیر به صورت انتگرال فوریه.}
@@ -369,23 +370,28 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{uncoverenv}<3->
 \EMeq{A(\omega) =\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx =2\int_0^ax^2\cos\omega x\,dx =2\left[\frac{x^2}\omega\sin\omega x+\frac{2x}{\omega^2}\cos\omega x-\frac2{\omega^3}\sin\omega x\right]_0^a \\[4pt] =2\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{مثال‌های انتگرال فوریه (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMeq{f(x) =\frac2\pi\int_0^\infty\left[\left(\frac{a^2}\omega-\frac2{\omega^3}\right)\sin\omega a+\frac{2a}{\omega^2}\cos\omega a\right]\cos\omega x\,d\omega}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{بعضی خواص انتگرال فوریه}
 \begin{uncoverenv}<2->
-\EMp{کلیهٔ خواص از روابط سنتز و آنالیز نشأت می‌گیرند:}
+\EMp{کلیۀ خواص از روابط سنتز و آنالیز نشأت می‌گیرند:}
 \vspace{3bp}
-\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega,\qquad A(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx,\qquad B(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx}
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega,\qquad A(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\cos\omega x\,dx,\qquad \\[4pt] B(\omega)\triangleq\int_{-\infty}^{\infty}f(x)\sin\omega x\,dx}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تغییر مقیاس زمانی}
 \begin{uncoverenv}<2->
 \EMeq{f(x)\to f(ax),\quad a\in\mathbb{R}\quad \Longrightarrow\quad \begin{cases}A(\omega)\to\dfrac1{|a|}A\!\left(\dfrac\omega a\right)\\\noalign{\vskip 2mm} B(\omega)\to\dfrac1{|a|}B\!\left(\dfrac\omega a\right)\end{cases}}
@@ -393,12 +399,12 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \EMgap
 \begin{EMbox}{prf}{2}{}
 \begin{uncoverenv}<3->
-\EMeq{A_1(\omega) =\int_{-\infty}^{\infty}f(ax)\cos\omega x\,dx\ \ \begin{cases}\underset{u=ax}{\overset{a>0}{=}}\ \displaystyle\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,\frac{du}a=\frac1aA\!\left(\frac\omega a\right)\\\noalign{\vskip 3mm}\underset{u=ax}{\overset{a<0}{=}}\ \displaystyle\int_{+\infty}^{-\infty}f(u)\cos\frac\omega au\,\frac{du}a=-\frac1a\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,du=-\frac1aA\!\left(\frac\omega a\right)\end{cases}\  \\[4pt] \Longrightarrow\ A_1(\omega) =\frac1{|a|}A\!\left(\frac\omega a\right)}
+\EMeq{A_1(\omega) \\[4pt] =\int_{-\infty}^{\infty}f(ax)\cos\omega x\,dx\ \ \begin{cases}\underset{u=ax}{\overset{a>0}{=}}\ \displaystyle\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,\frac{du}a=\frac1aA\!\left(\frac\omega a\right)\\\noalign{\vskip 3mm}\underset{u=ax}{\overset{a<0}{=}}\ \displaystyle\int_{+\infty}^{-\infty}f(u)\cos\frac\omega au\,\frac{du}a=-\frac1a\int_{-\infty}^{\infty}f(u)\cos\frac\omega au\,du=-\frac1aA\!\left(\frac\omega a\right)\end{cases}\  \\[4pt] \Longrightarrow\ A_1(\omega) =\frac1{|a|}A\!\left(\frac\omega a\right)}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تساوی پارسوال}
 \begin{uncoverenv}<2->
 \EMeq{\int_{-\infty}^{\infty}f^2(x)\,dx =\frac1\pi\int_0^\infty\big\{A^2(\omega)+B^2(\omega)\big\}\,d\omega}
@@ -415,20 +421,20 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق زمانی}
 \begin{uncoverenv}<2->
-\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\quad \Longrightarrow\quad f'(x) =\frac1\pi\int_0^\infty\big\{\omega B(\omega)\cos\omega x-\omega A(\omega)\sin\omega x\big\}\,d\omega}
+\EMeq{f(x) =\frac1\pi\int_0^\infty\big\{A(\omega)\cos\omega x+B(\omega)\sin\omega x\big\}\,d\omega\quad \Longrightarrow\quad f'(x) \\[4pt] =\frac1\pi\int_0^\infty\big\{\omega B(\omega)\cos\omega x-\omega A(\omega)\sin\omega x\big\}\,d\omega}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMp{(با استفاده از قاعدهٔ مشتق‌گیری از انتگرال:)}
+\EMp{(با استفاده از قاعدۀ مشتق‌گیری از انتگرال:)}
 \vspace{3bp}
 \EMeq{\frac\partial{\partial z}\int_{a(z)}^{b(z)}f(x,z)\,dx =\int_{a(z)}^{b(z)}\frac{\partial f(x,z)}{\partial z}\,dx+f\big(b(z),z\big)\frac{db(z)}{dz}-f\big(a(z),z\big)\frac{da(z)}{dz}}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق فرکانسی}
 \begin{uncoverenv}<2->
 \EMeq{\frac{dA(\omega)}{d\omega} =A'(\omega) =\int_{-\infty}^{\infty}-xf(x)\sin\omega x\,dx\quad \Longrightarrow\quad \int_{-\infty}^{\infty}\big(xf(x)\big)\sin\omega x\,dx =-A'(\omega)}
@@ -443,7 +449,7 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق فرکانسی (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \EMp{تساوی‌های زیر را ثابت کنید:}
@@ -459,17 +465,17 @@ f(x)&=\frac1\pi\int_0^\infty\left\{\int_{-\infty}^{\infty}f(t)\cos\omega(t-x)\,d
 \begin{uncoverenv}<4->
 \EMitem{۳.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{1-\cos\pi w}{w}\sin xw\,dw=\begin{cases}\dfrac12\pi&0<x<\pi\\\noalign{\vskip 1mm} 0&x>\pi\end{cases}}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMitem{۴.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\cos\frac12\pi w}{1-w^2}\cos xw\,dw=\begin{cases}\dfrac12\pi\cos x&0<|x|<\frac12\pi\\\noalign{\vskip 1mm} 0&|x|\ge\frac12\pi\end{cases}}}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق فرکانسی (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \begin{uncoverenv}<2->
+\EMitem{۴.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\cos\frac12\pi w}{1-w^2}\cos xw\,dw=\begin{cases}\dfrac12\pi\cos x&0<|x|<\frac12\pi\\\noalign{\vskip 1mm} 0&|x|\ge\frac12\pi\end{cases}}}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMitem{۵.}{\dimexpr\linewidth-26bp\relax}{\EMim{\displaystyle\int_0^\infty\frac{\sin w-w\cos w}{w^2}\sin xw\,dw=\begin{cases}\dfrac12\pi x&0<x<1\\\noalign{\vskip 1mm} \dfrac14\pi&x=1\\\noalign{\vskip 1mm} 0&x>1\end{cases}}}
 \end{uncoverenv}
 \end{EMbox}

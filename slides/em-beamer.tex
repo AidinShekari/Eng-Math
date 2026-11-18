@@ -14,16 +14,16 @@
 % direction-dependent styles (the reading start side is the right one in Persian)
 \ifEMrtl
   \tikzset{EMbarshade/.style={right color=SLbar,left color=SLbar!35!white},
-    EMstart/.style={anchor=east},EMend/.style={anchor=west}}
+    EMstart/.style={anchor=east},EMend/.style={anchor=west},EMtitlealign/.style={align=right}}
   \def\EMstartx{-38bp}\def\EMstartside{east}\def\EMendside{west}\def\EMfootx{-40bp}\def\EMfootxe{40bp}
   \tcbset{EMside/.style={borderline east={5bp}{0bp}{#1},left=12bp,right=17bp}}
 \else
   \tikzset{EMbarshade/.style={left color=SLbar,right color=SLbar!35!white},
-    EMstart/.style={anchor=west},EMend/.style={anchor=east}}
+    EMstart/.style={anchor=west},EMend/.style={anchor=east},EMtitlealign/.style={align=left}}
   \def\EMstartx{38bp}\def\EMstartside{west}\def\EMendside{east}\def\EMfootx{40bp}\def\EMfootxe{-40bp}
   \tcbset{EMside/.style={borderline west={5bp}{0bp}{#1},left=17bp,right=12bp}}
 \fi
-\newcommand{\EMbody}{\fontsize{18}{\EMlead\dimexpr18pt\relax}\selectfont}
+\newcommand{\EMbody}{\fontsize{20}{\EMlead\dimexpr20pt\relax}\selectfont}
 \newcommand{\EMdir}[1]{\ifEMrtl\RL{#1}\else#1\fi}
 \newcommand{\EMalign}{\ifEMrtl\raggedleft\else\raggedright\fi}
 
@@ -33,11 +33,11 @@
   \begin{tikzpicture}[remember picture,overlay]
     \shade[rounded corners=3bp,EMbarshade,draw=SLbarEdge,line width=0.8bp]
       ([xshift=22bp,yshift=-14bp]current page.north west) rectangle ([xshift=-22bp,yshift=-62bp]current page.north east);
-    \node[EMstart,text=SLtitle,font=\bfseries\fontsize{\EMtitlesize}{\EMtitlesize}\selectfont,inner sep=0pt]
+    \node[EMstart,text=SLtitle,font=\bfseries\fontsize{\EMtitlesize}{\EMtitleskip}\selectfont,inner sep=0pt,text width=880bp,EMtitlealign]
       at ([xshift=\EMstartx,yshift=-38bp]current page.north \EMstartside) {\EMdir{\insertframetitle}};
   \end{tikzpicture}%
   \vskip 80bp}
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 % ---- footer: chapter on the reading start side, slide number on the other ----
 \def\EMfootchapter{}
 \setbeamertemplate{footline}{%
@@ -59,7 +59,7 @@
 \newcommand{\EMgap}{\par\vspace{7bp}}
 % a figure with its caption
 \newcommand{\EMfigure}[3]{{\centering\scalebox{#1}{\EMfig{#2}}\par\vspace{6bp}
-  {\fontsize{14}{\EMlead\dimexpr14pt\relax}\selectfont\color{EMmuted}#3\par}}}
+  {\fontsize{15}{\EMlead\dimexpr15pt\relax}\selectfont\color{EMmuted}#3\par}}}
 % boxes: #1 kind (def, thm, imp, ex, exe, rem, prf), #2 overlay from which the box shows,
 % #3 heading (empty on a continuation slide)
 \newenvironment{EMbox}[3]{%
@@ -68,7 +68,7 @@
     opacityframe=\EMboxop,opacityback=\EMboxop,EMside={SL#1,opacity=\EMboxop},top=6bp,bottom=8bp,
     before skip=9bp,after skip=9bp]%
   \if\relax\detokenize{#3}\relax\else
-    \uncover<#2->{{\fontsize{17}{\EMlead\dimexpr17pt\relax}\selectfont\EMalign\color{SL#1}#3\par}}\vspace{4bp}\fi}
+    \uncover<#2->{{\fontsize{19}{\EMlead\dimexpr19pt\relax}\selectfont\EMalign\color{SL#1}#3\par}}\vspace{4bp}\fi}
   {\end{tcolorbox}}
 % two columns: the text on the reading start side, the figure on the other
 \newenvironment{EMtwocol}[1]{\begin{minipage}[t]{500bp}}{\end{minipage}}

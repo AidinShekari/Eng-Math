@@ -1,17 +1,17 @@
-\section{خواص سری فوریه، قضیهٔ پارسوال و صورت مختلط}
-\def\EMfootchapter{فصل ۲ \ \textbullet\ خواص سری فوریه، قضیهٔ پارسوال و صورت مختلط}
-\def\EMtitlesize{24}
-\begin{frame}{فصل ۲: خواص سری فوریه، قضیهٔ پارسوال و صورت مختلط}
+\section{خواص سری فوریه، قضیۀ پارسوال و صورت مختلط}
+\def\EMfootchapter{فصل ۲ \ \lr{\textbullet}\ خواص سری فوریه، قضیۀ پارسوال و صورت مختلط}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{فصل ۲: خواص سری فوریه، قضیۀ پارسوال و صورت مختلط}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مشتق و انتگرال سری فوریه}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{قضیهٔ رایلی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{قضیهٔ پارسوال}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{صورت مختلط سری فوریه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{مشتق و انتگرال سری فوریه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{قضیۀ رایلی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{قضیۀ پارسوال}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{صورت مختلط سری فوریه}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
@@ -19,7 +19,7 @@
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<3->
-\EMp{تابع متناوب با دورهٔ تناوب \EMim{2\pi} را در نظر بگیرید:}
+\EMp{تابع متناوب با دورۀ تناوب \EMim{2\pi} را در نظر بگیرید:}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos nx+b_n\sin nx,\qquad f(x) =f(x+2\pi)}
 \end{uncoverenv}
@@ -29,63 +29,61 @@
 \vspace{3bp}
 \EMeq{f(x) \approx a_0+\sum_{n=1}^{N}a_n\cos nx+b_n\sin nx}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود (ادامه)}
+\begin{uncoverenv}<2->
 \EMp{آیا تقریب مثلثاتی مقابل \textbf{بهتر} نیست؟}
 \vspace{3bp}
 \EMeq{F(x)\triangleq\alpha_0+\sum_{n=1}^{N}\alpha_n\cos nx+\beta_n\sin nx}
 \end{uncoverenv}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود (ادامه)}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{\textbf{معیار} بهتر بودن تقریب چیست؟ یک معیار: تابع خطا:}
 \vspace{3bp}
 \EMeq{E(x) =\big|f(x)-F(x)\big| =\left|f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right|}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
+\begin{uncoverenv}<4->
 \EMp{یک معیار خوب: متوسط مجذور خطا:}
 \vspace{3bp}
 \EMeq{D\triangleq\int_{-\pi}^{\pi}E^2(x)\,dx =\int_{-\pi}^{\pi}\left|f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right|^2dx}
 \end{uncoverenv}
-\EMgap
-\begin{EMbox}{prf}{3}{}
-\begin{uncoverenv}<4->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود (ادامه)}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
 \EMp{برای بهترین تقریب متوسط مجذور خطا را کمینه می‌کنیم. این کار با مشتق‌گیری از \EMim{D} بر حسب ضرایب سری مثلثاتی و برابر قرار دادن این مشتق با صفر به دست می‌آید. به عبارت دیگر:}
 \vspace{3bp}
 \EMeq{\frac{\partial D}{\partial\alpha_0} =-2\int_{-\pi}^{\pi}\left[f(x)-\alpha_0-\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right]dx =0}
 \end{uncoverenv}
-\end{EMbox}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{تقریب یک تابع متناوب توسط یک سری مثلثاتی با تعداد جملات محدود (ادامه)}
-\begin{EMbox}{prf}{1}{}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{uncoverenv}<3->
 \EMeq{\int_{-\pi}^{\pi}f(x)\,dx =\int_{-\pi}^{\pi}\left[\alpha_0+\sum_{n=1}^{N}\big(\alpha_n\cos nx+\beta_n\sin nx\big)\right]dx =2\pi\alpha_0\quad \Longrightarrow\quad \alpha_0 =\frac1{2\pi}\int_{-\pi}^{\pi}f(x)\,dx =a_0}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
+\begin{uncoverenv}<4->
 \EMeq{\frac{\partial D}{\partial\alpha_m} =0\quad \Longrightarrow\quad \alpha_m =\frac1\pi\int_{-\pi}^{\pi}f(x)\cos mx\,dx =a_m}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<5->
 \EMeq{\frac{\partial D}{\partial\beta_m} =0\quad \Longrightarrow\quad \beta_m =\frac1\pi\int_{-\pi}^{\pi}f(x)\sin mx\,dx =b_m}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<6->
 \EMp{بهترین تقریب مثلثاتی با تعداد جملات محدود از یک تابع تناوبی سری فوریه با جملات محدود است.}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق و انتگرال سری فوریه}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
-\EMp{اگر تابع \EMim{f(x)} با دورهٔ تناوب \EMim{T} تناوبی بوده، پیوسته و دارای سری فوریه باشد، آنگاه مشتق این تابع نیز تناوبی بوده سری فوریه آن با استفاده از مشتق‌گیری از سری فوریه تابع به دست می‌آید.}
+\EMp{اگر تابع \EMim{f(x)} با دورۀ تناوب \EMim{T} تناوبی بوده، پیوسته و دارای سری فوریه باشد، آنگاه مشتق این تابع نیز تناوبی بوده سری فوریه آن با استفاده از مشتق‌گیری از سری فوریه تابع به دست می‌آید.}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
 \end{uncoverenv}
@@ -96,14 +94,14 @@
 \end{EMbox}
 \begin{EMbox}{thm}{3}{}
 \begin{uncoverenv}<4->
-\EMp{اگر تابع \EMim{f(x)} با دورهٔ تناوب \EMim{T} تناوبی بوده و دارای سری فوریه باشد، آنگاه انتگرال معین این تابع با استفاده از انتگرال‌گیری از سری فوریه تابع قابل محاسبه است.}
+\EMp{اگر تابع \EMim{f(x)} با دورۀ تناوب \EMim{T} تناوبی بوده و دارای سری فوریه باشد، آنگاه انتگرال معین این تابع با استفاده از انتگرال‌گیری از سری فوریه تابع قابل محاسبه است.}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مشتق و انتگرال سری فوریه (ادامه)}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
@@ -112,11 +110,11 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ رایلی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ رایلی}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
-\EMp{اگر دو تابع \EMim{f(x)} و \EMim{g(x)} با دورهٔ تناوب \EMim{T} تناوبی بوده و سری فوریه این دو تابع به صورت زیر وجود داشته باشند:}
+\EMp{اگر دو تابع \EMim{f(x)} و \EMim{g(x)} با دورۀ تناوب \EMim{T} تناوبی بوده و سری فوریه این دو تابع به صورت زیر وجود داشته باشند:}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
 \end{uncoverenv}
@@ -133,8 +131,8 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ رایلی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ رایلی (ادامه)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
 \EMp{اثبات با فرض حقیقی بودن \EMim{g(x)}:}
@@ -149,11 +147,11 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ پارسوال}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ پارسوال}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
-\EMp{اگر تابع \EMim{f(x)} با دورهٔ تناوب \EMim{T} تناوبی بوده و سری فوریه آن به صورت زیر وجود داشته باشد:}
+\EMp{اگر تابع \EMim{f(x)} با دورۀ تناوب \EMim{T} تناوبی بوده و سری فوریه آن به صورت زیر وجود داشته باشد:}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos\frac{2\pi}Tnx+b_n\sin\frac{2\pi}Tnx}
 \end{uncoverenv}
@@ -170,12 +168,12 @@
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<5->
-\EMp{با توجه به تساوی پارسوال مقدار توان تابع \EMim{f(x)} را می‌شود با استفاده از ضرایب سری فوریه به دست آورد. اگر تابع توسط تقریب \EMim{N} جمله‌ای از سینوس‌ها و کسینوس‌ها بیان شود طبق رابطهٔ بالا توان تابع تقریبی کمتر از توان تابع \EMim{f(x)} خواهد بود و داریم:}
+\EMp{با توجه به تساوی پارسوال مقدار توان تابع \EMim{f(x)} را می‌شود با استفاده از ضرایب سری فوریه به دست آورد. اگر تابع توسط تقریب \EMim{N} جمله‌ای از سینوس‌ها و کسینوس‌ها بیان شود طبق رابطۀ بالا توان تابع تقریبی کمتر از توان تابع \EMim{f(x)} خواهد بود و داریم:}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ پارسوال (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ پارسوال (ادامه)}
 \begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
 \EMeq{\frac2T\int_T|f(x)|^2\,dx\ \ge\ 2|a_0|^2+\sum_{n=1}^{N}\big(|a_n|^2+|b_n|^2\big)}
@@ -183,8 +181,8 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ پارسوال (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ پارسوال (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \EMp{برای تابع \EMim{f(x)} زیر، چند جمله از سری فوریه نیاز است تا حداقل ۹۴ درصد توان در تابع تقریبی باقی بماند.}
 \EMgap
@@ -199,30 +197,31 @@
 \begin{uncoverenv}<4->
 \EMeq{\frac{\displaystyle\sum_{n=1}^{N}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2}\ge0.94}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{\frac{\displaystyle\sum_{n=1}^{7}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9496,\qquad \frac{\displaystyle\sum_{n=1}^{5}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9331\quad \Longrightarrow\quad N =7}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{قضیهٔ پارسوال (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{قضیۀ پارسوال (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{\frac{\displaystyle\sum_{n=1}^{7}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9496,\qquad \\[4pt] \frac{\displaystyle\sum_{n=1}^{5}\left(\frac{2k}{n\pi}(1-\cos n\pi)\right)^2}{2k^2} \cong0.9331\quad \Longrightarrow\quad N =7}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.116}{m02-power-example}{موج مربعی \EMim{\pm k} با دورهٔ تناوب \EMim{2\pi} در مثال توان}}}
+\EMside{237.1bp}{\uncover<3->{\EMfigure{1.121}{m02-power-example}{موج مربعی \EMim{\pm k} با دورۀ تناوب \EMim{2\pi} در مثال توان}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{صورت مختلط سری فوریه}
 \begin{uncoverenv}<2->
-\EMp{فرض کنید تابع \EMim{f(x)} تناوبی و صرفاً جهت سادگی دارای دورهٔ تناوب \EMim{2\pi} می‌باشد. لذا داریم:}
+\EMp{فرض کنید تابع \EMim{f(x)} تناوبی و صرفاً جهت سادگی دارای دورۀ تناوب \EMim{2\pi} می‌باشد. لذا داریم:}
 \vspace{3bp}
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\cos nx+b_n\sin nx}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMp{با استفاده از رابطهٔ اویلر \EMim{e^{ix}=\cos x+i\sin x}:}
+\EMp{با استفاده از رابطۀ اویلر \EMim{e^{ix}=\cos x+i\sin x}:}
 \vspace{3bp}
 \EMeq{\cos nx =\frac{e^{inx}+e^{-inx}}2,\qquad \sin nx =\frac{e^{inx}-e^{-inx}}{2i},\qquad \frac1i =-i}
 \end{uncoverenv}
@@ -230,30 +229,35 @@
 \begin{uncoverenv}<4->
 \EMeq{f(x) =a_0+\sum_{n=1}^{\infty}a_n\left(\frac{e^{inx}+e^{-inx}}2\right)+b_n\left(\frac{e^{inx}-e^{-inx}}{2i}\right) =\underbrace{a_0}_{c_0}+\sum_{n=1}^{\infty}\underbrace{\left(\frac{a_n-ib_n}2\right)}_{c_n}e^{inx}+\underbrace{\left(\frac{a_n+ib_n}2\right)}_{c_{-n}}e^{-inx}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{c_n =\frac{a_n-ib_n}2 =\frac12\left\{\frac1\pi\int_{2\pi}f(x)\cos nx\,dx-i\frac1\pi\int_{2\pi}f(x)\sin nx\,dx\right\} =\frac1{2\pi}\int_{2\pi}f(x)\big(\cos nx-i\sin nx\big)\,dx \\[4pt] =\frac1{2\pi}\int_{2\pi}f(x)e^{-inx}\,dx}
-\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{صورت مختلط سری فوریه (ادامه)}
 \begin{uncoverenv}<2->
+\EMeq{c_n =\frac{a_n-ib_n}2 =\frac12\left\{\frac1\pi\int_{2\pi}f(x)\cos nx\,dx-i\frac1\pi\int_{2\pi}f(x)\sin nx\,dx\right\} =\frac1{2\pi}\int_{2\pi}f(x)\big(\cos nx-i\sin nx\big)\,dx \\[4pt] =\frac1{2\pi}\int_{2\pi}f(x)e^{-inx}\,dx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMeq{c_{-n} =\frac{a_n+ib_n}2 =\frac1{2\pi}\int_{2\pi}f(x)\big(\cos nx+i\sin nx\big)\,dx =\frac1{2\pi}\int_{2\pi}f(x)e^{inx}\,dx}
 \end{uncoverenv}
 \EMgap
-\begin{EMbox}{imp}{2}{}
-\begin{uncoverenv}<3->
+\begin{EMbox}{imp}{3}{}
+\begin{uncoverenv}<4->
 \EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{inx},\qquad c_n =\frac1{2\pi}\int_{2\pi}f(x)e^{-inx}\,dx}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
-\EMp{برای دورهٔ تناوب دلخواه:}
+\begin{uncoverenv}<5->
+\EMp{برای دورۀ تناوب دلخواه:}
 \vspace{3bp}
 \EMeq{f(x) =\sum_{n=-\infty}^{\infty}c_ne^{i\frac{2\pi}Tnx},\qquad c_n =\frac1T\int_Tf(x)e^{-i\frac{2\pi}Tnx}\,dx}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{صورت مختلط سری فوریه (ادامه)}
+\begin{EMbox}{imp}{1}{}
+\begin{uncoverenv}<2->
 \EMeq{\frac1T\int_T|f(x)|^2\,dx =\sum_{n=-\infty}^{\infty}|c_n|^2}
 \end{uncoverenv}
 \end{EMbox}

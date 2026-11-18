@@ -1,0 +1,8 @@
+% A domain D in the complex plane
+\begin{tikzpicture}
+  \draw[EMax] (-0.4,0)--(4.6,0) node[EMlab,right]{$x$};
+  \draw[EMax] (0,-0.4)--(0,3.6) node[EMlab,above]{$y$};
+  \draw[EMcurve,fill=EMindigo!10] plot[smooth cycle,tension=0.75]
+    coordinates{(1.0,1.5)(1.5,2.7)(2.5,3.0)(3.2,2.1)(2.7,1.1)(1.7,0.9)};
+  \node[EMlab] at (2.1,1.95){$D$};
+\end{tikzpicture}

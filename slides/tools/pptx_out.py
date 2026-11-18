@@ -1,6 +1,7 @@
 """Write a deck as PowerPoint: slides/EngineeringMath-slider-<lang>.pptx
 
-* titles, text, captions: editable text boxes (Tahoma for Persian, Calibri for English);
+* titles, text, captions: editable text boxes in B Nazanin (Persian script) and Times New Roman
+  (Latin script); both fonts are embedded in the file;
 * formulas: editable PowerPoint equations (OMML, converted from the LaTeX by pandoc), each with a
   picture of the same formula as the fallback that applications without equation support show;
   a formula pandoc cannot convert is the picture alone;
@@ -37,6 +38,7 @@ NS_P14 = "http://schemas.microsoft.com/office/powerpoint/2010/main"
 NSDECL = f'xmlns:a="{NS_A}" xmlns:p="{NS_P}" xmlns:r="{NS_R}"'
 
 PT = 12700  # EMU per point
+LEAD = {"fa": 1.45, "en": 1.17}  # line pitch / size, as in the measuring runs
 
 COL = dict(bar="CFE2F3", bar2="EEF5FB", barline="9DBEDF", title="1E2A4A", foot="7A7F93", ink="1E1F3B",
            muted="6B6B85")
@@ -233,7 +235,7 @@ def omml_runs_fix(xml, size, lang):
         t = r.find("{%s}t" % NS_M)
         txt = t.text if t is not None and t.text else ""
         is_fa = bool(re.search(r"[\u0600-\u06FF]", txt))
-        face = ("Tahoma" if lang == "fa" else "Calibri") if (nor and is_fa) or (nor and txt.strip() and txt.isalpha() and len(txt) > 3) else "Cambria Math"
+        face = ("B Nazanin" if is_fa else "Times New Roman") if (nor and is_fa) or (nor and txt.strip() and txt.isalpha() and len(txt) > 3) else "Cambria Math"
         ital = "0" if (sty in ("p", "b") or nor) else "1"
         a = etree.Element("{%s}rPr" % NS_A, nsmap={"a": NS_A})
         a.set("lang", "fa-IR" if is_fa else "en-US")
@@ -253,6 +255,25 @@ def omml_runs_fix(xml, size, lang):
     return etree.tostring(root, encoding="unicode")
 
 
+_BNAZ = None
+
+
+def split_coverage(text):
+    """[(segment, lacks_in_B_Nazanin)]"""
+    global _BNAZ
+    if _BNAZ is None:
+        from fontTools.ttLib import TTFont
+        _BNAZ = set(TTFont(str(SLIDES / "fonts" / "BNazanin.ttf")).getBestCmap())
+    segs = []
+    for ch in text:
+        miss = ord(ch) not in _BNAZ and not (ch.isascii() and ch.isalnum()) and ch not in " \u00a0"
+        if segs and segs[-1][1] == miss:
+            segs[-1][0] += ch
+        else:
+            segs.append([ch, miss])
+    return [(a, b) for a, b in segs]
+
+
 FUNCS = {"sin", "cos", "tan", "cot", "sec", "csc", "sinh", "cosh", "tanh", "coth", "ln", "log", "exp", "arg",
          "Re", "Im", "Si", "Res", "arcsin", "arccos", "arctan", "arccot", "arcsinh", "arccosh", "Ln", "Arg", "erf",
          "lim", "max", "min", "sup", "inf", "det"}
@@ -264,7 +285,7 @@ class SlideXML:
         self.slide = slide
         self.lang = lang
         self.rtl = lang == "fa"
-        self.font = "Tahoma" if self.rtl else "Calibri"
+        self.font = "Times New Roman"   # Latin script; Persian script: B Nazanin (the cs font)
         self.tree = slide.shapes._spTree
         self.next_id = 2 + len(self.tree.xpath("./p:sp|./p:pic"))
         self.anim = {}  # step -> [ids]
@@ -279,21 +300,35 @@ class SlideXML:
         if step is not None and step > 0:
             self.anim.setdefault(step, []).append(sid)
 
-    def rpr(self, size, bold=False, italic=False, color=None, latin=False):
+    def rpr(self, size, bold=False, italic=False, color=None, latin=False, cs="B Nazanin"):
         color = color or COL["ink"]
         lang = "fa-IR" if self.rtl and not latin else "en-US"
         return ('<a:rPr lang="%s" sz="%d"%s%s dirty="0"><a:solidFill><a:srgbClr val="%s"/></a:solidFill>'
-                '<a:latin typeface="%s"/><a:cs typeface="Tahoma"/></a:rPr>') % (
-            lang, int(size * 100), ' b="1"' if bold else "", ' i="1"' if italic else "", color, self.font)
+                '<a:latin typeface="%s"/><a:cs typeface="%s"/></a:rPr>') % (
+            lang, int(size * 100), ' b="1"' if bold else "", ' i="1"' if italic else "", color, self.font, cs)
 
-    def para_xml(self, runs, size, align, color=None, omml=None, bold_all=False):
-        """One <a:p>; omml: {latex: xml} for inline formulas (None -> plain text of the formula)."""
+    def text_runs(self, text, size, bold, italic, color):
+        """Runs of one piece of text; characters that B Nazanin lacks (dashes, bullet, bar, the
+        Arabic decimal separator ...) get Times New Roman as their complex-script font."""
+        out = []
+        for seg, missing in split_coverage(text):
+            latin = not re.search(r"[\u0600-\u06FF]", seg)
+            out.append("<a:r>%s<a:t>%s</a:t></a:r>" % (
+                self.rpr(size, bold, italic, color, latin, cs="Times New Roman" if missing else "B Nazanin"), esc(seg)))
+        return "".join(out)
+
+    def para_xml(self, runs, size, align, color=None, omml=None, bold_all=False, lead=None):
+        """One <a:p>; omml: {latex: xml} for inline formulas (None -> plain text of the formula).
+        Text alone gets an exact line pitch (that of the measuring run, the same on every
+        platform); a line with a formula keeps the font's own spacing so that it can grow."""
         algn = {"r": "r", "l": "l", "c": "ctr"}[align]
-        parts = ['<a:p><a:pPr algn="%s" rtl="%d"/>' % (algn, 1 if self.rtl else 0)]
+        lead = lead or LEAD[self.lang]
+        exact = not any(r[0] == "m" and omml and omml.get(r[1]) for r in runs)
+        ln = '<a:lnSpc><a:spcPts val="%d"/></a:lnSpc>' % int(round(size * lead * 100)) if exact else ""
+        parts = ['<a:p><a:pPr algn="%s" rtl="%d">%s</a:pPr>' % (algn, 1 if self.rtl else 0, ln)]
         for r in runs:
             if r[0] == "t":
-                latin = not re.search(r"[\u0600-\u06FF]", r[1])
-                parts.append("<a:r>%s<a:t>%s</a:t></a:r>" % (self.rpr(size, r[2] or bold_all, r[3], color, latin), esc(r[1])))
+                parts.append(self.text_runs(r[1], size, r[2] or bold_all, r[3], color))
             elif r[0] == "br":
                 parts.append("<a:br>%s</a:br>" % self.rpr(size, color=color))
             else:
@@ -423,7 +458,6 @@ def write(deck):
     prs.slide_width = Emu(emu(L.SW))
     prs.slide_height = Emu(emu(L.SH))
     blank = prs.slide_layouts[6]
-    font = "Tahoma" if rtl else "Calibri"
     algn = "r" if rtl else "l"
     chap_title = {ch.num: ch.title for ch in deck.chapters}
     stats = dict(eq=0, eqpic=0, textmath=0)
@@ -436,14 +470,12 @@ def write(deck):
         if kind != "cover":
             title = plain_title(s["title"]) + ((" " + L.LABELS[lang]["cont"]) if s.get("cont") else "")
             tw = deck.title_w.get(s["title"] + ((" " + L.LABELS[lang]["cont"]) if s.get("cont") else ""))
-            size = L.TITLE
-            if tw and tw > L.BAR["w"] - 36:
-                size = max(14, int(L.TITLE * (L.BAR["w"] - 36) / tw))
+            size, two = L.title_style(tw)
             sid = X.nid()
             X.add(X.rect(sid, L.BAR["x"], L.BAR["y"], L.BAR["w"], L.BAR["h"], None, line=(COL["barline"], 10160),
                          name="Title bar", grad=(COL["bar"], COL["bar2"], 10800000 if rtl else 0), round_=True))
             sid = X.nid()
-            p = X.para_xml([("t", title, True, False)], size, algn, color=COL["title"])
+            p = X.para_xml([("t", title, True, False)], size, algn, color=COL["title"], lead=1.15 if two else None)
             X.add(X.sp_text(sid, L.BAR["x"] + 16, L.BAR["y"], L.BAR["w"] - 32, L.BAR["h"], p, name="Title", anchor="ctr"))
             # footer
             if s.get("chapter") not in (None, "front"):
@@ -497,6 +529,14 @@ def write(deck):
     add_sections(prs, deck)
     out = SLIDES / f"EngineeringMath-slider-{lang}.pptx"
     prs.save(str(out))
+    import embed_fonts
+    sysf = "/System/Library/Fonts/Supplemental/"
+    embed_fonts.embed(out, [
+        ("B Nazanin", "00000400000000000000", 2, -78, {"regular": SLIDES / "fonts" / "BNazanin.ttf"}),
+        ("Times New Roman", "02020603050405020304", 18, 0,
+         {"regular": sysf + "Times New Roman.ttf", "bold": sysf + "Times New Roman Bold.ttf",
+          "italic": sysf + "Times New Roman Italic.ttf", "boldItalic": sysf + "Times New Roman Bold Italic.ttf"}),
+    ])
     print(f"  wrote {out.name}: {len(deck.slides)} slides; equations {stats['eq']} (as pictures only: {stats['eqpic']}); "
           f"OMML failures {len(failed)}; text with formulas {stats['textmath']} (as pictures: {stats.get('textpic', 0)})")
 

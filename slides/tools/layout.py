@@ -24,10 +24,10 @@ LIST_IND = 26.0
 GAP = 7.0                        # between units
 GAP_BOX = 9.0                    # around a box
 SLACK = 1.05                     # heights are taken 5 % larger than measured (font differences)
-BODY = 18
-CAPTION = 14
-HEAD = 17
-TITLE = 24
+BODY = 20
+CAPTION = 15
+HEAD = 19
+TITLE = 26
 
 BOX_KIND = {
     "EMdefinition": "def", "EMtheorem": "thm", "EMlemma": "thm", "EMproposition": "thm",
@@ -48,6 +48,8 @@ LABELS = {
            "contents": "In this chapter"},
 }
 FA_DIGITS = str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹")
+# the labels written with the single letter U+06C0 (B Nazanin has no combining hamza)
+LABELS["fa"] = {k: v.replace("\u0647\u0654", "\u06c0") for k, v in LABELS["fa"].items()}
 
 
 def num(lang, s):
@@ -218,3 +220,75 @@ def break_lines(segw: List[float], width: float) -> List[List[int]]:
 
 def clean_title(t: str) -> str:
     return " ".join(t.split())
+
+
+def title_style(width):
+    """(font size, two lines) of a slide title whose width at TITLE size is `width`."""
+    room = BAR["w"] - 36
+    if not width or width <= room:
+        return TITLE, False
+    if width * 20 / TITLE <= room:
+        return max(20, int(TITLE * room / width)), False
+    return 17, True
+
+
+# ---------- B Nazanin lacks a few characters ----------
+FA_MISSING = "\u2014\u2013\u2022|\u066b\u066a"   # em dash, en dash, bullet, bar, Arabic decimal separator
+
+
+def fa_fix(tex):
+    """Persian text for B Nazanin: he + hamza above -> the single letter heh with yeh (U+06C0);
+    the characters the font lacks are set in the Latin font (\\lr{...}), outside formulas."""
+    if not tex:
+        return tex
+    tex = tex.replace("\u0647\u0654", "\u06c0").replace("\u0647\u200c\u0654", "\u06c0")
+    out = []
+    i = 0
+    n = len(tex)
+    while i < n:
+        if tex.startswith("\\EMim{", i):
+            j = _skip_braced(tex, i + 5)
+            out.append(tex[i:j])
+            i = j
+            continue
+        if tex[i] == "$":
+            j = tex.find("$", i + 1)
+            j = n if j < 0 else j + 1
+            out.append(tex[i:j])
+            i = j
+            continue
+        m = re.match(r"\\(dots|ldots|textbar)(?![A-Za-z])", tex[i:])
+        if m:  # characters B Nazanin lacks, written as commands
+            out.append("\\lr{%s}" % m.group(0))
+            i += m.end()
+            continue
+        if tex[i] == "\\" and i + 1 < n:
+            out.append(tex[i:i + 2])
+            i += 2
+            continue
+        if tex.startswith("--", i):  # an en or em dash (TeX ligature)
+            k = 3 if tex.startswith("---", i) else 2
+            out.append("\\lr{%s}" % tex[i:i + k])
+            i += k
+            continue
+        c = tex[i]
+        out.append("\\lr{%s}" % c if c in FA_MISSING else c)
+        i += 1
+    return "".join(out)
+
+
+def _skip_braced(s, i):
+    depth = 0
+    while i < len(s):
+        c = s[i]
+        if c == "\\":
+            i += 2
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return i + 1
+        i += 1
+    return i

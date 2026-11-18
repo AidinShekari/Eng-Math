@@ -1,3 +1,4 @@
 build/
 hand-*.tex
 hand-*.pdf
+*.tmp

@@ -1,0 +1,9 @@
+% A path from z0 to Z split into C1 and C2
+\begin{tikzpicture}
+  \draw[EMcurve,EMmid] (0,0) to[out=60,in=180] (2.1,1.1);
+  \draw[EMcurve,EMmid] (2.1,1.1) to[out=0,in=130] (5.2,0.1);
+  \draw[EMcurve] (2.0,0.95)--(2.2,1.25);
+  \node[EMhole,draw=EMindigo] at (0,0){};\node[EMhole,draw=EMindigo] at (5.2,0.1){};
+  \node[EMlab,below] at (0,-0.1){$z_0$};\node[EMlab,right] at (5.3,0.2){$Z$};
+  \node[EMlab,above] at (1.2,1.25){$C_1$};\node[EMlab,above] at (3.7,1.15){$C_2$};
+\end{tikzpicture}

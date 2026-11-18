@@ -1,4 +1,4 @@
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{بخش ۳}
 \begin{tikzpicture}[remember picture,overlay]
 \node[fill=SLbar,draw=SLbarEdge,line width=0.8bp,rounded corners=4bp,minimum width=520bp,minimum height=170bp] (b) at ([yshift=-20bp]current page.center) {};
@@ -8,69 +8,69 @@
 \end{frame}
 
 \section{اعداد مختلط}
-\def\EMfootchapter{فصل ۸ \ \textbullet\ اعداد مختلط}
-\def\EMtitlesize{24}
+\def\EMfootchapter{فصل ۸ \ \lr{\textbullet}\ اعداد مختلط}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{فصل ۸: اعداد مختلط}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مجموعهٔ اعداد مختلط}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{چهار عمل اصلی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{خواص جمع و ضرب}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مزدوج مختلط}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{نامساوی مثلثی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{فرم قطبی اعداد مختلط}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{ضرب دو عدد مختلط در فرم قطبی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{ریشهٔ \EMim{m}-ام یک عدد مختلط}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{مجموعۀ اعداد مختلط}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{چهار عمل اصلی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{خواص جمع و ضرب}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{مزدوج مختلط}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{نامساوی مثلثی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{فرم قطبی اعداد مختلط}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{ضرب دو عدد مختلط در فرم قطبی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{ریشۀ \EMim{m}-ام یک عدد مختلط}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{مجموعهٔ اعداد مختلط}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{مجموعۀ اعداد مختلط}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{def}{1}{}
 \begin{uncoverenv}<2->
-\EMp{مجموعهٔ اعداد مختلط تعمیم اعداد واقع بر محور اعداد حقیقی به صفحه‌ای از اعداد دارای دو مولفهٔ حقیقی و موهومی می‌باشد.}
+\EMp{مجموعۀ اعداد مختلط تعمیم اعداد واقع بر محور اعداد حقیقی به صفحه‌ای از اعداد دارای دو مولفۀ حقیقی و موهومی می‌باشد.}
 \vspace{3bp}
 \EMeq{\mathbb{R}\to\mathbb{C}}
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<3->
-\EMeq{\mathbb{C} =\{(x,y)\mid x,y\in\mathbb{R}\},\qquad z =(x,y),\qquad x =\operatorname{Re}\{z\},\qquad y \\[4pt] =\operatorname{Im}\{z\}}
+\EMeq{\mathbb{C} =\{(x,y)\mid x,y\in\mathbb{R}\},\qquad z =(x,y),\qquad x \\[4pt] =\operatorname{Re}\{z\},\qquad y =\operatorname{Im}\{z\}}
 \end{uncoverenv}
 \EMgap
-\EMgap
-\begin{uncoverenv}<5->
+\end{minipage}
+\EMside{190.0bp}{\uncover<4->{\EMfigure{1.500}{m08-complex-plane}{نمایش عدد مختلط \EMim{z=(x,y)} در صفحۀ مختلط؛ اندازۀ \EMim{|z|} و آرگومان \EMim{\theta}}}}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{مجموعۀ اعداد مختلط (ادامه)}
+\begin{uncoverenv}<2->
 \EMp{اندازه یا نرم (\lr{norm}) عدد مختلط:}
 \vspace{3bp}
 \EMeq{|z| =\sqrt{x^2+y^2}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<6->
+\begin{uncoverenv}<3->
 \EMp{فاز یا آرگومان:}
 \vspace{3bp}
 \EMeq{\theta =\measuredangle z =\tan^{-1}\!\left(\frac{y}{x}\right),\qquad z =|z|\measuredangle\theta}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<7->
+\begin{uncoverenv}<4->
 \EMeq{x =|z|\cos\theta,\qquad y =|z|\sin\theta}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<8->
+\begin{uncoverenv}<5->
 \EMeq{z =x\times(1,0)+y\times(0,1) =x+iy}
 \end{uncoverenv}
-\end{minipage}
-\EMside{171.2bp}{\uncover<4->{\EMfigure{1.500}{m08-complex-plane}{نمایش عدد مختلط \EMim{z=(x,y)} در صفحهٔ مختلط؛ اندازهٔ \EMim{|z|} و آرگومان \EMim{\theta}}}}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{مجموعهٔ اعداد مختلط (ادامه)}
-\begin{EMbox}{imp}{1}{}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{EMbox}{imp}{5}{}
+\begin{uncoverenv}<6->
 \EMeq{i^2 =-1}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{چهار عمل اصلی}
 \begin{uncoverenv}<2->
 \EMp{فرض کنید \EMim{z_1=(a_1,b_1)=a_1+ib_1} و \EMim{z_2=(a_2,b_2)=a_2+ib_2}.}
@@ -99,7 +99,7 @@ z_1\times z_2&=(a_1+ib_1)\times(a_2+ib_2)\\
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{چهار عمل اصلی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{ضرب در یک عدد حقیقی:}
@@ -118,60 +118,64 @@ z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{خواص جمع و ضرب}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
-\EMp{مجموعهٔ اعداد مختلط همراه با دو عمل جمع و ضرب تشکیل یک میدان غیرترتیب‌پذیر می‌دهد.}
+\EMp{مجموعۀ اعداد مختلط همراه با دو عمل جمع و ضرب تشکیل یک میدان غیرترتیب‌پذیر می‌دهد.}
 \end{uncoverenv}
 \end{EMbox}
-\begin{uncoverenv}<3->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{خواص جمع و ضرب (ادامه)}
+\begin{uncoverenv}<2->
 \EMp{برای \EMim{z_1,z_2,z_3\in\mathbb{C}}:}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<3->
 \EMeq{z_1+z_2\in\mathbb{C},\qquad z_1\times z_2\in\mathbb{C}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<4->
 \EMeq{z_1+z_2 =z_2+z_1,\qquad z_1\times z_2 =z_2\times z_1}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<6->
+\begin{uncoverenv}<5->
 \EMeq{(z_1+z_2)+z_3 =z_1+(z_2+z_3),\qquad (z_1z_2)z_3 =z_1(z_2z_3)}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<7->
+\begin{uncoverenv}<6->
 \EMeq{z_1(z_2+z_3) =z_1z_2+z_1z_3}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<8->
+\begin{uncoverenv}<7->
 \EMeq{z_1+(0,0) =z_1+0 =z_1,\qquad z_1+(-z_1) =(0,0) =0}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<9->
+\begin{uncoverenv}<8->
 \EMeq{-z_1 =-(a_1,b_1) =(-a_1,-b_1) =-a_1-ib_1}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<10->
+\begin{uncoverenv}<9->
 \EMeq{z_1\times(1,0) =z_1\times1 =z_1,\qquad z_1\times z_1^{-1} =(1,0) =1}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<11->
+\begin{uncoverenv}<10->
 \EMeq{z_1^{-1} =\left(\frac{a_1}{a_1^2+b_1^2},\frac{-b_1}{a_1^2+b_1^2}\right) =\frac{a_1}{a_1^2+b_1^2}-i\,\frac{b_1}{a_1^2+b_1^2}}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{خواص جمع و ضرب (ادامه)}
 \begin{EMbox}{rem}{1}{}
 \begin{uncoverenv}<2->
-\EMp{در مجموعهٔ اعداد مختلط نمی‌توان رابطهٔ ترتیب \EMim{z_1<z_2} تعریف کرد.}
+\EMp{در مجموعۀ اعداد مختلط نمی‌توان رابطۀ ترتیب \EMim{z_1<z_2} تعریف کرد.}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مزدوج مختلط}
 \begin{EMbox}{def}{1}{}
 \begin{uncoverenv}<2->
@@ -180,17 +184,17 @@ z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مزدوج مختلط (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
-\EMp{مزدوج عدد مختلط \EMim{z=5+2i} را در صفحهٔ مختلط رسم کنید.}
+\EMp{مزدوج عدد مختلط \EMim{z=5+2i} را در صفحۀ مختلط رسم کنید.}
 \end{EMbox}
 \end{minipage}
-\EMside{49.8bp}{\uncover<2->{\EMfigure{1.500}{m08-conjugate}{عدد مختلط \EMim{z=5+2i} و مزدوج آن \EMim{\bar z=5-2i}}}}
+\EMside{53.4bp}{\uncover<2->{\EMfigure{1.500}{m08-conjugate}{عدد مختلط \EMim{z=5+2i} و مزدوج آن \EMim{\bar z=5-2i}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مزدوج مختلط (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \EMp{عبارت‌های زیر را ثابت کنید.}
@@ -207,31 +211,28 @@ z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{نامساوی مثلثی}
 \begin{minipage}[t]{500bp}\vspace{0pt}
-\end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m08-triangle}{نامساوی مثلثی: مثلثی با رئوس \EMim{0}، \EMim{z_1} و \EMim{z_1+z_2}}}}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{نامساوی مثلثی (ادامه)}
+\EMgap
 \begin{EMbox}{exe}{1}{}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{نامساوی مثلثی را برای هر دو عدد مختلط ثابت کنید: \EMim{|z_1+z_2|\le|z_1|+|z_2|}.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{نامساوی مثلثی را برای هر دو عدد مختلط ثابت کنید: \EMim{|z_1+z_2|\le|z_1|+|z_2|}.}
 \EMgap
 \begin{uncoverenv}<2->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{فرم کلی نامساوی مثلثی را برای \EMim{n} عدد مختلط دلخواه ثابت کنید:}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{فرم کلی نامساوی مثلثی را برای \EMim{n} عدد مختلط دلخواه ثابت کنید:}
 \vspace{3bp}
 \EMeq{|z_1+z_2+\cdots+z_n|\le|z_1|+|z_2|+\cdots+|z_n|}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{ثابت کنید: \EMim{|z_1+z_2|\ge|z_1|-|z_2|}.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{ثابت کنید: \EMim{|z_1+z_2|\ge|z_1|-|z_2|}.}
 \end{uncoverenv}
 \end{EMbox}
+\end{minipage}
+\EMside{0.0bp}{\EMfigure{1.500}{m08-triangle}{نامساوی مثلثی: مثلثی با رئوس \EMim{0}، \EMim{z_1} و \EMim{z_1+z_2}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{فرم قطبی اعداد مختلط}
 \begin{uncoverenv}<2->
 \EMeq{z =x+iy,\qquad \left.\begin{aligned}x&=|z|\cos\theta\\ y&=|z|\sin\theta\end{aligned}\right\}\; \Longrightarrow\; z =|z|\,(\cos\theta+i\sin\theta)}
@@ -246,7 +247,7 @@ z_1\div z_2&=(a_1+ib_1)\div(a_2+ib_2)=\frac{a_1+ib_1}{a_2+ib_2}=\frac{(a_1+ib_1)
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{ضرب دو عدد مختلط در فرم قطبی}
 \begin{uncoverenv}<2->
 \EMeq{z_1 =|z_1|(\cos\theta_1+i\sin\theta_1),\qquad z_2 =|z_2|(\cos\theta_2+i\sin\theta_2)}
@@ -277,29 +278,30 @@ z_1\cdot z_2&=|z_1||z_2|(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)
 \EMeq{z^k =|z|^k(\cos k\theta+i\sin k\theta)}
 \end{uncoverenv}
 \end{EMbox}
-\begin{uncoverenv}<7->
-\EMeq{z^k =\big[|z|(\cos\theta+i\sin\theta)\big]^k =|z|^k(\cos\theta+i\sin\theta)^k =|z|^k(\cos k\theta+i\sin k\theta)}
-\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{ضرب دو عدد مختلط در فرم قطبی (ادامه)}
-\begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
+\EMeq{z^k =\big[|z|(\cos\theta+i\sin\theta)\big]^k =|z|^k(\cos\theta+i\sin\theta)^k =|z|^k(\cos k\theta+i\sin k\theta)}
+\end{uncoverenv}
+\EMgap
+\begin{EMbox}{imp}{2}{}
+\begin{uncoverenv}<3->
 \EMeq{(\cos\theta+i\sin\theta)^k =\cos k\theta+i\sin k\theta}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{ضرب دو عدد مختلط در فرم قطبی (ادامه)}
 \begin{EMbox}{exe}{1}{}
-\EMp{با استفاده از رابطهٔ دموار \EMim{\cos3\theta} و \EMim{\cos4\theta} را بر حسب \EMim{\cos\theta} و \EMim{\sin\theta} به دست آورید.}
+\EMp{با استفاده از رابطۀ دموار \EMim{\cos3\theta} و \EMim{\cos4\theta} را بر حسب \EMim{\cos\theta} و \EMim{\sin\theta} به دست آورید.}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{ریشهٔ \EMim{m}-ام یک عدد مختلط}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{ریشۀ \EMim{m}-ام یک عدد مختلط}
 \begin{uncoverenv}<2->
 \EMeq{w =\sqrt[m]{z} =z^{1/m},\qquad z =|z|(\cos\theta+i\sin\theta)}
 \end{uncoverenv}
@@ -327,11 +329,11 @@ z_1\cdot z_2&=|z_1||z_2|(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{ریشهٔ \EMim{m}-ام یک عدد مختلط (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{ریشۀ \EMim{m}-ام یک عدد مختلط (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
-\EMp{ریشه‌های معادلهٔ \EMim{z^n=1} چیست؟}
+\EMp{ریشه‌های معادلۀ \EMim{z^n=1} چیست؟}
 \EMgap
 \begin{uncoverenv}<2->
 \EMeq{z =\sqrt[n]{1},\qquad 1 =1\measuredangle0\; \Longrightarrow\; z \\[4pt] =\cos\!\left(\frac{2k\pi}{n}\right)+i\sin\!\left(\frac{2k\pi}{n}\right),\qquad k =0,1,\dots,n-1}
@@ -344,16 +346,16 @@ z_1\cdot z_2&=|z_1||z_2|(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{227.9bp}{\uncover<4->{\EMfigure{0.914}{m08-roots-of-unity}{ریشه‌های \EMim{z=\sqrt[3]{1}}، \EMim{z=\sqrt[4]{1}} و \EMim{z=\sqrt[5]{1}} روی دایرهٔ واحد}}}
+\EMside{249.6bp}{\uncover<4->{\EMfigure{0.916}{m08-roots-of-unity}{ریشه‌های \EMim{z=\sqrt[3]{1}}، \EMim{z=\sqrt[4]{1}} و \EMim{z=\sqrt[5]{1}} روی دایرۀ واحد}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{ریشهٔ \EMim{m}-ام یک عدد مختلط (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{ریشۀ \EMim{m}-ام یک عدد مختلط (ادامه)}
 \begin{EMbox}{exe}{1}{}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{ریشه‌های معادلهٔ \EMim{z^6+6+8i=0} را به دست آورده در صفحهٔ اعداد مختلط رسم کنید.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{ریشه‌های معادلۀ \EMim{z^6+6+8i=0} را به دست آورده در صفحۀ اعداد مختلط رسم کنید.}
 \EMgap
 \begin{uncoverenv}<2->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{درستی اتحاد \EMim{1+z+z^2+\cdots+z^n=\dfrac{1-z^{n+1}}{1-z}} را تحقیق کنید و سپس اتحاد زیر (اتحاد لاگرانژ) را نتیجه بگیرید.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{درستی اتحاد \EMim{1+z+z^2+\cdots+z^n=\dfrac{1-z^{n+1}}{1-z}} را تحقیق کنید و سپس اتحاد زیر (اتحاد لاگرانژ) را نتیجه بگیرید.}
 \vspace{3bp}
 \EMeq{1+\cos\theta+\cos2\theta+\cdots+\cos n\theta =\frac12+\frac{\sin\!\left[\left(n+\frac12\right)\theta\right]}{2\sin\frac\theta2}}
 \end{uncoverenv}

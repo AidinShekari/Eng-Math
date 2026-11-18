@@ -1,4 +1,4 @@
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{بخش ۲}
 \begin{tikzpicture}[remember picture,overlay]
 \node[fill=SLbar,draw=SLbarEdge,line width=0.8bp,rounded corners=4bp,minimum width=520bp,minimum height=170bp] (b) at ([yshift=-20bp]current page.center) {};
@@ -7,21 +7,21 @@
 \end{tikzpicture}
 \end{frame}
 
-\section{معادلهٔ موجی یک‌بعدی و روش جداسازی متغیرها}
-\def\EMfootchapter{فصل ۴ \ \textbullet\ معادلهٔ موجی یک‌بعدی و روش جداسازی متغیرها}
-\def\EMtitlesize{24}
-\begin{frame}{فصل ۴: معادلهٔ موجی یک‌بعدی و روش جداسازی متغیرها}
+\section{معادلۀ موجی یک‌بعدی و روش جداسازی متغیرها}
+\def\EMfootchapter{فصل ۴ \ \lr{\textbullet}\ معادلۀ موجی یک‌بعدی و روش جداسازی متغیرها}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{فصل ۴: معادلۀ موجی یک‌بعدی و روش جداسازی متغیرها}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign مطالب این فصل\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{مقدمه}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معادلهٔ دیفرانسیل موجی یک‌بعدی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{روش جداسازی متغیرها: مثال‌ها}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک)}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{مقدمه}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معادلۀ دیفرانسیل موجی یک‌بعدی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{حل معادلۀ دیفرانسیل موجی یک‌بعدی}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{روش جداسازی متغیرها: مثال‌ها}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معادلۀ موجی یک‌بعدی با شرایط مرزی غیرصفر}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{معادلۀ موجی یک‌بعدی با سرعت اولیۀ صفر (امواج متحرک)}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مقدمه}
 \begin{EMbox}{def}{1}{}
 \begin{uncoverenv}<2->
@@ -35,36 +35,36 @@
 \end{EMbox}
 \begin{EMbox}{def}{3}{}
 \begin{uncoverenv}<4->
-\EMp{معادلهٔ دیفرانسیلی که تابع به چند متغیر مستقل وابسته بوده، مشتقات جزئی تابع بر حسب متغیرهای مختلف در معادله وجود داشته باشد.}
+\EMp{معادلۀ دیفرانسیلی که تابع به چند متغیر مستقل وابسته بوده، مشتقات جزئی تابع بر حسب متغیرهای مختلف در معادله وجود داشته باشد.}
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<5->
-\EMp{\textbf{معادلهٔ دیفرانسیل موج:}}
+\EMp{\textbf{معادلۀ دیفرانسیل موج:}}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad \frac{\partial^2u}{\partial t^2} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad \frac{\partial^2u}{\partial t^2} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<6->
-\EMp{\textbf{معادلهٔ دیفرانسیل انتقال حرارت:}}
+\EMp{\textbf{معادلۀ دیفرانسیل انتقال حرارت:}}
 \vspace{3bp}
 \EMeq{\frac{\partial u}{\partial t} =c^2\frac{\partial^2u}{\partial x^2},\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right),\qquad \frac{\partial u}{\partial t} =c^2\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}\right)}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{مقدمه (ادامه)}
 \begin{uncoverenv}<2->
-\EMp{\textbf{معادلهٔ دیفرانسیل لاپلاس:}}
+\EMp{\textbf{معادلۀ دیفرانسیل لاپلاس:}}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2} =0,\qquad \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2} =0,\qquad \nabla^2u =0}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ دیفرانسیل موجی یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ دیفرانسیل موجی یک‌بعدی}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
-\EMp{مدلسازی یک تار مرتعش (به‌دست آوردن معادلهٔ حاکم بر \EMim{u(x,t)}).}
+\EMp{مدلسازی یک تار مرتعش (به‌دست آوردن معادلۀ حاکم بر \EMim{u(x,t)}).}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
@@ -72,25 +72,25 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{جرم به صورت یکنواخت در طول تار توزیع شده (تار همگن)، کاملاً انعطاف‌پذیر است.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{جرم به صورت یکنواخت در طول تار توزیع شده (تار همگن)، کاملاً انعطاف‌پذیر است.}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{تار چنان محکم کشیده شده است که نیروی جاذبه در آن قابل چشم‌پوشی است.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{تار چنان محکم کشیده شده است که نیروی جاذبه در آن قابل چشم‌پوشی است.}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<6->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{میزان انحراف تار از حالت تعادل بسیار کوچک است.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{میزان انحراف تار از حالت تعادل بسیار کوچک است.}
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{184.3bp}{\uncover<7->{\EMfigure{1.414}{m04-string}{قطعهٔ \EMim{PQ} از تار مرتعش: کشش‌های \EMim{T_1} و \EMim{T_2} در دو انتها با زوایای \EMim{\alpha} و \EMim{\beta}}}}
+\EMside{201.7bp}{\uncover<7->{\EMfigure{1.418}{m04-string}{قطعۀ \EMim{PQ} از تار مرتعش: کشش‌های \EMim{T_1} و \EMim{T_2} در دو انتها با زوایای \EMim{\alpha} و \EMim{\beta}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
-\EMeq{T_1\cos\alpha =T_2\cos\beta =T =\text{const.}}
+\EMeq{T_1\cos\alpha =T_2\cos\beta =T =\symup{const.}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
@@ -104,35 +104,35 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
-\EMp{با استفاده از قضیهٔ مقدار میانی (\EMim{f(b)-f(a)=f'(l)(b-a)}، \EMim{l\in[a,b]}):}
+\EMp{با استفاده از قضیۀ مقدار میانی (\EMim{f(b)-f(a)=f'(l)(b-a)}، \EMim{l\in[a,b]}):}
 \vspace{3bp}
 \EMeq{T\left(\frac{\partial u}{\partial x}\bigg|_{(x+\Delta x,t)}-\frac{\partial u}{\partial x}\bigg|_{(x,t)}\right) =T\frac{\partial^2u}{\partial x^2}\bigg|_{(l,t)}\Delta x =\rho\,\Delta s\,\frac{\partial^2u}{\partial t^2},\qquad x<l<x+\Delta x}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<6->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\begin{uncoverenv}<2->
 \EMp{طبق فرض \EMim{\displaystyle\lim_{\Delta x\to0}\frac{\Delta x}{\Delta s}=1}، پس:}
 \vspace{3bp}
 \EMeq{T\frac{\partial^2u}{\partial x^2} =\rho\frac{\partial^2u}{\partial t^2},\qquad c^2\triangleq\frac T\rho\quad \Longrightarrow\quad \frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2}}
 \end{uncoverenv}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{برای حل یکتای این معادله نیاز به شرایط مرزی و شرایط اولیه داریم:}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط مرزی (\lr{Boundary Conditions}): \EMim{u(0,t)=u(L,t)=0}}
+\begin{uncoverenv}<4->
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{شرایط مرزی (\lr{Boundary Conditions}): \EMim{u(0,t)=u(L,t)=0}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{شرایط اولیه (\lr{Initial Conditions}): \EMim{u(x,0)=f(x)} و \EMim{u_t(x,0)=g(x)}، که در آن \EMim{u_t\triangleq\dfrac{\partial u}{\partial t}}}
+\begin{uncoverenv}<5->
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{شرایط اولیه (\lr{Initial Conditions}): \EMim{u(x,0)=f(x)} و \EMim{u_t(x,0)=g(x)}، که در آن \EMim{u_t\triangleq\dfrac{\partial u}{\partial t}}}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی}
 \begin{uncoverenv}<2->
 \EMeq{\begin{cases}\dfrac{\partial^2u}{\partial t^2}=c^2\dfrac{\partial^2u}{\partial x^2}\\\noalign{\vskip 2mm} u(0,t)=u(L,t)=0\\ u(x,0)=f(x)\\ u_t(x,0)=g(x)\end{cases}}
 \end{uncoverenv}
@@ -152,8 +152,8 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{\textbf{اگر \EMim{k=0}:}}
 \vspace{3bp}
@@ -163,7 +163,7 @@
 \begin{uncoverenv}<3->
 \EMp{\textbf{اگر \EMim{k>0} (\EMim{k=\lambda^2}):}}
 \vspace{3bp}
-\EMeq{\frac{X''}{X} =\lambda^2\  \Rightarrow\ X''-\lambda^2X =0\  \Rightarrow\ X(x) =Ae^{\lambda x}+Be^{-\lambda x},\qquad X(0) =0 \Rightarrow A+B =0,\quad X(L) =0 \Rightarrow Ae^{\lambda L}+Be^{-\lambda L} \\[4pt] =0}
+\EMeq{\frac{X''}{X} =\lambda^2\  \Rightarrow\ X''-\lambda^2X =0\  \Rightarrow\ X(x) =Ae^{\lambda x}+Be^{-\lambda x},\qquad X(0) =0 \Rightarrow A+B =0,\quad X(L) =0 \\[4pt] \Rightarrow Ae^{\lambda L}+Be^{-\lambda L} =0}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
@@ -171,8 +171,8 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{بنابراین \EMim{k} باید حتماً یک عدد منفی باشد (\EMim{k=-\lambda^2}):}
 \vspace{3bp}
@@ -200,8 +200,8 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{با برهم‌نهی جواب‌ها:}
 \vspace{3bp}
@@ -215,14 +215,14 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMp{تابع \EMim{f(x)} با یک تابع تناوبی و فرد برابر شده است، بنابراین برای محاسبهٔ ضرایب مجهول فوریه باید \EMim{f(x)} را یک تابع تناوبی (با دورهٔ تناوب \EMim{2L}) و فرد فرض کنیم. به این صورت خواهیم داشت:}
+\EMp{تابع \EMim{f(x)} با یک تابع تناوبی و فرد برابر شده است، بنابراین برای محاسبۀ ضرایب مجهول فوریه باید \EMim{f(x)} را یک تابع تناوبی (با دورۀ تناوب \EMim{2L}) و فرد فرض کنیم. به این صورت خواهیم داشت:}
 \vspace{3bp}
 \EMeq{a_n =\frac2{2L}\int_{-L}^{L}f(x)\sin\!\left(\frac{2\pi}{2L}nx\right)dx =\frac1L\int_{-L}^{L}f(x)\sin\!\left(\frac{n\pi}Lx\right)dx =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{uncoverenv}<2->
 \EMp{شرط \EMim{u_t(x,0)=g(x)}:}
 \vspace{3bp}
@@ -244,15 +244,15 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ موجی یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =k\sin2x,\qquad u_t(x,0) =0}
 \EMgap
 \begin{uncoverenv}<2->
-\EMp{با توجه به اینکه سرعت اولیهٔ تار مرتعش صفر است، \EMim{g(x)=0\Rightarrow b_n=0}. بنابراین (\EMim{c=1}، \EMim{L=\pi}):}
+\EMp{با توجه به اینکه سرعت اولیۀ تار مرتعش صفر است، \EMim{g(x)=0\Rightarrow b_n=0}. بنابراین (\EMim{c=1}، \EMim{L=\pi}):}
 \vspace{3bp}
 \EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos\!\left(\frac{cn\pi}Lt\right)\sin\frac{n\pi}Lx =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
 \end{uncoverenv}
@@ -260,24 +260,25 @@
 \begin{uncoverenv}<3->
 \EMeq{a_n =\frac2L\int_0^Lf(x)\sin\!\left(\frac{n\pi}Lx\right)dx =\frac2\pi\int_0^\pi k\sin2x\sin nx\,dx =\begin{cases}0&n\neq2\\ k&n=2\end{cases}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMeq{u(x,t) =k\sin2x\cos2t}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{u(x,t) =k\sin2x\cos2t}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.356}{m04-mode2}{مود دوم ارتعاش تار: \EMim{u(x,t)=k\sin2x\cos2t} در لحظه‌های مختلف}}}
+\EMside{59.4bp}{\uncover<3->{\EMfigure{1.360}{m04-mode2}{مود دوم ارتعاش تار: \EMim{u(x,t)=k\sin2x\cos2t} در لحظه‌های مختلف}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ موجی یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =f(x),\qquad u_t(x,0) =0}
 \EMgap
@@ -288,33 +289,33 @@
 \vspace{3bp}
 \EMeq{u(x,t) =\sum_{n=1}^{\infty}a_n\cos nt\,\sin nx}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<3->
-\EMeq{\begin{aligned}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq[0.993]{\begin{aligned}
 a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx+\frac2\pi\int_a^\pi\frac k{a-\pi}(x-\pi)\sin nx\,dx\\
 &=\frac{2k}{a\pi}\left[x\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_0^a+\frac{2k}{(a-\pi)\pi}\left[(x-\pi)\left(\frac{-1}n\cos nx\right)-(1)\left(\frac{-1}{n^2}\sin nx\right)\right]_a^\pi\\
 &=\cdots=\frac{2k\sin na}{an^2(\pi-a)}
 \end{aligned}}
 \end{uncoverenv}
-\end{EMbox}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
-\begin{EMbox}{ex}{1}{}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{uncoverenv}<3->
 \EMeq{u(x,t) =\frac{2k}{a(\pi-a)}\sum_{n=1}^{\infty}\frac{\sin na}{n^2}\cos nt\,\sin nx}
 \end{uncoverenv}
 \end{EMbox}
-\end{minipage}
-\EMside{95.1bp}{\uncover<3->{\EMfigure{1.376}{m04-triangle}{توزیع اولیهٔ مثلثی \EMim{f(x)} با قلهٔ \EMim{k} در \EMim{x=a}}}}
+\begin{uncoverenv}<4->
+\EMfigure{1.081}{m04-triangle}{توزیع اولیۀ مثلثی \EMim{f(x)} با قلۀ \EMim{k} در \EMim{x=a}}
+\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ موجی یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ موجی یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(\pi,t) =0,\qquad u(x,0) =kx(\pi-x),\qquad u_t(x,0) =0}
 \EMgap
@@ -325,24 +326,25 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{a_n =\frac2\pi\int_0^\pi kx(\pi-x)\sin nx\,dx =\frac{2k}\pi\Big[(-x^2+\pi x)\Big(\frac{-1}n\cos nx\Big)-(-2x+\pi)\Big(\frac{-1}{n^2}\sin nx\Big)+(-2)\Big(\frac1{n^3}\cos nx\Big)\Big]_0^\pi \\[4pt] =\cdots =\frac{4k\big(1-(-1)^n\big)}{\pi n^3}}
-\end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMeq{u(x,t) =\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx}
+\EMeq{a_n =\frac2\pi\int_0^\pi kx(\pi-x)\sin nx\,dx \\[4pt] =\frac{2k}\pi\Big[(-x^2+\pi x)\Big(\frac{-1}n\cos nx\Big)-(-2x+\pi)\Big(\frac{-1}{n^2}\sin nx\Big)+(-2)\Big(\frac1{n^3}\cos nx\Big)\Big]_0^\pi =\cdots \\[4pt] =\frac{4k\big(1-(-1)^n\big)}{\pi n^3}}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMeq{u(x,t) =\frac{4k}\pi\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\cos nt\,\sin nx}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.376}{m04-parabola}{توزیع اولیهٔ سهمی‌شکل \EMim{f(x)=kx(\pi-x)}}}}
+\EMside{102.4bp}{\uncover<3->{\EMfigure{1.380}{m04-parabola}{توزیع اولیۀ سهمی‌شکل \EMim{f(x)=kx(\pi-x)}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{حل معادلهٔ دیفرانسیل موجی یک‌بعدی (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{حل معادلۀ دیفرانسیل موجی یک‌بعدی (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \EMp{(الف) مقدار نسبت \EMim{\dfrac{a_1^2}{a_1^2+a_2^2+\cdots}} را به دست آورید.}
 \EMgap
@@ -352,10 +354,10 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{روش جداسازی متغیرها: مثال‌ها}
 \begin{EMbox}{ex}{1}{}
-\EMp{مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{xu_x=yu_y}.}
+\EMp{مطلوب است حل معادلۀ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{xu_x=yu_y}.}
 \EMgap
 \begin{uncoverenv}<2->
 \EMeq{x\frac{\partial u}{\partial x} =y\frac{\partial u}{\partial y},\qquad u(x,y) =X(x)\cdot Y(y)}
@@ -375,10 +377,10 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{روش جداسازی متغیرها: مثال‌ها (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{u_{xx}+u_{yy}=0}.}
+\EMp{مطلوب است حل معادلۀ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{u_{xx}+u_{yy}=0}.}
 \EMgap
 \begin{uncoverenv}<2->
 \EMeq{u(x,y) =X(x)\cdot Y(y)\  \Rightarrow\ X''Y+XY'' =0\  \Rightarrow\ \frac{X''}X =-\frac{Y''}Y =k}
@@ -394,10 +396,10 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{روش جداسازی متغیرها: مثال‌ها (ادامه)}
 \begin{EMbox}{ex}{1}{}
-\EMp{مطلوب است حل معادلهٔ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{x^2u_{xy}=-3y^2u}.}
+\EMp{مطلوب است حل معادلۀ دیفرانسیل مقابل به روش جداسازی متغیرها: \EMim{x^2u_{xy}=-3y^2u}.}
 \EMgap
 \begin{uncoverenv}<2->
 \EMeq{x^2\frac{\partial^2u}{\partial x\partial y}+3y^2u =0,\qquad u(x,y) =X(x)\cdot Y(y)\  \Rightarrow\ x^2X'Y'+3y^2XY =0\  \Rightarrow\ \frac{x^2X'}X =\frac{-3y^2Y}{Y'} =k}
@@ -417,10 +419,10 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با شرایط مرزی غیرصفر}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ دیفرانسیل موجی یک‌بعدی زیر را به‌دست آورید.}
+\EMp{جواب معادلۀ دیفرانسیل موجی یک‌بعدی زیر را به‌دست آورید.}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =P_0,\quad u(L,t) =P_1,\quad u(x,0) =f(x),\quad u_t(x,0) =g(x)}
 \EMgap
@@ -431,47 +433,52 @@ a_n&=\frac2\pi\int_0^\pi f(x)\sin nx\,dx=\frac2\pi\int_0^a\frac ka\,x\sin nx\,dx
 \begin{uncoverenv}<3->
 \EMeq{\frac{\partial^2w}{\partial t^2} =c^2\left(\frac{\partial^2w}{\partial x^2}+\frac{\partial^2v}{\partial x^2}\right)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMp{تابع \EMim{v(x)} را چنان انتخاب می‌کنیم که مسئلهٔ \EMim{w} شرایط مرزی همگن داشته باشد:}
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با شرایط مرزی غیرصفر (ادامه)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
+\EMp{تابع \EMim{v(x)} را چنان انتخاب می‌کنیم که مسئلۀ \EMim{w} شرایط مرزی همگن داشته باشد:}
 \vspace{3bp}
 \EMeq{\begin{cases}\dfrac{\partial^2v}{\partial x^2}=0\\ v(0)=P_0\\ v(L)=P_1\end{cases}\quad \Longrightarrow\quad v(x) =\left(\frac{P_1-P_0}L\right)x+P_0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMeq{\begin{cases}\dfrac{\partial^2w}{\partial t^2}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases}\quad \Longrightarrow\quad w(x,t) =\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
+\EMeq{u(x,t) =\underbrace{\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}_{w(x,t)}+\underbrace{\left(\frac{P_1-P_0}L\right)x+P_0}_{v(x)}}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با شرایط مرزی غیرصفر (ادامه)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
-\EMeq{\begin{cases}\dfrac{\partial^2w}{\partial t^2}=c^2\dfrac{\partial^2w}{\partial x^2}\\ w(0,t)=w(L,t)=0\end{cases}\quad \Longrightarrow\quad w(x,t) =\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}
-\end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<3->
-\EMeq{u(x,t) =\underbrace{\sum_{n=1}^{\infty}\left[A_n\cos\!\left(\frac{cn\pi}Lt\right)+B_n\sin\!\left(\frac{cn\pi}Lt\right)\right]\sin\frac{n\pi}Lx}_{w(x,t)}+\underbrace{\left(\frac{P_1-P_0}L\right)x+P_0}_{v(x)}}
-\end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMp{شرط اولیهٔ \EMim{u(x,0)=f(x)}:}
+\EMp{شرط اولیۀ \EMim{u(x,0)=f(x)}:}
 \vspace{3bp}
 \EMeq{\sum_{n=1}^{\infty}A_n\sin\frac{n\pi}Lx =f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\triangleq f_1(x)}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<3->
 \EMeq{A_n =\frac2L\int_0^Lf_1(x)\sin\frac{n\pi}Lx\,dx =\frac2L\int_0^L\left[f(x)-\left(\frac{P_1-P_0}L\right)x-P_0\right]\sin\frac{n\pi}Lx\,dx}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با شرایط مرزی غیرصفر (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با شرایط مرزی غیرصفر (ادامه)}
 \begin{EMbox}{exe}{1}{}
 \EMp{\EMim{B_n} را برای حالت (الف) \EMim{g(x)=0} و (ب) \EMim{g(x)} دلخواه به دست آورید.}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با سرعت اولیۀ صفر (امواج متحرک)}
 \begin{uncoverenv}<2->
 \EMp{اگر سرعت اولیه صفر باشد (\EMim{g(x)=0}) آنگاه خواهیم داشت:}
 \vspace{3bp}
@@ -487,31 +494,29 @@ u(x,t)&=\sum_{n=1}^{\infty}a_n\frac12\left[\sin\!\left(\frac{n\pi}Lx+\frac{cn\pi
 &=\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x+ct)+\frac12\sum_{n=1}^{\infty}a_n\sin\frac{n\pi}L(x-ct)=\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]
 \end{aligned}}
 \end{uncoverenv}
-\EMgap
-\begin{EMbox}{imp}{3}{}
-\begin{uncoverenv}<4->
-\EMeq{u(x,t) =\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]}
-\end{uncoverenv}
-\end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک) (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با سرعت اولیۀ صفر (امواج متحرک) (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{imp}{1}{}
 \begin{uncoverenv}<2->
-\EMp{\EMim{\tilde f} ادامهٔ فرد و متناوب (با دورهٔ \EMim{2L}) تابع اولیهٔ \EMim{f} است؛ جواب برهم‌نهی دو موج با نیمی از دامنهٔ اولیه است که با سرعت \EMim{c} در دو جهت مخالف حرکت می‌کنند.}
+\EMeq{u(x,t) =\frac12\Big[\tilde f(x+ct)+\tilde f(x-ct)\Big]}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
+\EMp{\EMim{\tilde f} ادامۀ فرد و متناوب (با دورۀ \EMim{2L}) تابع اولیۀ \EMim{f} است؛ جواب برهم‌نهی دو موج با نیمی از دامنۀ اولیه است که با سرعت \EMim{c} در دو جهت مخالف حرکت می‌کنند.}
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{103.5bp}{\uncover<3->{\EMfigure{1.135}{m04-traveling}{ادامهٔ فرد و متناوب \EMim{\tilde f(x)} و دو موج \EMim{\frac12\tilde f(x+ct)} و \EMim{\frac12\tilde f(x-ct)} که در دو جهت مخالف حرکت می‌کنند}}}
+\EMside{141.0bp}{\uncover<4->{\EMfigure{1.137}{m04-traveling}{ادامۀ فرد و متناوب \EMim{\tilde f(x)} و دو موج \EMim{\frac12\tilde f(x+ct)} و \EMim{\frac12\tilde f(x-ct)} که در دو جهت مخالف حرکت می‌کنند}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{معادلهٔ موجی یک‌بعدی با سرعت اولیهٔ صفر (امواج متحرک) (ادامه)}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{معادلۀ موجی یک‌بعدی با سرعت اولیۀ صفر (امواج متحرک) (ادامه)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
-\EMp{جواب معادلهٔ موجی یک‌بعدی زیر را با فرض سرعت اولیهٔ صفر در زمان‌های مختلف رسم کنید.}
+\EMp{جواب معادلۀ موجی یک‌بعدی زیر را با فرض سرعت اولیۀ صفر در زمان‌های مختلف رسم کنید.}
 \vspace{3bp}
 \EMeq{\frac{\partial^2u}{\partial t^2} =c^2\frac{\partial^2u}{\partial x^2},\qquad u(0,t) =u(L,t) =0,\qquad u(x,0) \\[4pt] =f(x),\qquad u_t(x,0) =0}
 \EMgap
@@ -522,5 +527,5 @@ u(x,t)&=\sum_{n=1}^{\infty}a_n\frac12\left[\sin\!\left(\frac{n\pi}Lx+\frac{cn\pi
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{298.3bp}{\uncover<3->{\EMfigure{1.259}{m04-triangle-time}{جواب مثال برای \EMim{t=0}، \EMim{\frac{L}{5c}}، \EMim{\frac{2L}{5c}}، \EMim{\frac{L}{2c}} و \EMim{\frac{3L}{5c}}؛ در \EMim{t=\frac{L}{2c}} شکل تار صاف است}}}
+\EMside{314.4bp}{\uncover<3->{\EMfigure{1.262}{m04-triangle-time}{جواب مثال برای \EMim{t=0}، \EMim{\frac{L}{5c}}، \EMim{\frac{2L}{5c}}، \EMim{\frac{L}{2c}} و \EMim{\frac{3L}{5c}}؛ در \EMim{t=\frac{L}{2c}} شکل تار صاف است}}}
 \end{frame}

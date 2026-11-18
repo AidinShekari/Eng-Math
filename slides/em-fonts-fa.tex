@@ -1,8 +1,10 @@
-% Fonts of the Persian deck: Vazirmatn (OFL, in template/fonts) for the text, TeX Gyre for Latin
-% words and the mathematics (as in the notes).  \EMlead = the line height as a multiple of the size.
-\settextfont[Path=\EMroot/fonts/, Extension=.ttf, AutoFakeBold=1.3]{Vazirmatn-Regular}
-\setlatintextfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
-  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+% Fonts of the Persian deck: B Nazanin (slides/fonts) for the Persian text, Times New Roman for
+% Latin words (TeX Gyre Termes, its metric clone, where Times New Roman is not installed), TeX Gyre
+% Termes Math for the mathematics.  \EMlead = the line height as a multiple of the size.
+\settextfont[Path=\EMslidefonts, AutoFakeBold=2.2]{BNazanin.ttf}
+\IfFontExistsTF{Times New Roman}
+  {\setlatintextfont{Times New Roman}}
+  {\setlatintextfont{texgyretermes}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+     ItalicFont=*-italic, BoldItalicFont=*-bolditalic]}
 \setmathfont{texgyretermes-math.otf}
-\defpersianfont\EMfaDisplay[Path=\EMroot/fonts/, Extension=.ttf]{Vazirmatn-Black}
-\def\EMlead{1.42}
+\def\EMlead{1.45}
