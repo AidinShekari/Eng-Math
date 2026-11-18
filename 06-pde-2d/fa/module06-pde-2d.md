@@ -139,7 +139,7 @@ $$y''+\frac1xy'+\left(1-\frac{n^2}{x^2}\right)y=0\quad\Longrightarrow\quad y(x)=
 $$P'=\frac{dP}{dr}=\frac{dP}{ds}\frac{ds}{dr}=\lambda\frac{dP}{ds},\qquad P''=\lambda^2\frac{d^2P}{ds^2},\qquad\frac1r\lambda=\frac{\lambda^2}s$$
 $$\lambda^2\frac{d^2P}{ds^2}+\frac1r\lambda\frac{dP}{ds}+\lambda^2P=0\ \Rightarrow\ \frac{d^2P}{ds^2}+\frac1s\frac{dP}{ds}+P=0$$
 این معادلهٔ دیفرانسیل بسل از مرتبهٔ صفر است ($n=0$)، پس:
-$$P(r)=AJ_0(\lambda r)+BY_0(\lambda r)$$
+$$P(r)=CJ_0(\lambda r)+DY_0(\lambda r)$$
 **اعمال شرایط مرزی:**
 
 - چون $P(0)\neq\infty$ و $Y_0$ در مبدأ بی‌کران است: $D=0$ (ضریب $Y_0$ صفر است) و $P(r)=CJ_0(\lambda r)$.

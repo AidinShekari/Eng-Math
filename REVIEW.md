@@ -43,6 +43,12 @@ PDE = partial differential equations).
 | Ch. 14, class-1 example (CA p. 111) | the integral along the semicircle is printed with denominator $1+R^2e^{i2t}$ | $(1+R^2e^{i2t})^2$ | the integrand of this example has the squared denominator; $\omega>0$ stated |
 | Ch. 14, second-class formula (CA p. 112) | $\displaystyle\int_0^{2\pi}f(a\cos t,b\sin t)\,dt=\oint_C f(\ldots)\,dz$ | $\ldots\oint_C f(\ldots)\,\dfrac{dz}{iz}$ | $dt=dz/(iz)$ was derived on the same slide; the worked example uses it |
 | Ch. 14, example $\int_0^{2\pi}\frac{dx}{2+\cos x}$ (CA p. 113) | labelled "first class" | labelled by its type: second class | it is a trigonometric integral, i.e. the second class |
+| Ch. 5, Example 3, insulated ends (PDE p. 36) | $u=\sum_{n=1}^\infty B_ne^{-(c\lambda_n)^2t}\cos\lambda_nx$ with $B_n=\frac2L\int_0^Lf\cos\lambda_nx\,dx$ | $u=B_0+\sum_{n=1}^\infty\cdots$ with $B_0=\frac1L\int_0^Lf\,dx$ ($n=0,1,2,\dots$) | with $u_x=0$ at both ends $\lambda=0$ is an eigenvalue (the constant mode); without $B_0$ the series cannot represent an $f$ of nonzero mean |
+| Ch. 6, Bessel's equation (PDE p. 69) | $P(r)=AJ_0(\lambda r)+BY_0(\lambda r)$, then "$D=0$, $P(r)=CJ_0(\lambda r)$" | $P(r)=CJ_0(\lambda r)+DY_0(\lambda r)$ | one name for each constant |
+| Ch. 9, example $w=\lvert z\rvert^2$ (CA p. 26) | "analytic nowhere except at the origin" | "differentiable only at the origin, hence analytic nowhere" | analyticity needs a whole neighbourhood |
+| Ch. 10, logarithm (CA pp. 47–48) | "analytic in the whole plane except the origin"; $\ln(z_1z_2)=\ln z_1+\ln z_2$ … | the same, with: a single-valued branch is analytic off its cut; the identities hold up to multiples of $2\pi i$ | the principal branch is discontinuous on the negative real axis |
+| Ch. 12, $\int\cos\omega x/(1+x^2)\,dx$ (CA p. 75) | the last line still read $\cos x$, $\sin x$ and $\int_{-R}^{R}$ | $\cos\omega x$, $\sin\omega x$, $\int_{-\infty}^{\infty}$ (the limit $R\to\infty$) | completes the correction of this example |
+
 
 ## Small additions (derived from the surrounding slide, not new content)
 
@@ -58,6 +64,4 @@ PDE = partial differential equations).
 
 | Where | Remark |
 |---|---|
-| Ch. 9, example $w=\lvert z\rvert^2$ (CA p. 26) | The slide says "analytic nowhere except at the origin". Strictly, $\lvert z\rvert^2$ is differentiable only at the origin and analytic nowhere (analyticity needs a neighbourhood). |
-| Ch. 10, logarithm (CA pp. 47–48) | "Analytic in the whole plane except the origin" holds for a branch only off its cut (the principal branch is discontinuous on the negative real axis); the properties $\ln(z_1z_2)=\ln z_1+\ln z_2$ etc. hold up to multiples of $2\pi i$. |
 | Ch. 12, exercise 1 (CA p. 86) | The slide prints the denominator as "$(2z-1)4$"; read as $(2z-1)^4$, in line with the generalized formula on the preceding slides. |

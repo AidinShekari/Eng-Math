@@ -157,7 +157,7 @@ $$w=\ln z=\ln|z|+i\arg z=\ln\!\big(x^2+y^2\big)^{1/2}+i\tan^{-1}\frac yx$$
 $$u(x,y)=\frac12\ln\!\big(x^2+y^2\big),\qquad v(x,y)=\tan^{-1}\frac yx$$
 $$\frac{\partial u}{\partial x}=\frac{x}{x^2+y^2}=\frac{\partial v}{\partial y}\ \checkmark\qquad\qquad \frac{\partial u}{\partial y}=\frac{y}{x^2+y^2}=-\frac{\partial v}{\partial x}\ \checkmark$$
 
-Hence the logarithm function is analytic in the whole complex plane except at the origin.
+Hence the logarithm function is analytic in the whole complex plane except at the origin (a single-valued branch, such as the principal one, is analytic off its cut, here the negative real axis).
 
 $$\frac{d}{dz}\ln z=\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}=\frac{x}{x^2+y^2}+i\,\frac{-y}{x^2+y^2}=\frac{\bar z}{z\bar z}=\frac1z$$
 
@@ -170,3 +170,4 @@ So that the definition of a function is not violated, the range of this function
 
 The following properties hold for the logarithm function:
 $$\ln(z_1\times z_2)=\ln z_1+\ln z_2,\qquad \ln\!\left(\frac{z_1}{z_2}\right)=\ln z_1-\ln z_2,\qquad \ln(z^c)=c\ln z$$
+(as sets of values, i.e. up to integer multiples of $2\pi i$.)

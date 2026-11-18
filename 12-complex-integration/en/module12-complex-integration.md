@@ -283,7 +283,7 @@ $$\lim_{R\to\infty}\left|e^{i\omega Re^{it}}\right|=\lim_{R\to\infty}\left|e^{i\
 On the other hand, in the integral $I_1$ the remaining factor of the integrand tends to zero as $R$ tends to infinity. So the limit of $I_1$ as $R\to\infty$ is zero.
 
 Therefore
-$$\pi e^{-\omega}=\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}=\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}=\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2}=\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}$$
+$$\pi e^{-\omega}=\lim_{R\to\infty}\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}=\int_{-\infty}^{\infty}\frac{e^{i\omega x}\,dx}{1+x^2}=\int_{-\infty}^{\infty}\frac{(\cos\omega x+i\sin\omega x)\,dx}{1+x^2}=\int_{-\infty}^{\infty}\frac{\cos\omega x\,dx}{1+x^2}+i\int_{-\infty}^{\infty}\frac{\sin\omega x\,dx}{1+x^2}$$
 The second integral is zero. Why?
 $$\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx=\pi e^{-\omega}$$
 :::

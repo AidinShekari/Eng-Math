@@ -320,8 +320,13 @@
 
 % ---------- header / footer ----------
 \def\EMchaptitle{}\def\EMchapother{}
-\newcommand{\EMsetmodule}[3]{\gdef\EMmodkey{#1}\gdef\EMchaptitle{#2}\gdef\EMchapother{#3}%
+% inside the document the page in progress is finished first, so that the last page of the
+% previous chapter keeps the header of its own chapter
+\makeatletter
+\newcommand{\EMsetmodule}[3]{\ifx\@nodocument\relax\clearpage\fi
+  \gdef\EMmodkey{#1}\gdef\EMchaptitle{#2}\gdef\EMchapother{#3}%
   \ifnum0#1>0 \setcounter{EMchap}{#1}\fi\setcounter{section}{0}}
+\makeatother
 \newcommand{\EMheadchapter}{\ifnum\value{EMchap}>0 {\color{EMrose}\EMlangChapter~\EMnum{\arabic{EMchap}}}\ \EMsep\ \fi\EMchaptitle}
 \newcommand{\EMheadcourse}{\EMlangCourse}
 \pagestyle{fancy}

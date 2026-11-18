@@ -139,7 +139,7 @@ With the substitution $s=\lambda r$:
 $$P'=\frac{dP}{dr}=\frac{dP}{ds}\frac{ds}{dr}=\lambda\frac{dP}{ds},\qquad P''=\lambda^2\frac{d^2P}{ds^2},\qquad\frac1r\lambda=\frac{\lambda^2}s$$
 $$\lambda^2\frac{d^2P}{ds^2}+\frac1r\lambda\frac{dP}{ds}+\lambda^2P=0\ \Rightarrow\ \frac{d^2P}{ds^2}+\frac1s\frac{dP}{ds}+P=0$$
 This is Bessel's equation of order zero ($n=0$), so
-$$P(r)=AJ_0(\lambda r)+BY_0(\lambda r)$$
+$$P(r)=CJ_0(\lambda r)+DY_0(\lambda r)$$
 **Applying the boundary conditions:**
 
 - Since $P(0)\neq\infty$ and $Y_0$ is unbounded at the origin, the coefficient of $Y_0$ is zero ($D=0$) and $P(r)=CJ_0(\lambda r)$.
