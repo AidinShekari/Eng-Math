@@ -125,6 +125,40 @@ def front_matter(lang):
     return blocks, sheet_blocks
 
 
+def fix_fa_blocks(blocks):
+    """Apply layout.fa_fix to every piece of Persian text (formulas: only the hamza)."""
+    def hamza(t):
+        if not t:
+            return t
+        t = t.replace("\u0647\u0654", "\u06c0")
+        return re.sub(r"\\text\{([A-Za-z][^{}]*)\}", r"\\symup{\1}", t)  # Latin words in a formula
+
+    def el(e):
+        if e.kind == "para":
+            e.tex = L.fa_fix(e.tex)
+        elif e.kind == "disp":
+            e.tex = hamza(e.tex)
+        elif e.kind == "fig":
+            e.caption = L.fa_fix(e.caption)
+        elif e.kind == "table":
+            e.tex = hamza(e.tex)
+        elif e.kind == "list":
+            for it in e.items:
+                for x in it:
+                    el(x)
+    for b in blocks:
+        if b.kind == "heading":
+            b.title = L.fa_fix(b.title)
+        elif b.kind == "group":
+            for e in b.elements:
+                el(e)
+        elif b.kind == "box":
+            b.title = L.fa_fix(b.title)
+            for g in b.groups:
+                for e in g.elements:
+                    el(e)
+
+
 # ============================================================ model
 class Deck:
     def __init__(self, lang):
@@ -234,7 +268,7 @@ def measure_all(lang, flows, titles, workdir):
                 b = it.box
                 b.jid = "h%d_%s" % (b.bid, fl.key)
                 lab, title = b.head
-                tex = r"\textbf{" + lab + "}" + ((r"\ \ |\ \ " + title) if title else "")
+                tex = r"\textbf{" + lab + "}" + ((r"\ \ \lr{|}\ \ " + title) if title else "")
                 b.headtex = tex
                 for w in (L.CW - L.BOX_IN, L.NW - L.BOX_IN):
                     add(("%s_w%d" % (b.jid, w), "para", w, tex, align, L.HEAD))
@@ -271,8 +305,7 @@ class Pager:
             return s["h"] * sc * L.SLACK + 6
         if e.kind == "table":
             s = self.S[e.jid + "_tab"]
-            sc = min(1.0, L.CW / s["wd"])
-            return s["h"] * sc + 4
+            return s["h"] * self.table_scale(e) + 4
         if e.kind == "fig":
             if self.fig_side(e):
                 return 0.0
@@ -280,15 +313,23 @@ class Pager:
             return self.S[e.jid + "_fig"]["h"] * sc + 6 + self.S["%s_cap640" % e.jid]["h"]
         raise ValueError(e.kind)
 
+    def table_scale(self, e):
+        s = self.S[e.jid + "_tab"]
+        return min(1.0, L.CW / s["wd"], (L.CY1 - L.CY0 - 12) / s["h"])
+
     def fig_side_scale(self, e):
         s = self.S[e.jid + "_fig"]
         cap = self.S["%s_cap%d" % (e.jid, L.FIGW)]["h"]
         return min(L.FIGW / s["wd"], 1.5, (L.CY1 - L.CY0 - cap - 8) / s["h"])
 
     def fig_side(self, e):
+        if getattr(e, "mode", None) == "full":
+            return False
         return self.fig_side_scale(e) >= 0.72
 
     def fig_full_scale(self, e):
+        if getattr(e, "fscale", None):
+            return e.fscale
         s = self.S[e.jid + "_fig"]
         cap = self.S["%s_cap640" % e.jid]["h"]
         return min(L.CW * 0.85 / s["wd"], 1.5, (L.CY1 - L.CY0 - cap - 12) / s["h"])
@@ -348,6 +389,30 @@ class Pager:
                             return False
         return self.column_h(units, head_boxes) <= L.CY1 - L.CY0
 
+    def try_fig_below(self, cur, u, heads):
+        figs = [e for e in u.els if e.kind == "fig"]
+        if len(figs) != 1 or not cur["units"]:
+            return False
+        e = figs[0]
+        fs = self.S[e.jid + "_fig"]
+        cap = self.S["%s_cap640" % e.jid]["h"]
+        e.mode, e.fscale = "full", 1e-6
+        trial = cur["units"] + [u]
+        base = self.column_h(trial, heads)
+        room = L.CY1 - L.CY0 - base  # base already counts the caption
+        e.fscale = None
+        best = self.fig_full_scale(e)
+        sc = min(best, room / fs["h"]) if room > 0 else 0
+        if sc >= 0.5 and fs["wd"] * sc >= 220:
+            e.fscale = sc
+            if self.fits(trial, heads):
+                cur["units"] = trial
+                cur["heads"] = heads
+                return True
+        del e.mode
+        e.fscale = None
+        return False
+
     def disp_scale(self, e, w):
         lines = e.lines_by_w[w]
         key = "%s_l%s" % (e.jid, "-".join(str(len(x)) for x in lines))
@@ -383,7 +448,14 @@ class Pager:
                     title_level = it[2]
                     cur = None
                 elif it[0] == "break":
-                    cur = None
+                    if cur is not None and cur["units"] and all(
+                            all(e.kind == "fig" for e in x.els) for x in cur["units"]):
+                        # a figure alone before an example/exercise: it stays with the statement and,
+                        # like the statement, is there from the start
+                        for x in cur["units"]:
+                            x.initial = True
+                    else:
+                        cur = None
                 continue
             u = it
             if cur is None or not cur["units"]:
@@ -424,6 +496,11 @@ class Pager:
                     self.box_started.add(u.box.bid)
                 self.deck.warnings.append("too tall for one slide: %s / %s" % (chapter_label, title))
                 continue
+            # a figure that does not fit beside the text: under the text, in the room left
+            if self.try_fig_below(cur, u, heads):
+                if u.box:
+                    self.box_started.add(u.box.bid)
+                continue
             # move the trailing units that belong with this one (same EMunit / statement), unless
             # they are all that is on the slide
             moved = []
@@ -434,6 +511,12 @@ class Pager:
                 if k > 0:
                     moved = cur["units"][k:]
                     cur["units"] = cur["units"][:k]
+            if not moved and all(e.kind == "fig" for e in u.els) and len(cur["units"]) >= 2 \
+                    and not cur["units"][-1].initial and not getattr(u, "pulled", False):
+                # a figure would open a slide alone: take the text before it along
+                u.pulled = True
+                moved = [cur["units"][-1]]
+                cur["units"] = cur["units"][:-1]
             for mu in moved:
                 if mu.box and mu.box.bid in cur["heads"] and not any(x.box is mu.box for x in cur["units"]):
                     cur["heads"].discard(mu.box.bid)
@@ -535,7 +618,7 @@ def place(slide, pager, lang):
                                   scale=sc, nat=(s["wp"] * sc, S[key]["hp"] * sc)))
             elif e.kind == "table":
                 s = S[e.jid + "_tab"]
-                sc = min(1.0, L.CW / s["wd"])
+                sc = pager.table_scale(e)
                 items.append(dict(kind="table", el=e, x=ex, y=y, w=s["wd"] * sc, h=s["h"] * sc, step=st,
                                   jid=e.jid + "_tab", scale=sc))
             elif e.kind == "fig":
@@ -580,6 +663,22 @@ def build(lang, args):
     chapters = load(lang, only)
     parts, cover = book_parts(lang)
     info_blocks, sheet_blocks = front_matter(lang)
+    if lang == "fa":
+        # the figures with the single letter U+06C0 for he + hamza (B Nazanin has no combining hamza)
+        fd = SLIDES / "figures-fa"
+        fd.mkdir(exist_ok=True)
+        for f in (ROOT / "template" / "figures").glob("*.tex"):
+            t = f.read_text(encoding="utf-8").replace("\u0647\u0654", "\u06c0")
+            if not (fd / f.name).exists() or (fd / f.name).read_text(encoding="utf-8") != t:
+                (fd / f.name).write_text(t, encoding="utf-8")
+        fix_fa_blocks(info_blocks)
+        fix_fa_blocks(sheet_blocks)
+        for ch in chapters:
+            fix_fa_blocks(ch.blocks)
+            ch.title = L.fa_fix(ch.title)
+            ch.sections = [L.fa_fix(t) for t in ch.sections]
+        parts = [(a, L.fa_fix(b), c, d) for a, b, c, d in parts]
+        cover = tuple(L.fa_fix(x) if i in (0, 1) else x for i, x in enumerate(cover))
     deck = Deck(lang)
     flows = []
     fr = L.build_flow(lang, info_blocks + sheet_blocks)

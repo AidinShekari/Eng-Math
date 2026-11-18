@@ -5,8 +5,10 @@
 \documentclass[t,12pt]{beamer}
 \newif\ifEMrtl \EMrtlfalse
 \def\EMroot{../template}
+\def\EMslidefonts{fonts/}
+
 \input{em-slides-common}
-\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMroot/fonts/,Extension=.ttf,Script=Arabic]{Vazirmatn-Regular}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}
+\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMslidefonts,Script=Arabic]{BNazanin.ttf}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}
 \input{em-fonts-en}
 \input{em-beamer}
 \title{Engineering Mathematics}

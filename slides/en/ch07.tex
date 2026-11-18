@@ -1,14 +1,14 @@
 \section{The Laplace Transform}
 \def\EMfootchapter{Chapter 7 \ \textbullet\ The Laplace Transform}
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Chapter 7: The Laplace Transform}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The One-Sided Laplace Transform}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Using the Laplace Transform to Solve Differential Equations}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{The One-Sided Laplace Transform}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Using the Laplace Transform to Solve Differential Equations}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform}
 \begin{EMbox}{def}{1}{}
 \begin{uncoverenv}<2->
@@ -26,7 +26,7 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{f(t) =\begin{cases}1&t\ge0\\ 0&t<0\end{cases}\  \Longrightarrow\ \mathcal{L}\{f(t)\} =F(s) =\;?}
@@ -37,7 +37,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{f(t) =\begin{cases}e^{at}&t\ge0\\ 0&t<0\end{cases}\  \Longrightarrow\ \mathcal{L}\{f(t)\} =F(s) =\;?}
@@ -48,21 +48,21 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\mathcal{L}\{\cosh(at)\} =\mathcal{L}\left\{\tfrac12e^{at}+\tfrac12e^{-at}\right\} =\tfrac12\mathcal{L}\{e^{at}\}+\tfrac12\mathcal{L}\{e^{-at}\} =\frac12\frac1{s-a}+\frac12\frac1{s+a} =\frac s{s^2-a^2}}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\mathcal{L}\{\sinh(at)\} =\mathcal{L}\left\{\tfrac12e^{at}-\tfrac12e^{-at}\right\} =\tfrac12\mathcal{L}\{e^{at}\}-\tfrac12\mathcal{L}\{e^{-at}\} =\frac12\frac1{s-a}-\frac12\frac1{s+a} =\frac a{s^2-a^2}}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{Using \EMim{\displaystyle\int e^{ax}\cos nx\,dx=\frac{e^{ax}}{a^2+n^2}\big(a\cos nx+n\sin nx\big)}:}
@@ -71,7 +71,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The One-Sided Laplace Transform (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{Using \EMim{\displaystyle\int e^{ax}\sin nx\,dx=\frac{e^{ax}}{a^2+n^2}\big(a\sin nx-n\cos nx\big)}:}
@@ -80,17 +80,17 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{21}
+\def\EMtitlesize{23}\def\EMtitleskip{28}
 \begin{frame}{Table of Laplace Transforms (Table 6.1 of the textbook; a longer table is in Section 6.9)}
 \begin{uncoverenv}<2->
 {\EMbody\centering\scalebox{1.000}{\parbox{880bp}{\setlength{\columnwidth}{792pt}\centering \begin{tabular}{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0909}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1515}}@{}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.0909}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}
+  >{\centering\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1515}}@{}}
 \toprule\noalign{}
 \rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -115,13 +115,16 @@
 \bottomrule
 \end{tabular}}}\par}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<3->
+\end{frame}
+
+\def\EMtitlesize{20}\def\EMtitleskip{24}
+\begin{frame}{Table of Laplace Transforms (Table 6.1 of the textbook; a longer table is in Section 6.9) (continued)}
+\begin{uncoverenv}<2->
 \EMeq{\Gamma(x) =\int_0^\infty e^{-t}t^{x-1}\,dt}
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{21}
+\def\EMtitlesize{23}\def\EMtitleskip{28}
 \begin{frame}{Properties of the One-Sided Laplace Transform (the table of Section 6.8 of the textbook)}
 \begin{uncoverenv}<2->
 \EMp{With the unit step function}
@@ -130,12 +133,12 @@
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{18}
+\def\EMtitlesize{20}\def\EMtitleskip{24}
 \begin{frame}{Properties of the One-Sided Laplace Transform (the table of Section 6.8 of the textbook) (continued)}
 \begin{uncoverenv}<2->
-{\EMbody\centering\scalebox{1.000}{\parbox{880bp}{\setlength{\columnwidth}{792pt}\centering \begin{tabular}{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4444}}
-  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5556}}@{}}
+{\EMbody\centering\scalebox{0.577}{\parbox{880bp}{\setlength{\columnwidth}{792pt}\centering \begin{tabular}{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4444}}
+  >{\centering\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5556}}@{}}
 \toprule\noalign{}
 \rowcolor{EMindigoL}\begin{minipage}[b]{\linewidth}\raggedright
 Property
@@ -159,7 +162,7 @@ Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=
 \end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Using the Laplace Transform to Solve Differential Equations}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -179,10 +182,10 @@ Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{166.5bp}{\uncover<6->{\EMfigure{0.747}{m07-solve-scheme}{The steps of solving an initial-value problem with the Laplace transform: initial-value problem \EMim{\xrightarrow{1}} algebraic problem \EMim{\xrightarrow{2}} solution of the algebraic problem \EMim{\xrightarrow{3}} solution of the initial-value problem}}}
+\EMside{200.0bp}{\uncover<6->{\EMfigure{0.747}{m07-solve-scheme}{The steps of solving an initial-value problem with the Laplace transform: initial-value problem \EMim{\xrightarrow{1}} algebraic problem \EMim{\xrightarrow{2}} solution of the algebraic problem \EMim{\xrightarrow{3}} solution of the initial-value problem}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Ordinary Differential Equations}
 \begin{EMbox}{ex}{1}{}
 \EMp{Solve the differential equation \EMim{y''-y=t}, \EMim{y(0)=1}, \EMim{y'(0)=1} using the Laplace transform.}
@@ -201,7 +204,7 @@ Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Partial Differential Equations}
 \begin{EMbox}{ex}{1}{}
 \EMp{Solve the following partial differential equation using the Laplace transform.}
@@ -230,7 +233,7 @@ Integral in the \EMim{s} domain & \EMim{\mathcal{L}\left\{\dfrac{f(t)}t\right\}=
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Partial Differential Equations (continued)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->

@@ -23,15 +23,15 @@ SYS_FONTS = "/System/Library/Fonts/Supplemental/"
 # 'beamer' = the fonts of the Beamer decks (those of the notes: Vazirmatn, TeX Gyre).
 FONTS = {
     ("fa", "pptx"): r"""
-\settextfont[Path=%(sys)s,BoldFont={Tahoma Bold.ttf}]{Tahoma.ttf}
-\setlatintextfont[Path=%(sys)s,BoldFont={Tahoma Bold.ttf},ItalicFont={Tahoma.ttf},ItalicFeatures={FakeSlant=0.2}]{Tahoma.ttf}
+\settextfont[Path=%(fonts)s, AutoFakeBold=2.2]{BNazanin.ttf}
+\setlatintextfont[Path=%(sys)s,BoldFont={Times New Roman Bold.ttf},ItalicFont={Times New Roman Italic.ttf},BoldItalicFont={Times New Roman Bold Italic.ttf}]{Times New Roman.ttf}
 \setmathfont[Path=%(word)s,FontIndex=1]{Cambria.ttc}
-\def\EMlead{1.207}""",
+\def\EMlead{1.45}""",
     ("en", "pptx"): r"""
-\setmainfont[Path=%(word)s,BoldFont=Calibrib.ttf,ItalicFont=Calibrii.ttf,BoldItalicFont=Calibriz.ttf]{Calibri.ttf}
+\setmainfont[Path=%(sys)s,BoldFont={Times New Roman Bold.ttf},ItalicFont={Times New Roman Italic.ttf},BoldItalicFont={Times New Roman Bold Italic.ttf}]{Times New Roman.ttf}
 \setmathfont[Path=%(word)s,FontIndex=1]{Cambria.ttc}
-\def\EMlead{1.221}""",
-    ("fa", "beamer"): None,  # filled from slides/em-fonts-*.tex
+\def\EMlead{1.17}""",
+    ("fa", "beamer"): None,  # read from slides/em-fonts-*.tex
     ("en", "beamer"): None,
 }
 
@@ -39,23 +39,25 @@ FONTS = {
 def font_block(lang, mode):
     if mode == "beamer":
         return (SLIDES / f"em-fonts-{lang}.tex").read_text(encoding="utf-8")
-    return FONTS[(lang, mode)] % {"sys": SYS_FONTS, "word": WORD_FONTS}
+    return FONTS[(lang, mode)] % {"sys": SYS_FONTS, "word": WORD_FONTS, "fonts": str(SLIDES / "fonts") + "/"}
 
 
 def preamble(lang, mode):
     rtl = lang == "fa"
     p = [r"\documentclass{article}", r"\newif\ifEMrtl " + (r"\EMrtltrue" if rtl else r"\EMrtlfalse"),
          r"\def\EMroot{" + str(ROOT / "template") + "}",
+         r"\def\EMslidefonts{" + str(SLIDES / "fonts") + "/}",
+         (r"\def\EMfigdir{" + str(SLIDES / "figures-fa") + "}") if rtl else "",
          r"\input{" + str(SLIDES / "em-slides-common") + "}"]
     if rtl:
         p.append(r"\usepackage{xepersian}")
     else:
-        p.append(r"\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMroot/fonts/,Extension=.ttf,Script=Arabic]{Vazirmatn-Regular}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}")
+        p.append(r"\usepackage{fontspec}\newfontfamily\persianfont[Path=\EMslidefonts,Script=Arabic]{BNazanin.ttf}\TeXXeTstate=1 \newcommand{\lr}[1]{#1}\newcommand{\rl}[1]{{\persianfont\beginR #1\endR}}")
     p.append(font_block(lang, mode))
     p.append(r"""
 \setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
 \newwrite\EMsz \immediate\openout\EMsz=sizes.txt
-\newcommand{\EMbody}{\fontsize{18}{\EMlead\dimexpr18pt\relax}\selectfont}
+\newcommand{\EMbody}{\fontsize{20}{\EMlead\dimexpr20pt\relax}\selectfont}
 \newcommand{\EMship}[1]{%
   \immediate\write\EMsz{#1|\the\wd0|\the\ht0|\the\dp0}%
   \pdfpagewidth=\wd0 \pdfpageheight=\dimexpr\ht0+\dp0\relax

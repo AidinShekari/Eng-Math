@@ -247,6 +247,9 @@ SKIP_LINE = re.compile(r"^\s*(\\EMhold|\\begin\{EMjoin\}|\\end\{EMjoin\}|\\Needs
 
 
 def parse_content(tex: str, chapnum: int):
+    # pandoc >= 3.2 wraps a table in a group that keeps the table counter unchanged
+    tex = re.sub(r"\{\\def\\LTcaptype\{none\}[^\n]*\n", "", tex)
+    tex = re.sub(r"(\\end\{longtable\})[ \t]*\n\}", r"\1", tex)
     blocks = []
     unit_id = 0
     in_unit = None

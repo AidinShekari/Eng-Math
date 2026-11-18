@@ -1,21 +1,21 @@
 \section{Integration of Complex Functions}
 \def\EMfootchapter{Chapter 12 \ \textbullet\ Integration of Complex Functions}
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Chapter 12: Integration of Complex Functions}
 {\fontsize{20}{26}\selectfont\bfseries\color{SLdef}\EMalign In this chapter\par}
 \vspace{10bp}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Definite Integral and the Path of Integration}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{The Definite Integral of Complex Functions}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Simple Closed Curves and Simply Connected Domains}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Integration by Antiderivative}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Integrals of Complex Functions Along Closed Paths}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Cauchy's Integral Formula}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Application: Evaluating Real Integrals}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Cauchy's Theorem with Several Non-Analytic Points}
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{Derivatives of an Analytic Function}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{The Definite Integral and the Path of Integration}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{The Definite Integral of Complex Functions}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Simple Closed Curves and Simply Connected Domains}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Integration by Antiderivative}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Integrals of Complex Functions Along Closed Paths}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Cauchy's Integral Formula}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Application: Evaluating Real Integrals}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Cauchy's Theorem with Several Non-Analytic Points}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{Derivatives of an Analytic Function}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Definite Integral and the Path of Integration}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -23,11 +23,11 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{the indefinite integral, which amounts to finding an antiderivative;}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{the indefinite integral, which amounts to finding an antiderivative;}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMitem{\textbullet}{\dimexpr\linewidth-26bp\relax}{the definite integral, known as the integral along a path.}
+\EMitem{\lr{\textbullet}}{\dimexpr\linewidth-26bp\relax}{the definite integral, known as the integral along a path.}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
@@ -41,10 +41,10 @@
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{173.6bp}{\uncover<7->{\EMfigure{1.500}{m12-path}{A path of integration \EMim{C} from the point \EMim{A} to the point \EMim{B} in the \EMim{z}-plane}}}
+\EMside{172.4bp}{\uncover<7->{\EMfigure{1.500}{m12-path}{A path of integration \EMim{C} from the point \EMim{A} to the point \EMim{B} in the \EMim{z}-plane}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Path of Integration}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -60,10 +60,10 @@
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{190.7bp}{\uncover<5->{\EMfigure{1.500}{m12-path-param}{The path \EMim{C}, directed from \EMim{A=z(a)} to \EMim{B=z(b)}}}}
+\EMside{189.9bp}{\uncover<5->{\EMfigure{1.500}{m12-path-param}{The path \EMim{C}, directed from \EMim{A=z(a)} to \EMim{B=z(b)}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Path of Integration (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
@@ -74,10 +74,10 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{105.2bp}{\uncover<3->{\EMfigure{1.500}{m12-line-path}{The path \EMim{z(t)=t+i2t}, \EMim{1\le t\le2}}}}
+\EMside{109.7bp}{\uncover<3->{\EMfigure{1.500}{m12-line-path}{The path \EMim{z(t)=t+i2t}, \EMim{1\le t\le2}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Path of Integration (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
@@ -92,21 +92,21 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{118.2bp}{\uncover<4->{\EMfigure{1.500}{m12-circle-path}{The path \EMim{z(t)=e^{it}}, \EMim{0\le t\le2\pi} (the unit circle)}}}
+\EMside{122.9bp}{\uncover<4->{\EMfigure{1.500}{m12-circle-path}{The path \EMim{z(t)=e^{it}}, \EMim{0\le t\le2\pi} (the unit circle)}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Derivative of the Path}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
-\EMeq{\dot z(t) =\frac{d}{dt}z(t) =\lim_{\Delta t\to0}\frac{z(t+\Delta t)-z(t)}{\Delta t} =\frac{d}{dt}x(t)+i\frac{d}{dt}y(t) \\[4pt] =\dot x(t)+i\dot y(t)}
+\EMeq{\dot z(t) =\frac{d}{dt}z(t) =\lim_{\Delta t\to0}\frac{z(t+\Delta t)-z(t)}{\Delta t} \\[4pt] =\frac{d}{dt}x(t)+i\frac{d}{dt}y(t) =\dot x(t)+i\dot y(t)}
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{87.4bp}{\uncover<3->{\EMfigure{1.461}{m12-tangent}{The derivative of the path \EMim{\dot z(t)} as the limit of \EMim{\frac{z(t+\Delta t)-z(t)}{\Delta t}}}}}
+\EMside{113.8bp}{\uncover<3->{\EMfigure{1.463}{m12-tangent}{The derivative of the path \EMim{\dot z(t)} as the limit of \EMim{\frac{z(t+\Delta t)-z(t)}{\Delta t}}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Definite Integral of Complex Functions}
 \begin{uncoverenv}<2->
 \EMeq{\int_Cf(z)\,dz =\int_C(u+iv)(dx+i\,dy) =\int_C(u\,dx-v\,dy)+i\int_C(v\,dx+u\,dy)}
@@ -135,7 +135,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Definite Integral of Complex Functions (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{Compute the integral of the function \EMim{f(z)=\bar z} along the path shown.}
@@ -147,8 +147,13 @@
 \begin{uncoverenv}<3->
 \EMeq{f(z) =\bar z =x-iy,\qquad f\big(z(t)\big) =\bar z(t) =t-it^2}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{The Definite Integral of Complex Functions (continued)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMeq{\begin{aligned}
 \int_{-1+i}^{1+i}\bar z\,dz&=\int_{t=-1}^{1}(t-it^2)(1+i2t)\,dt\\
 &=\int_{t=-1}^{1}\Big[(t+2t^3)+i(2t^2-t^2)\Big]dt=\int_{t=-1}^{1}\Big[(t+2t^3)+it^2\Big]dt\\
@@ -156,16 +161,12 @@
 \end{aligned}}
 \end{uncoverenv}
 \end{EMbox}
+\begin{uncoverenv}<3->
+\EMfigure{1.500}{m12-parabola-path}{The path \EMim{z(t)=t+it^2}, \EMim{-1\le t\le1}, from \EMim{-1+i} to \EMim{1+i}}
+\end{uncoverenv}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{The Definite Integral of Complex Functions (continued)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
-\end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m12-parabola-path}{The path \EMim{z(t)=t+it^2}, \EMim{-1\le t\le1}, from \EMim{-1+i} to \EMim{1+i}}}}
-\end{frame}
-
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{The Definite Integral of Complex Functions (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
@@ -180,7 +181,7 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
-\EMeq{\int_{-1+i}^{1+i}\bar z\,dz =\int_{t=-1}^{1}(t-i)(1)\,dt =\left.\left(\frac{t^2}{2}-it\right)\right|_{-1}^{1} =0-i2}
+\EMeq{\int_{-1+i}^{1+i}\bar z\,dz =\int_{t=-1}^{1}(t-i)(1)\,dt =\left.\left(\frac{t^2}{2}-it\right)\right|_{-1}^{1} \\[4pt] =0-i2}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
@@ -188,14 +189,14 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{257.0bp}{\uncover<6->{\EMfigure{1.500}{m12-line-path-2}{The path \EMim{z(t)=t+i}, \EMim{-1\le t\le1}, from \EMim{-1+i} to \EMim{1+i}}}}
+\EMside{256.5bp}{\uncover<6->{\EMfigure{1.500}{m12-line-path-2}{The path \EMim{z(t)=t+i}, \EMim{-1\le t\le1}, from \EMim{-1+i} to \EMim{1+i}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Some Properties of the Definite Integral}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
-\EMeq{\int_C\big[k_1f_1(z)+k_2f_2(z)\big]dz =k_1\int_Cf_1(z)\,dz+k_2\int_Cf_2(z)\,dz\qquad \\[4pt] \text{(linearity)}}
+\EMeq{\int_C\big[k_1f_1(z)+k_2f_2(z)\big]dz \\[4pt] =k_1\int_Cf_1(z)\,dz+k_2\int_Cf_2(z)\,dz\qquad \text{(linearity)}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
@@ -207,10 +208,10 @@
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{273.0bp}{\uncover<5->{\EMfigure{1.500}{m12-split-path}{A path \EMim{C} from \EMim{z_0} to \EMim{Z} split into two pieces \EMim{C_1} and \EMim{C_2}}}}
+\EMside{314.2bp}{\uncover<5->{\EMfigure{1.500}{m12-split-path}{A path \EMim{C} from \EMim{z_0} to \EMim{Z} split into two pieces \EMim{C_1} and \EMim{C_2}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Simple Closed Curves and Simply Connected Domains}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{def}{1}{}
@@ -224,18 +225,15 @@
 \EMp{A domain \EMim{D} is simply connected if, whenever a simple closed curve lies entirely in it, all the points inside the curve belong to this domain.}
 \end{uncoverenv}
 \end{EMbox}
+\begin{uncoverenv}<5->
+\EMfigure{1.500}{m12-connected-types}{Simply connected and not simply connected domains}
+\end{uncoverenv}
 \end{minipage}
-\EMside{69.2bp}{\uncover<3->{\EMfigure{1.021}{m12-curve-types}{Simple closed curves and closed curves that are not simple}}}
+\EMside{72.1bp}{\uncover<3->{\EMfigure{1.022}{m12-curve-types}{Simple closed curves and closed curves that are not simple}}}
+\EMside{177.8bp}{\uncover<5->{\EMfigure{1.500}{m12-connected-types}{Simply connected and not simply connected domains}}}
 \end{frame}
 
-\def\EMtitlesize{24}
-\begin{frame}{Simple Closed Curves and Simply Connected Domains (continued)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
-\end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{0.978}{m12-connected-types}{Simply connected and not simply connected domains}}}
-\end{frame}
-
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integration by Antiderivative}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
@@ -246,35 +244,35 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integration by Antiderivative (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\int_0^{1+i}z^2\,dz =\left.\frac13z^3\right|_0^{1+i} =\frac13(1+i)^3 =\frac23(-1+i)}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integration by Antiderivative (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\int_{-\pi i}^{\pi i}\cos z\,dz =\sin z\Big|_{-\pi i}^{\pi i} =2\sin(\pi i) =2i\sinh\pi =23.097\,i}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integration by Antiderivative (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\int_{8+\pi i}^{8-3\pi i}e^{z/2}\,dz =2e^{z/2}\Big|_{8+\pi i}^{8-3\pi i} =2\left(e^{4-3\pi i/2}-e^{4+\pi i/2}\right) =0}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integration by Antiderivative (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMeq{\int_{-i}^{i}\frac{dz}{z} =\ln i-\ln(-i) =\frac{i\pi}{2}-\left(-\frac{i\pi}{2}\right) =i\pi}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -303,10 +301,10 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{258.0bp}{\uncover<5->{\EMfigure{1.500}{m12-cauchy-region}{A simple closed path \EMim{C} in the simply connected domain \EMim{D}}}}
+\EMside{270.7bp}{\uncover<5->{\EMfigure{1.500}{m12-cauchy-region}{A simple closed path \EMim{C} in the simply connected domain \EMim{D}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
@@ -331,7 +329,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{If the function is analytic in the whole complex plane, the integral along any closed path is zero:}
@@ -340,7 +338,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{If the function has non-analytic points that lie neither on the path nor inside \EMim{C}, the integral is still zero:}
@@ -353,7 +351,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{If the function is not analytic, the integral along a closed path \textbf{may} be nonzero:}
@@ -366,7 +364,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{EMbox}{ex}{1}{}
 \EMp{If the function is not analytic on the path or inside it, the integral along a closed path \textbf{may} be zero:}
@@ -375,7 +373,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Integrals of Complex Functions Along Closed Paths (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{exe}{1}{}
@@ -392,7 +390,7 @@
 \end{uncoverenv}
 \end{EMbox}
 \begin{uncoverenv}<4->
-\EMeq{\int_{C_1}f(z)\,dz+\int_{C_2^*}f(z)\,dz =0\; \Longrightarrow\;\int_{C_1}f(z)\,dz =-\int_{C_2^*}f(z)\,dz\; \\[4pt] \Longrightarrow\;\int_{C_1}f(z)\,dz =\int_{C_2}f(z)\,dz}
+\EMeq{\int_{C_1}f(z)\,dz+\int_{C_2^*}f(z)\,dz =0\; \Longrightarrow\;\int_{C_1}f(z)\,dz \\[4pt] =-\int_{C_2^*}f(z)\,dz\; \Longrightarrow\;\int_{C_1}f(z)\,dz =\int_{C_2}f(z)\,dz}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<5->
@@ -400,10 +398,10 @@
 \end{uncoverenv}
 \EMgap
 \end{minipage}
-\EMside{277.6bp}{\uncover<6->{\EMfigure{0.953}{m12-path-independence}{The paths \EMim{C_1}, \EMim{C_2} and \EMim{C_2^*} (\EMim{C_2} with reversed direction) between \EMim{z_1} and \EMim{z_2}}}}
+\EMside{276.6bp}{\uncover<6->{\EMfigure{0.953}{m12-path-independence}{The paths \EMim{C_1}, \EMim{C_2} and \EMim{C_2^*} (\EMim{C_2} with reversed direction) between \EMim{z_1} and \EMim{z_2}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{A Very Important Example}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{uncoverenv}<2->
@@ -425,10 +423,10 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{57.6bp}{\uncover<3->{\EMfigure{1.500}{m12-circle-integral}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{r}}}}
+\EMside{62.6bp}{\uncover<3->{\EMfigure{1.500}{m12-circle-integral}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{r}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Cauchy's Integral Formula}
 \begin{EMbox}{thm}{1}{}
 \begin{uncoverenv}<2->
@@ -456,7 +454,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Cauchy's Integral Formula (continued)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
@@ -474,23 +472,24 @@
 \vspace{3bp}
 \EMeq{g(z)\triangleq\begin{cases}\dfrac{f(z)-f(z_0)}{z-z_0}&z\neq z_0\\\noalign{\vskip 2mm} f'(z_0)&z=z_0\end{cases}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Cauchy's Integral Formula (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
 \EMp{is analytic inside \EMim{C'}. Therefore}
 \vspace{3bp}
 \EMeq{\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz =f(z_0)}
 \end{uncoverenv}
 \end{EMbox}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{Cauchy's Integral Formula (continued)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m12-cauchy-proof}{The path \EMim{\Gamma} in the proof of Cauchy's integral formula: the curve \EMim{C}, the small circle \EMim{C'} centred at \EMim{z_0}, and the two connecting segments \EMim{AA'} and \EMim{BB'}}}}
+\EMside{108.0bp}{\uncover<3->{\EMfigure{1.500}{m12-cauchy-proof}{The path \EMim{\Gamma} in the proof of Cauchy's integral formula: the curve \EMim{C}, the small circle \EMim{C'} centred at \EMim{z_0}, and the two connecting segments \EMim{AA'} and \EMim{BB'}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.21}}
 \EMp{Evaluate the integral \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}} using Cauchy's integral formula.}
@@ -506,30 +505,30 @@
 \vspace{3bp}
 \EMeq{\oint_C\frac{dz}{1+z^2} =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMp{In the expression above, the first term as \EMim{R\to\infty} is the required value.}
-\vspace{3bp}
-\EMeq{\oint_C\frac{dz}{1+z^2} =\pi =\int_{-\infty}^{\infty}\frac{dx}{1+x^2}+I,\qquad I =\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}} =0}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
+\EMp{In the expression above, the first term as \EMim{R\to\infty} is the required value.}
+\vspace{3bp}
+\EMeq{\oint_C\frac{dz}{1+z^2} =\pi =\int_{-\infty}^{\infty}\frac{dx}{1+x^2}+I,\qquad I \\[4pt] =\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}} =0}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{Therefore}
 \vspace{3bp}
 \EMeq{\int_{-\infty}^{\infty}\frac{dx}{1+x^2} =\pi}
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{101.3bp}{\uncover<3->{\EMfigure{1.500}{m12-semicircle-1}{The semicircular path in the upper half-plane; the poles are at \EMim{z=\pm i}}}}
+\EMside{159.2bp}{\uncover<4->{\EMfigure{1.500}{m12-semicircle-1}{The semicircular path in the upper half-plane; the poles are at \EMim{z=\pm i}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.22}}
 \EMp{Evaluate the integral \EMim{\displaystyle\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx} using Cauchy's integral formula (\EMim{\omega>0}).}
@@ -545,39 +544,44 @@
 \vspace{3bp}
 \EMeq{\oint_C\frac{e^{i\omega z}\,dz}{1+z^2} =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}+\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Application: Evaluating Real Integrals (continued)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMp{But:}
 \vspace{3bp}
 \EMeq{I_1 =\lim_{R\to\infty}\int_0^\pi\frac{e^{i\omega Re^{it}}\,iRe^{it}\,dt}{1+R^2e^{i2t}}\to0}
 \end{uncoverenv}
-\end{EMbox}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{Application: Evaluating Real Integrals (continued)}
-\begin{EMbox}{ex}{1}{}
-\begin{uncoverenv}<2->
+\EMgap
+\begin{uncoverenv}<3->
 \EMp{\textbf{Proof:}}
 \vspace{3bp}
 \EMeq{e^{i\omega Re^{it}} =e^{i\omega R(\cos t+i\sin t)} =e^{i\omega R\cos t}\,e^{-\omega R\sin t}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<3->
+\begin{uncoverenv}<4->
 \EMeq{\lim_{R\to\infty}\left|e^{i\omega Re^{it}}\right| =\lim_{R\to\infty}\left|e^{i\omega R\cos t}\right|\times\left|e^{-\omega R\sin t}\right| =1\times0 =0,\qquad t\in[0,\pi]}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<5->
 \EMp{On the other hand, in the integral \EMim{I_1} the remaining factor of the integrand tends to zero as \EMim{R} tends to infinity. So the limit of \EMim{I_1} as \EMim{R\to\infty} is zero.}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Application: Evaluating Real Integrals (continued)}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMp{Therefore}
 \vspace{3bp}
-\EMeq{\pi e^{-\omega} =\oint_C\frac{e^{i\omega z}\,dz}{1+z^2} =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2} =\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2} =\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}}
+\EMeq{\pi e^{-\omega} =\lim_{R\to\infty}\oint_C\frac{e^{i\omega z}\,dz}{1+z^2} =\int_{-\infty}^{\infty}\frac{e^{i\omega x}\,dx}{1+x^2} =\int_{-\infty}^{\infty}\frac{(\cos\omega x+i\sin\omega x)\,dx}{1+x^2} \\[4pt] =\int_{-\infty}^{\infty}\frac{\cos\omega x\,dx}{1+x^2}+i\int_{-\infty}^{\infty}\frac{\sin\omega x\,dx}{1+x^2}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<6->
+\begin{uncoverenv}<3->
 \EMp{The second integral is zero. Why?}
 \vspace{3bp}
 \EMeq{\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx =\pi e^{-\omega}}
@@ -585,7 +589,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.23}}
 \EMp{Evaluate the integral \EMim{\displaystyle I=\int_{-\infty}^{\infty}\frac{dx}{(x^2+1)(x^2+4)}} using Cauchy's integral formula.}
@@ -603,50 +607,51 @@
 \vspace{3bp}
 \EMeq{\oint_Cg_1(z)\,dz =\oint_C\frac1{z^2+1}\,dz =\oint_C\frac{\left[\dfrac1{z+i}\right]}{z-i}\,dz =2\pi i\,\frac1{i+i} =\pi}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<5->
-\EMeq{\oint_C\frac1{z^2+1}\,dz =\pi =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
-\EMeq{\lim_{R\to\infty}\oint_C\frac1{z^2+1}\,dz =\int_{-R}^{R}\frac{dx}{1+x^2}+0 =\pi\; \Longrightarrow\;I_1 =\pi}
+\EMeq{\oint_C\frac1{z^2+1}\,dz =\pi =\int_{-R}^{R}\frac{dx}{1+x^2}+\int_0^\pi\frac{iRe^{it}\,dt}{1+R^2e^{i2t}}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
+\EMeq{\lim_{R\to\infty}\oint_C\frac1{z^2+1}\,dz =\int_{-R}^{R}\frac{dx}{1+x^2}+0 =\pi\; \Longrightarrow\;I_1 =\pi}
+\end{uncoverenv}
+\EMgap
+\begin{uncoverenv}<4->
 \EMp{\textbf{Second integral:} \EMim{I_2=\displaystyle\int_{-\infty}^{\infty}\frac{dx}{x^2+4}} and \EMim{g_2(z)=\dfrac1{z^2+4}}:}
 \vspace{3bp}
 \EMeq{\oint_Cg_2(z)\,dz =\oint_C\frac1{z^2+4}\,dz =\oint_C\frac{\left[\dfrac1{z+2i}\right]}{z-2i}\,dz =2\pi i\,\frac1{2i+2i} =\frac\pi2}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<4->
+\begin{uncoverenv}<5->
 \EMeq{\oint_C\frac1{z^2+4}\,dz =\frac\pi2 =\int_{-R}^{R}\frac{dx}{x^2+4}+\int_0^\pi\frac{iRe^{it}\,dt}{R^2e^{i2t}+4}}
 \end{uncoverenv}
 \EMgap
-\begin{uncoverenv}<5->
+\begin{uncoverenv}<6->
 \EMeq{\lim_{R\to\infty}\oint_C\frac1{z^2+4}\,dz =\int_{-R}^{R}\frac{dx}{x^2+4}+0 =\frac\pi2\; \Longrightarrow\;I_2 =\frac\pi2}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<6->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Application: Evaluating Real Integrals (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{ex}{1}{}
+\begin{uncoverenv}<2->
 \EMp{As a result}
 \vspace{3bp}
 \EMeq{I =\frac13I_1-\frac13I_2 =\frac13\pi-\frac13\times\frac\pi2 =\frac\pi6}
 \end{uncoverenv}
 \end{EMbox}
-\end{frame}
-
-\def\EMtitlesize{24}
-\begin{frame}{Application: Evaluating Real Integrals (continued)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m12-semicircle-2}{The semicircular path; the poles are at \EMim{z=\pm i} and \EMim{z=\pm2i}}}}
+\EMside{100.8bp}{\uncover<3->{\EMfigure{1.500}{m12-semicircle-2}{The semicircular path; the poles are at \EMim{z=\pm i} and \EMim{z=\pm2i}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.24}}
 \EMp{Evaluate the integral \EMim{\displaystyle I=\int_0^\infty\frac{dx}{x^4+1}} using Cauchy's integral formula.}
@@ -657,7 +662,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{EMbox}{ex}{1}{}
 \begin{uncoverenv}<2->
@@ -674,7 +679,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Application: Evaluating Real Integrals (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{ex}{1}{}
@@ -685,7 +690,7 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{\lim_{R\to\infty}\oint_C\frac1{z^4+1}\,dz =\int_{-\infty}^{\infty}\frac{dx}{x^4+1}+\underbrace{\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}_{0} =\frac\pi{\sqrt2}}
+\EMeq{\lim_{R\to\infty}\oint_C\frac1{z^4+1}\,dz =\int_{-\infty}^{\infty}\frac{dx}{x^4+1}+\underbrace{\lim_{R\to\infty}\int_0^\pi\frac{iRe^{it}\,dt}{R^4e^{i4t}+1}}_{0} \\[4pt] =\frac\pi{\sqrt2}}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<4->
@@ -693,17 +698,17 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{98.6bp}{\uncover<5->{\EMfigure{1.500}{m12-semicircle-3}{The semicircular path and the circles \EMim{C_1} and \EMim{C_2} around the poles \EMim{z_1} and \EMim{z_2}; the poles \EMim{z_3} and \EMim{z_4} lie in the lower half-plane}}}
+\EMside{97.2bp}{\uncover<5->{\EMfigure{1.500}{m12-semicircle-3}{The semicircular path and the circles \EMim{C_1} and \EMim{C_2} around the poles \EMim{z_1} and \EMim{z_2}; the poles \EMim{z_3} and \EMim{z_4} lie in the lower half-plane}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Cauchy's Theorem with Several Non-Analytic Points}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{thm}{1}{\textbf{Theorem 12.25}}
 \begin{uncoverenv}<2->
 \EMp{If the function \EMim{f(z)} is analytic at all points of the domain \EMim{D} except the points \EMim{z_1,z_2,z_3,\dots,z_n} inside \EMim{C}, then}
 \vspace{3bp}
-\EMeq{\oint_Cf(z)\,dz =\oint_{C_1}f(z)\,dz+\oint_{C_2}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
+\EMeq{\oint_Cf(z)\,dz \\[4pt] =\oint_{C_1}f(z)\,dz+\oint_{C_2}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
@@ -711,10 +716,10 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{180.0bp}{\uncover<4->{\EMfigure{1.500}{m12-multi-points}{A path \EMim{C} and the non-analytic points \EMim{z_1,\dots,z_n} inside it}}}
+\EMside{179.6bp}{\uncover<4->{\EMfigure{1.500}{m12-multi-points}{A path \EMim{C} and the non-analytic points \EMim{z_1,\dots,z_n} inside it}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Cauchy's Theorem with Several Non-Analytic Points (continued)}
 \begin{EMbox}{prf}{1}{\textbf{Proof}}
 \begin{uncoverenv}<2->
@@ -726,23 +731,24 @@
 \begin{uncoverenv}<3->
 \EMeq{\oint_Cf(z)\,dz =-\oint_{C_1^{\circlearrowright}}f(z)\,dz-\cdots-\oint_{C_n^{\circlearrowright}}f(z)\,dz =\oint_{C_1}f(z)\,dz+\cdots+\oint_{C_n}f(z)\,dz}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
-\EMp{where \EMim{C_k^{\circlearrowright}} is the circle \EMim{C_k} traversed clockwise and \EMim{C_k} the same circle traversed counterclockwise.}
-\end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Cauchy's Theorem with Several Non-Analytic Points (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{prf}{1}{}
+\begin{uncoverenv}<2->
+\EMp{where \EMim{C_k^{\circlearrowright}} is the circle \EMim{C_k} traversed clockwise and \EMim{C_k} the same circle traversed counterclockwise.}
+\end{uncoverenv}
+\end{EMbox}
 \end{minipage}
-\EMside{0.0bp}{\uncover<2->{\EMfigure{1.500}{m12-multi-proof}{The path \EMim{\Gamma} for the proof: \EMim{C}, the circles \EMim{C_1,\dots,C_n} and the connecting segments}}}
+\EMside{72.3bp}{\uncover<3->{\EMfigure{1.500}{m12-multi-proof}{The path \EMim{\Gamma} for the proof: \EMim{C}, the circles \EMim{C_1,\dots,C_n} and the connecting segments}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function}
-\begin{EMbox}{thm}{1}{\textbf{Theorem 12.26}\ \ |\ \ Cauchy's integral formula for the derivative}
+\begin{EMbox}{thm}{1}{\textbf{Theorem 12.26}\ \ \lr{|}\ \ Cauchy's integral formula for the derivative}
 \begin{uncoverenv}<2->
 \EMp{If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D} and \EMim{z_0} is a point inside \EMim{C}, then}
 \vspace{3bp}
@@ -751,12 +757,12 @@
 \end{EMbox}
 \begin{EMbox}{prf}{2}{\textbf{Proof}}
 \begin{uncoverenv}<3->
-\EMeq{f'(z_0) =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t},\qquad f(z_0) =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz,\qquad f(z_0+\Delta t) =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz}
+\EMeq{f'(z_0) =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t},\qquad f(z_0) =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0}\,dz,\qquad f(z_0+\Delta t) \\[4pt] =\frac1{2\pi i}\oint_C\frac{f(z)}{z-z_0-\Delta t}\,dz}
 \end{uncoverenv}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
 \begin{EMbox}{prf}{1}{}
 \begin{uncoverenv}<2->
@@ -769,11 +775,15 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq{f'(z_0) =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t} =\lim_{\Delta t\to0}\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
+\EMeq{f'(z_0) =\lim_{\Delta t\to0}\frac{f(z_0+\Delta t)-f(z_0)}{\Delta t} =\lim_{\Delta t\to0}\frac1{2\pi i}\oint_Cf(z)\left[\frac1{(z-z_0-\Delta t)(z-z_0)}\right]dz \\[4pt] =\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz}
 \end{uncoverenv}
 \end{EMbox}
-\begin{EMbox}{thm}{3}{\textbf{Theorem 12.27}\ \ |\ \ Generalization of Cauchy's integral formula}
-\begin{uncoverenv}<4->
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Derivatives of an Analytic Function (continued)}
+\begin{EMbox}{thm}{1}{\textbf{Theorem 12.27}\ \ \lr{|}\ \ Generalization of Cauchy's integral formula}
+\begin{uncoverenv}<2->
 \EMp{If the function \EMim{f(z)} is analytic in the simply connected domain \EMim{D} and \EMim{z_0} is a point inside \EMim{C}, then}
 \vspace{3bp}
 \EMeq{\frac{n!}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}\,dz =f^{(n)}(z_0)}
@@ -781,14 +791,14 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
 \begin{EMbox}{exe}{1}{\textbf{Exercise 12.28}}
 \EMp{Prove it by mathematical induction.}
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.29}}
 \EMp{Evaluate the following integral. (\EMim{C} is the unit circle.)}
@@ -805,7 +815,7 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
 \begin{EMbox}{ex}{1}{\textbf{Example 12.30}}
 \EMp{Evaluate the following integral. (\EMim{C} is the unit circle.)}
@@ -822,10 +832,9 @@
 \end{EMbox}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
-\begin{minipage}[t]{500bp}\vspace{0pt}
-\begin{EMbox}{exe}{1}{\textbf{Exercise 12.31}\ \ |\ \ Problem}
+\begin{EMbox}{exe}{1}{\textbf{Exercise 12.31}\ \ \lr{|}\ \ Problem}
 \EMp{If \EMim{f(z)} is analytic in the whole \EMim{z}-plane and bounded in the whole plane, i.e.~\EMim{|f(z)|<M}, prove that \EMim{f(z)=k}, \EMim{k\in\mathbb{C}}.}
 \EMgap
 \begin{uncoverenv}<2->
@@ -835,18 +844,24 @@
 \end{uncoverenv}
 \EMgap
 \begin{uncoverenv}<3->
-\EMeq[0.987]{|f'(z_0)| \\[4pt] =\left|\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\right|\le\frac1{2\pi}\oint_C\frac{|f(z)|}{|z-z_0|^2}\,|dz|\le\frac1{2\pi}\,\frac{M}{R^2}\oint_C|dz| \\[4pt] =\frac1{2\pi}\,\frac{M}{R^2}\cdot2\pi R =\frac MR\to0\quad (R\to\infty)}
+\EMeq{|f'(z_0)| =\left|\frac1{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^2}\,dz\right|\le\frac1{2\pi}\oint_C\frac{|f(z)|}{|z-z_0|^2}\,|dz|\le\frac1{2\pi}\,\frac{M}{R^2}\oint_C|dz| =\frac1{2\pi}\,\frac{M}{R^2}\cdot2\pi R =\frac MR\to0\quad \\[4pt] (R\to\infty)}
 \end{uncoverenv}
-\EMgap
-\begin{uncoverenv}<4->
+\end{EMbox}
+\end{frame}
+
+\def\EMtitlesize{26}\def\EMtitleskip{31}
+\begin{frame}{Derivatives of an Analytic Function (continued)}
+\begin{minipage}[t]{500bp}\vspace{0pt}
+\begin{EMbox}{exe}{1}{}
+\begin{uncoverenv}<2->
 \EMeq{\Longrightarrow\;|f'(z_0)| =0\; \Longrightarrow\;f'(z) =0\; \Longrightarrow\;f(z) =k}
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{172.3bp}{\uncover<5->{\EMfigure{1.500}{m12-liouville-circle}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{R}}}}
+\EMside{55.3bp}{\uncover<3->{\EMfigure{1.500}{m12-liouville-circle}{A circle \EMim{C} with centre \EMim{z_0} and radius \EMim{R}}}}
 \end{frame}
 
-\def\EMtitlesize{24}
+\def\EMtitlesize{26}\def\EMtitleskip{31}
 \begin{frame}{Derivatives of an Analytic Function (continued)}
 \begin{minipage}[t]{500bp}\vspace{0pt}
 \begin{EMbox}{exe}{1}{\textbf{Exercise 12.32}}
@@ -869,5 +884,5 @@
 \end{uncoverenv}
 \end{EMbox}
 \end{minipage}
-\EMside{144.1bp}{\uncover<6->{\EMfigure{1.500}{m12-exercise-circle}{The path of exercise 4: a circle with centre \EMim{3+3i} and radius \EMim{r=1}}}}
+\EMside{143.2bp}{\uncover<6->{\EMfigure{1.500}{m12-exercise-circle}{The path of exercise 4: a circle with centre \EMim{3+3i} and radius \EMim{r=1}}}}
 \end{frame}

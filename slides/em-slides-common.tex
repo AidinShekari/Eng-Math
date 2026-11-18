@@ -54,6 +54,8 @@
 \def\circlearrowleft{\mathord{\acwopencirclearrow}}
 \providecommand{\tightlist}{\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
 \ifEMrtl\newcommand{\EML}[2]{\RL{\persianfont #2}}\else\newcommand{\EML}[2]{#1}\fi
-\newcommand{\EMfig}[1]{\begingroup\fontsize{11}{13}\selectfont\ifEMrtl\begin{latin}\fi\input{\EMroot/figures/#1}\ifEMrtl\end{latin}\fi\endgroup}
+\providecommand{\EMfigdir}{\EMroot/figures}
+\newcommand{\EMfig}[1]{\begingroup\fontsize{11}{13}\selectfont\ifEMrtl\begin{latin}\fi\input{\EMfigdir/#1}\ifEMrtl\end{latin}\fi\endgroup}
 \AtBeginDocument{\input{\EMroot/figures/em-diagram-styles}}
 \AtBeginDocument{\def\setminus{\mathbin{\backslash}}}
+\AtBeginDocument{\setoperatorfont\symup}
