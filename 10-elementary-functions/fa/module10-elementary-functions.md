@@ -157,7 +157,7 @@ $$w=\ln z=\ln|z|+i\arg z=\ln\!\big(x^2+y^2\big)^{1/2}+i\tan^{-1}\frac yx$$
 $$u(x,y)=\frac12\ln\!\big(x^2+y^2\big),\qquad v(x,y)=\tan^{-1}\frac yx$$
 $$\frac{\partial u}{\partial x}=\frac{x}{x^2+y^2}=\frac{\partial v}{\partial y}\ \checkmark\qquad\qquad \frac{\partial u}{\partial y}=\frac{y}{x^2+y^2}=-\frac{\partial v}{\partial x}\ \checkmark$$
 
-بنابراین تابع لگاریتم در تمام صفحهٔ مختلط بجز مبدأ تحلیلی است.
+بنابراین تابع لگاریتم در تمام صفحهٔ مختلط بجز مبدأ تحلیلی است (یک شاخهٔ تک‌مقداری، مانند شاخهٔ اصلی، بیرون از برش خود، در اینجا نیم‌محور حقیقی منفی، تحلیلی است).
 
 $$\frac{d}{dz}\ln z=\frac{\partial u}{\partial x}+i\,\frac{\partial v}{\partial x}=\frac{x}{x^2+y^2}+i\,\frac{-y}{x^2+y^2}=\frac{\bar z}{z\bar z}=\frac1z$$
 
@@ -170,3 +170,4 @@ $$z=re^{i\theta}=re^{i(\theta+2k\pi)}$$
 
 خواص زیر برای تابع لگاریتم برقرارند:
 $$\ln(z_1\times z_2)=\ln z_1+\ln z_2,\qquad \ln\!\left(\frac{z_1}{z_2}\right)=\ln z_1-\ln z_2,\qquad \ln(z^c)=c\ln z$$
+(به‌عنوان مجموعهٔ مقادیر، یعنی با تفاوتی برابر مضرب صحیحی از $2\pi i$.)

@@ -428,7 +428,7 @@ But:
 On the other hand, in the integral \EMim{I_1} the remaining factor of the integrand tends to zero as \EMim{R} tends to infinity. So the limit of \EMim{I_1} as \EMim{R\to\infty} is zero.
 
 Therefore
-\EMdisp{\pi e^{-\omega}\EMbr =\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-R}^{R}\frac{e^{i\omega x}\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{(\cos x+i\sin x)\,dx}{1+x^2}\EMbr =\int_{-R}^{R}\frac{\cos x\,dx}{1+x^2}+i\int_{-R}^{R}\frac{\sin x\,dx}{1+x^2}}
+\EMdisp{\pi e^{-\omega}\EMbr =\lim_{R\to\infty}\oint_C\frac{e^{i\omega z}\,dz}{1+z^2}\EMbr =\int_{-\infty}^{\infty}\frac{e^{i\omega x}\,dx}{1+x^2}\EMbr =\int_{-\infty}^{\infty}\frac{(\cos\omega x+i\sin\omega x)\,dx}{1+x^2}\EMbr =\int_{-\infty}^{\infty}\frac{\cos\omega x\,dx}{1+x^2}+i\int_{-\infty}^{\infty}\frac{\sin\omega x\,dx}{1+x^2}}
 The second integral is zero. Why?
 \EMdisp{\int_{-\infty}^{\infty}\frac{\cos\omega x}{1+x^2}\,dx\EMbr =\pi e^{-\omega}}
 
